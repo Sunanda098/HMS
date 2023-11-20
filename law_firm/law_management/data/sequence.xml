@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="seq_matter" model="ir.sequence">
+            <field name="name">Matter</field>
+            <field name="code">matter.matter</field>
+            <field name="prefix">CASE/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+        <!--Judge-->
+        <record id="seq_judge" model="ir.sequence">
+            <field name="name">Judge</field>
+            <field name="code">judge.details</field>
+            <field name="prefix">Judge/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--witness-->
+        <record id="seq_witness" model="ir.sequence">
+            <field name="name">Witness</field>
+            <field name="code">witness.details</field>
+            <field name="prefix">witness/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--Lawyer-->
+        <record id="seq_lawyer" model="ir.sequence">
+            <field name="name">Lawyer</field>
+            <field name="code">lawyer.details</field>
+            <field name="prefix">Lawyer/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--accuse-->
+        <record id="seq_accuse" model="ir.sequence">
+            <field name="name">Claimant / Plaintiff</field>
+            <field name="code">accuse.details</field>
+            <field name="prefix">Claimant / Plaintiff/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--claim-->
+        <record id="seq_claim" model="ir.sequence">
+            <field name="name">Claim</field>
+            <field name="code">matter.claim</field>
+            <field name="prefix">Claim/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--claim distribution-->
+        <record id="seq_dis" model="ir.sequence">
+            <field name="name">Claim Distribution</field>
+            <field name="code">claim.distribution</field>
+            <field name="prefix">CD/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--claim transaction-->
+        <record id="seq_tra" model="ir.sequence">
+            <field name="name">Claim transaction</field>
+            <field name="code">claim.distribution.transaction</field>
+            <field name="prefix">CT/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!--payment schedule-->
+        <record id="seq_pay" model="ir.sequence">
+            <field name="name">Payment schedule</field>
+            <field name="code">payment.schedule</field>
+            <field name="prefix">PS/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- judgement sequence -->
+        <record id="seq_judgement" model="ir.sequence">
+            <field name="name">Judgement</field>
+            <field name="code">case.trail.judgement</field>
+            <field name="prefix">J/%(year)s/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record forcecreate="True" id="ir_cron_trail_client" model="ir.cron">
+            <field name="name">Trail Schedular for Client</field>
+            <field name="model_id" ref="model_matter_matter"/>
+            <field name="state">code</field>
+            <field name="code">model.send_trail_secheduler_email_client()</field>
+            <field eval="True" name="active"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field eval="'send_trail_secheduler_email_client'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+
+        <record forcecreate="True" id="ir_cron_trail_judge" model="ir.cron">
+            <field name="name">Trail Schedular for Judge</field>
+            <field name="model_id" ref="model_matter_matter"/>
+            <field name="state">code</field>
+            <field name="code">model.send_trail_secheduler_email_judge()</field>
+            <field eval="True" name="active"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field eval="'send_trail_secheduler_email_judge'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+
+        <record forcecreate="True" id="ir_cron_trail_opp_lawyer" model="ir.cron">
+            <field name="name">Trail Schedular for Opp Lawyer</field>
+            <field name="model_id" ref="model_matter_matter"/>
+            <field name="state">code</field>
+            <field name="code">model.send_trail_secheduler_email_opp_lawyer()</field>
+            <field eval="True" name="active"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field eval="'send_trail_secheduler_email_opp_lawyer'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+
+        <record forcecreate="True" id="ir_cron_trail_accuse" model="ir.cron">
+            <field name="name">Trail Schedular for Claimant / Plaintiff</field>
+            <field name="model_id" ref="model_matter_matter"/>
+            <field name="state">code</field>
+            <field name="code">model.send_trail_secheduler_email_accuse()</field>
+            <field eval="True" name="active"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field eval="'send_trail_secheduler_email_accuse'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+        
+    </data>
+</odoo>

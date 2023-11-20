@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+		<!--Lawyer Details Start-->
+        <record id="view_lawyer_details_tree" model="ir.ui.view">
+          <field name="name">lawyer.details.tree</field>
+          <field name="model">lawyer.details</field>
+          <field name="arch" type="xml">
+                <tree string="Lawyer Details">
+                    <field name="lawyer_name"/>
+                    <field name="lawyer_mobileP"/>
+                    <field name="lawyer_mobileW"/>
+                    <field name="lawyer_emailP"/>
+                    <field name="lawyer_emailW"/>
+                    <field name="lawyer_gender"/>
+                    <field name="lawyer_type"/>
+                    <field name="lawyer_experience"/>
+                </tree>
+          </field>
+        </record>
+
+        <record id="view_lawyer_details_form" model="ir.ui.view">
+          <field name="name">lawyer.details.form</field>
+          <field name="model">lawyer.details</field>
+          <field name="arch" type="xml">
+              <form string="Lawyer Details">
+                <sheet>
+                  <div class="oe_button_box" name="button_box">
+                    <!-- <button name="toggle_active" type="object"
+                            class="oe_stat_button" icon="fa-archive">
+                        <field name="active" widget="boolean_button"
+                            options='{"terminology": "archive"}'/>
+                    </button> -->
+                    <button name="lawyer_account_view_action" type="object" class="oe_stat_button" icon="fa-money">
+                      <field string="Account" name="lawyer_account" widget="statinfo"/>
+                    </button>
+                    <button name="action_lawyer_invoices" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                      <field string="Invoiced" name="invoiced" widget="statinfo"/>
+                    </button>
+                    <!-- <button name="action_won_cases_view" type="object" class="oe_stat_button" icon="fa-gavel">
+                      <field string="Won Cases" name="won_cases" widget="statinfo"/>
+                    </button> -->
+                    <!-- <button name="action_lost_cases_view" type="object" class="oe_stat_button" icon="fa-gavel">
+                      <field string="Lost Cases" name="lost_cases" widget="statinfo"/>
+                    </button> -->
+<!--                     <button name="action_ongoing_cases_view" type="object" class="oe_stat_button" icon="fa-money">
+                      <field string="Ongoing Cases" name="ongoing_cases" widget="statinfo"/>
+                    </button> -->
+                    <!-- <button name="action_total_cases_view" type="object" class="oe_stat_button" icon="fa-gavel">
+                      <field string="Total Cases" name="total_cases" widget="statinfo"/>
+                    </button> -->
+                    <!-- <button name="action_settlement_cases_view" type="object" class="oe_stat_button" icon="fa-gavel">
+                      <field string="Settlement Cases" name="settlement_cases" widget="statinfo"/> 
+                    </button>-->
+                    <button name="action_lawyer_expenses" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                      <field string="Expenses" name="expenses" widget="statinfo"/>
+                    </button>
+                    <button name="action_lawyer_document" type="object" class="oe_stat_button" icon="fa-pencil-square-o">
+                        <field string="Documents" name="l_doc_count" widget="statinfo"/>
+                    </button>
+                  </div>
+                    <field name="image" widget="image" class="oe_avatar" />
+                      <div class="oe_title">
+                          <h1>
+                          <field name="lawyer_id" readonly="1" />
+                          </h1>
+                          <h1>
+                            <field name="lawyer_name" placeholder="Name" required="1"/>
+                          </h1>
+                      </div>
+                  <group>
+                      <group string="General Information">
+                        <field name="lawyer_gender"/>
+                        <field name="lawyer_dob"/>
+                        <field name="lawyer_age"/>
+                        <field name="lawyer_marital_status"/>
+                        <field name="lawyer_function" required="1"/>
+                       
+                        <!-- <field name="case_result" required="1"/> -->
+                      </group>
+                      <group string="Contact Information">
+                        <field name="lawyer_mobileP"/>
+                        <field name="lawyer_mobileW"/>
+                        <field name="lawyer_emailP"/>
+                        <field name="lawyer_emailW" required="1"/>
+                        <field name="lawyer_website"/>
+                        <field name="l_created_by" options='{"no_open": True}'/>
+                      </group>
+                  </group>
+                  <group>
+                      <group string="Residential Address">
+                          <label for="street" string="Address"/>
+                          <div class="o_address_format">
+                              <field name="street" placeholder="Street..." class="o_address_street"/>
+                              <field name="street2" placeholder="Street 2..." class="o_address_street" />
+                              <field name="city_id" placeholder="City" class="o_address_city" style="width: 48%"/>
+                              <field name="village" placeholder="Village" class="o_address_city"/>
+                              <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open":True}' context="{'country_id': country_id,'zip': zip}" style="width: 48%"/>
+                              <field name="district_id" placeholder="District" style="width: 52%"/>
+                              <field name="zip" placeholder="ZIP" class="o_address_zip" style="width: 48%"/>
+                              <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open":True, "no_create": True}' />
+                          </div>
+                      </group>
+                      <group string="Postal Address">
+                          <label for="postal_street" string="Postal Address"/>
+                          <div class="o_address_format">
+                              <field name="postal_street" placeholder="Street..." class="o_address_street"/>
+                              <field name="postal_street2" placeholder="Street 2..." class="o_address_street" />
+                              <field name="postal_city_id" placeholder="City" class="o_address_city" style="width: 48%"/>
+                              <field name="postal_village" placeholder="Village" class="o_address_city"/>
+                              <field name="postal_state_id" class="o_address_state" placeholder="State" options='{"no_open":True}' context="{'country_id': postal_country_id,'zip': postal_zip}" style="width: 48%"/>
+                              <field name="district_id" placeholder="District" style="width: 52%"/>
+                              <field name="postal_zip" placeholder="ZIP" class="o_address_zip" style="width: 48%"/>
+                              <field name="postal_country_id" placeholder="Country" class="o_address_country" options='{"no_open":True, "no_create": True}' />
+                          </div>
+                      </group>
+                    </group>
+                      <group string="Other Information">
+                        <group> 
+                            <field name="lawyer_type"/>
+                            <field name="lawyer_experience"/>
+                            <field name="lawyer_category"/>
+                            <field name="lawyer_practice_area" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="lawyer_nationality"/>
+                            <field name="traditional_authority"/>
+                            <field name="relative_name"/>
+                            <field name="relative_info"/>
+                        </group>
+                      </group>
+                      <notebook>
+                        <page string="Account">
+                          <field name="lawyer_account_details_ids" domain="[('lawyer_account','=',active_id)]" readonly="1">
+                            <tree>
+                              <field name="account_number"/>
+                              <field name="lawyer_account"/>
+                              <field name="bank"/>
+                              <field name="account_type"/>
+                            </tree>
+                          </field>
+                        </page>
+                        <page string="Documents">
+                          <field name="lawyer_doc_ids" domain="[('lawyer_document_id','=',active_id)]" readonly="1">
+                              <tree create="false" edit="false" editable="false">
+                                <field name="doc_name"/>
+                                <field name="doc_id" widget="many2many_binary"/>
+                                <field name="date"/>
+                                <field name="comment"/>
+                                <field name="ld_created_by"/>
+                              </tree>
+                          </field>
+                        </page>
+                        <page string="On Going">
+                          <field name="ongoing_case_ids" readonly="1">
+                            <tree create="false" edit="false" editable="false">
+                              <field name="matter_seq"/>
+                              <field name="case_name"/>
+                              <field name="category_id"/>
+                              <field name="client_name"/>
+                              <field name="accused"/>
+                              <field name="case_result"/>
+                              <field name="opp_lawyer_id"/>
+                              <field name="judge_id"/>
+                            </tree>
+                          </field>
+                        </page>
+                        <page string="Won">
+                          <field name="won_case_ids" readonly="1">
+                          <tree create="false" edit="false" editable="false">
+                              <field name="matter_seq"/>
+                              <field name="case_name"/>
+                              <field name="category_id"/>
+                              <field name="client_name"/>
+                              <field name="accused"/>
+                              <field name="case_result"/>
+                              <field name="opp_lawyer_id"/>
+                              <field name="judge_id"/>
+                            </tree>
+                          </field>
+                        </page>
+                        <page string="Lost">
+                          <field name="lost_case_ids" readonly="1">
+                          <tree create="false" edit="false" editable="false">
+                              <field name="matter_seq"/>
+                              <field name="case_name"/>
+                              <field name="category_id"/>
+                              <field name="client_name"/>
+                              <field name="accused"/>
+                              <field name="case_result"/>
+                              <field name="opp_lawyer_id"/>
+                              <field name="judge_id"/>
+                            </tree>
+                          </field>
+                        </page>
+                        <page string="Settlement">
+                          <field name="settlement_case_ids" readonly="1">
+                          <tree create="false" edit="false" editable="false">
+                              <field name="matter_seq"/>
+                              <field name="case_name"/>
+                              <field name="category_id"/>
+                              <field name="client_name"/>
+                              <field name="accused"/>
+                              <field name="case_result"/>
+                              <field name="opp_lawyer_id"/>
+                              <field name="judge_id"/>
+                            </tree>
+                          </field>
+                        </page>
+                      </notebook>
+                  </sheet>
+                  <div class="oe_chatter">
+                      <field name="message_follower_ids" widget="mail_followers"/>
+                      <field name="message_ids" widget="mail_thread"/>
+                  </div>
+              </form>
+          </field>
+        </record>
+
+
+        <record id="view_lawyer_details_kanban" model="ir.ui.view">
+          <field name="name">lawyer.details.kanban</field>
+          <field name="model">lawyer.details</field>
+          <field name="arch" type="xml">
+              <kanban class="o_hr_employee_kanban">
+                  <field name="id"/>
+                  <field name="image"/>
+                  <field name="lawyer_name"/>
+                  <field name="lawyer_mobileW"/>
+                  <field name="lawyer_emailW"/>
+                  <field name="lawyer_type"/>
+                  <field name="lawyer_experience"/>
+                     <templates>
+                      <t t-name="kanban-box">
+                      <div class="oe_kanban_global_click">
+                          <div class="o_kanban_image">
+                              <img t-att-src="kanban_image('lawyer.details', 'image', record.id.raw_value)"/>
+                          </div>
+                          <div class="oe_kanban_details">
+                              <ul>
+                                  <li t-if="record.lawyer_name.raw_value"><field name="lawyer_name"/></li>
+                                  <li t-if="record.lawyer_mobileW.raw_value">
+                                    <i class="fa fa-phone"></i><field name="lawyer_mobileW"/></li>
+                                  <li t-if="record.lawyer_emailW.raw_value">
+                                    <i class="fa fa-envelope"></i><field name="lawyer_emailW"/></li>
+                                  <li t-if="record.lawyer_type.raw_value"><field name="lawyer_type"/></li>
+                                  <li t-if="record.lawyer_experience.raw_value"><field name="lawyer_experience"/></li>
+                              </ul>
+                          </div>
+                      </div>
+                      </t>
+                  </templates>
+              </kanban>
+            </field>
+        </record> 
+
+        <record id="view_lawyer_details_search" model="ir.ui.view">
+          <field name="name">lawyer.details.search</field>
+          <field name="model">lawyer.details</field>
+            <field name="arch" type="xml">
+                  <search>
+                      <field name="lawyer_name"/>
+                      <field name="lawyer_mobileW"/>
+                      <field name="lawyer_emailW"/>
+                      <field name="lawyer_type"/>
+                      <field name="lawyer_experience"/>
+                      <filter name="fil_type" domain="[]" string="Type" context="{'group_by':'lawyer_type'}"/>
+                  </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="lawyer_details_action">
+            <field name="name">Lawyer</field>
+            <field name="res_model">lawyer.details</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="search_view_id" ref="view_lawyer_details_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="menu_lawyer_details" name="Lawyer" parent="menu_master_data" sequence="3" action="lawyer_details_action"/>
+        <!--Lawyer Details End-->
+
+        <!--Lawyer Document View Start-->
+        <record id="view_lawyer_document_tree" model="ir.ui.view">
+          <field name="name">lawyer.document.tree</field>
+          <field name="model">lawyer.document</field>
+          <field name="arch" type="xml">
+                <tree string="Lawyer Document" delete="0">
+                    <field name="doc_name"/>
+                    <field name="doc_id" widget="many2many_binary"/>
+                    <field name="comment"/>
+                    <field name="date"/>
+                    <field name="ld_created_by"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_lawyer_document_form" model="ir.ui.view">
+          <field name="name">lawyer.document.form</field>
+          <field name="model">lawyer.document</field>
+          <field name="arch" type="xml">
+              <form string="Lawyer Document" delete="0">
+                <sheet>
+                    <group>
+                      <group>
+                        <field name="lawyer_document_id" required="1" options='{"no_open": True,"no_create": 1, "no_create_edit": 1}'/>
+                        <field name="doc_name"/>
+                        <field name="doc_no"/>
+                        <field name="doc_id" widget="many2many_binary"/>
+                      </group>
+                      <group>
+                        <field name="date"/>
+                        <field name="comment"/>
+                        <field name="ld_created_by" options='{"no_open": True}'/>
+                      </group>
+                    </group>
+                </sheet>
+              </form>
+          </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="lawyer_document_action">
+            <field name="name">Lawyer Document</field>
+            <field name="res_model">lawyer.document</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- <menuitem id="menu_lawyer_document" name="Lawyer" parent="menu_documents_forms" sequence="2" action="lawyer_document_action"/> -->
+        <!--Lawyer Document View End-->
+
+        <!--Practice area View End-->
+        <record id="view_practice_area_tree" model="ir.ui.view">
+          <field name="name">lawyer.practice.area.tree</field>
+          <field name="model">lawyer.practice.area</field>
+          <field name="arch" type="xml">
+                <tree string="Lawyer Document" delete="0">
+                    <field name="name"/>
+                    <field name="duration"/>
+                    <field name="spec_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_practice_area_form" model="ir.ui.view">
+          <field name="name">lawyer.practice.area.form</field>
+          <field name="model">lawyer.practice.area</field>
+          <field name="arch" type="xml">
+              <form string="Lawyer Document" delete="0">
+                <sheet>
+                    <group>
+                        <field name="name" required='1'/>
+                        <field name="duration"/>
+                        <field name="spec_type"/>
+                    </group>
+                </sheet>
+              </form>
+          </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="practice_area_action">
+            <field name="name">Practice Area</field>
+            <field name="res_model">lawyer.practice.area</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="menu_practice_area" name="Practice Area" parent="menu_master_data" sequence="8" action="practice_area_action"/>
+
+    </data>
+
+</odoo>
