@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- <record id="print_kra_report" model="ir.actions.report.xml">
+            <field name="name">KRA Report</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">indimedi.kra</field>
+            <field name="report_name">kra.question.report</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_ods_ods" />
+            <field name="parser_loc">indimedi_kra/report/indimedi_kra_report.py</field>
+            <field name="report_rml">indimedi_kra/report/indimedi_kra_report.ods</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+        </record> -->
+
+        <!-- <record id="print_fill_kra_report" model="ir.actions.report.xml">
+            <field name="name">KRA Fill Report</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">employee.kra</field>
+            <field name="report_name">employee.kra.report</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_ods_ods" />
+            <field name="parser_loc">indimedi_kra/report/indimedi_kra_report_fill.py</field>
+            <field name="report_rml">indimedi_kra/report/indimedi_kra_report_fill.ods</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+        </record>
+ -->
+       <!--  <record id="print_all_fill_kra_report" model="ir.actions.report.xml">
+            <field name="name">KRA Reports</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">kra.wizard</field>
+            <field name="report_name">kra.wizard.report</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_ods_ods" />
+            <field name="parser_loc">indimedi_kra/report/indimedi_kra_report_all.py</field>
+            <field name="report_rml">indimedi_kra/report/indimedi_kra_report_all.ods</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+        </record> -->
+
+       <!-- <record id="print_value_rating_wizard" model="ir.actions.report.xml">
+            <field name="name">Value Rating Report</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">kra.wizard</field>
+            <field name="report_name">value.rating.wizard</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_ods_ods" />
+            <field name="parser_loc">indimedi_kra/report/indimedi_value_rating_all.py</field>
+            <field name="report_rml">indimedi_kra/report/indimedi_value_rating_all.ods</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+       </record> -->
+
+      <!--  <record id="print_value_rating" model="ir.actions.report.xml">
+            <field name="name">Value Rating Report</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">value.rating</field>
+            <field name="report_name">value.rating.report</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-ods</field>
+            <field name="out_format" ref="report_aeroo.report_mimetypes_ods_ods" />
+            <field name="parser_loc">indimedi_kra/report/indimedi_value_rating.py</field>
+            <field name="report_rml">indimedi_kra/report/indimedi_value_rating.ods</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+       </record> -->
+    </data>
+</openerp>

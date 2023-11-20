@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--record id="fusion_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit"/>
+            <field name="arch" type="xml">
+                   <xpath expr="//button[@name='action_view_delivery']" position="replace">
+                       <field name="picking_id" invisible="1"/>
+                       <button name="action_view_picking" states="manual" string="View Delivery Order" type="object" class="oe_highlight"
+                           attrs="{'invisible': ['|',('picking_id','=',False),('picking_id','=',[])]}" groups="base.group_user"/>
+                   </xpath>
+            </field>
+        </record-->
+
+        <record id="indimedi_view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="origin" position="replace"/>
+                <field name="partner_id" position="after">
+                    <field name="physician_id"/>
+                    <field name="origin" string="Prescription"/>
+                </field>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                    <field name="batch_no" domain="[('product_id','=',product_id)]"/>
+                    <field name="exp_date"/>
+                </xpath>
+                <field name='origin' position="after">
+                    <field name="sale_on_cost"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="fusion_view_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="physician_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="fusion_view_quotation_tree" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="physician_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

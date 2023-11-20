@@ -1,0 +1,169 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_patient_user,Patient,hms_gynec.model_hms_patient,hms.group_hms_user,1,0,0,0
+access_systemic_abdominal_examination_user,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_user,1,0,0,0
+access_systemic_veginal_examination_user,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_user,1,0,0,0
+access_systemic_rectal_examination_user,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_user,1,0,0,0
+access_hms_appointment_history_user,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_user,1,0,0,0
+access_hms_appointment_sonography_pelvis_user,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_user,1,0,0,0
+access_sonography_follical_line_user,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_user,1,0,0,0
+access_hms_appointment_sonography_follical_user,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_user,1,0,0,0
+access_hms_appointment_sonography_obstetric_user,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_user,1,0,0,0
+access_hms_delivery_user,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_user,1,0,0,0
+access_hms_patient_menstrual_history_user,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_user,1,0,0,0
+access_hms_patient_pregnancy_user,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_user,1,0,0,0
+access_hms_perinatal_user,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_user,1,0,0,0
+access_hms_patient_prenatal_evaluation_user,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_user,1,0,0,0
+access_hms_puerperium_monitor_user,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_user,1,0,0,0
+access_hms_perinatal_monitor_user,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_user,1,0,0,0
+access_indimedi_hms_patient_mammography_history_user,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_user,1,0,0,0
+access_hms_patient_pap_history_user,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_user,1,0,0,0
+access_hms_patient_colposcopy_history_user,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_user,1,0,0,0
+access_hms_specialty_user,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_receptionist,Patient,hms_gynec.model_hms_patient,hms.group_hms_receptionist,1,1,1,0
+access_systemic_abdominal_examination_receptionist,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_receptionist,1,1,1,0
+access_systemic_veginal_examination_receptionist,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_receptionist,1,1,1,0
+access_systemic_rectal_examination_receptionist,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_receptionist,1,1,1,0
+access_hms_appointment_history_receptionist,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_receptionist,1,1,1,0
+access_hms_appointment_sonography_pelvis_receptionist,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_receptionist,1,1,1,0
+access_sonography_follical_line_receptionist,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_receptionist,1,1,1,0
+access_hms_appointment_sonography_follical_receptionist,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_receptionist,1,1,1,0
+access_hms_appointment_sonography_obstetric_receptionist,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_receptionist,1,1,1,0
+access_hms_delivery_receptionist,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_receptionist,1,1,1,0
+access_hms_patient_menstrual_history_receptionist,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_receptionist,1,1,1,0
+access_hms_patient_pregnancy_receptionist,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_receptionist,1,1,1,0
+access_hms_perinatal_receptionist,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_receptionist,1,1,1,0
+access_hms_patient_prenatal_evaluation_receptionist,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_receptionist,1,1,1,0
+access_hms_puerperium_monitor_receptionist,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_receptionist,1,1,1,0
+access_hms_perinatal_monitor_receptionist,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_receptionist,1,1,1,0
+access_indimedi_hms_patient_mammography_history_receptionist,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_receptionist,1,1,1,0
+access_hms_patient_pap_history_receptionist,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_receptionist,1,1,1,0
+access_hms_patient_colposcopy_history_receptionist,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_receptionist,1,1,1,0
+access_hms_specialty_receptionist,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_receptionist,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_doctor,Patient,hms_gynec.model_hms_patient,hms.group_hms_doctor,1,1,1,1
+access_systemic_abdominal_examination_doctor,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_doctor,1,1,1,1
+access_systemic_veginal_examination_doctor,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_doctor,1,1,1,1
+access_systemic_rectal_examination_doctor,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_history_doctor,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_sonography_pelvis_doctor,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_doctor,1,1,1,1
+access_sonography_follical_line_doctor,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_sonography_follical_doctor,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_sonography_obstetric_doctor,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_doctor,1,1,1,1
+access_hms_delivery_doctor,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_menstrual_history_doctor,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_pregnancy_doctor,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_doctor,1,1,1,1
+access_hms_perinatal_doctor,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_prenatal_evaluation_doctor,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_doctor,1,1,1,1
+access_hms_puerperium_monitor_doctor,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_doctor,1,1,1,1
+access_hms_perinatal_monitor_doctor,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_doctor,1,1,1,1
+access_indimedi_hms_patient_mammography_history_doctor,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_pap_history_doctor,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_colposcopy_history_doctor,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_doctor,1,1,1,1
+access_hms_specialty_doctor,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_nurse,Patient,hms_gynec.model_hms_patient,hms.group_hms_nurse,1,1,1,0
+access_systemic_abdominal_examination_nurse,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_nurse,1,1,1,0
+access_systemic_veginal_examination_nurse,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_nurse,1,1,1,0
+access_systemic_rectal_examination_nurse,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_nurse,1,1,1,0
+access_hms_appointment_history_nurse,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_nurse,1,1,1,0
+access_hms_appointment_sonography_pelvis_nurse,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_nurse,1,1,1,0
+access_sonography_follical_line_nurse,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_nurse,1,1,1,0
+access_hms_appointment_sonography_follical_nurse,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_nurse,1,1,1,0
+access_hms_appointment_sonography_obstetric_nurse,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_nurse,1,1,1,0
+access_hms_delivery_nurse,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_nurse,1,1,1,0
+access_hms_patient_menstrual_history_nurse,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_nurse,1,1,1,0
+access_hms_patient_pregnancy_nurse,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_nurse,1,1,1,0
+access_hms_perinatal_nurse,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_nurse,1,1,1,0
+access_hms_patient_prenatal_evaluation_nurse,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_nurse,1,1,1,0
+access_hms_puerperium_monitor_nurse,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_nurse,1,1,1,0
+access_hms_perinatal_monitor_nurse,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_nurse,1,1,1,0
+access_indimedi_hms_patient_mammography_history_nurse,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_nurse,1,1,1,0
+access_hms_patient_pap_history_nurse,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_nurse,1,1,1,0
+access_hms_patient_colposcopy_history_nurse,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_nurse,1,1,1,0
+access_hms_specialty_nurse,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_nurse,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_pharmacist,Patient,hms_gynec.model_hms_patient,hms.group_hms_pharmacist,1,1,1,0
+access_systemic_abdominal_examination_pharmacist,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_pharmacist,1,1,1,0
+access_systemic_veginal_examination_pharmacist,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_pharmacist,1,1,1,0
+access_systemic_rectal_examination_pharmacist,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_pharmacist,1,1,1,0
+access_hms_appointment_history_pharmacist,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_appointment_sonography_pelvis_pharmacist,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_pharmacist,1,1,1,0
+access_sonography_follical_line_pharmacist,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_appointment_sonography_follical_pharmacist,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_pharmacist,1,1,1,0
+access_hms_appointment_sonography_obstetric_pharmacist,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_pharmacist,1,1,1,0
+access_hms_delivery_pharmacist,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_menstrual_history_pharmacist,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_pregnancy_pharmacist,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_pharmacist,1,1,1,0
+access_hms_perinatal_pharmacist,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_prenatal_evaluation_pharmacist,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_pharmacist,1,1,1,0
+access_hms_puerperium_monitor_pharmacist,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_pharmacist,1,1,1,0
+access_hms_perinatal_monitor_pharmacist,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_pharmacist,1,1,1,0
+access_indimedi_hms_patient_mammography_history_pharmacist,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_pap_history_pharmacist,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_colposcopy_history_pharmacist,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_specialty_pharmacist,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_jr_doctor,Patient,hms_gynec.model_hms_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_systemic_abdominal_examination_jr_doctor,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_jr_doctor,1,1,1,1
+access_systemic_veginal_examination_jr_doctor,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_jr_doctor,1,1,1,1
+access_systemic_rectal_examination_jr_doctor,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_history_jr_doctor,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_sonography_pelvis_jr_doctor,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_jr_doctor,1,1,1,1
+access_sonography_follical_line_jr_doctor,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_sonography_follical_jr_doctor,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_sonography_obstetric_jr_doctor,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_delivery_jr_doctor,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_menstrual_history_jr_doctor,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_pregnancy_jr_doctor,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_perinatal_jr_doctor,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_prenatal_evaluation_jr_doctor,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_puerperium_monitor_jr_doctor,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_perinatal_monitor_jr_doctor,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_jr_doctor,1,1,1,1
+access_indimedi_hms_patient_mammography_history_jr_doctor,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_pap_history_jr_doctor,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_colposcopy_history_jr_doctor,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_specialty_jr_doctor,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_manager,Patient,hms_gynec.model_hms_patient,hms.group_hms_manager,1,1,1,0
+access_systemic_abdominal_examination_manager,Systemic Abdominal Examination,hms_gynec.model_systemic_abdominal_examination,hms.group_hms_manager,1,1,1,0
+access_systemic_veginal_examination_manager,Systemic Veginal Examination,hms_gynec.model_systemic_veginal_examination,hms.group_hms_manager,1,1,1,0
+access_systemic_rectal_examination_manager,Systemic Rectal Examination,hms_gynec.model_systemic_rectal_examination,hms.group_hms_manager,1,1,1,0
+access_hms_appointment_history_manager,Oemedical Appointment History,hms_gynec.model_hms_appointment_history,hms.group_hms_manager,1,1,1,0
+access_hms_appointment_sonography_pelvis_manager,Oemedical Appointment Sonography Pelvis,hms_gynec.model_hms_appointment_sonography_pelvis,hms.group_hms_manager,1,1,1,0
+access_sonography_follical_line_manager,Sonography Follical Line,hms_gynec.model_sonography_follical_line,hms.group_hms_manager,1,1,1,0
+access_hms_appointment_sonography_follical_manager,Oemedical Appointment Sonography Follical,hms_gynec.model_hms_appointment_sonography_follical,hms.group_hms_manager,1,1,1,0
+access_hms_appointment_sonography_obstetric_manager,Oemedical Appointment Sonography Obstetric,hms_gynec.model_hms_appointment_sonography_obstetric,hms.group_hms_manager,1,1,1,0
+access_hms_delivery_manager,Oemedical Delivery,hms_gynec.model_hms_delivery,hms.group_hms_manager,1,1,1,0
+access_hms_patient_menstrual_history_manager,Oemedical Patient Menstrual History,hms_gynec.model_hms_patient_menstrual_history,hms.group_hms_manager,1,1,1,0
+access_hms_patient_pregnancy_manager,Oemedical Patient Pregnancy,hms_gynec.model_hms_patient_pregnancy,hms.group_hms_manager,1,1,1,0
+access_hms_perinatal_manager,Oemedical Perinatal,hms_gynec.model_hms_perinatal,hms.group_hms_manager,1,1,1,0
+access_hms_patient_prenatal_evaluation_manager,Oemedical Patient Prenatal Evaluation,hms_gynec.model_hms_patient_prenatal_evaluation,hms.group_hms_manager,1,1,1,0
+access_hms_puerperium_monitor_manager,Oemedical Puerperium Monitor,hms_gynec.model_hms_puerperium_monitor,hms.group_hms_manager,1,1,1,0
+access_hms_perinatal_monitor_manager,Oemedical Perinatal Monitor,hms_gynec.model_hms_perinatal_monitor,hms.group_hms_manager,1,1,1,0
+access_indimedi_hms_patient_mammography_history_manager,Oemedical Patient Mammography History,hms_gynec.model_hms_patient_mammography_history,hms.group_hms_manager,1,1,1,0
+access_hms_patient_pap_history_manager,Oemedical Patient Pap History,hms_gynec.model_hms_patient_pap_history,hms.group_hms_manager,1,1,1,0
+access_hms_patient_colposcopy_history_manager,Oemedical Patient Colposcopy History,hms_gynec.model_hms_patient_colposcopy_history,hms.group_hms_manager,1,1,1,0
+access_hms_specialty_manager,Oemedical Specialty,hms_gynec.model_hms_specialty,hms.group_hms_manager,1,1,1,0

@@ -1,0 +1,1434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <template id="assets_backend" name="account assets" inherit_id="web.assets_backend">
+              <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/indimedi_careplan_shah/static/src/css/color.css"/>        
+              </xpath>
+        </template>
+
+
+        <record id="careplan_hms_detail_tree_view" model="ir.ui.view">
+            <field name="name">Nursing Chart Detail</field>
+            <field name="model">careplan.hms.detail</field>
+            <field name="arch" type="xml">
+                <tree string="Nursing Chart Detail">
+                    <field name="patient_id"/>
+                    <field name="date_careplan"/>
+                    <!-- Extra -->
+                    <field name="careplan_hms_id" readonly="1"/>
+                    <field name="pod"/>
+                    <field name="temp" string="Temp."/>
+                    <field name="pulse" string="PR"/>
+                    <field name="bp"/>
+                    <field name="spo"/>
+                    <field name="resp" string="R"/>
+                    <field name="sugar" />
+                    <field name="insulin" string="IU"/>
+                    <field name="oral" string="OI"/>
+                    <field name="ivfluid" string="IV"/>
+                    <field name="rtfeed" string="RT"/>
+                    <field name="urine" string="UR"/>
+                    <field name="stool" string="STL"/>
+                    <field name="vomit" string="V"/>
+                    <field name="drain" />
+                    <field name="dress_soak" string="DS"/>
+                    <field name="dress_change" string="DC"/>
+                    <field name="sleep" string="SLP"/>
+                    <field name="bed_soar" string="BSR"/>
+                    <field name="sponging" string="SPO"/>
+                    <field name="bed_sheet" string="BST"/>
+                    <!-- Extra -->
+                    <field name="check_id"/>
+                    <field name="user_id"/>
+                    <field name="update_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="careplan_hms_detail_view" model="ir.ui.view">
+            <field name="name">Nursing Chart Detail</field>
+            <field name="model">careplan.hms.detail</field>
+            <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="button_approve"  string="To Approve" type="object" states="draft"/>
+                    <button name="button_done"  string="Done" type="object" states="approve" groups="hms.group_hms_medical_officer"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approve,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <!-- <field name="day_careplan"/> -->
+                        <group name="left">
+                            <field name="patient_id"/>
+                            <field name="careplan_hms_id" readonly="1"/>
+                            <field name="pod"/>
+                            <field name="temp"/>
+                            <field name="pulse"/>
+                            <field name="bp"/>
+                            <field name="spo"/>
+                            <field name="resp"/>
+                            <field name="sugar"/>
+                            <field name="insulin"/>
+                            <field name="oral"/>
+                            <field name="ivfluid"/>
+                            <field name="rtfeed"/>
+                        </group>
+                        <group name="right">
+                            <field name="date_careplan"/>
+                            <field name="urine"/>
+                            <field name="stool"/>
+                            <field name="vomit"/>
+                            <field name="drain"/>
+                            <field name="dress_soak"/>
+                            <field name="dress_change"/>
+                            <field name="sleep"/>
+                            <field name="bed_soar"/>
+                            <field name="sponging"/>
+                            <field name="bed_sheet"/>
+                            <field name="user_id" readonly="1"/>
+                            <field name="check_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="careplan_hms_detail_view_form" model="ir.ui.view">
+            <field name="name">inpatient.registration.care.form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="priority" eval="10"/>
+            <field name="inherit_id" ref="hms_hospitalization.view_inpatient_registration_form"/>
+            <field name="arch" type="xml">
+                <page name="basic_careplan" position="replace">
+                    <page string="Nursing" groups="hms.group_hms_medical_officer,hms.group_hms_nurse" invisible="0" >
+                        <notebook>
+                            <page string="Nursing Admission Assessment Form">
+                               <div>
+                                    <separator string="INITIAL ASSESSMENT- To be filled by Nursing Staff within 15 mints of Admission"/>
+                                    <group>
+                                        <group>
+                                            <field name="initial_date"/>
+                                            <field name="initial_unit"/>
+                                            <field name="arrival_time" widget="float_time"/>
+                                            <!-- <separator string="Patient Assessment"/> -->
+                                            <field name="patient_height"/>
+                                            <field name="patient_weight"/>
+                                            <field name="ht_wt" string="Unable to take ht/wt due to"/>
+                                        </group>
+                                        <group>
+                                            <field name="history" string="History given by:"/>
+                                            <field name="relationship"/>
+                                            <field name="patient_arrival"/>
+                                            <field name="patient_arrival_from"/>
+                                            <!-- <separator string="Patient Arrived from Home/ER/OPD/Other"/> -->
+                                            <field name="id_band" string="ID Band on:"/>
+                                            <field name="call_bell" string="Call Bell in reach:"/>
+                                        </group>
+                                    </group>
+                                    <group string="Vital Signs:">
+                                        <group>
+                                            <field name="temp" placeholder="°F"/>
+                                            <field name="v_pulse" placeholder="/min"/>
+                                            <field name="v_rr" placeholder="/min"/>
+                                            <field name="blood_pressure" placeholder="mm"/>
+                                            <field name="hgspo2" placeholder="%"/>
+                                            <field name="denture" widget="radio" options="{'horizontal': true}"/>
+                                            <field name="upper" attrs="{'invisible': [('denture','!=','yes')]}"/>
+                                            <field name="lower" attrs="{'invisible': [('denture','!=','yes')]}"/>
+                                            <field name="partial" attrs="{'invisible': [('denture','!=','yes')]}"/>
+                                            <field name="none" attrs="{'invisible': [('denture','!=','yes')]}"/>
+                                            <field name="eye_aid" widget="radio" options="{'horizontal': true}"/>
+                                            <field name="glasses" attrs="{'invisible': [('eye_aid','!=','yes')]}"/>
+                                            <field name="contacts" attrs="{'invisible': [('eye_aid','!=','yes')]}"/>
+                                            <label for="other_ad" attrs="{'invisible': [('eye_aid','!=','yes')]}"/>
+                                            <div class="oe_inline">
+                                                <field name="other_ad" style="width:20%" attrs="{'invisible': [('eye_aid','!=','yes')]}"/>
+                                                <field name="other_ad_note" style="width:79%" nolabel="1" attrs="{'invisible': ['|',('other_ad','!=',True),('eye_aid','!=','yes')]}" />
+                                            </div>
+                                        </group>
+                                        <group>
+                                            <field name="allergies" widget="radio" options="{'horizontal': true}"/>
+                                            <field name="drug" attrs="{'invisible': [('allergies','!=','yes')]}"/>
+                                            <field name="food" attrs="{'invisible': [('allergies','!=','yes')]}"/>
+                                            <field name="other_all" attrs="{'invisible': [('allergies','!=','yes')]}"/>
+                                            <field name="blood_tranfusion" widget="radio" options="{'horizontal': true}"/>
+                                            <field name="decs" attrs="{'invisible': [('blood_tranfusion','!=','yes')]}"/>
+                                            <label for="alert" string="Level of Consciousness(LOC)" class="text_value_color"/><br/>
+                                            <field name="alert"/>
+                                            <field name="lethargic"/>
+                                            <field name="responsive_pain"/>
+                                            <field name="unresponsive_pain"/>
+                                            <label for="walker" string="Assistive device" class="text_value_color"/><br/>
+                                            <field name="walker"/>
+                                            <field name="cane"/>
+                                            <field name="crutched"/>
+                                            <label for="other_device"/>
+                                            <div class="oe_inline">
+                                                <field name="other_device" style="width:20%" string="Other"/>
+                                                <field name="other_1" style="width:79%" nolabel="1" attrs="{'invisible': [('other_device','!=',True)]}" />
+                                            </div>
+                                        </group>
+                                         <field name="chief_complaint" />
+                                        <field name="diagnosis"/>
+                                    </group>
+                                <div>
+                                    <group col="3">
+                                        <group>
+                                            <field name="name_nursing_staff"/>
+                                        </group>
+                                        <group>
+                                            <field name="date_1"/>
+                                        </group>
+                                        <group>
+                                            <field name="time_1"/>
+                                        </group>
+                                    </group>
+                                </div>
+                                <group string="Past History">
+                                    <field name="past_history_ids" nolabel="1" options="{'no_open': True}">
+                                        <tree editable="top" delete="false" create="false">
+                                            <field name="name" readonly="1" options="{'no_open': True}"/>
+                                            <field name="value" widget="radio" options="{'horizontal': true}"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="major_surgery" widget="many2many_tags"/></group>
+                                    <group>
+                                        <field name="surgery_date"/>
+                                    </group>
+                                </group>
+                                <group string="Family History">
+                                    <field name="family_history_ids" nolabel="1" options="{'no_open': True}">
+                                        <tree editable="top" delete="false" create="false">
+                                            <field name="name" readonly="1" ptions="{'no_open': True}"/>
+                                            <field name="father"/>
+                                            <field name="mother"/>
+                                            <field name="brother"/>
+                                            <field name="sister"/>
+                                            <field name="duration"/>
+                                            <field name="value" widget="radio" options="{'horizontal': true}"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Pediatric History" col="4">
+                                    <field name="p_diet_formula" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="p_bottle_fed" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="p_bf" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="p_diapers" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="p_toilet_training" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="p_as_per_schedules" string="Immunization status: As per schedules:" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="p_head_circum"/>
+                                    <field name="p_chest_circum"/>
+                                </group>
+                               <!--  <separator string="For Children under 2 Years:"/> -->
+                                
+                                <group string="Child Growth" col="6">
+                                    <field name="c_social" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="c_lang" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="c_phy" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="c_intell" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="c_emo" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="c_behavior" widget="radio" options="{'horizontal': true}"/>
+                                </group>
+                                <label for="specific_remark"/>
+                                <field name="specific_remark"/>
+                                <separator string="Review of System"/>
+                                <group string="Respiratory" col="6">
+                                    <field name="r_cough"/>
+                                    <field name="r_asthma"/>
+                                    <field name="r_dyspnea"/>
+                                    <field name="r_shortness_breath"/>
+                                    <field name="r_emphysema"/>
+                                    <field name="r_copd"/>
+                                    <field name="r_nad_other"/>
+                                    <field name="nad_other" attrs="{'invisible': [('r_nad_other','!=',True)]}"/>
+                                    <label for="r_cany_other"/>
+                                    <div class="o_address_format">
+                                        <field name="r_cany_other" class="o_address_state"/>
+                                        <field name="any_other" class="o_address_city" attrs="{'invisible': [('r_cany_other','!=',True)]}"/>
+                                    </div>
+                                </group>
+                                <group string="Skin" col="6">
+                                    <field name="s_intra"/>
+                                    <field name="s_dusky"/>
+                                    <field name="s_diaphoretic"/>
+                                    <field name="s_cyanotic"/>
+                                    <field name="s_warm"/>
+                                    <field name="s_pale"/>
+                                    <field name="s_dry"/>
+                                    <field name="s_mattled"/>
+                                    <field name="s_flushed"/>
+                                    <label for="s_moist_other"/>
+                                    <div class="o_address_format">
+                                        <field name="s_moist_other" class="o_address_state"/>
+                                        <field name="moist_other" class="o_address_city" attrs="{'invisible': [('s_moist_other','!=',True)]}"/>
+                                    </div>
+                                </group>
+                                <group string="Central Nervous System" col="6">
+                                    <field name="c_dizziness"/>
+                                    <field name="c_aphasia"/>
+                                    <field name="c_headache"/>
+                                    <field name="c_speech"/>
+                                    <field name="c_paralysis"/>
+                                    <field name="c_sedation"/>
+                                    <field name="c_ataxia"/>
+                                    <field name="c_slurred"/>
+                                    <field name="c_nad"/>
+                                    <field name="c_other"/>
+                                </group>
+                                <group string="Genitourinary" col="6">
+                                    <field name="g_pregnant"/>
+                                    <field name="g_amenorrhea"/>
+                                    <field name="g_venereal"/>
+                                    <field name="g_urinary_incotinence"/>
+                                    <field name="g_retention"/>
+                                    <field name="g_having_menses"/>
+                                    <field name="g_dysmenorrhea"/>
+                                    <field name="g_hematuria"/>
+                                    <field name="g_dysuria"/>
+                                    <field name="g_disease"/>
+                                    <field name="g_enuresis"/>
+                                    <field name="g_other"/>
+                                    <field name="g_nad"/>
+                                </group>
+                                <group string="Gastrointestinal" col="6">
+                                    <field name="ga_vomiting"/>
+                                    <field name="ga_nausea"/>
+                                    <field name="ga_ulcer"/>
+                                    <field name="ga_constipation"/>
+                                    <field name="ga_blood_stool"/>
+                                    <field name="ga_diarrhea"/>
+                                    <field name="ga_hepatitis"/>
+                                    <field name="ga_nad"/>
+                                    <label for="ga_other"/>
+                                    <div class="o_address_format">
+                                        <field name="ga_other" class="o_address_state"/>
+                                        <field name="ga_other_c" class="o_address_city" attrs="{'invisible': [('ga_other','!=',True)]}"/>
+                                    </div>
+                                </group>
+                                <group string="Cardiovascular" col="6">
+                                    <field name="c_angina"/>
+                                    <field name="c_peripheral"/>
+                                    <field name="c_htn"/>
+                                    <field name="c_pacemaker"/>
+                                    <field name="c_heart_murmur"/>
+                                    <field name="c_sob"/>
+                                    <field name="c_chest_pain"/>
+                                    <field name="c_edema"/>
+                                    <field name="c_hx_mi"/>
+                                    <field name="c_nad"/>
+                                </group>
+                                <group string="Musculoskeletal" col="6">
+                                    <field name="m_fracture"/>
+                                    <field name="m_joint"/>
+                                    <field name="m_muscle_spasm"/>
+                                    <field name="m_back_pain"/>
+                                    <field name="m_joint_pain"/>
+                                    <field name="m_amputation"/>
+                                    <field name="m_joint_stiffness"/>
+                                    <field name="m_nad"/>
+                                </group>
+                                <group string="Others" col="6">
+                                    <field name="o_hyperthyroid"/>
+                                    <field name="o_hiv_aids"/>
+                                    <label for="o_hepatitis"/>
+                                    <div class="o_address_format">
+                                        <field name="o_hepatitis" class="o_address_state"/>
+                                        <field name="c_hepatitis" class="o_address_city" attrs="{'invisible': [('o_hepatitis','!=',True)]}"/>
+                                    </div>
+                                    <label for="o_other"/>
+                                    <div class="o_address_format">
+                                        <field name="o_other" class="o_address_state"/>
+                                        <field name="o_other_note" class="o_address_city" attrs="{'invisible': [('o_other','!=',True)]}"/>
+                                    </div>
+                                </group>
+                                <group string="Activities of Daily Living">
+                                    <field name="activity_daily_living_ids" nolabel="1" options="{'no_open': True}">
+                                        <tree editable="bottom" delete="false" create="false">
+                                            <field name="activity" options="{'no_open': True}" readonly="1"/>
+                                            <field name="usual_level"/>
+                                            <field name="level_on_add"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Vulnerable Assessment">
+                                    <field name="vulnerable_assessment_ids" nolabel="1" options="{'no_open': True}">
+                                        <tree editable="bottom" delete="false" create="false">
+                                            <field name="name" options="{'no_open': True}"/>
+                                            <field name="yes"/>
+                                            <field name="no"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Vulnerability level">
+                                    <group>
+                                        <field name="high_vulnerability"/>
+                                    </group>
+                                    <group>
+                                        <field name="low_vulnerability"/>
+                                    </group>
+                                </group>
+                                
+                                <group>
+                                    <field name="pain_assessment" widget="radio" options="{'horizontal': true}"/>
+                                </group>
+                                <group>
+                                    <field name="pain_scale" widget="radio" options="{'horizontal': true}"/>
+                                    <field name="pain_scale_value"/>
+                                </group>
+                                <group>
+                                    <field name="pain_location"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="quality" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="character" widget="radio" options="{'horizontal': true}"/>
+                                    </group>
+                                    <group>
+                                        <field name="after_daily_routine" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="sleep_s" widget="radio" options="{'horizontal': true}"/>
+                                    </group>
+                                </group>
+                                
+                                <!--Burden Scale-->
+                                <group>
+                                    <group string="Sensory Percep">
+                                        <div class="o_address_format">
+                                            <field name="sensory_percep_value" class="o_address_state"/>
+                                            <field name="sensory_percep_score" class="o_address_city"/>
+                                        </div>
+                                    </group>
+                                    <group string="Moisture">
+                                        <div class="o_address_format">
+                                            <field name="moisture_value" class="o_address_state"/>
+                                            <field name="moisture_score" class="o_address_city"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Sensory Percep">
+                                        <div class="o_address_format">
+                                            <field name="degreeofac_value" class="o_address_state"/>
+                                            <field name="degreeofac_score" class="o_address_city"/>
+                                        </div>
+                                    </group>
+                                    <group string="Moisture">
+                                        <div class="o_address_format">
+                                            <field name="mobility_value" class="o_address_state"/>
+                                            <field name="mobility_score" class="o_address_city"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Nutrition">
+                                        <div class="o_address_format">
+                                            <field name="nutrition_value" class="o_address_state"/>
+                                            <field name="nutrition_score" class="o_address_city"/>
+                                        </div>
+                                    </group>
+                                    <group string="Shear &amp; Friction">
+                                        <div class="o_address_format">
+                                            <field name="shear_friction_value" class="o_address_state"/>
+                                            <field name="shear_friction_score" class="o_address_city"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group string='Burden Scale Total'>
+                                    <field name="burden_scale_final_total"/>
+                                    <div class="oe_inline">
+                                       <strong><font style="color:red">
+                                            <field name="msg1" readonly="1"/>
+                                        </font></strong>
+                                    </div>
+                                </group>
+                                <!--Fall Risk Assessnent-->
+                                <group string="Fall Risk Assessnent">
+                                    <label for="history_fall_value"/>
+                                    <div class="o_address_format">
+                                        <field name="history_fall_value" class="o_address_state" />
+                                        <field name="history_fall_score" class="o_address_city" />
+                                    </div>
+                                    <label for="physical_status_value" />
+                                    <div class="o_address_format">
+                                        <field name="physical_status_value" class="o_address_state" />
+                                        <field name="physical_status_score" class="o_address_city" />
+                                    </div>
+                                    <label for="mental_status_value" />
+                                    <div class="o_address_format">
+                                        <field name="mental_status_value" class="o_address_state"/>
+                                        <field name="mental_status_score" class="o_address_city" />
+                                    </div>
+                                    <label for="medication_status_value" />
+                                    <div class="o_address_format">
+                                        <field name="medication_status_value" class="o_address_state"/>
+                                        <field name="medication_status_score" class="o_address_city" />
+                                    </div>
+                                </group>
+                                <group string='Fall Risk Total'>
+                                    <field name="fall_risk_final_total"/>
+                                    <div class="oe_inline">
+                                       <strong><font style="color:red">
+                                            <field name="msg" readonly="1"/>
+                                        </font></strong>
+                                    </div>
+                                </group>
+                                <!--GCS-->
+                                <group string="GCS">
+                                    <label for="eye_value"/>
+                                    <div class="o_address_format">
+                                        <field name="eye_value" class="o_address_state" />
+                                        <field name="eye_score" class="o_address_city" />
+                                    </div>
+                                    <label for="best_verbal_value" />
+                                    <div class="o_address_format">
+                                        <field name="best_verbal_value" class="o_address_state" />
+                                        <field name="best_verbal_score" class="o_address_city" />
+                                    </div>
+                                    <label for="best_motor_value" />
+                                    <div class="o_address_format">
+                                        <field name="best_motor_value" class="o_address_state"/>
+                                        <field name="best_motor_score" class="o_address_city" />
+                                    </div>
+                                </group>
+                                <group string='GCS Total'>
+                                    <field name="gcs_na"/>
+                                    <field name="gcs_final_total"/>
+                                </group>
+                                <group string="History of medication Patient currently taking">
+                                    <field name="history_medicatiion_ids" nolabel="1">
+                                        <tree editable="bottom">
+                                            <field name="product_id" options='{"no_open": True}'/>
+                                            <field name="dosage" string="Dose"/>
+                                            <field name="frequency"/>
+                                            <field name="advice_by" options='{"no_open": True}'/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="NURSING PLAN OF CARE" col="4">
+                                    <group string="GENERAL NURSING CARE">
+                                        <field name="g_sponging"/>
+                                        <field name="g_mouth"/>
+                                        <field name="g_nail"/>
+                                        <field name="g_back"/>
+                                        <field name="g_vitals"/>
+                                        <field name="g_drain"/>
+                                        <field name="g_dressing"/>
+                                        <field name="g_phycological_support"/>
+                                    </group>
+                                    <group string="CURATIVE">
+                                        <field name="c_fluid"/>
+                                        <field name="c_antibiotic"/>
+                                        <field name="c_causative"/>
+                                        <field name="c_Continue"/>
+                                        <field name="c_self_medica"/>
+                                        <field name="c_high_risk"/>
+                                    </group>
+                                    <group string="DIABETIC CARE">
+                                        <field name="d_oral_drug"/>
+                                        <field name="d_insulin"/>
+                                    </group>
+                                </group>
+                                <group col="6">
+                                    <group string="NUTRITION CARE">
+                                        <field name="n_ryle"/>
+                                        <field name="n_parental"/>
+                                        <label for="n_food"/>
+                                        <div class="oe_inline">
+                                            <field name="n_food" style="width:20%" string="Other"/>
+                                            <field name="n_type" style="width:79%" attrs="{'invisible': [('n_food', '=', False)]}" nolabel="1" />
+                                        </div>
+                                    </group>
+                                    <group>
+                                        <field name="physiotherapy_need" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="pain_management" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="relieving_factor" attrs="{'invisible': [('pain_management','=','no')]}"/>
+                                        <field name="rest" attrs="{'invisible': [('pain_management','=','no')]}"/>
+                                        <field name="Medication_b" attrs="{'invisible': [('pain_management','=','no')]}"/>
+                                        <field name="other_b" attrs="{'invisible': [('pain_management','=','no')]}"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Safety Care(Avoid Fall Risk)">
+                                        <field name="s_side"/>
+                                        <field name="s_low_bed"/>
+                                        <field name="s_near"/>
+                                        <field name="s_continue"/>
+                                        <field name="s_light"/>
+                                        <field name="s_lang"/>
+                                        <field name="s_full_time"/>
+                                        <field name="blood_tranfusion_s" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="approx_req" attrs="{'invisible': [('blood_tranfusion_s', '=', 'no')]}"/>
+                                        <field name="specific_equ" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="if_yes" attrs="{'invisible': [('specific_equ', '=', 'no')]}"/>
+                                        <field name="any_procedure" attrs="{'invisible': [('specific_equ', '=', 'no')]}"/>
+                                    </group>
+                                    <group>
+                                        <group string="Bedsore care">
+                                            <field name="b_positioning"/>
+                                            <field name="b_bedsore"/>
+                                            <field name="b_education"/>
+                                            <field name="b_application"/>
+                                        </group><br/>
+                                        <group string="Infection Control Practices">
+                                            <field name="i_regular"/>
+                                            <field name="i_washing"/>
+                                            <field name="specific_remark_2"/>
+                                        </group>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="name_staff" options="{'no_open': True}"/>
+                                        <field name="date_2"/>
+                                    </group>
+                                    <group>
+                                        <label string="Information Provided By Patient and family are correct and they are Involved in plan of Care(Relation with Patient in case Signature done by Relative)" class="text_value_color"/><br/>
+                                        <label for="name_patient"/>
+                                        <field name="name_patient" nolabel="1"/>
+                                    </group>
+                                </group>
+                        </div>
+                    </page>
+
+                            <!--HSE -->
+
+                            <page string="Patient Pain Rating Assessment Sheet">
+                                <div>
+                                    <label style="width:10%" for="pain_constant" string="1.Pain Location : Patient or Nurse should select the option :"/>
+                                    <group>
+                                        <div class="oe_inline">
+                                            <group>
+                                                <group>
+                                                    <field name="front" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                                    <field name="back" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                                    <field name="right_side" class="oe_inline" widget="radio" options="{'horizontal': true}"/>       
+                                                    <field name="neck" class="oe_inline" widget="radio" options="{'horizontal': true}"/>       
+                                                </group>
+                                                <group>
+                                                    <field name="left_side" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                                    <field name="face" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                                    <field name="legs" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                                    <field name="ancle" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                                </group>
+                                            </group>
+                                        </div>
+                                    </group>                                
+                                </div>
+                                <div>
+                                    <group>
+                                       <label style="width:10%" for="pain_constant" string="2. Is the pain Constant?"/>
+                                        <div class="oe_inline">
+                                            <field name="pain_constant" class="oe_inline" widget="radio" options="{'horizontal': true}"/>
+                                        </div>
+                                    </group>                                
+                                    <group attrs="{'invisible':[('pain_constant','!=','no')]}">
+                                        <!-- <label string="If No how often dose it occur?"/> -->
+                                        <field name="occur" string="If No how often dose it occur?"/>
+                                    </group>
+                                </div>
+                                <div>
+                                    <label string="3. What causes or Increases the Pain ?"/>
+                                    <div class="o_address_format">
+                                        <field name="increase_pain" class="o_address_street"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label string="4. Characteristic of Pain(e.g. :Ache, Deep, Sharp, Hot, Cold, Itchy ect):"/>
+                                    <div class="o_address_format">
+                                        <field name="ache_pain" class="o_address_street"/>
+                                    </div>
+                                </div>
+                                <div>
+                                   <label string="5. Effect of pain (Note decreased functions/Quality of Life):"/>
+                                            
+                                    <field name="effect_of_pain_ids" nolabel="1" options="{'no_open': True}">
+                                        <tree editable="button" create="false" delete="false">
+                                            <field name="name" readonly="1" options="{'no_open': True}"/>
+                                            <field name="decreased_fun"/>
+                                        </tree>
+                                    </field>
+                                </div>
+                                <div>
+                                    <label string="6. Pain relieving modatalities (Select based on severity of pain and/or Clinical Judgement in Consultation With Patient and family members):"/>
+                                    <sheet>
+                                        <group>
+                                            <field name="pain_relieve" string="a. pain relieve drug:"/>
+                                            <field name="hot_and_cold_packs" string="b. Hot or Cold packs:"/>
+                                            <field name="changing_position" string="c. Changing Position (e.g. Lying down or elevating legs etc):"/>
+                                            <field name="exercise_or_physiotherapy" string="d. Exercise or Physiotherapy:"/>
+                                            <field name="massage" string="e. Massage:"/>
+                                            <field name="psychological" string="f. Psychological Counseling:"/>
+                                            <field name="prayer_meditation" string="g. Prayer, Meditation, Guided Imagery:"/>
+                                            <field name="relaxation_teq" string="h. Relaxation technique(Hypnosis, Biofeedback):"/>
+                                            <field name="creative_teq" string="i. Creative technique:"/>
+                                            <field name="other_teq" string="j. Other:"/>
+                                        </group>
+                                    </sheet>
+                                   <!--  <label string="Quality department, Kaizen Hospital"/> -->
+                                </div>
+<!--                                 <div>
+                                    <group>
+                                        <field name="intensity_pain" string="7. Intensity of Pain"/>
+                                    </group>
+                                </div>
+-->                             <div>
+                                    <br/>
+                                    <label string="7. Intensity of Pain (Score)"/>
+                                    <field name="pain_medicine">
+                                        <tree editable="bottom">
+                                            <field name="date" />
+                                            <field name="time" />
+                                            <field name="score" />
+                                            <field name="medicine_non_drug" />
+                                            <field name="score_after" />
+                                            <field name="sign_id" />
+                                        </tree>
+                                    </field>
+                                </div>
+                                <div>
+                                    <group>
+                                        <field name="patient_relative" string="Name and Sign of Patient/Relative:"/>
+                                    </group>
+                                </div>
+                            </page>
+                            <page string="Intra and Post Operative Nursing Care">
+                                <separator string="To be filled by OT staff:"/>
+                                <group>
+                                    <group>
+                                        <field name="name_surgery" widget="many2many_tags"/>
+                                    </group>
+                                    <group>
+                                        <field name="type_of_anesthesia" options='{"no_open": True}'/>
+                                    </group>
+                                </group>
+
+                                <label string="Intra operative medication &amp; blood transfusion received :" />
+                                <group>
+                                    <group>
+                                        <field name="intra_operative1"/>
+                                        <field name="intra_operative2"/>
+                                    </group>
+                                    <group>
+                                        <field name="intra_operative3"/>
+                                        <field name="intra_operative4"/>
+                                    </group>
+                                </group>
+                                
+                                <group>
+                                    <group string='Procedure Performed During Operation'>
+                                        <field name="drainage_rlt" widget="radio" ptions="{'horizontal': true}"/>
+                                        <field name="drain_rlt" widget="radio" ptions="{'horizontal': true}"/>
+                                        <field name="epidural_yn" widget="radio" ptions="{'horizontal': true}"/>
+                                    </group>
+                                    <group>
+                                        <field name="cvp_line" string="CVP Line"/>
+                                        <label for="biopsy_sent"/>
+                                        <div class="oe_inline">
+                                            <field name="biopsy_sent" widget="radio" options="{'horizontal': true}"/>
+                                            <field name="specimen" style="width:79%" nolabel="1" attrs="{'invisible': [('biopsy_sent','!=','yes')]}" />
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="name_laboratory"/>
+                                        <field name="intra_post_sent_by"/>
+                                        <field name="intra_post_time"/>
+                                    </group>
+                                    <group>
+                                        <field name="specific_position_surgery"/>
+                                        <field name="intra_post_rbs" placeholder="Hourly"/>
+                                    </group>
+                                </group>
+                                <group string="B. To be filled by Post Operative / ICU Staff:">
+                                    <field name="icu_ids" nolabel="1" options="{'no_open': True}">
+                                        <tree editable="button" create="false" delete="false">
+                                            <field name="post_ob" string="Name" readonly="1" options="{'no_open': True}"/>
+                                            <field name="min_15" class="onehr"/>
+                                            <field name="min_30" class="onehr"/>
+                                            <field name="min_45" class="onehr"/>
+                                            <field name="min_60" class="onehr"/>
+                                            <field name="min_90" class="twohr"/>
+                                            <field name="min_120" class="twohr"/>
+                                            <field name="min_180" class="threehr"/>
+                                            <field name="min_240" class="fourhr"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <groups string="Post Operative medication Detail:">
+                                    <field name="medication_detail_ids" nolabel="1">
+                                        <tree editable="bottom">
+                                            <field name="medication"/>
+                                            <field name="frequency"/>
+                                            <field name="timing"/>
+                                            <field name="route"/>
+                                            <field name="remarks"/>
+                                        </tree>
+                                    </field>
+                                </groups>
+                                <label string="Patient operative from OT to Ward/Post Operative/ICU" />
+                                <div class="col-xs-12">
+                                    <group col="9">
+                                        <group>
+                                            <field name="ot_nurse"/>
+                                            <field name="post_nurse"/>
+                                            <field name="ward_nurse"/>
+                                        </group>
+                                        <group>
+                                            <field name="emp_id_ot"/>
+                                            <field name="emp_id_post"/>
+                                            <field name="emp_id_ward"/>
+                                        </group>
+                                        <group>
+                                            <field name="ot_to_ward_time"/>
+                                            <field name="post_to_ward_time"/>
+                                            <field name="ward_to_ward_time"/>
+                                        </group>
+                                    </group>
+                                </div>
+                            </page>
+
+
+                        <!--HSE -->
+                            <page string="VITALS I/O CHART">
+                            <group string="Previous Day Total">
+                              <group col="4">
+                                <field name="parent_id" domain="[]"/>
+                                <field name="vitals_chart_date"/>
+                                <field name="patient_id1"/>
+                                <group string="INTAKE">
+                                    <field name="in_oral" readonly="1"/>
+                                    <field name="in_rtf" readonly="1"/>
+                                    <field name="in_iv1" readonly="1"/>
+                                    <field name="in_iv2" readonly="1"/>
+                                    <field name="in_tpn" readonly="1"/>
+                                </group>
+                                <group string="OUTPUT">
+                                    <field name="ot_rta" readonly="1"/>
+                                    <field name="ot_urine" readonly="1"/>
+                                    <field name="ot_vomit" readonly="1"/>
+                                    <field name="ot_stool" readonly="1"/>
+                                    <field name="ot_icd1" readonly="1"/>
+                                    <field name="ot_icd2" readonly="1"/>
+                                </group>
+                            </group>
+                        </group>
+                            <group>
+                                <label for="vitals_io_chart_ids" string="VITALS I/O CHART" />
+                            </group>
+                            <group>
+                                 
+                                 <field name="vitals_io_chart_ids" nolabel="1" options="{'no_open': True}">
+                                <tree editable="button" create="false" delete="false">
+                                    <field name="time" string="Time" readonly="1" options="{'no_open': True}"/>
+                                    <field name="vitals_temp" />
+                                    <field name="vitals_pulse"/>
+                                    <field name="vitals_resp"/>
+                                    <field name="vitals_bp"/>
+                                    <field name="vitals_spo2"/>
+                                    <field name="vitals_oral"/>
+                                    <field name="vitals_ng_rtf_jft"/>
+                                    <field name="vitals_iv1"/>
+                                    <field name="vitals_iv2"/>
+                                    <field name="vitals_tpn"/>
+                                    <field name="intake_hourly_total" sum="Total" string="Total"/>
+                                    <field name="vitals_rta"/>
+                                    <field name="vitals_urine"/>
+                                    <field name="vitals_vomit"/>
+                                    <field name="vitals_stool"/>
+                                    <field name="vitals_icd1"/>
+                                    <field name="vitals_icd2"/>
+                                    <field name="output_hourly_total" sum="Total" string="Total"/>
+                                </tree>
+                                </field>
+                            </group>
+                            </page>
+                            <!-- Nursing master chart tab -->
+                            <page string="Nursing Master Chart">
+                            <group>
+                                 <field name="nursing_master_chart_ids" nolabel="1">
+                                <tree editable="button">
+                                    <field name="nursing_date" string="Date"/>
+                                    <field name="nursing_time" />
+                                    <field name="nursing_weight" widget="char"/>
+                                    <field name="nursing_time_avg_hrly" widget="char"/>
+                                    <field name="nursing_total_oral" widget="char"/>
+                                    <field name="nursing_total_iv" widget="char"/>
+                                    <field name="nursing_total_jft" widget="char"/>
+                                    <field name="nursing_total_intake" widget="char"/>
+                                    <field name="nursing_uo" widget="char"/>
+                                    <field name="nursing_stool" widget="char"/>
+                                    <field name="nursing_rta" widget="char"/>
+                                    <field name="nursing_drain_one" widget="char"/>
+                                    <field name="nursing_drain_two" widget="char"/>
+                                    <field name="nursing_ib_cb" widget="char"/>
+                                    <field name="nursing_pcd" widget="char"/>
+                                    <field name="nursing_total_output" widget="char"/>
+                                    <field name="nursing_bal" widget="char"/>
+                                    <field name="nursing_sign_of_staff" options="{'no_open': True}"/>
+                                </tree>
+                                </field>
+                            </group>
+                            </page>
+
+                            <!-- SBAR Scale -->
+                            <page string="SBAR SCALE">
+                                <group>
+                                    <group>
+                                        <field name="sbar_shift"/>
+                                    </group>
+                                    <group>
+                                        <field name="sbar_datetime"/>
+                                    </group>
+                                 </group>
+
+                                <group col="4" string="Situation">
+                                    <group>
+                                        <label for="sbar_issues" string="Most Current Issues"/><br/>
+                                        <field name="sbar_issues" nolabel="1" style="width:100%"/>
+                                    </group>
+                                    <group>
+                                        <label for="sbar_patient" string="Patient and Family Education"/><br/>
+                                        <field name="sbar_patient" nolabel="1" style="width:100%"/>
+                                    </group>
+                                </group>
+
+                                <group col="4">
+                                    <group>
+                                        <label for="sbar_diagnosis" string="Admitting Diagnosis/Secondary Diagnosis"/><br/>
+                                        <field name="sbar_diagnosis" nolabel="1" style="width:100%"/>
+                                    </group>
+                                    <group>
+                                        <label for="sbar_isolation" string="Infected/Non Infected/Isolation"/><br/>
+                                        <field name="sbar_isolation" nolabel="1" style="width:100%"/>
+                                    </group>
+                                </group>
+
+                                <group col="4" string="Background">
+                                    <group>
+                                        <label for="sbar_procedure" string="Any Procedure/Surgery Done:"/><br/>
+                                        <field name="sbar_procedure" nolabel="1" style="width:100%"/>
+                                    </group>
+                                    <group>
+                                        <label for="sbar_wounds"  string="Wounds/Dressing"/><br/>
+                                        <field name="sbar_wounds" nolabel="1" style="width:100%"/>
+                                    </group>
+                                </group>
+
+                                <group col="4">
+                                    <group>
+                                        <label for="sbar_recent"  string="Recent Intervention:"/><br/>
+                                        <field name="sbar_recent" nolabel="1" style="width:100%"/>
+                                    </group>
+
+                                    <group string="Bedsore status/stage, Location,Treatment">
+                                        <field name="sbar_status"/>
+                                        <field name="sbar_location"/>
+                                        <field name="sbar_treatment"/>
+                                    </group>
+                                </group>
+
+                                <group string="Discharge Planning/transfer if applicable">
+                                    <field name="discharge_planning_transfer" nolabel="1"/>
+                                </group>
+
+
+                                <group string="Recommendation">
+                                    <label for="sbar_pre" string="Pre &amp; Post-Operative Instruction, If any"/><br/>
+                                    <field name="sbar_pre" nolabel="1"/>
+                                </group>
+                                <group>
+                                    <label for="sbar_care_issues" string="Care Issues Requiring Follow-up"/><br/>
+                                    <field name="sbar_care_issues" nolabel="1"/>
+                                </group>
+                                <group>
+                                    <label for="sbar_pending" string="Pending Treatment/Investigation"/><br/>
+                                    <field name="sbar_pending" nolabel="1"/>
+                                </group>
+
+                                <group string="Nurses Note:" col="4">
+                                    <group>
+                                        <field name="sbar_note" nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="sbar_iv"/>
+                                        <field name="sbar_date_of_insertion"/>
+                                        <field name="sbar_cvc_line"/>
+                                        <field name="sbar_cvc_insertion"/>
+                                         <field name="sbar_foleys_insertion"/>
+                                        <field name="sbar_rt_date"/> 
+                                    </group>
+                                </group>
+
+                                <group string="Nursing Care Plan for Next Shift">
+                                    <field name="sbar_nursing_care" nolabel="1"/>
+                                </group>
+
+                                <group>
+                                    <group>
+                                        <field name="sbar_sign" string="Sign. of over given by:(with EID)"/>
+                                    </group>
+                                    <group>
+                                        <field name="sbar_sign_taken" string="Sign. of over taken by:(with EID)"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="ER Assessment" groups="hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                <group col="2">
+                                    <field name="er_date" />
+                                </group>
+                                <group string="Nursing Assessment :" />
+                                <group string="Mode of Arrival" col="6">
+                                    <field name="walk_in" />
+                                    <field name="wheelchair" />
+                                    <field name="p_family" />
+                                    <field name="friends" />
+                                    <field name="guardian" />
+                                    <field name="hospital" />
+                                    <field name="paramedic" />
+                                    <field name="police" />
+                                    <field name="other_source" />
+                                </group>
+                                <group string="TRIAGE" col="4">
+                                    <field name="life_th_emer" />
+                                    <field name="non_emer" />
+                                    <field name="non_life_th_emer" />
+                                    <field name="brought_dead" />
+                                </group>
+                                <group string="Prehospital" col="6">
+                                    <field name="cpr" />
+                                    <field name="intuba" />                                    
+                                    <field name="o2" />
+                                    <field name="iv" />
+                                    <field name="c_collar" />
+                                    <field name="splints" />
+                                    <field name="meds" />
+                                    <field name="none" />
+                                </group>
+                                <group string="Vital Signs" col="6">
+                                    <field name="temp_er" placeholder="°F"/>
+                                    <field name="pulse_er" placeholder="/min"/>
+                                    <field name="rr_er" placeholder="/min"/>
+                                    <field name="bp_er" placeholder="mm"/>
+                                    <field name="spo2_er" placeholder="%"/>
+                                </group>
+                                <group string="Nusring Examination" />
+                                <group string="Consciousness" col="4">
+                                    <field name="alert" />
+                                    <field name="appear" />
+                                    <field name="confused" />
+                                    <field name="poor_res" />
+                                    <field name="unconscious" />
+                                </group>
+                                <group string="Respiratory" col="4">
+                                    <field name="rl_bill" />
+                                    <field name="wheezer_rates" />
+                                    <field name="rhonchile" />
+                                    <field name="normal_res" />
+                                </group>
+                                <group string="Cardio Vascular" col="4">
+                                    <field name="techycardia" />
+                                    <field name="bradycardia" />
+                                    <field name="irregular" />
+                                    <field name="normal_cv" />
+                                </group>
+                                <group string="Neurologic Oriented to" col="6">
+                                    <field name="time_neuro" />
+                                    <field name="person_neuro" />
+                                    <field name="place_neuro" />
+                                    <field name="not_oriented" />
+                                    <field name="un_test" />
+                                    <field name="normal_neuro" />
+                                </group>
+                                <group string="Motor Function" col="6">
+                                    <field name="rl_arm" />
+                                    <field name="leg" />
+                                    <field name="face" />
+                                    <field name="weak" />
+                                    <field name="un_test_func" />
+                                    <field name="normal_func" />
+                                </group>
+                                <label for="other_exam" />
+                                <field name="other_exam" />
+                                <group string="Orders, Interventions and Results" />
+                                <label string="Standing orders or Interventions Initiated prior to consultant evaluation" />
+                                <group col="6">
+                                    <field name="consult_notify" />
+                                    <!-- <field name="glucometer" /> -->
+                                    <field name="rbs" />
+                                    <field name="o2_inter" />
+                                    <field name="iv_inter" />
+                                    <field name="monitor_inter" />
+                                    <field name="ecg_inter" />
+                                    <field name="cxr" />
+                                </group>
+                                <group col="4">
+                                    <field name="labs_inform" />
+                                    <field name="labs_ordered" />
+                                    <field name="consulted_by" />
+                                </group>
+                                <group string="Treatment Give in ER Department">
+                                    <field name="treatment_er_department_ids" nolabel="1">
+                                        <tree string="ER Department" editable="top">
+                                            <field name="name" options="{'no_open': True}"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="VITALS MONITORING">
+                                    <field name="inter_obser_ids" nolabel="1" colspan="7">
+                                        <tree string="Line" editable="top">
+                                            <field name="observ_time" />
+                                            <field name="temp_inter" />
+                                            <field name="pulse_inter" />
+                                            <field name="rr_inter" />
+                                            <field name="bp_inter" />
+                                            <field name="o2_sat" />
+                                            <!-- <field name="pain_inter" /> -->
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group col="4">
+                                    <group string="Condition of Patient">
+                                        <field name="cond_patient_improved"/>
+                                        <field name="cond_patient_unchanged"/>
+                                        <field name="cond_patient_deteriorate"/>
+                                        <field name="cond_patient_expired"/>
+                                    </group>
+                                    <group string="Transfer to">
+                                        <field name="transferto_home"/>
+                                        <field name="transferto_icu"/>
+                                        <field name="transferto_ward"/>
+                                        <field name="transferto_ot"/>
+                                        <field name="transferto_other" />
+                                        <field name="transferto_other_note" attrs="{'invisible': [('transferto_other', '=', False)]}"/>
+                                    </group>
+                                    <!-- <field name="weight_inter" />
+                                    <field name="cond_patient" /> -->
+                                </group>
+                                <!-- <group col="8">
+                                    <field name="home" />
+                                    <field name="transfer" />
+                                    <field name="trans_text" nolabel="1" />
+                                    <field name="transfer_time" />
+                                </group> -->
+                            </page>
+                            <page string="Nursing Chart" groups="hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                <field name="careplan_hms_ids" colspan="4" context="{'default_patient_id': patient_id,'default_careplan_hms_id': id}">
+                                    <tree>
+                                        <field name="date_careplan"/>
+                                        <field name="pod"/>
+                                        <field name="temp" string="Temp."/>
+                                        <field name="pulse" string="PR"/>
+                                        <field name="bp"/>
+                                        <field name="spo"/>
+                                        <field name="resp" string="R"/>
+                                        <field name="sugar" />
+                                        <field name="insulin" string="IU"/>
+                                        <field name="oral" string="OI"/>
+                                        <field name="ivfluid" string="IV"/>
+                                        <field name="rtfeed" string="RT"/>
+                                        <field name="urine" string="UR"/>
+                                        <field name="stool" string="STL"/>
+                                        <field name="vomit" string="V"/>
+                                        <field name="drain" />
+                                        <field name="dress_soak" string="DS"/>
+                                        <field name="dress_change" string="DC"/>
+                                        <field name="sleep" string="SLP"/>
+                                        <field name="bed_soar" string="BSR"/>
+                                        <field name="sponging" string="SPO"/>
+                                        <field name="bed_sheet" string="BST"/>
+                                        <field name="check_id"/>
+                                        <field name="user_id"/>
+                                        <field name="update_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Nurses Hand Over Sheet">
+                                <group string="Morning Shift">
+                                    <field name="morning_ids" nolabel="1">
+                                        <tree string="Line" editable="top">
+                                            <field name="morning_date"/>
+                                            <field name="morning_shift"/>
+                                            <field name="m_nurse_username"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Evening Shift">
+                                    <field name="evening_ids" nolabel="1">
+                                        <tree string="Line" editable="top">
+                                            <field name="evening_date"/>
+                                            <field name="evening_shift"/>
+                                            <field name="e_nurse_username"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="Night Shift">
+                                    <field name="night_ids" nolabel="1">
+                                        <tree string="Line" editable="top">
+                                            <field name="night_date"/>
+                                            <field name="night_shift"/>
+                                            <field name="n_nurse_username"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Personal Hygiene Chart">
+                                    <group col="2">
+                                        <field name="hygiene_datetime" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="sponge_bath" />
+                                        <field name="sponge_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="mouth_care" />
+                                        <field name="mouth_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="nail_care" />
+                                        <field name="nail_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="back_care" />
+                                        <field name="back_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="hair_care" />
+                                        <field name="hair_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="bed_sore" />
+                                        <field name="bed_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="mouth_gargles" />
+                                        <field name="mouth_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="position_changing" />
+                                        <field name="position_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="eye_care" />
+                                        <field name="eye_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="urine_care" />
+                                        <field name="urine_obv" />
+                                    </group>
+                                    <group col="4">
+                                        <field name="wound_care" />
+                                        <field name="wound_obv" />
+                                    </group>
+                                    <group>
+                                        <field name="filled_by"/>
+                                    </group>
+                            </page>
+                            <page string="Discharge Checklist">
+                                <group col="2" style="width:50%">
+                                    <field name="unit_name" />
+                                </group>
+                                <div>
+                                    <field name="ident_band" nolabel="1" />
+                                    <label for="ident_band" /><br/>
+                                    <field name="intra_cath" nolabel="1" />
+                                    <label for="intra_cath" /><br/>
+                                    <field name="urinary_cath" nolabel="1" />
+                                    <label for="urinary_cath" /><br/>
+                                    <field name="dis_given_expl" nolabel="1" />
+                                    <label for="dis_given_expl" /><br/>
+                                    <field name="home_medication" nolabel="1" />
+                                    <label for="home_medication" /><br/>
+                                    <field name="wound_dress" nolabel="1" />
+                                    <label for="wound_dress" /><br/>
+                                    <field name="vuln_safety" nolabel="1" />
+                                    <label for="vuln_safety" /><br/>
+                                    <field name="process_followup" nolabel="1" />
+                                    <label for="process_followup" /><br/>
+                                    <field name="emergency_no" nolabel="1" />
+                                    <label for="emergency_no" /><br/>
+                                    <field name="home_care" nolabel="1" />
+                                    <label for="home_care" /><br/>
+                                </div>
+                                <group col="4">
+                                    <field name="patient_relative" />
+                                    <field name="dis_check_time" />
+                                </group>
+                                <group>
+                                    <field name="return_demonstration" />
+                                    <field name="verb_understand" />
+                                </group>
+                                <group col="2">
+                                    <b><label string="Nursing Discharge Note: The patient understands about his / her medication, dressing and contact procedures and demonstrated by:" /></b>
+                                    <field name="login_username" nolabel="1" style="width:50%" />
+                                </group>
+                            </page>
+                            <!-- <page string="Pre Operative Checklist" >
+                                <group col="4">
+                                    <field name="surgery_id" widget="many2many_tags" />
+                                    <field name="pre_op_datetime" />
+                                    <field name="surgeon_id" />
+                                    <field name="anesthetist_id" />
+                                </group>
+                                <group col="6">
+                                    <field name="high_risk" />
+                                    <field name="hiv_positive" />
+                                    <field name="hbsag_preop" />
+                                </group>
+                                <group col="2">
+                                    <field name="allergy_preop" />
+                                </group>
+                                <group col="4">
+                                    <field name="pulse_preop" />
+                                    <field name="temp_preop" />
+                                    <field name="rr_preop" />
+                                    <field name="bp_preop" />
+                                    <field name="spo2_preop" />
+                                    <field name="rbs_preop" />
+                                    <field name="hb_preop" />
+                                    <field name="blood_group_preop" style="width:37%" />
+                                </group>
+                                <label string="Investigation :" />
+                                <field name="investigation_preop_ids" nolabel="1">
+                                    <tree string="Investigation" editable="top">
+                                        <field name="name" />
+                                        <field name="preop_done" />
+                                        <field name="copy_no" />
+                                    </tree>
+                                </field>
+                                <label string="Information :" />
+                                <field name="information_preop_ids" nolabel="1">
+                                    <tree string="Information" editable="top">
+                                        <field name="name" />
+                                        <field name="info_done" />
+                                    </tree>
+                                </field>
+                                <group style="width:50%">
+                                    <field name="ward_nurse_id" />
+                                    <field name="preop_nurse_id" />
+                                    <field name="ot_nurse_id" />
+                                </group>
+                            </page> -->
+                            <!-- <page name="service_provider" string="Service Provided To Patient">
+                                <field name="service_provider_ids" nolabel="1">
+                                    <tree string="Line" editable="top">
+                                        <field name="service_datetime"/>
+                                        <field name="service_description"/>
+                                        <field name="service_pro_name"/>
+                                    </tree>
+                                </field>
+                            </page> -->
+                           <!--  <page string="Transfer Checklist" groups="hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                <group>
+                                    <field name="pre_ward_checklist_ids">
+                                        <tree editable="top">
+                                            <field name="name" readonly="1"/>
+                                            <field name="is_done" />
+                                            <field name="is_done1" />
+                                            <field name="is_done2" />
+                                            <field name="is_done3" />
+                                            <field name="remark" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page> -->
+                           <!--  <page string="Master Chart" groups="hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                <group>
+                                    <field name="master_chart_ids" nolabel="1">
+                                        <tree>
+                                            <field name="master_datetime" />
+                                            <field name="master_weight" />
+                                            <field name="total_oral" />
+                                            <field name="total_iv" />
+                                            <field name="jft_rtf" />
+                                            <field name="total_intake" />
+                                            <field name="u_o" />
+                                            <field name="stool" />
+                                            <field name="rta" />
+                                            <field name="drain1" />
+                                            <field name="drain2" />
+                                            <field name="ib_cb" />
+                                            <field name="pcd" />
+                                            <field name="total_output" />
+                                            <field name="balance" />
+                                            <field name="master_chart_user" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page> -->
+                        </notebook>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_master_chart_line_form" model="ir.ui.view">
+            <field name="name">master.chart.form</field>
+            <field name="model">master.chart</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Line">
+                    <sheet>
+                        <group col="4">
+                            <field name="master_datetime" />
+                            <field name="master_weight" />                            
+                        </group>
+                        <group col="4">
+                            <field name="t1_ag" />
+                            <field name="ag1" />
+                            <field name="t2_ag" />
+                            <field name="ag2" />
+                            <field name="t3_ag" />
+                            <field name="ag3" />
+                            <field name="t4_ag" />
+                            <field name="ag4" />
+                        </group>
+                        <group col="4">
+                            <field name="total_oral" />
+                            <field name="total_iv" />
+                            <field name="jft_rtf" />
+                            <field name="total_intake" />
+                            <field name="u_o" />
+                            <field name="stool" />
+                            <field name="rta" />
+                            <field name="drain1" />
+                            <field name="drain2" />
+                            <field name="ib_cb" />
+                            <field name="pcd" />
+                            <field name="total_output" />
+                            <field name="balance" />
+                            <field name="master_chart_user" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_careplan_hms_detail_view">
+            <field name="name">Nursing Chart</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">careplan.hms.detail</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="careplan_hms_detail_tree_view"/>
+        </record>
+
+        <!-- Under HMS Menu -->
+        <menuitem id="menu_careplan_hms_detail_view" name="Nursing Chart"
+            action="action_careplan_hms_detail_view" parent="hms_hospitalization.indimedi_inpatient_menu"
+            sequence="3" />
+
+        <!-- Under Hospitalization menu -->
+        <menuitem id="main_menu_careplan_hms_detail_view" name="Nursing Chart" groups="hms.group_hms_jr_doctor,hms.group_hms_nurse,hms.group_hms_medical_officer"
+            action="action_careplan_hms_detail_view" parent="hms_hospitalization.menu_hospitalization" />
+
+    </data>
+</openerp>

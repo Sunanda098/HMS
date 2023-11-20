@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_payment_receipt_document">
+            <t t-call="hms.hms_external_layout">
+                <div class="page col-xs-offset-1">
+                    <div class="row mt32 mb32">
+                        <table class="table" style="border: 2px solid black;">
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>Receipt Number : </strong>
+                                    <span t-field="o.number" />
+                                </td>
+                                <td style="border: none;">
+                                    <strong>Receipt Date : </strong>
+                                    <span t-field="o.date" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>Received with thanks from : </strong>
+                                    <span t-field="o.partner_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>Address : </strong>
+                                    <t t-if="o.partner_id.street">
+                                        <span t-field="o.partner_id.street" />
+                                        ,
+                                    </t>
+                                    <!--t t-if="o.partner_id.street1"><span t-field="o.partner_id.street1"/>, 
+                                        </t -->
+                                    <t t-if="o.partner_id.city">
+                                        <span t-field="o.partner_id.city" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.state_id.name">
+                                        <span t-field="o.partner_id.state_id.name" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.zip">
+                                        <span t-field="o.partner_id.zip" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.phone">
+                                        <span t-field="o.partner_id.phone" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.mobile">
+                                        <span t-field="o.partner_id.mobile" />
+                                        ,
+                                    </t>
+                                </td>
+                                <td style="border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>Ruppees in words. : </strong>
+                                    <span t-esc="o.amount_to_text(o.amount)" />
+                                </td>
+                                <td style="border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>Rs. : </strong>
+                                    <span t-field="o.amount" />
+                                </td>
+                                <td style="border: none;">
+                                </td>
+                            </tr>
+                            <!-- <tr> <td style="border: none;"><strong>Remark :</strong></td> 
+                                </tr> <tr> <td style="border: none;"><strong>Balance as on Sales date: </strong></td> 
+                                </tr> -->
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>PAYMENT DETAILS</strong>
+                                </td>
+                                <td style="border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>MODE OF PAYMENT</strong>
+                                    <span t-field="o.payment_mode" />
+                                    <br />
+                                </td>
+                                <div t-if="o.payment_mode=='cash'">
+                                    <td>
+                                        <strong>Cash</strong>
+                                        <br />
+                                    </td>
+                                </div>
+                                <div t-if="o.payment_mode=='cheque'">
+                                    <td>
+                                        <strong>Bank Name:</strong>
+                                        <span t-field="o.bank_name" />
+                                        <br />
+                                        <strong>Branch:</strong>
+                                        <span t-field="o.branch" />
+                                        <br />
+                                        <strong>Cheque Nos.:</strong>
+                                        <span t-field="o.cheque_no" />
+                                        <br />
+                                        <strong>Cheque Date:</strong>
+                                        <span t-field="o.cheque_date" />
+                                        <br />
+                                    </td>
+                                </div>
+                                <div t-if="o.payment_mode=='debit'">
+                                    <td>
+                                        <t t-if="o.card_number">
+                                        <strong>Card Name:</strong>
+                                        <span t-field="o.card_number" />
+                                        <br />
+                                    </t>
+                                    <t t-if="o.expiry_date">
+                                        <strong>Expiry Date:</strong>
+                                        <span t-field="o.expiry_date" />
+                                        <br />
+                                    </t>
+                                    <t t-if="o.card_holder">
+                                        <strong>Card Holder:</strong>
+                                        <span t-field="o.card_holder" />
+                                    </t>
+                                    </td>
+                                </div>
+                                <div t-if="o.payment_mode=='neft/rtgs'">
+                                    <td>
+                                        <strong>Neft Nos.:</strong>
+                                        <span t-field="o.neft_number" />
+                                        <br />
+                                        <strong>Neft Date:</strong>
+                                        <span t-field="o.neft_date" />
+                                    </td>
+                                </div>
+                                <td style="border: none;">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="oe_structure" />
+                </div>
+            </t>
+        </template>
+
+        <template id="report_payment_receipt">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hms_invoice.report_payment_receipt_document"
+                        t-lang="o.partner_id.lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

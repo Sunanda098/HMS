@@ -1,0 +1,35 @@
+<openerp>
+	<data noupdate="1">
+		<!-- Data For Investigation of Pre Operative Checklist -->
+		<record id="pre_op_investigation_data_1" model="preoperative.investigation.template">
+            <field name="name">Biopsy Report</field>
+        </record>
+        <record id="pre_op_investigation_data_2" model="preoperative.investigation.template">
+            <field name="name">Lab Reports</field>
+        </record>
+        <record id="pre_op_investigation_data_3" model="preoperative.investigation.template">
+            <field name="name">X-ray</field>
+        </record>
+        <record id="pre_op_investigation_data_4" model="preoperative.investigation.template">
+            <field name="name">USG</field>
+        </record>
+        <record id="pre_op_investigation_data_5" model="preoperative.investigation.template">
+            <field name="name">CT Scan</field>
+        </record>
+        <record id="pre_op_investigation_data_6" model="preoperative.investigation.template">
+            <field name="name">MRI</field>
+        </record>
+        <record id="pre_op_investigation_data_7" model="preoperative.investigation.template">
+            <field name="name">Doppler</field>
+        </record>
+        <record id="pre_op_investigation_data_8" model="preoperative.investigation.template">
+            <field name="name">ECG / Echo</field>
+        </record>
+        <record id="pre_op_investigation_data_9" model="preoperative.investigation.template">
+            <field name="name">Endoscopy / Colonoscopy Report</field>
+        </record>
+        <record id="pre_op_investigation_data_10" model="preoperative.investigation.template">
+            <field name="name">Others</field>
+        </record>
+	</data>
+</openerp>

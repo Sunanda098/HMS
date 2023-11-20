@@ -1,0 +1,32 @@
+{
+    'name': 'Appointment Extended -Trauma , OA - Osteoarthritis,Spine, Hip Joint',
+    'version': '9.0.1.0.0',
+    'sequence': 2,
+    'category': 'HMS',
+    'summary': 'Appointment module for addition of functionality for Trauma,Oa,Spine,Hip joint',
+    'description': """
+    This module will add button in appointment view for trauma ,oa ,spine,hip joint management
+    """,
+    'author': 'Indimedi Solutions Pvt. Ltd.',
+    'website': 'www.indimedi.com',
+    'depends': ['base','hms','hms_hospitalization'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/sequence.xml',
+        'views/trauma_view.xml',
+        'views/oa_view.xml',
+        'views/spine_view.xml',
+        'data/hip_joint_data.xml',
+        'data/oa_data.xml',
+        'data/spine_data.xml',
+        'views/hip_joint_view.xml',
+        'views/shah_trauma_menu.xml',
+        'report/oa_report.xml',
+        'report/trauma_report.xml',
+        'report/hip_joint_report.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="account_invoice_discount_form_view" model="ir.ui.view">
+            <field name="name">Invoice Discount Form View</field>
+            <field name="model">account.invoice.discount</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Discount" create="false" edit="false">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="patient_id"/>
+                            <field name="date"/>
+                            <field name="by_whom"/>
+                            <field name="product_id"/>
+                            <field name="discount"/>
+                            <field name="treating_doctor_id"/>
+                            <field name="treating_amount"/>
+                            <field name="attending_doctor_id"/>
+                            <field name="attending_amount"/>
+                            <field name="invoice_id"/>
+                            <field name="hospital_amount"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="account_invoice_discount_tree_view" model="ir.ui.view">
+            <field name="name">Invoice Discount Tree View</field>
+            <field name="model">account.invoice.discount</field>
+            <field name="arch" type="xml">
+                <tree string="Invoice Discount" create="false" edit="false">
+                    <field name="name"/>
+                    <field name="patient_id"/>
+                    <field name="date"/>
+                    <field name="by_whom"/>
+                    <field name="product_id"/>
+                    <field name="hospital_amount"/>
+                    <field name="attending_amount"/>
+                    <field name="treating_amount"/>
+                    <field name="invoice_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_invoice_discount" model="ir.actions.act_window">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.invoice.discount</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot</field>
+        </record>
+
+        <menuitem id="menu_action_invoice_discount" name="Discounts"
+            parent="menu_revenue_sharing" action="action_invoice_discount"
+            sequence="15"/>
+
+    </data>
+</openerp>

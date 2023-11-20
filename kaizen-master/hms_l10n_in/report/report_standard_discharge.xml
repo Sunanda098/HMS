@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report_standard_discharge_qweb">
+             <t t-call="report.html_container"> 
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size: 10px !important">
+                    <center>
+                        <strong>
+                            DETAIL BREAKUP 
+                            </strong>
+                    </center>
+                       <br/> 
+                        <table class="table table-bordered" style="border-style:solid">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span>Provider Name:</span>
+                                    </td>
+                                    <td>
+                                       <span t-field="o.company_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span>Bill Number:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.number" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Provider Registration No:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.company_id.company_registry" />
+                                    </td>
+                                    <td>
+                                        <span>Bill Date:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.date_invoice" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Address:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.company_id.street"/><br/>
+                                        <span t-field="o.company_id.street2"/><br/>
+                                        <span t-field="o.company_id.city"/>
+                                        <span t-field="o.company_id.state_id.name"/>
+                                        <span t-field="o.company_id.zip"/>
+                                    </td>
+                                    <td>
+                                        <span>Pan Number:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.company_id.pan"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>IP nos:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.hospital_id.name" />
+                                    </td>
+                                    <td>
+                                        <span>Service Tax Regn. No
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.company_id.vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Patient Name:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.patient_id.name" />
+                                    </td>
+                                    <td>
+                                        <span>
+                                            Date of Admission
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.hospital_id.hospitalization_date" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Payer Name:</span>
+                                    </td>
+                                    <td>
+                                        <t t-foreach="o.patient_id.insurance_ids" t-as="l">
+                                           <span t-field="l.insurance_company"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span>
+                                            Date of Discharge
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.hospital_id.discharge_date" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Member Address:</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.patient_id.street" /><br/>
+                                        <span t-field="o.patient_id.street2" /><br/>
+                                        <span t-field="o.patient_id.city_id" />
+                                    </td>
+                                    <td>
+                                        <span>
+                                            Bed Number
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.hospital_id.bed_id.name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <center>
+                            <strong>
+                                Billing Detail 
+                            </strong>
+                        </center>
+                        <br/>   
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>SI No</center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>Date</center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>Code</center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>Particulars</center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>Rate</center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>Nos(Unit)</center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td colspan="1">
+                                        <span>
+                                            <strong>
+                                                <center>
+                                                    Amount
+                                                </center>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                               
+                                <t t-set="sequence" t-value="1" />
+                                <t t-foreach="o.invoice_line_ids" t-as="line">
+                                    <tr>
+                                        <td colspan="1">
+                                            <center>
+                                                <span t-esc="sequence" />
+                                            </center>
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="o.date_invoice" />
+                                        </td>
+                                        <td colspan="1">
+                                            <span t-field="line.product_id.irda_category_id.parent_code" />
+                                        </td>
+                                        <td colspan="1">
+                                            <center>
+                                                <span t-field="line.product_id.irda_category_id.name" />
+                                            </center>
+                                        </td>
+                                        <td colspan="1">
+                                            <center>
+                                                <span t-field="line.price_unit" />
+                                            </center>
+                                        </td>
+                                        <td colspan="1">
+                                            <center>
+                                                <span t-field="line.quantity" />
+                                            </center>
+                                        </td>
+                                        <td colspan="1">
+                                            <center>
+                                                <span t-field="line.price_subtotal" />
+                                            </center>
+                                        </td>
+                                    </tr>
+                                    <t t-set="sequence" t-value="sequence + 1" />
+                                </t>
+                            </tbody>
+                        </table>                                              
+                    </div>
+                </t>
+           </t> 
+        </template>
+
+    </data>
+</openerp>

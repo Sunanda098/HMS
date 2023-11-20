@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_hms_prescription_order_tree" model="ir.ui.view">
+            <field name="name">prescription.order.tree</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Prescription Order">
+                    <field name="prescription_date" />
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="physician_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_hms_prescription_order_form" model="ir.ui.view">
+            <field name="name">prescription.order.form</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indimedi Prescription Order" >
+                    <header>
+                        <button name="action_sale_order" states="prescription" string="Create Sale Order" type="object"/>
+                        <button name="action_purchase_order" string="Create Purchase Order" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'prescription')]}" groups="base.group_user"/>
+                        <button name="button_confirm" states="draft" string="Confirm" type="object" class="oe_highlight" />
+                        <button name="button_reset" states="prescription" string="Reset to Draft" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,prescription,so_created" />
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Prescription Order " class="oe_inline oe_edit_only"/>
+                            <field name="name" class="oe_inline"/>
+                            <div class="oe_right oe_button_box">
+                                <button name="action_view_invoice" class="oe_stat_button" icon="fa-user" type="object" help="Review Prescription Invoice" attrs="{'invisible': [('state', '!=', 'invoiced')]}" string=
+                                "View Invoice"/>
+                                <button name="action_view_sale" string="View Sale Order" class="oe_stat_button" icon="fa-user" type="object" help="View Prescription Sale Order" attrs="{'invisible': [('state', 'not in', ('invoiced','so_created','po_created'))]}"/>
+                                <button name="action_view_purchase" class="oe_stat_button" icon="fa-user" type="object" attrs="{'invisible': [('state', 'not in', ('invoiced','po_created'))]}" string="View Purchase order"/>
+                            </div>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="patient_id" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="company_id" />
+                                <field name="patient_age" invisible="1" />
+                                <field name="physician_id" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="doc_user_prescription" invisible="1" />
+                                <field name="pharmacy" invisible="1" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <!--field name="company"/>
+                                <field name="company_id"/-->
+                                <!--field name="warehouse_id" options="{'no_create': True}" groups="stock.group_locations"/-->
+                                <field name="group_id" domain="[('physician_id','=',physician_id)]" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="prescription_date" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                            </group>
+                            <group>
+                                <field name="pathology" invisible="1" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="appointment" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="created_by" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="creation_date" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                                <field name="pregnancy_warning" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                               <field name="language"  widget="radio" options="{'horizontal': true}"/> 
+                                <!-- <div name="language" colspan="3">
+                                   <label for="language" string="Language" style="font-weight: bold;"/> -->
+                                <!-- </div>
+ -->                    <field name="picking_type_id" invisible="1" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="prescription_line" nolabel="1" colspan="4" attrs="{'readonly': [('state', '=', 'so_created')]}">
+                                <tree string="" editable="top">
+                                    <field name="product_id" string="Medicine Name"/>
+                                    <field name="active_component_ids" widget="many2many_tags"/>
+                                    <field name="allow_substitution" />
+                                    <!--<field name="form" string="Drug Form" required="1" widget="selection"/>
+                                    <field name="dose" required="1"/>-->
+                                    <field name="dose_unit" invisible="1" />
+                                    <field name="common_dosage" required="1" />
+                                    <field name="days" />
+                                    <field name="quantity" required="1" string="Qty" />
+                                    <!--field name="batch_no" domain="[('product_id','=',product_id)]"/>
+                                    <field name="exp_date"/-->
+                                </tree>
+                                <form string="">
+                                    <group>
+                                        <group>
+                                            <field name="product_id"/>
+                                            <field name="active_component_ids" widget="many2many_tags" />
+                                            <!--<field name="prnt" colspan="2"/>-->
+                                            <field name="form" />
+                                            <field name="start_treatment" />
+                                            <field name="dose" />
+                                            <!--<field name="qty"/>-->
+                                            <field name="common_dosage" />
+                                        </group>
+                                        <group>
+                                            <field name="indication"/>
+                                            <field name="allow_substitution"/>
+                                            <field name="route" invisible="1" />
+                                            <field name="end_treatment" />
+                                            <field name="dose_unit" />
+                                            <!--<field name="admin_times"/>-->
+                                        </group>
+                                        <group>
+                                            <field name="duration"/>
+                                            <field name="duration_period"/>
+                                            <field name="review"/>
+                                            <field name="quantity"/>
+                                            <field name="short_comment"/>
+                                        </group>
+                                        <!--<group colspan="4" col="6" string="Specific Dosage" >
+                                            <field name="frequency"/>
+                                            <field name="frequency_unit"/>
+                                            <field name="frequency_prn"/>
+                                        </group>-->
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="notes" colspan="4" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_hms_prescription_order_search" model="ir.ui.view">
+            <field name="name">prescription.order.search</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indimedi Prescription Order">
+                    <field name="name" />
+                    <field name="prescription_date" />
+                    <field name="patient_id" />
+                    <field name="pregnancy_warning" />
+                    <field name="pharmacy" />
+                    <field name="prescription_warning_ack" />
+                    <field name="physician_id" />
+                    <field name="notes" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
+                        <filter string="Pregancy Warning" domain="[]" context="{'group_by':'pregnancy_warning'}" />
+                        <filter string="Prescription Notes" domain="[]" context="{'group_by':'notes'}" />
+                        <filter string="Pharmacy" domain="[]" context="{'group_by':'pharmacy'}" />
+                        <filter string="Prescription Date" domain="[]" context="{'group_by':'prescription_date'}" />
+                        <filter string="Prescription verified" domain="[]" context="{'group_by':'prescription_warning_ack'}" />
+                        <filter string="Prescribing Doctor" domain="[]" context="{'group_by':'physician_id'}" />
+                        <filter string="Prescription ID" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="Today's Prescription" name="today" domain="[('create_date','&gt;=', datetime.datetime.now().strftime('%Y-%m-%d 00:00:00')),('create_date','&lt;=', datetime.datetime.now().strftime('%Y-%m-%d 23:59:59'))]" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_hms_prescription_order_kanban">
+            <field name="name">indimedi.Prescription Order kanban</field>
+            <field name="model">prescription.order</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban  class="oe_background_grey">
+                    <field name="name" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_vignette oe_semantic_html_override">
+                                    <div class="oe_kanban_details">
+                                        <h3>
+                                            <a type="open">
+                                                <field name="name" />
+                                            </a>
+                                        </h3>
+                                        <ul>
+                                            <li t-if="record.prescription_date.raw_value">
+                                                <b>Date:</b>
+                                                <field name="prescription_date" />
+                                            </li>
+                                            <li t-if="record.patient_id.raw_value">
+                                                <b>Patient:</b>
+                                                <field name="patient_id" />
+                                            </li>
+                                            <li t-if="record.physician_id.raw_value">
+                                                <b>Physician:</b>
+                                                <field name="physician_id" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_hms_prescription_order_view">
+            <field name="name">Prescription Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">prescription.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="search_view_id" ref="view_hms_prescription_order_search" />
+            <field name="view_id" ref="view_hms_prescription_order_tree" />
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_today': 1}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_hms_prescription_order_view_form">
+            <field name="act_window_id" ref="act_open_hms_prescription_order_view" />
+            <field name="sequence" eval="30" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_hms_prescription_order_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_hms_prescription_order_view_tree">
+            <field name="act_window_id" ref="act_open_hms_prescription_order_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_hms_prescription_order_tree" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_hms_prescription_order_view_kanban">
+             <field name="act_window_id" ref="act_open_hms_prescription_order_view" />
+             <field name="sequence" eval="25" />
+             <field name="view_mode">kanban</field>
+             <field name="view_id" ref="view_hms_prescription_order_kanban" />
+         </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="indimedi_outpatient_prescription_view_form" model="ir.ui.view">
+            <field name="name">indimedi.outpatient.prescription.view.form</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <field name="inherit_id" ref="hms_prescription.view_hms_prescription_order_form" />
+            <field name="arch" type="xml">
+                <field name="appointment" position="after">
+                    <field name="inpatient_registration_code" attrs="{'readonly': [('state', '=', 'so_created')]}" />
+                </field>
+            </field>
+        </record>
+
+        <record id="indimedi_inpatient_prescription_view_form" model="ir.ui.view">
+            <field name="name">indimedi.inpatient.prescription.view.form</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <field name="inherit_id" ref="hms_prescription.indoor_Patient_medicine_request_form" />
+            <field name="arch" type="xml">
+                <group name='inpatient_details' position="after">
+                    <group>
+                        <field name="inpatient_registration_code" attrs="{'readonly': [('state','not in',('draft'))]}" />
+                        <field name="ward_no" attrs="{'readonly': [('state','not in',('draft'))]}" />
+                        <field name="bed_no" attrs="{'readonly': [('state','not in',('draft'))]}" />
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="indimedi_inpatient_prescription_view_search" model="ir.ui.view">
+            <field name="name">indimedi.inpatient.prescription.view.search</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <!-- <field name="type">form</field> -->
+            <field name="inherit_id" ref="hms_prescription.view_indimedi_ipmr_search" />
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="IPMR">
+                    <field name="inpatient_registration_code" />
+                    <field name="bed_no" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Hospitalization" domain="[]" context="{'group_by':'inpatient_registration_code'}" />
+                        <filter string="Bed No." domain="[]" context="{'group_by':'bed_no'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="indimedi_inpatient_prescription_view_tree" model="ir.ui.view">
+            <field name="name">indimedi.inpatient.prescription.view.tree</field>
+            <field name="model">prescription.order</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Prescription Order">
+                    <field name="prescription_date"/>
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="physician_id" />
+                    <field name="state" string="Invoice Status"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

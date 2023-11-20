@@ -1,0 +1,49 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Data for OPD Phy hand Note -->
+        <record id="shah_oa_complaint_template_1" model="shah.oa.complaint.template">
+            <field name="val_name">Knee pain :</field>
+        </record>
+        <record id="shah_oa_complaint_template_2" model="shah.oa.complaint.template">
+            <field name="val_name">Difficulty In Walking :</field>
+        </record>
+        <record id="shah_oa_complaint_template_3" model="shah.oa.complaint.template">
+            <field name="val_name">Difficulty In Sitting X-legged and squatting :</field>
+        </record>
+        
+
+        <record id="shah_oa_note_template_1" model="shah.oa.note.template">
+            <field name="val_name">Tender Joint Line :</field>
+        </record>
+        <record id="shah_oa_note_template_2" model="shah.oa.note.template">
+            <field name="val_name">Synovitis / Effusion :</field>
+        </record>
+        <record id="shah_oa_note_template_3" model="shah.oa.note.template">
+            <field name="val_name">Muscle Wasting : Thigh :</field>
+        </record>
+        <record id="shah_oa_note_template_4" model="shah.oa.note.template">
+            <field name="val_name">Tibia Vara :</field>
+        </record>
+        <record id="shah_oa_note_template_5" model="shah.oa.note.template">
+            <field name="val_name">Fixed flexion deformity :</field>
+        </record>
+        <record id="shah_oa_note_template_6" model="shah.oa.note.template">
+            <field name="val_name">Other deformities :</field>
+        </record>
+        <record id="shah_oa_note_template_7" model="shah.oa.note.template">
+            <field name="val_name">Range of Motion :</field>
+        </record>
+        <record id="shah_oa_note_template_8" model="shah.oa.note.template">
+            <field name="val_name">Ligament Laxity :</field>
+        </record>
+        <record id="shah_oa_note_template_9" model="shah.oa.note.template">
+            <field name="val_name">Patello Femoral joint: tenderness :</field>
+        </record>
+        <record id="shah_oa_note_template_10" model="shah.oa.note.template">
+            <field name="val_name">Patello Femoral joint: tracking :</field>
+        </record>
+        <record id="shah_oa_note_template_11" model="shah.oa.note.template">
+            <field name="val_name">Distal Pulsations :</field>
+        </record>
+    </data>
+</openerp>

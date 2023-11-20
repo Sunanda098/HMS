@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="claim_report_view" model="ir.ui.view">
+            <field name="name">Today Report</field>
+            <field name="model">claim.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="is_claim"/>
+                            <group>
+                                <field name="date_from"/>
+                            </group>
+                            <group>
+                                <field name="date_to"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_claim_report_menu" model="ir.actions.act_window">
+            <field name="name">Claim Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">claim.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="claim_report_view"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem
+            id="menu_claim_report"
+            name="Claim Report"
+            action="action_claim_report_menu"
+           groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor" parent="hms_hospitalization.menu_hospitalization_report" sequence="3" />
+           
+        
+</data>
+</openerp>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	<record id="view_renewable_service_form" model="ir.ui.view">
+            <field name="name">hr.equipment.form</field>
+            <field name="model">hr.equipment</field>
+            <field name="inherit_id" ref='hr_equipment.hr_equipment_view_form'/>
+            <field name="arch" type="xml">
+                <label for="name" position="attributes">
+                    <attribute name="string">Renewable Services</attribute>
+                </label>
+                <field name="name" position="attributes">
+                    <attribute name="string">Renewable Services</attribute>
+                    <attribute name="placeholder">Renewable Services</attribute>
+                </field>
+                <label for="category_id" position="attributes">
+                    <attribute name="string">Equipment Categories</attribute>
+                </label>
+                <field name="category_id" position="attributes">
+                    <attribute name="string">Equipment Categories</attribute>
+                </field>
+                <field name="assign_date" position="replace"/>
+                <field name="scrap_date" position="replace"/>
+                    
+                <field name="user_id" position="after">
+                    <field name="assign_date" string="From Date"/>
+                    <field name="scrap_date" string="To Date"/>
+                    <field name="alert_days"/>
+                    <field name="alert_date"/>
+                </field>
+                <field name="equipment_assign_to" position="after">
+                    <field name="active"/>
+                </field>
+            </field>
+    </record>
+
+    <record id="hr_equipment.hr_equipment_view_kanban" model="ir.ui.view">
+        <field name="name">hr.equipment.kanban</field>
+        <field name="model">hr.equipment</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="category_id">
+                <field name="name"/>
+                <field name="color"/>
+                <field name="user_id"/>
+                <field name="category_id"/>
+                <field name="serial_no"/>
+                <field name="model"/>
+                <field name="maintenance_ids"/>
+                <field name="maintenance_open_count"/>
+                <field name="assign_date"/>
+                <field name="scrap_date"/>
+                <field name="alert_days"/>
+                <field name="alert_date"/>
+                <field name="active"/>
+                <templates>
+                    <t t-name="kanban-tooltip">
+                        <ul class="oe_kanban_tooltip">
+                            <li><b>Serial Number:</b> <field name="serial_no"/></li>
+                            <li><b>Model Number:</b> <field name="model"/></li>
+                        </ul>
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}  oe_kanban_card oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable"><li><a type="edit">Edit...</a></li></t>
+                                    <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                    <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                <div><b><field name="name"/><span t-if="record.model.raw_value"> (<field name="model"/>)</span></b></div>
+                                <div class="mt4">
+                                    <div t-if="record.serial_no.raw_value"><field name="serial_no"/></div>
+                                    <div t-if="!record.employee_id.raw_value and !record.department_id.raw_value">Unassigned</div>
+                                    <div t-if="record.employee_id.raw_value"><b>Responsible :</b><field name="employee_id"/></div>
+                                    <div t-if="record.department_id.raw_value"><b>Responsible Dept:</b><field name="department_id"/></div>
+                                    <div t-if="record.assign_date.raw_value"><span><b>From Date :</b></span><field name="assign_date"/></div>
+                                    <div t-if="record.scrap_date.raw_value"><span><b>To Date :</b></span><field name="scrap_date"/></div>
+                                    <div t-if="record.alert_days.raw_value"><span><b>Alert Before Days:</b></span><field name="alert_days"/></div>
+                                    <div t-if="record.active.raw_value">Active</div>
+                                    <div t-if="!record.active.raw_value">Not Active</div>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('hr.employee', 'image_small', record.employee_id.raw_value)" t-att-title="record.employee_id.value" width="27" height="27" class="oe_kanban_avatar"/>
+                                </div>
+                                <div class="oe_kanban_footer_left mt4 label label-danger" t-if="record.maintenance_open_count.raw_value" >
+                                    <t t-raw="record.maintenance_open_count.raw_value"/> Request
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+           
+    <!-- <record id="view_renewable_service_kanban" model="ir.ui.view">
+        <field name="name">hr.equipment.kanban</field>
+        <field name="model">hr.equipment</field>
+        <field name="inherit_id" ref='hr_equipment.hr_equipment_view_kanban'/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                
+            </field>
+
+
+            <xpath expr="//div[contains(@class, 'mt4')]" position="inside">
+                
+            </xpath>
+
+        </field>
+    </record> -->
+    
+	    
+    </data>
+</openerp>
+
+

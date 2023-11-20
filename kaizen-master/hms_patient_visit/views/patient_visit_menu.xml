@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+         <menuitem id="indi_hms_visit" name="Patient Visits" sequence="2" parent="hms.menu_patient" action="action_indi_hms_patient_visit"/>
+
+    </data>
+</openerp>

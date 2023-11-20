@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Drug Form -->
+        <record id="view_drug_form_tree" model="ir.ui.view">
+            <field name="name">drug.form.tree</field>
+            <field name="model">drug.form</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="indimedi Drug Form">
+                    <field name="code" />
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_drug_form_form" model="ir.ui.view">
+            <field name="name">drug.form.form</field>
+            <field name="model">drug.form</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="indimedi Drug Form">
+                    <group><group>
+                    <field name="code" />
+                    </group><group>
+                    <field name="name" />
+                    </group></group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_drug_form_search" model="ir.ui.view">
+            <field name="name">drug.form.search</field>
+            <field name="model">drug.form</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="indimedi Drug Form">
+                    <field name="code" />
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Code" domain="[]" context="{'group_by':'code'}" />
+                        <filter string="Form" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_drug_form_view">
+            <field name="name">Drug Form</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">drug.form</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_drug_form_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="view_drug_company_form_search" model="ir.ui.view">
+            <field name="name">active.comp.search</field>
+            <field name="model">active.comp</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Drug Company">
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_drug_company_form_view">
+            <field name="name">Drug Company</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">drug.company</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_drug_company_form_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record id="view_active_comp_form_search" model="ir.ui.view">
+            <field name="name">active.comp.search</field>
+            <field name="model">active.comp</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Active Component">
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_active_comp">
+            <field name="name">Active Component</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">active.comp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_active_comp_form_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+
+        <record model="ir.actions.act_window.view" id="act_open_drug_form_view_form">
+            <field name="act_window_id" ref="act_open_drug_form_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_drug_form_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_drug_form_view_tree">
+            <field name="act_window_id" ref="act_open_drug_form_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_drug_form_tree" />
+        </record>
+
+        <!-- Drug Route -->
+        <record id="view_drug_route_tree" model="ir.ui.view">
+            <field name="name">drug.route.tree</field>
+            <field name="model">drug.route</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="indimedi Drug Route">
+                    <field name="code" />
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_drug_route_form" model="ir.ui.view">
+            <field name="name">drug.route.form</field>
+            <field name="model">drug.route</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="indimedi Drug Route">
+                    <group>
+                        <group>
+                            <field name="code" />
+                        </group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_drug_route_search" model="ir.ui.view">
+            <field name="name">drug.route.search</field>
+            <field name="model">drug.route</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="indimedi Drug Route">
+                    <field name="code" />
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Code" domain="[]" context="{'group_by':'code'}" />
+                        <filter string="Unit" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_drug_route_view">
+            <field name="name">Drug Route</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">drug.route</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_drug_route_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_drug_route_view_form">
+            <field name="act_window_id" ref="act_open_drug_route_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_drug_route_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_drug_route_view_tree">
+            <field name="act_window_id" ref="act_open_drug_route_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_drug_route_tree" />
+        </record>
+        <!-- <menuitem id="hos_drug" name="Drug Admin Route" parent="health_medicaments" action="act_open_drug_route_view"/> -->
+
+    </data>
+</openerp>

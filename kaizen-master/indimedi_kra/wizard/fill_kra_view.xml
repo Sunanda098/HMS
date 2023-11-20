@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="view_kra_wizard_wizard" model="ir.ui.view">
+            <field name="name">KRA Wizard</field>
+            <field name="model">kra.wizard</field>
+            <field name="arch" type="xml">
+                <form string="KRA Wizard">
+                    <group>
+                        <label for="month_from"/>
+                        <div>
+                            <field name="month_from" class="oe_inline"/> -
+                            <field name="month_to" class="oe_inline"/>
+                        </div>
+                        <field name="year" placeholder="Year"/>
+                        <field name="employee_id"/>
+                    </group>
+                    <footer>
+                        <button name="print_kra_report" type="object"
+                            string="Print" class="oe_highlight"
+                            />
+                        or
+                        <button string="Print Value Rating" name="print_value_rating"
+                            type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_kra_report_wizard" model="ir.actions.act_window">
+            <field name="name">KRA Print Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">kra.wizard</field>
+            <field name="view_id" ref="view_kra_wizard_wizard"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- <menuitem action="action_kra_report_wizard" id="menu_kra_report_wizard"
+            sequence="10" name="Print KRA report" parent="menu_indimedi_kra_reporting" /> -->
+    </data>
+</openerp>

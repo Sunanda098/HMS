@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report.style" name="style">
+            <style type="text/css">
+                body {
+                color: #000 !important;
+                }
+                .table table-condensed {
+                border-top: 1px solid black !important;
+                }
+
+             </style>
+          </template>
+
+        <template id="probation_extension_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div>
+                            <table class="table table-condensed" style="width:100%;" >
+                                <tbody>
+                                    <tr style="border-top:hidden;">
+                                        <td align="right">
+                                            <span>Date:<span t-esc="datetime.datetime.now().date()" /> </span>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="center" style="text-decoration:underline;adding-top:15;">
+                                            <strong>Extension of Probation
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" style="adding-top:15;">
+                                            <span>Dear <strong><t t-esc="o.full_name"/></strong></span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" style="adding-top:15;">
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" >
+                                            <span>You may be aware that your tenure of probation starting from <strong><t t-esc="o.date_joining"/></strong> for a period of three months has come to an end as on<strong> <t t-esc="o.three_months_after"/></strong>.</span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>In this regard, with reference to your appointment letter clause No 5, dated <strong><t t-esc="o.date_joining"/></strong> , we do hereby inform you that your performance during such period has not been satisfactory and thereby the hospital has decided to extend your probation for further period of 3 months.</span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>All the other terms &amp; conditions as detailed in your appointment letter remain unchanged.</span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>We look forward to your valuable contribution and wish you all the very best for a rewarding career with the organization.</span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>Please sign the duplicate copy of this letter as a token of acceptance for the same.</span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>For, Kaizen Hospital </span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>Dr Nehal Gadhavi </span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>Hospital Administrator </span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_probation_extension" model="report.paperformat">
+            <field name="name">Probation Extension</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">35</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="report_probation_extension" 
+            string="Probation Extension" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.probation_extension_report" 
+            name="indimedi_kra.probation_extension_report"
+            paperformat="indimedi_kra.paperformat_probation_extension"
+        />
+
+
+    </data>
+</openerp>

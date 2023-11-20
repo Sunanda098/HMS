@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_trauma_hospitalization_form" model="ir.ui.view">
+            <field name="name">shah.hospitalization</field>
+            <field name="model">inpatient.registration</field>
+            <field name="inherit_id" ref="hms_hospitalization.view_inpatient_registration_form" />
+            <field name="arch" type="xml">
+                <field name="appointment_id" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </field>
+            </field>
+        </record>
+        <!-- Trauma Form -->
+        <record id="view_trauma_tree" model="ir.ui.view">
+            <field name="name">shah.trauma.tree</field>
+            <field name="model">shah.trauma</field>
+            <field name="arch" type="xml">
+                <tree string="Trauma/Injury">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="inpatient_id" />
+                    <field name="date_trauma" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_trauma_form" model="ir.ui.view">
+            <field name="name">shah.trauma.form</field>
+            <field name="model">shah.trauma</field>
+            <field name="arch" type="xml">
+                <form string="Trauma">
+                    <header>
+                        <button name="button_done" states="draft" string="Done" type="object" />
+                        <button name="button_cancel" states="draft" string="Cancel" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done" statusbar_colors="{&quot;draft&quot;:&quot;blue&quot;,&quot;cancel&quot;:&quot;red&quot;}" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1" />
+                            </h1>
+                        </div>
+                        <group string="Trauma">
+                            <group>
+                                <field name="inpatient_id" attrs="{'readonly': [('state','!=','draft')]}" invisible="1" />
+                                <field name="patient_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="date_trauma" attrs="{'readonly': [('state','!=','draft')]}" />
+                            </group>
+                            <group>
+                                <field name="head_injury_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="history_loss_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                            </group>
+                        </group>
+                        <field name="ho" nolabel="1" placeholder="H/O..." attrs="{'readonly': [('state','!=','draft')]}" />
+                        <group col="9" string="Vitals">
+                            <field name="consciousness" />
+                            <field name="pulse" />
+                            <field name="bp" />
+                        </group>
+                        <group col="9">
+                            <field name="resp" />
+                            <field name="orientation" />
+                            <field name="temp" />
+                        </group>
+                        <group col="4">
+                            <field name="alcohol" />
+                            <field name="legal" />
+                        </group>
+                        <group>
+                            <group>
+                                <field name="co" nolabel="1" placeholder="C/O..." attrs="{'readonly': [('state','!=','draft')]}" />
+                            </group>
+                            <group>
+                                <field name="mri" nolabel="1" placeholder="CT/MRI..." attrs="{'readonly': [('state','!=','draft')]}" />
+                            </group>
+                            <field name="lab" nolabel="1" placeholder="Labortory..." attrs="{'readonly': [('state','!=','draft')]}" />
+                            <field name="oe" nolabel="1" placeholder="O/E..." attrs="{'readonly': [('state','!=','draft')]}" />
+                        </group>
+                        <group col="4">
+                            <field name="advice_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                            <field name="xray_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_trauma_search" model="ir.ui.view">
+            <field name="name">shah.trauma.search</field>
+            <field name="model">shah.trauma</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Trauma Search">
+                    <field name="patient_id" />
+                </search>
+            </field>
+        </record>
+        <record id="action_trauma_form" model="ir.actions.act_window">
+            <field name="name">Trauma form</field>
+            <field name="res_model">shah.trauma</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+        <record id="view_shah_trauma_appointment" model="ir.ui.view">
+            <field name="name">hms.appointment.form</field>
+            <field name="model">hms.appointment</field>
+            <field name="inherit_id" ref="hms.view_hms_appointment_form" />
+            <field name="arch" type="xml">
+                <button name="view_invoice" position="before">
+                    <button name="action_trauma" string="Trauma" type="object" attrs="{'invisible':['|',('department_name','!=','Orthopedic'),('state','not in',['in_consultation','invoiced','done','sr_dr'])]}" class="btn btn-sm oe_button oe_button oe_form_button oe_highlight" groups="hms.group_hms_jr_doctor,hms.group_hms_doctor,hms.group_hms_medical_officer"  style="width:31%;"/>
+                </button>
+            </field>
+        </record>
+    </data>
+</openerp>

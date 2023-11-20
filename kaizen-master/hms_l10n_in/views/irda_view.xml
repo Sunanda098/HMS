@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+    	<record id="irda_category_view" model="ir.ui.view">
+            <field name="name">irda.category</field>
+            <field name="model">irda.category</field>
+            <field name="arch" type="xml">
+                <form string="IRDA Category">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_irda_product" string="Irda Category"
+                            type="object"/>
+                        </div>
+                	<group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="parent_id"/>
+                        <field name="parent_code"/>
+                    </group>
+                   </sheet>
+                </form>           		
+            </field>
+		</record>
+
+		<record id="irda_category_tree_view" model="ir.ui.view">
+            <field name="name">irda.category</field>
+            <field name="model">irda.category</field>
+            <field name="arch" type="xml">
+                <tree string="IRDA Category">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>           		
+            </field>
+		</record>	
+
+		<record model="ir.actions.act_window" id="action_irda_category_view">
+			<field name="name">Irda category</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">irda.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>	
+
+		<record id="view_irda_product_form" model="ir.ui.view">
+			<field name="name">product.product</field>
+			<field name="model">product.template</field>
+			<field name="inherit_id" ref="product.product_template_only_form_view"/>
+			<field name="arch" type="xml">
+				<field name="default_code" position="after">
+                    <field name="irda_category_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_res_company_inherit_form" model="ir.ui.view">
+            <field name="name">res.company.inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="company_registry" position="after">
+                    <field name="pan"/>
+                </field>
+            </field>
+        </record>
+
+		<menuitem id="menu_irda_category"  parent="hms.menu_hms_cofig" action='action_irda_category_view' sequence="5" name="IRDA category"/>	
+
+    </data>
+</openerp>

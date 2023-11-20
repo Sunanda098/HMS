@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>    
+        <record id="view_hms_lithotripsy_tree" model="ir.ui.view">
+            <field name="name">view.hms.lithotripsy.tree</field>
+            <field name="model">hms.lithotripsy</field>
+            <field name="arch" type="xml">
+                <tree string="Indimedi Lithotrypsy">
+                    <field name="name" string="ID"/>
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_hms_lithotripsy_form" model="ir.ui.view">
+            <field name="name">view.hms.lithotripsy.form</field>
+            <field name="model">hms.lithotripsy</field>
+            <field name="arch" type="xml">
+                <form string="Indimedi Lithotrypsy">
+                    <header>
+                        <button name="action_confirm" states="draft" string="Confirm" class="oe_highlight" type="object"/>
+                        <button name="action_inprogress" states="confirm" string="In Progress" class="oe_highlight" type="object"/>
+                        <button name="action_done" states="progress" string="Done" class="oe_highlight" type="object"/>
+                        <button name="action_create_invoice" states="progress" string="Create Invoice" class="oe_highlight" type="object"/>
+                        <button name="action_draft" states="done" string="Draft" class="oe_highlight" type="object"/>
+                        <button name="action_done" states="invoiced" string="Done" class="oe_highlight" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_right oe_button_box" name="buttons">
+                            <button name="action_view_invoice" string="View Invoice" class="oe_stat_button" icon="fa-pencil-square-o" states="invoiced" type="object"/>
+                        </div>
+                        <h1>
+                            <label string="Lithotripsy #"/>
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="patient_id" required="1" attrs="{'readonly': [('state', 'in', ('invoiced'))]}"/>
+                                <field name="doctor_id" required="1" attrs="{'readonly': [('state', 'in', ('invoiced'))]}"/>
+                                <field name="ref_doctor_id" domain="[('is_refering_doctor', '=', True)]" />
+                            </group>
+                            <group>
+                                <field name="inpatient_id" domain="[('patient_id', '=', patient_id)]" invisible="True"/>
+                                <field name="product_id" string="Surgery" required="1" domain="[('hospital_product_type', '=', 'lithotripsy')]" attrs="{'readonly': [('state', 'in', ('invoiced'))]}" context="{'default_hospital_product_type': 'lithotripsy'}"/>
+                                <field name="date_start" required="1"/>
+                                <field name="date_end"/>
+                            </group>
+                        </group>
+                        <group string="Stone">
+                            <field name="stone_line_ids" nolabel="1" colspan="4">
+                                <tree string="Line" editable="top" mm="1"> 
+                                    <field name="stone" required="1"/>
+                                    <field name="size"/>
+                                    <field name="mm_lable"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group string="Diagnosis">
+                            <field name="diagnosis" nolabel="1" colspan="4"/>
+                        </group>
+                        <group string="Procedure">
+                            <field name="procedure" nolabel="1" colspan="4"/>
+                        </group>
+                        <group string="Advice">
+                            <field name="advice" nolabel="1" colspan="4"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="action_lithotripsy" model="ir.actions.act_window">
+            <field name="name">Lithotripsy</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hms.lithotripsy</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_lithotripsy" name="Lithotripsy" sequence="3" parent="hms_hospitalization.indimedi_inpatient_menu" action="hms_lithotripsy.action_lithotripsy" />
+
+        <record id="view_patient_form_lithotripsy" model="ir.ui.view">
+            <field name="name">patient.form</field>
+            <field name="model">hms.patient</field>
+            <field name="inherit_id" ref="hms.view_patient_form"/>
+            <field name="arch" type="xml">
+                <button name="view_invoice">
+                    <button name="action_lithotripsy" string="Lithotripsy" type="object" class="oe_stat_button" icon="fa-pencil-square-o"/>
+                </button>
+            </field>
+        </record>
+
+    </data>
+</openerp>

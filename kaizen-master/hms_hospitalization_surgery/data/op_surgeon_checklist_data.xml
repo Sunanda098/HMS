@@ -1,0 +1,50 @@
+<openerp>
+    <data noupdate="1">
+        <!--By Operating Surgeon-->
+
+        <record id="admission_checklist_operating_surgeon_1" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Patient Confirmation</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_2" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Site of Operation</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_3" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Anitibiotics Prophylaxis</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_4" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Procedure:</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_5" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Procedure: Open</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_6" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Procedure: Laparoscopy</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_7" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Additional Procedure</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_8" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Blood and Product Arranged</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_operating_surgeon_9" model="inpatient.checklist.operating.surgeon.template">
+            <field name="name">Any Special Remark</field>
+            <field name="remark"></field>
+        </record>
+    </data>
+</openerp>

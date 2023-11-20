@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- QWeb Reports -->
+        
+        <!-- <report id="action_report_treatmentsheet" model="inpatient.registration" string="Treatment
+            Sheet" report_type="qweb-pdf" name="hms_treatment.report_treatmentsheet"
+            file="hms_treatment.report_treatmentsheet" /> -->
+
+        <report id="action_report_line_treatment" 
+            string="Treatment" 
+            model="hms.treatment" 
+            report_type="qweb-pdf" 
+            file="hms_treatment.report_line_treatment"
+            name="hms_treatment.report_line_treatment"/>
+        
+    </data>
+</openerp>

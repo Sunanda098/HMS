@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_shipment_barcode">
+            <t t-call="report.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <t t-foreach="o.move_lines" t-as="l">
+                            <td class="col-xs-1">
+                                <div class="col-xs-3 mt8 mb64" style="font-size:10px">
+                                    <div class="pull-left">
+                                        <strong t-field="l.product_id.default_code" />
+                                    </div>
+                                    <div class="pull-right">
+                                        <strong>Rs:</strong>
+                                        <strong t-field="l.price_unit" />
+                                    </div>
+                                    <br />
+                                    <center>
+                                        <img t-if="l.product_id.barcode"
+                                            t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('EAN13',l.product_id.barcode,200,100)"
+                                            style="width:120px;height:20px;" />
+                                    </center>
+                                    <center>
+                                        <strong t-field="l.product_id.barcode" />
+                                    </center>
+                                    <center>
+                                        <strong t-field="l.product_id.name" style="font-size:8px" />
+                                    </center>
+                                </div>
+                            </td>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</openerp>

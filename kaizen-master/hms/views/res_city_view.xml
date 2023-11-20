@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <!-- City -->
+        
+        <record id="view_res_city_tree" model="ir.ui.view">
+            <field name="name">res.area.tree</field>
+            <field name="model">res.area</field>
+            <field name="arch" type="xml">
+                <tree string="Area">
+                    <field name="name"/>
+                    <field name="city_id"/>
+                    <field name="state_id"/>
+                    <field name="country_id"/>
+                    <field name="zip"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_res_city_form" model="ir.ui.view">
+            <field name="name">res.area.form</field>
+            <field name="model">res.area</field>
+            <field name="arch" type="xml">
+                <form string="Area" version="7.0">
+                    <group>
+                        <field name="name"/>
+                        <field name="city_id"/>
+                        <field name="state_id"/>
+                        <field name="country_id" options='{"no_open": True}'/>
+                        <field name="zip"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_res_city" model="ir.actions.act_window">
+            <field name="name">Area</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.area</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_res_city_tree"/>
+            <field name="help">If you are working on the Indian market, you can manage the different cities you are working on from here. Each city is attached to one state and country.</field>
+        </record>
+
+       <!-- <menuitem action="action_res_city" id="menu_res_city"  groups="base.group_no_one"/> -->
+
+       <menuitem id="menu_res_city" name="Area"
+            sequence="10" parent="menu_hms_cofig" action="action_res_city" />
+
+    </data>
+ </openerp>

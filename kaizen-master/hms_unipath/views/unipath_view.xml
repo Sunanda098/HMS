@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_res_company_unipath_form" model="ir.ui.view">
+            <field name="name">res.company.unipath.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[3]" position="after">
+                    <page string="Unipath">
+                        <group>
+                            <group>
+                                <field name="unipath_host"/>
+                                <field name="unipath_user"/>
+                                <field name="unipath_password"/>
+                            </group>
+                            <group>
+                                <field name="unipath_port"/>
+                                <field name="unipath_database"/>
+                            </group>
+                             <button name="test_unipath_connection" type="object" string="Test Connection" icon="gtk-network"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+     </data>
+</openerp>

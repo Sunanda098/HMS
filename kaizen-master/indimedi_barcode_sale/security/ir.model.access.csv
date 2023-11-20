@@ -1,0 +1,35 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_indimedi_barcode_sale_report_product_barcode_user,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_user,1,0,0,0
+access_stock_picking_barcode_line_user,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_user,1,0,0,0
+access_stock_picking_barcode_user,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_user,1,0,0,0
+access_stock_production_report_user,Stock Production Report,model_stock_production_report,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_report_indimedi_barcode_sale_report_product_barcode_receptionist,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_receptionist,1,0,0,0
+access_stock_picking_barcode_line_receptionist,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_receptionist,1,0,0,0
+access_stock_picking_barcode_receptionist,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_receptionist,1,0,0,0
+access_stock_production_report_receptionist,Stock Production Report,model_stock_production_report,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_report_indimedi_barcode_sale_report_product_barcode_nurse,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_nurse,1,0,0,0
+access_stock_picking_barcode_line_nurse,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_nurse,1,0,0,0
+access_stock_picking_barcode_nurse,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_nurse,1,0,0,0
+access_stock_production_report_nurse,Stock Production Report,model_stock_production_report,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_report_indimedi_barcode_sale_report_product_barcode_doctor,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_doctor,1,1,1,0
+access_stock_picking_barcode_line_doctor,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_doctor,1,1,1,0
+access_stock_picking_barcode_doctor,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_doctor,1,1,1,0
+access_stock_production_report_doctor,Stock Production Report,model_stock_production_report,hms.group_hms_doctor,1,1,1,0
+,,,,,,,
+access_report_indimedi_barcode_sale_report_product_barcode_pharmacist,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_pharmacist,1,0,0,0
+access_stock_picking_barcode_line_pharmacist,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_pharmacist,1,0,0,0
+access_stock_picking_barcode_pharmacist,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_pharmacist,1,0,0,0
+access_stock_production_report_pharmacist,Stock Production Report,model_stock_production_report,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+access_report_indimedi_barcode_sale_report_product_barcode_jr_doctor,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_jr_doctor,1,1,1,0
+access_stock_picking_barcode_line_jr_doctor,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_jr_doctor,1,1,1,0
+access_stock_picking_barcode_jr_doctor,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_jr_doctor,1,1,1,0
+access_stock_production_report_jr_doctor,Stock Production Report,model_stock_production_report,hms.group_hms_jr_doctor,1,1,1,0
+,,,,,,,
+access_report_indimedi_barcode_sale_report_product_barcode_manager,Report Indimedi Barcode Sale Report Product Barcode,model_report_indimedi_barcode_sale_report_product_barcode,hms.group_hms_manager,1,1,1,0
+access_stock_picking_barcode_line_manager,Stock Picking Barcode Line,model_stock_picking_barcode_line,hms.group_hms_manager,1,1,1,0
+access_stock_picking_barcode_manager,Stock Picking Barcode,model_stock_picking_barcode,hms.group_hms_manager,1,1,1,0
+access_stock_production_report_manager,Stock Production Report,model_stock_production_report,hms.group_hms_manager,1,1,1,0

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Appointment schedual Form -->
+    <record id="appointment_schedual_form" model="ir.ui.view">
+        <field name="name">appointment.schedual.form</field>
+        <field name="model">appointment.schedual</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Schedual">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                    </group>
+                    <field name="schedual_lines" />
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Appointment schedual tree -->
+    <record id="view_appointment_schedual_tree" model="ir.ui.view">
+        <field name="name">appointment.schedual.tree</field>
+        <field name="model">appointment.schedual</field>
+        <field name="arch" type="xml">
+            <tree string="Appointment Schedual">
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+    <!-- Appointment schedual Action -->
+    <record id="action_appointment_schedual_form" model="ir.actions.act_window">
+        <field name="name">Appointment Schedual</field>
+        <field name="res_model">appointment.schedual</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Appointment schedual Lines tree -->
+    <record id="view_appointment_schedual_lines_tree" model="ir.ui.view">
+        <field name="name">appointment.schedual.lines.tree</field>
+        <field name="model">appointment.schedual.lines</field>
+        <field name="arch" type="xml">
+            <tree string="Appointment Schedual Lines">
+                <field name="name" />
+                <field name="dayofweek" />
+                <field name="hour_from" widget="float_time" />
+                <field name="hour_to" widget="float_time" />
+            </tree>
+        </field>
+    </record>
+    <!-- Appointment schedual Lines Form -->
+    <record id="view_appointment_schedual_lines_form" model="ir.ui.view">
+        <field name="name">appointment.schedual.lines.form</field>
+        <field name="model">appointment.schedual.lines</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Schedual Lines">
+                <group>
+                    <field name="name" />
+                    <field name="dayofweek" />
+                    <label for="hour_from" string="Hours" />
+                    <div>
+                        <field name="hour_from" widget="float_time" class="oe_inline" />
+                        -
+                        <field name="hour_to" widget="float_time" class="oe_inline" />
+                    </div>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Appointment schedual Slot Form -->
+    <record id="view_appointment_schedual_slot_form" model="ir.ui.view">
+        <field name="name">appointment.schedual.slot.form</field>
+        <field name="model">appointment.schedual.slot</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Schedual Slot">
+                <sheet>
+                    <group>
+                        <field name="slot_date" />
+                    </group>
+                    <group string="Slot Lines">
+                        <field name="slot_ids" nolabel="1">
+                            <tree string="Appointment Schedual Slot" editable="bottom">
+                                <field name="name" />
+                                <field name="from_slot" />
+                                <field name="to_slot" />
+                                <field name="limit" />
+                                <field name="rem_limit" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Appointment schedual Lines tree -->
+    <record id="view_appointment_schedual_slot_tree" model="ir.ui.view">
+        <field name="name">appointment.schedual.slot.tree</field>
+        <field name="model">appointment.schedual.slot</field>
+        <field name="arch" type="xml">
+            <tree string="Appointment Schedual Slot">
+                <field name="slot_date" />
+                <field name="slot_ids" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Appointment schedual Slot Action -->
+    <record id="action_appointment_schedual_slot_form" model="ir.actions.act_window">
+        <field name="name">Appointment Schedual Slot</field>
+        <field name="res_model">appointment.schedual.slot</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Appointment schedual Slot Lines Form -->
+    <record id="view_appointment_schedual_slot_lines_form" model="ir.ui.view">
+        <field name="name">appointment.schedual.slot.form</field>
+        <field name="model">appointment.schedual.slot.lines</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Schedual Slot Lines">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="from_slot" />
+                        <field name="to_slot" />
+                        <field name="limit" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Appointment Schedual Slot Lines tree -->
+    <record id="view_appointment_schedual_slot_lines_tree" model="ir.ui.view">
+        <field name="name">appointment.schedual.slot.lines.tree</field>
+        <field name="model">appointment.schedual.slot.lines</field>
+        <field name="arch" type="xml">
+            <tree string="Appointment Schedual Slot Lines">
+                <field name="from_slot" />
+                <field name="to_slot" />
+                <field name="limit" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_indimedi_online_appointment_form" model="ir.ui.view">
+        <field name="name">hms.appointment.form</field>
+        <field name="model">hms.appointment</field>
+        <field name="inherit_id" ref="shah_opd.view_hms_appointment_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="booked_online" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Appointment schedual Slot Lines Action <record id="action_appointment_schedual_slot_lines_form" 
+        model="ir.actions.act_window"> <field name="name">Appointment Schedual Slot 
+        Lines</field> <field name="res_model">appointment.schedual.slot.lines</field> 
+        <field name="view_type">form</field> <field name="view_mode">tree,form</field> 
+        </record> -->
+    <!-- Appointment Booking Under HMS conf -->
+    <menuitem name="Appointment Booking" id="portal_appointment_conf_menu"
+        parent="hms.menu_hms_cofig" sequence="27" />
+    <menuitem id="menu_appointment_schedual" name="Appointment Schedual"
+        sequence="10" parent="portal_appointment_conf_menu" action="action_appointment_schedual_form" />
+    <menuitem id="menu_appointment_schedual_slot" name="Appointment Slot"
+        sequence="20" parent="portal_appointment_conf_menu" action="action_appointment_schedual_slot_form" />
+</odoo>

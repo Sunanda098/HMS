@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_ot_booking_user,Ot Booking,hms_operation_theatre.model_ot_booking,hms.group_hms_user,1,0,0,0
+access_hms_indi_company_user,Indi Company,model_implant_company,hms.group_hms_user,1,0,0,0
+access_hms_implant_user,HMS implant,model_hms_implant,hms.group_hms_user,1,0,0,0
+access_hms_ot_booking_receptionist,Ot Booking,hms_operation_theatre.model_ot_booking,hms.group_hms_receptionist,1,1,1,0
+access_hms_indi_company_receptionist,Indi Company,model_implant_company,hms.group_hms_receptionist,1,0,0,0
+access_hms_implant_receptionist,HMS implant,model_hms_implant,hms.group_hms_receptionist,1,0,0,0
+access_hms_ot_booking_jr_doctor,Ot Booking,hms_operation_theatre.model_ot_booking,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indi_company_jr_doctor,Indi Company,model_implant_company,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_implant_jr_dr,HMS implant,model_hms_implant,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ot_booking_manager,Ot Booking,hms_operation_theatre.model_ot_booking,hms.group_hms_manager,1,1,1,1
+access_hms_indi_company_manager,Indi Company,model_implant_company,hms.group_hms_manager,1,1,1,0
+access_hms_implant_manager,HMS implant,model_hms_implant,hms.group_hms_manager,1,1,1,0

@@ -1,0 +1,6 @@
+#Translations
+*.pyc
+*.pyc~
+*.xml~
+*.py~
+*.csv#

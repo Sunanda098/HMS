@@ -1,0 +1,21 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_hms_patient_barcode_report_patient_barcode_user,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_user,1,0,0,0
+access_patient_barcode_wizard_user,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_report_hms_patient_barcode_report_patient_barcode_receptionist,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_receptionist,1,0,0,0
+access_patient_barcode_wizard_receptionist,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_report_hms_patient_barcode_report_patient_barcode_doctor,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_doctor,1,1,1,1
+access_patient_barcode_wizard_doctor,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_report_hms_patient_barcode_report_patient_barcode_nurse,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_nurse,1,0,0,0
+access_patient_barcode_wizard_nurse,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_report_hms_patient_barcode_report_patient_barcode_pharmacist,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_pharmacist,1,1,1,0
+access_patient_barcode_wizard_pharmacist,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_report_hms_patient_barcode_report_patient_barcode_jr_doctor,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_jr_doctor,1,1,1,1
+access_patient_barcode_wizard_jr_doctor,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_report_hms_patient_barcode_report_patient_barcode_manager,Report Indimedi Hms Patient Barcode Report Patient Barcode,model_report_hms_patient_barcode_report_patient_barcode,hms.group_hms_manager,1,1,1,0
+access_patient_barcode_wizard_manager,Patient Barcode Wizard,model_patient_barcode_wizard,hms.group_hms_manager,1,1,1,0

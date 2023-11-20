@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="revenue_sharing_form_view" model="ir.ui.view">
+            <field name="name">Revenue Sharing</field>
+            <field name="model">revenue.sharing</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                                <field name="product_id" required="1"/>
+                                <field name="type" required="1"/>
+                                <field name="base_price" required="1"/>
+                            </group>
+                        <group>
+                            <group string="Inhouse">
+                                <field name="hospital_share_std"/>
+                                <field name="hospital_share_std_disc"/>
+                                <field name="ksga_price_std"/>
+                                <field name="ksga_price_std_disc"/>
+                                <field name="attend_std_price"/>
+                                <field name="attend_std_disc"/>
+                                <field name="treat_std_price"/>
+                                <field name="treat_std_disc" />
+                            </group>
+                            <group string="Visiting">
+                                <field name="hospital_share_out"/>
+                                <field name="hospital_share_out_disc"/>
+                                <field name="ksga_price_out"/>
+                                <field name="ksga_price_out_disc"/>
+                                <field name="attend_outside_price"/>
+                                <field name="attend_outside_disc" />
+                                <field name="treat_outside_price"/>
+                                <field name="treat_outside_disc"/>
+                            </group>
+<!--                            <group string="Special">-->
+<!--                                <field name="hospital_share_special"/>-->
+<!--                                <field name="ksga_share_special"/>-->
+<!--                            </group>-->
+<!--                            <group string="Doctor">-->
+<!--                                <field name="hospital_share_doc"/>-->
+<!--                                <field name="ksga_price_doc"/>-->
+<!--                                <field name="attend_doctor_price"/>-->
+<!--                                <field name="attend_doctor_disc"/>-->
+<!--                                <field name="treat_doctor_price"/>-->
+<!--                                <field name="treat_doctor_disc"/>-->
+<!--                            </group>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="revenue_sharing_tree_view" model="ir.ui.view">
+            <field name="name">Revenue Sharing Tree</field>
+            <field name="model">revenue.sharing</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_id"/>
+                    <field name="base_price"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_revenue_sharing">
+            <field name="name">Revenue Sharing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">revenue.sharing</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_revenue_sharing" parent="hms.menu_hms" name="Revenue Sharing"
+            sequence="5" />
+        <menuitem id="action_menu_revenue_sharing" action="action_revenue_sharing"
+            parent="menu_revenue_sharing" groups="hms.group_hms_medical_officer"/>
+        
+    </data>
+</openerp>

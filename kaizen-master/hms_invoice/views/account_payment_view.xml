@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="hms_account_payment_invoice_form_customer" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_invoice_form" />
+            <field name="arch" type="xml">
+                <field name="payment_method_code" position="after">
+                    <field name="code" invisible="1"/>
+                    <field name="received_amount"/>
+                    <label for="tds_amount"/>
+                    <div name="amount_div" class="o_row">
+                        <field name="tds_amount"/>
+                        <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                    </div>
+                </field>
+                <field name="communication" position="after">
+                    <field name="bank_name" attrs="{'invisible': [('code', '!=', 'cheq')],'required':
+                        [('code', '=', 'cheq')]}" placeholder="Bank Name"/>
+                    <field name="cheque_no" attrs="{'invisible': [('code', '!=', 'cheq')],'required':
+                        [('code', '=', 'cheq')]}" placeholder="Cheque No"/>
+                    <field name="cheque_date" attrs="{'invisible': [('code', '!=', 'cheq')],'required':
+                        [('code', '=', 'cheq')]}"/>
+                    <field name="card_no" attrs="{'invisible': [('code', '!=', 'credt')]}" placeholder="Credit
+                        Card No"/>
+                    <field name="card_name" attrs="{'invisible': [('code', '!=', 'credt')]}" placeholder="Credit
+                        Card Name"/>
+                    <label for="months" attrs="{'invisible': [('code', '!=', 'credt')]}"/>
+                    <div name="amount_div" class="o_row" attrs="{'invisible': [('code', '!=', 'credt')]}">
+                        <field name="months" attrs="{'invisible': [('code', '!=', 'credt')]}"/>
+                        <field name="years" nolabel="1" attrs="{'invisible': [('code', '!=', 'credt')]}"/>
+                    </div>
+                    <field name="card_ccv" style="width:20%;" attrs="{'invisible': [('code', '!=', 'credt')]}"
+                        placeholder="CVV"/>
+                    <field name="pan_no" attrs="{'invisible': [('code', '!=', 'credt')]}" placeholder="PAN
+                        No"/>
+                </field>
+                <field name="communication" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field>
+        </record>
+        <record id="hms_account_account_payment_form_customer_shah" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form" />
+            <field name="arch" type="xml">
+                <field name='partner_id' position="after">
+                    <field name='patient_id' operator="child_of" />
+                </field>
+                <field name="communication" position="after">
+                    <field name="product_id" />                        
+                    <field name="code" invisible="1"/>
+                    <field name="bank_name" attrs="{'invisible': [('code', '!=', 'cheq')],'required':
+                        [('code', '=', 'cheq')]}" placeholder="Bank Name"/>
+                    <field name="cheque_no" attrs="{'invisible': [('code', '!=', 'cheq')],'required':
+                        [('code', '=', 'cheq')]}" placeholder="Cheque No"/>
+                    <field name="cheque_date" attrs="{'invisible': [('code', '!=', 'cheq')],'required':
+                        [('code', '=', 'cheq')]}"/>
+                    <field name="card_no" attrs="{'invisible': [('code', '!=', 'credt')]}" placeholder="Credit
+                        Card No"/>
+                    <field name="card_name" attrs="{'invisible': [('code', '!=', 'credt')]}" placeholder="Credit
+                        Card Name"/>
+                    <label for="months" attrs="{'invisible': [('code', '!=', 'credt')]}"/>
+                    <div name="amount_div" class="o_row" attrs="{'invisible': [('code', '!=', 'credt')]}">
+                        <field name="months" attrs="{'invisible': [('code', '!=', 'credt')]}"/>
+                        <field name="years" nolabel="1" attrs="{'invisible': [('code', '!=', 'credt')]}"/>
+                    </div>
+                    <field name="card_ccv" style="width:20%;" attrs="{'invisible': [('code', '!=', 'credt')]}"
+                        placeholder="CVV"/>
+                    <field name="pan_no" attrs="{'invisible': [('code', '!=', 'credt')]}" placeholder="PAN
+                        No"/>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

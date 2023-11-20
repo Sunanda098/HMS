@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <template id="confirmation_letter_report_temp">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row pull-right text-right">
+                            <p style="font-size:20px;">KH/HRD/CL/<span t-field="o.employee_code"/></p>
+                            <p style="font-size:20px;">Date:<span t-esc="datetime.datetime.now().strftime('%m/%d/%Y')"/></p><br/>
+                        </div><br/><br/><br/><br/>
+                        <div>
+                             <p style="font-size:20px;text-align:center;"><b>Confirmation Letter</b></p>
+                        </div>
+                        <div class="row">
+                            <p style="font-size:20px;">To:</p>
+                            <p style="font-size:20px;"><span t-field="o.full_name"/></p>
+                            <p style="font-size:20px;"><span t-field="o.job_id"/></p><br/>
+                            <p style="font-size:20px;">Dear:<span t-field="o.full_name"/></p><br/>
+                            <p style="font-size:20px;">Consequent to the review of your performance during <span t-field="o.date_joining"/> to <span t-esc="datetime.datetime.now().strftime('%m/%d/%Y')"/> your probation period, we have the pleasure in informing you that, your services are being confirmed as <span t-field="o.job_id"/> with effect from <span t-esc="datetime.datetime.now().strftime('%m/%d/%Y')"/></p><br/>
+                            <p style="font-size:20px;">All the other terms and conditions as detailed in your appointment letter remain unchanged.</p><br/>
+                            <p style="font-size:20px;">We look forward to your valuable contributions and wish you all the very best for a rewarding career with the organization.</p><br/>
+                            <p style="font-size:20px;">Please sign the duplicate copy of this letter as a token of acceptance of the same.</p><br/>
+                            <p style="font-size:20px;">For, Kaizen Hospital</p>
+                            <p style="font-size:20px;">Dr Nehal Gadhavi</p>
+                            <p style="font-size:20px;">Hospital Administrator</p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report 
+            id="report_confirmation_letter" 
+            string="Confirmation Letter" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.confirmation_letter_report" 
+            name="indimedi_kra.confirmation_letter_report_temp"
+        />
+
+    </data>
+</openerp>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+,,,,,,,
+access_irda_category_patient,Patient,model_irda_category,hms.group_hms_user,1,1,0,0
+access_irda_category_receptionist,Receptionist,model_irda_category,hms.group_hms_receptionist,1,1,1,0
+access_irda_category_doctor,Doctor,model_irda_category,hms.group_hms_doctor,1,1,1,1
+access_irda_category_nurse,nurse,model_irda_category,hms.group_hms_nurse,1,0,0,0
+access_irda_category_pharmacist,Pharcimst,model_irda_category,hms.group_hms_pharmacist,1,0,0,0
+access_irda_category_jr_doctor,jr doctror,model_irda_category,hms.group_hms_jr_doctor,1,1,1,1
+access_irda_category_manager,manager,model_irda_category,hms.group_hms_manager,1,1,1,0

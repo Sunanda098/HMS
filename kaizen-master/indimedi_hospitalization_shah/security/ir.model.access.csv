@@ -1,0 +1,298 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_indimedi_ipd_opnote_comments_user,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_ipd_opnote_otnote_user,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_ipd_opnote_drainage_user,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_ipd_opnote_closure_user,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_ipd_opnote_histopathology_user,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_user,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_diagonsis_user,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_user,1,0,0,0
+access_hms_medical_history_user,Medical History,model_medical_history,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_asa_user,Indimedi Asa,model_indimedi_asa,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_pre_medication_user,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_user,1,0,0,0
+access_hms_pre_operative_procedure_user,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_user,1,0,0,0
+access_hms_position_patient_user,Position Patient,model_position_patient,hms.group_hms_user,1,0,0,0
+access_hms_anaesthesia_technique_user,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_user,1,0,0,0
+access_hms_anaesthesia_agent_user,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_user,1,0,0,0
+access_hms_anaesthesia_muscle_user,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_user,1,0,0,0
+access_hms_laryngoscopy_refex_user,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_user,1,0,0,0
+access_hms_et_lml_dlt_user,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_user,1,0,0,0
+access_hms_inhalation_agent_user,Inhalation Agent,model_inhalation_agent,hms.group_hms_user,1,0,0,0
+access_hms_apn_circuit_user,Apn Circuit,model_apn_circuit,hms.group_hms_user,1,0,0,0
+access_hms_apn_ventilation_user,Apn Ventilation,model_apn_ventilation,hms.group_hms_user,1,0,0,0
+access_hms_apn_spinal_user,Apn Spinal,model_apn_spinal,hms.group_hms_user,1,0,0,0
+access_hms_apn_epidural_user,Apn Epidural,model_apn_epidural,hms.group_hms_user,1,0,0,0
+access_hms_apn_block_user,Apn Block,model_apn_block,hms.group_hms_user,1,0,0,0
+access_hms_intra_op_complications_user,Intra Op Complications,model_intra_op_complications,hms.group_hms_user,1,0,0,0
+access_hms_ansnote_pre_op_course_user,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_user,1,0,0,0
+access_hms_ansnote_post_op_course_user,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_user,1,0,0,0
+access_hms_ansnote_risk_factor_user,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_user,1,0,0,0
+access_hms_ansnote_maintenance_user,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_pre_anesthetic_medication_user,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_user,1,0,0,0
+access_hms_careplan_investigation_user,Investigation user,model_careplan_investigation,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_receptionist,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_ipd_opnote_otnote_receptionist,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_ipd_opnote_drainage_receptionist,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_ipd_opnote_closure_receptionist,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_ipd_opnote_histopathology_receptionist,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_receptionist,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_diagonsis_receptionist,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_receptionist,1,0,0,0
+access_hms_medical_history_receptionist,Medical History,model_medical_history,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_asa_receptionist,Indimedi Asa,model_indimedi_asa,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_pre_medication_receptionist,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_receptionist,1,0,0,0
+access_hms_pre_operative_procedure_receptionist,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_receptionist,1,0,0,0
+access_hms_position_patient_receptionist,Position Patient,model_position_patient,hms.group_hms_receptionist,1,0,0,0
+access_hms_anaesthesia_technique_receptionist,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_receptionist,1,0,0,0
+access_hms_anaesthesia_agent_receptionist,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_receptionist,1,0,0,0
+access_hms_anaesthesia_muscle_receptionist,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_receptionist,1,0,0,0
+access_hms_laryngoscopy_refex_receptionist,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_receptionist,1,0,0,0
+access_hms_et_lml_dlt_receptionist,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_receptionist,1,0,0,0
+access_hms_inhalation_agent_receptionist,Inhalation Agent,model_inhalation_agent,hms.group_hms_receptionist,1,0,0,0
+access_hms_apn_circuit_receptionist,Apn Circuit,model_apn_circuit,hms.group_hms_receptionist,1,0,0,0
+access_hms_apn_ventilation_receptionist,Apn Ventilation,model_apn_ventilation,hms.group_hms_receptionist,1,0,0,0
+access_hms_apn_spinal_receptionist,Apn Spinal,model_apn_spinal,hms.group_hms_receptionist,1,0,0,0
+access_hms_apn_epidural_receptionist,Apn Epidural,model_apn_epidural,hms.group_hms_receptionist,1,0,0,0
+access_hms_apn_block_receptionist,Apn Block,model_apn_block,hms.group_hms_receptionist,1,0,0,0
+access_hms_intra_op_complications_receptionist,Intra Op Complications,model_intra_op_complications,hms.group_hms_receptionist,1,0,0,0
+access_hms_ansnote_pre_op_course_receptionist,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_receptionist,1,0,0,0
+access_hms_ansnote_post_op_course_receptionist,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_receptionist,1,0,0,0
+access_hms_ansnote_risk_factor_receptionist,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_receptionist,1,0,0,0
+access_hms_ansnote_maintenance_receptionist,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_pre_anesthetic_medication_receptionist,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_receptionist,1,0,0,0
+access_hms_careplan_investigation_receptionist,Indimedi Investigation,model_careplan_investigation,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_doctor,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_otnote_doctor,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_drainage_doctor,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_closure_doctor,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_histopathology_doctor,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_doctor,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_diagonsis_doctor,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_doctor,1,1,1,1
+access_hms_medical_history_doctor,Medical History,model_medical_history,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_asa_doctor,Indimedi Asa,model_indimedi_asa,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_pre_medication_doctor,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_doctor,1,1,1,1
+access_hms_pre_operative_procedure_doctor,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_doctor,1,1,1,1
+access_hms_position_patient_doctor,Position Patient,model_position_patient,hms.group_hms_doctor,1,1,1,1
+access_hms_anaesthesia_technique_doctor,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_doctor,1,1,1,1
+access_hms_anaesthesia_agent_doctor,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_doctor,1,1,1,1
+access_hms_anaesthesia_muscle_doctor,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_doctor,1,1,1,1
+access_hms_laryngoscopy_refex_doctor,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_doctor,1,1,1,1
+access_hms_et_lml_dlt_doctor,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_doctor,1,1,1,1
+access_hms_inhalation_agent_doctor,Inhalation Agent,model_inhalation_agent,hms.group_hms_doctor,1,1,1,1
+access_hms_apn_circuit_doctor,Apn Circuit,model_apn_circuit,hms.group_hms_doctor,1,1,1,1
+access_hms_apn_ventilation_doctor,Apn Ventilation,model_apn_ventilation,hms.group_hms_doctor,1,1,1,1
+access_hms_apn_spinal_doctor,Apn Spinal,model_apn_spinal,hms.group_hms_doctor,1,1,1,1
+access_hms_apn_epidural_doctor,Apn Epidural,model_apn_epidural,hms.group_hms_doctor,1,1,1,1
+access_hms_apn_block_doctor,Apn Block,model_apn_block,hms.group_hms_doctor,1,1,1,1
+access_hms_intra_op_complications_doctor,Intra Op Complications,model_intra_op_complications,hms.group_hms_doctor,1,1,1,1
+access_hms_ansnote_pre_op_course_doctor,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_doctor,1,1,1,1
+access_hms_ansnote_post_op_course_doctor,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_doctor,1,1,1,1
+access_hms_ansnote_risk_factor_doctor,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_doctor,1,1,1,1
+access_hms_ansnote_maintenance_doctor,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_pre_anesthetic_medication_doctor,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_doctor,1,1,1,1
+access_hms_careplan_investigation_doctor,Careplan Investigation,model_careplan_investigation,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_nurse,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_ipd_opnote_otnote_nurse,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_ipd_opnote_drainage_nurse,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_ipd_opnote_closure_nurse,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_ipd_opnote_histopathology_nurse,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_nurse,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_diagonsis_nurse,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_nurse,1,0,0,0
+access_hms_medical_history_nurse,Medical History,model_medical_history,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_asa_nurse,Indimedi Asa,model_indimedi_asa,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_pre_medication_nurse,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_nurse,1,0,0,0
+access_hms_pre_operative_procedure_nurse,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_nurse,1,0,0,0
+access_hms_position_patient_nurse,Position Patient,model_position_patient,hms.group_hms_nurse,1,0,0,0
+access_hms_anaesthesia_technique_nurse,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_nurse,1,0,0,0
+access_hms_anaesthesia_agent_nurse,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_nurse,1,0,0,0
+access_hms_anaesthesia_muscle_nurse,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_nurse,1,0,0,0
+access_hms_laryngoscopy_refex_nurse,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_nurse,1,0,0,0
+access_hms_et_lml_dlt_nurse,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_nurse,1,0,0,0
+access_hms_inhalation_agent_nurse,Inhalation Agent,model_inhalation_agent,hms.group_hms_nurse,1,0,0,0
+access_hms_apn_circuit_nurse,Apn Circuit,model_apn_circuit,hms.group_hms_nurse,1,0,0,0
+access_hms_apn_ventilation_nurse,Apn Ventilation,model_apn_ventilation,hms.group_hms_nurse,1,0,0,0
+access_hms_apn_spinal_nurse,Apn Spinal,model_apn_spinal,hms.group_hms_nurse,1,0,0,0
+access_hms_apn_epidural_nurse,Apn Epidural,model_apn_epidural,hms.group_hms_nurse,1,0,0,0
+access_hms_apn_block_nurse,Apn Block,model_apn_block,hms.group_hms_nurse,1,0,0,0
+access_hms_intra_op_complications_nurse,Intra Op Complications,model_intra_op_complications,hms.group_hms_nurse,1,0,0,0
+access_hms_ansnote_pre_op_course_nurse,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_nurse,1,0,0,0
+access_hms_ansnote_post_op_course_nurse,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_nurse,1,0,0,0
+access_hms_ansnote_risk_factor_nurse,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_nurse,1,0,0,0
+access_hms_ansnote_maintenance_nurse,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_pre_anesthetic_medication_nurse,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_nurse,1,0,0,0
+access_hms_careplan_investigation_nurse,Indimedi Investigation,model_careplan_investigation,hms.group_hms_nurse,1,1,1,0
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_pharmacist,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_ipd_opnote_otnote_pharmacist,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_ipd_opnote_drainage_pharmacist,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_ipd_opnote_closure_pharmacist,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_ipd_opnote_histopathology_pharmacist,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_pharmacist,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_diagonsis_pharmacist,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_pharmacist,1,0,0,0
+access_hms_medical_history_pharmacist,Medical History,model_medical_history,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_asa_pharmacist,Indimedi Asa,model_indimedi_asa,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_pre_medication_pharmacist,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_pharmacist,1,0,0,0
+access_hms_pre_operative_procedure_pharmacist,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_pharmacist,1,0,0,0
+access_hms_position_patient_pharmacist,Position Patient,model_position_patient,hms.group_hms_pharmacist,1,0,0,0
+access_hms_anaesthesia_technique_pharmacist,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_pharmacist,1,0,0,0
+access_hms_anaesthesia_agent_pharmacist,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_pharmacist,1,0,0,0
+access_hms_anaesthesia_muscle_pharmacist,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_pharmacist,1,0,0,0
+access_hms_laryngoscopy_refex_pharmacist,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_pharmacist,1,0,0,0
+access_hms_et_lml_dlt_pharmacist,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_pharmacist,1,0,0,0
+access_hms_inhalation_agent_pharmacist,Inhalation Agent,model_inhalation_agent,hms.group_hms_pharmacist,1,0,0,0
+access_hms_apn_circuit_pharmacist,Apn Circuit,model_apn_circuit,hms.group_hms_pharmacist,1,0,0,0
+access_hms_apn_ventilation_pharmacist,Apn Ventilation,model_apn_ventilation,hms.group_hms_pharmacist,1,0,0,0
+access_hms_apn_spinal_pharmacist,Apn Spinal,model_apn_spinal,hms.group_hms_pharmacist,1,0,0,0
+access_hms_apn_epidural_pharmacist,Apn Epidural,model_apn_epidural,hms.group_hms_pharmacist,1,0,0,0
+access_hms_apn_block_pharmacist,Apn Block,model_apn_block,hms.group_hms_pharmacist,1,0,0,0
+access_hms_intra_op_complications_pharmacist,Intra Op Complications,model_intra_op_complications,hms.group_hms_pharmacist,1,0,0,0
+access_hms_ansnote_pre_op_course_pharmacist,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_pharmacist,1,0,0,0
+access_hms_ansnote_post_op_course_pharmacist,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_pharmacist,1,0,0,0
+access_hms_ansnote_risk_factor_pharmacist,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_pharmacist,1,0,0,0
+access_hms_ansnote_maintenance_pharmacist,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_pre_anesthetic_medication_pharmacist,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_pharmacist,1,0,0,0
+access_hms_careplan_investigation_pharmacist,Careplan Investigation,model_careplan_investigation,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_jr_doctor,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_otnote_jr_doctor,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_drainage_jr_doctor,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_closure_jr_doctor,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_ipd_opnote_histopathology_jr_doctor,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_jr_doctor,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_diagonsis_jr_doctor,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medical_history_jr_doctor,Medical History,model_medical_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_asa_jr_doctor,Indimedi Asa,model_indimedi_asa,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_pre_medication_jr_doctor,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_pre_operative_procedure_jr_doctor,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_position_patient_jr_doctor,Position Patient,model_position_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_anaesthesia_technique_jr_doctor,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_anaesthesia_agent_jr_doctor,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_anaesthesia_muscle_jr_doctor,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_laryngoscopy_refex_jr_doctor,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_et_lml_dlt_jr_doctor,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_inhalation_agent_jr_doctor,Inhalation Agent,model_inhalation_agent,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_apn_circuit_jr_doctor,Apn Circuit,model_apn_circuit,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_apn_ventilation_jr_doctor,Apn Ventilation,model_apn_ventilation,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_apn_spinal_jr_doctor,Apn Spinal,model_apn_spinal,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_apn_epidural_jr_doctor,Apn Epidural,model_apn_epidural,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_apn_block_jr_doctor,Apn Block,model_apn_block,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_intra_op_complications_jr_doctor,Intra Op Complications,model_intra_op_complications,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ansnote_pre_op_course_jr_doctor,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ansnote_post_op_course_jr_doctor,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ansnote_risk_factor_jr_doctor,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ansnote_maintenance_jr_doctor,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_pre_anesthetic_medication_jr_doctor,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_careplan_investigation_jr_doctor,Investigation careplan,model_careplan_investigation,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_manager,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_ipd_opnote_otnote_manager,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_ipd_opnote_drainage_manager,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_ipd_opnote_closure_manager,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_ipd_opnote_histopathology_manager,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_manager,1,1,1,0
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_manager,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_diagonsis_manager,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_manager,1,1,1,0
+access_hms_medical_history_manager,Medical History,model_medical_history,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_asa_manager,Indimedi Asa,model_indimedi_asa,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_pre_medication_manager,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_manager,1,1,1,0
+access_hms_pre_operative_procedure_manager,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_manager,1,1,1,0
+access_hms_position_patient_manager,Position Patient,model_position_patient,hms.group_hms_manager,1,1,1,0
+access_hms_anaesthesia_technique_manager,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_manager,1,1,1,0
+access_hms_anaesthesia_agent_manager,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_manager,1,1,1,0
+access_hms_anaesthesia_muscle_manager,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_manager,1,1,1,0
+access_hms_laryngoscopy_refex_manager,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_manager,1,1,1,0
+access_hms_et_lml_dlt_manager,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_manager,1,1,1,0
+access_hms_inhalation_agent_manager,Inhalation Agent,model_inhalation_agent,hms.group_hms_manager,1,1,1,0
+access_hms_apn_circuit_manager,Apn Circuit,model_apn_circuit,hms.group_hms_manager,1,1,1,0
+access_hms_apn_ventilation_manager,Apn Ventilation,model_apn_ventilation,hms.group_hms_manager,1,1,1,0
+access_hms_apn_spinal_manager,Apn Spinal,model_apn_spinal,hms.group_hms_manager,1,1,1,0
+access_hms_apn_epidural_manager,Apn Epidural,model_apn_epidural,hms.group_hms_manager,1,1,1,0
+access_hms_apn_block_manager,Apn Block,model_apn_block,hms.group_hms_manager,1,1,1,0
+access_hms_intra_op_complications_manager,Intra Op Complications,model_intra_op_complications,hms.group_hms_manager,1,1,1,0
+access_hms_ansnote_pre_op_course_manager,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_manager,1,1,1,0
+access_hms_ansnote_post_op_course_manager,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_manager,1,1,1,0
+access_hms_ansnote_risk_factor_manager,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_manager,1,1,1,0
+access_hms_ansnote_maintenance_manager,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_pre_anesthetic_medication_manager,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_manager,1,1,1,0
+access_hms_careplan_investigation_manager,Investigation careplan,model_careplan_investigation,hms.group_hms_manager,1,1,1,0
+,,,,,,,
+access_hms_indimedi_ipd_opnote_comments_medical_officer,Indimedi Ipd Opnote Comments,model_indimedi_ipd_opnote_comments,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_ipd_opnote_otnote_medical_officer,Indimedi Ipd Opnote Otnote,model_indimedi_ipd_opnote_otnote,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_ipd_opnote_drainage_medical_officer,Indimedi Ipd Opnote Drainage,model_indimedi_ipd_opnote_drainage,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_ipd_opnote_closure_medical_officer,Indimedi Ipd Opnote Closure,model_indimedi_ipd_opnote_closure,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_ipd_opnote_histopathology_medical_officer,Indimedi Ipd Opnote Histopathology,model_indimedi_ipd_opnote_histopathology,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+access_hms_indimedi_ipd_discharge_fellow_medical_officer,Indimedi Ipd Discharge Fellow,model_indimedi_ipd_discharge_fellow,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_diagonsis_medical_officer,Indimedi Diagonsis,model_indimedi_diagonsis,hms.group_hms_medical_officer,1,1,1,0
+access_hms_medical_history_medical_officer,Medical History,model_medical_history,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_asa_medical_officer,Indimedi Asa,model_indimedi_asa,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_pre_medication_medical_officer,Indimedi Pre Medication,model_indimedi_pre_medication,hms.group_hms_medical_officer,1,1,1,0
+access_hms_pre_operative_procedure_medical_officer,Pre Operative Procedure,model_pre_operative_procedure,hms.group_hms_medical_officer,1,1,1,0
+access_hms_position_patient_medical_officer,Position Patient,model_position_patient,hms.group_hms_medical_officer,1,1,1,0
+access_hms_anaesthesia_technique_medical_officer,Anaesthesia Technique,model_anaesthesia_technique,hms.group_hms_medical_officer,1,1,1,0
+access_hms_anaesthesia_agent_medical_officer,Anaesthesia Agent,model_anaesthesia_agent,hms.group_hms_medical_officer,1,1,1,0
+access_hms_anaesthesia_muscle_medical_officer,Anaesthesia Muscle,model_anaesthesia_muscle,hms.group_hms_medical_officer,1,1,1,0
+access_hms_laryngoscopy_refex_medical_officer,Laryngoscopy Refex,model_laryngoscopy_refex,hms.group_hms_medical_officer,1,1,1,0
+access_hms_et_lml_dlt_medical_officer,Et Ml Dlt,model_et_lml_dlt,hms.group_hms_medical_officer,1,1,1,0
+access_hms_inhalation_agent_medical_officer,Inhalation Agent,model_inhalation_agent,hms.group_hms_medical_officer,1,1,1,0
+access_hms_apn_circuit_medical_officer,Apn Circuit,model_apn_circuit,hms.group_hms_medical_officer,1,1,1,0
+access_hms_apn_ventilation_medical_officer,Apn Ventilation,model_apn_ventilation,hms.group_hms_medical_officer,1,1,1,0
+access_hms_apn_spinal_medical_officer,Apn Spinal,model_apn_spinal,hms.group_hms_medical_officer,1,1,1,0
+access_hms_apn_epidural_medical_officer,Apn Epidural,model_apn_epidural,hms.group_hms_medical_officer,1,1,1,0
+access_hms_apn_block_medical_officer,Apn Block,model_apn_block,hms.group_hms_medical_officer,1,1,1,0
+access_hms_intra_op_complications_medical_officer,Intra Op Complications,model_intra_op_complications,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ansnote_pre_op_course_medical_officer,Ansnote Pre Op Course,model_ansnote_pre_op_course,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ansnote_post_op_course_medical_officer,Ansnote Post Op Course,model_ansnote_post_op_course,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ansnote_risk_factor_medical_officer,Ansnote Risk Factor,model_ansnote_risk_factor,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ansnote_maintenance_medical_officer,Ansnote Maintenance,model_ansnote_maintenance,hms.group_hms_medical_officer,1,1,1,0
+access_hms_indimedi_pre_anesthetic_medication_medical_officer,Indimedi Pre Anesthetic Medication,model_indimedi_pre_anesthetic_medication,hms.group_hms_medical_officer,1,1,1,0
+access_hms_careplan_investigation_medical_officer,Careplan Investigation,model_careplan_investigation,hms.group_hms_medical_officer,1,1,1,0
+
+access_hms_extrasurgeries_manager,hms.extrasurgeries,model_hms_extrasurgeries,hms.group_hms_manager,1,1,1,1
+access_hms_extrasurgeries_medical_officer,hms.extrasurgeries,model_hms_extrasurgeries,hms.group_hms_medical_officer,1,1,1,1
+access_hms_extrasurgeries_receptionist,hms.extrasurgeries,model_hms_extrasurgeries,hms.group_hms_receptionist,1,1,0,0
+access_hms_extrasurgeries_doctor,hms.extrasurgeries,model_hms_extrasurgeries,hms.group_hms_doctor,1,1,1,1
+access_hms_extrasurgeries_jr_doctor,hms.extrasurgeries,model_hms_extrasurgeries,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_extrasurgeries_nurse,hms.extrasurgeries,model_hms_extrasurgeries,hms.group_hms_nurse,1,1,0,0
+
+access_hms_approach_manager,access_hms_approach,model_hms_approach,hms.group_hms_manager,1,1,1,1
+access_hms_approach_medical_officer,access_hms_approach,model_hms_approach,hms.group_hms_medical_officer,1,1,1,1
+access_hms_approach_receptionist,access_hms_approach,model_hms_approach,hms.group_hms_receptionist,1,1,1,0
+access_hms_approach_doctor,access_hms_approach,model_hms_approach,hms.group_hms_doctor,1,1,1,1
+access_hms_approach_jr_doctor,access_hms_approach,model_hms_approach,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_approach_nurse,access_hms_approach,model_hms_approach,hms.group_hms_nurse,1,1,1,0
+
+access_hms_incision_receptionist,hms.incision,model_hms_incision,hms.group_hms_receptionist,1,1,1,0
+access_hms_incision_manager,hms.incision,model_hms_incision,hms.group_hms_manager,1,1,1,1
+access_hms_incision_mo,hms.incision,model_hms_incision,hms.group_hms_medical_officer,1,1,1,1
+access_hms_incision_doctor,hms.incision,model_hms_incision,hms.group_hms_doctor,1,1,1,1
+access_hms_incision_jr_doctor,hms.incision,model_hms_incision,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_incision_nurse,hms.incision,model_hms_incision,hms.group_hms_nurse,1,1,1,0
+
+access_implant_size_receptionist,implant.size,model_implant_size,hms.group_hms_receptionist,1,1,1,0
+access_implant_size_manager,implant.size,model_implant_size,hms.group_hms_manager,1,1,1,1
+access_implant_size_mo,implant.size,model_implant_size,hms.group_hms_medical_officer,1,1,1,1
+access_implant_size_doctor,implant.size,model_implant_size,hms.group_hms_doctor,1,1,1,1
+access_implant_size_jr_doctor,implant.size,model_implant_size,hms.group_hms_jr_doctor,1,1,1,1
+access_implant_size_nurse,implant.size,model_implant_size,hms.group_hms_nurse,1,1,1,0
+
+access_operative_morbidity_receptionist,operative.morbidity,model_operative_morbidity,hms.group_hms_receptionist,1,1,1,0
+access_operative_morbidity_manager,operative.morbidity,model_operative_morbidity,hms.group_hms_manager,1,1,1,1
+access_operative_morbidity_mo,operative.morbidity,model_operative_morbidity,hms.group_hms_medical_officer,1,1,1,1
+access_operative_morbidity_doctor,operative.morbidity,model_operative_morbidity,hms.group_hms_doctor,1,1,1,1
+access_operative_morbidity_jr_doctor,operative.morbidity,model_operative_morbidity,hms.group_hms_jr_doctor,1,1,1,1
+access_operative_morbidity_nurse,operative.morbidity,model_operative_morbidity,hms.group_hms_nurse,1,1,1,0
+
+access_surgery_morbidity_receptionist,surgery.morbidity,model_surgery_morbidity,hms.group_hms_receptionist,1,1,1,0
+access_surgery_morbidity_manager,surgery.morbidity,model_surgery_morbidity,hms.group_hms_manager,1,1,1,1
+access_surgery_morbidity_mo,surgery.morbidity,model_surgery_morbidity,hms.group_hms_medical_officer,1,1,1,1
+access_surgery_morbidity_doctor,surgery.morbidity,model_surgery_morbidity,hms.group_hms_doctor,1,1,1,1
+access_surgery_morbidity_jr_doctor,surgery.morbidity,model_surgery_morbidity,hms.group_hms_jr_doctor,1,1,1,1
+access_surgery_morbidity_nurse,surgery.morbidity,model_surgery_morbidity,hms.group_hms_nurse,1,1,1,0

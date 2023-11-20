@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+   <data noupdate="1">
+
+        <!-- Alert-related subtypes for messaging / Chatter for Indoor Patient Medication Request -->
+
+        <record id="mt_alert_medical_procedure_draft" model="mail.message.subtype">
+            <field name="name">Medical Procedure</field>
+            <field name="res_model">medical.procedure</field>
+            <field name="description">Status: Draft</field>
+        </record>
+
+        <record id="mt_alert_medical_procedure_in" model="mail.message.subtype">
+            <field name="name">Medical Procedure</field>
+            <field name="res_model">medical.procedure</field>
+            <field name="description">Status: Draft -> In Progress</field>
+        </record>
+
+         <record id="mt_alert_medical_procedure_done" model="mail.message.subtype">
+            <field name="name">Medical Procedure</field>
+            <field name="res_model">medical.procedure</field>
+            <field name="description">Status: Inprogress -> Done </field>
+        </record>
+
+        <!-- Ir.sequence -->
+
+        <record id="seq_hms_medical_procedure" model="ir.sequence">
+            <field name="name">Medical Procedure</field>
+            <field name="code">medical.procedure</field>
+            <field name="prefix">OPP</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</openerp>

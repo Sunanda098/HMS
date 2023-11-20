@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <report id="report_opp_discharge"
+               string="Lithotripsy"
+               model="hms.lithotripsy" 
+               report_type="qweb-pdf"
+               file="hms_medical_procedure.oop_discharge_summary" 
+               name="hms_medical_procedure.oop_discharge_summary" 
+           />
+        <report id="report_opp_medical_procedure"
+               string="Medical Procedure"
+               model="medical.procedure" 
+               report_type="qweb-pdf"
+               file="hms_medical_procedure.oop_medical_procedure_qweb_report" 
+               name="hms_medical_procedure.oop_medical_procedure_qweb_report" 
+           />
+    </data>
+</openerp>

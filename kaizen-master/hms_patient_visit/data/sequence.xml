@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="seq_indi_patient_visit" model="ir.sequence">
+            <field name="name">Indimedi Patient Visit</field>
+            <field name="code">indi.patient.visit</field>
+            <field name="prefix">VISIT/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>
+
+    </data>
+</openerp>

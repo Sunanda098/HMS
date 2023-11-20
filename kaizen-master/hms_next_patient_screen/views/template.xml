@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend"
+            name="Website frontend assets">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href='/enercomp_website/static/src/css/main.css' />
+                <link rel="stylesheet" href='/enercomp_website/static/src/css/responsive.css' />
+                <link rel="stylesheet" href='/enercomp_website/static/src/css/animate.min.css' />
+                <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+            </xpath>
+        </template>
+        <template id="enercomp_layout" inherit_id="website.layout"
+            name="Enercomp layout" priority="17">
+            <xpath expr="//head//link" position="after">
+                <link rel="shortcut icon" href="/enercomp_website/static/src/css/favicon.ico"
+                    type="image/x-icon" />
+            </xpath>
+        </template>
+    </data>
+</openerp>

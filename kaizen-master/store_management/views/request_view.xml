@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+
+        <record id="view_stock_request_tree" model="ir.ui.view">
+            <field name="name">store.request.tree</field>
+            <field name="model">store.request</field>
+            <field name="arch" type="xml">
+                 <tree string="Request Form">
+                    <field name="sequence_number"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_stock_request_form" model="ir.ui.view">
+            <field name="name">store.request.form</field>
+            <field name="model">store.request</field>
+            <field name="arch" type="xml">
+                <form name="request" string="Request">
+                    <header>
+                        <button name="confirm" class="oe_highlight" states="draft" string="Confirm" type="object" groups="stock.group_stock_user"/>
+                        <button name="approve_request" class="oe_highlight" states="confirm" string="Approve" type="object" groups="stock.group_stock_manager"/>
+                        <button string="Cancel" type="object" name="cancel" states="confirm" class="oe_link" groups="stock.group_stock_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approved,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" invisible="1"/>
+                                <field name="sequence_number"/>
+                                <field name="employee_id" domain="[('user_id','!=',False)]" required="1" attrs="{'readonly':['|',('state','=','confirm'),('state','=','done')]}"/>
+                                <field name="location_id" groups="stock.group_locations"/>
+                                <field name="location_dest_id" groups="stock.group_locations"/>
+                            </group>
+                            <group>
+                                <field name="name" readonly="1" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Products">
+                                <field name="move_product_lines" attrs="{'readonly':[('state','=','done')]}">
+                                    <tree string="Purchase Order Lines" editable="bottom">
+                                        <field name="name" invisible="1"/>
+                                        <field name="product_id"/>
+                                        <field name="product_uom_qty"/>
+                                        <field name="qty_received"/>
+                                        <field name="product_uom"  invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Additional">
+                                <group>
+                                    <group>
+                                        <field name="picking_type_id" attrs="{'readonly':['|',('state','=','confirm'),('state','=','done')]}"/>
+                                        <field name="priority" attrs="{'readonly':['|',('state','=','confirm'),('state','=','done')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="move_type" attrs="{'readonly':['|',('state','=','confirm'),('state','=','done')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_request_form" model="ir.actions.act_window">
+            <field name="name">Request form</field>
+            <field name="res_model">store.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="seq_store_request" model="ir.sequence">
+            <field name="name">Store Request</field>
+            <field name="code">store.request</field>
+            <field name="prefix">Request</field>
+            <field name="padding">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <menuitem id="action_menu_request_parent" name="Request" groups="base.group_user"/>
+        <menuitem id="action_menu_request_child" name="Request" 
+            action="action_request_form" parent="action_menu_request_parent" groups="base.group_user"/>
+
+    </data>
+</openerp>

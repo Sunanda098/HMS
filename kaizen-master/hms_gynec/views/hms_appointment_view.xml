@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_hms_appointment_form_inherit_gynec_1">
+            <field name="name">hms.appointment.view.inherit</field>
+            <field name="model">hms.appointment</field>
+            <field name="inherit_id" ref="hms.view_hms_appointment_form" />
+            <field name="arch" type="xml">
+		<xpath expr="//field[@name='create_date']" position="after">
+		    <field name="entry" />
+		    <field name="sex" />
+		</xpath>
+		<xpath expr="//field[@name='physician_id']" position="after">
+		    <field name="lmp" />
+		</xpath>
+		<xpath expr="//notebook/page[@name='advice']" position="attributes">
+		    <attribute name="string">O/P Advice</attribute>
+		</xpath>
+                <xpath expr="//field[@name='differencial_diagnosis']" position="before">
+		    <div class="oe_right oe_button_box">
+                            <button name="print_medical_advice" 
+                                string="Print Medical Advice"
+                                type="object" class="oe_highlight"/>
+                        </div>
+		</xpath>
+                <xpath expr="//notebook/page[@name='advice']" position="after">
+		    <page string="Sonography" attrs="{'invisible':[('sex','!=', 'f')]}">
+                        <separator string="Sonography Pelvis Reports" colspan="4"/>
+                        <field name="sonography_pelvis_ids" nolabel="1" context="{'default_lmp':lmp}"/>
+                        <separator string="Follicular Study Reports" colspan="4"/>
+                        <field name="sonography_follical_ids" nolabel="1" context="{'default_lmp':lmp}"/>
+                        <separator string="Sonography Obstetric Reports" colspan="4"/>
+                        <field name="sonography_obstetric_ids" nolabel="1" context="{'default_lmp':lmp}"/>
+                    </page>
+		</xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

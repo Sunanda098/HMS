@@ -1,0 +1,430 @@
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend"
+        name="Website Portal Sale">
+        <xpath expr="." position="inside">
+            <link rel='stylesheet' href='/hms_portal/static/src/less/website_portal_sale.less' />
+	    <script type="text/javascript" src="/hms_portal/static/src/js/hms_portal.js"></script>
+        </xpath>
+    </template>
+
+    <template id="myaccount" name="Account">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mb64">
+                    <div class="col-md-7 o_my_documents">
+                        <div class="oe_structure" />
+                    </div>
+                    <div t-if="sales_rep" class="col-md-3">
+                        <t t-call="website_portal.contact" />
+                        <div class="oe_structure" />
+                    </div>
+                    <div class="col-md-4 col-md-offset-1 o_my_sidebar">
+                        <div class="o_my_details">
+                            <h3 class="page-header">
+                                Create Appointment
+                                <a href="/create/appointment" class="btn btn-default btn-xs">Create</a>
+                            </h3>
+
+                        </div>
+                        <div class="o_my_details">
+                            <h3 class="page-header">
+                                Your Details
+                                <a href="/my/change/load" class="btn btn-default btn-xs">Change</a>
+                            </h3>
+                            <div t-field="user.partner_id"
+                                t-field-options='{"widget": "contact", "fields": ["email", "mobile", "address", "name"]}' />
+                        </div>
+                    </div>
+                    <div class="col-md-12 oe_structure" />
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="hms_account" name="Account"
+        inherit_id="hms_portal.myaccount">
+        <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
+            <t t-call="hms_portal.app" />
+            <t t-call="hms_portal.invoices" />
+        </xpath>
+    </template>
+
+    <!-- <template id="patient" name="Patient"> <h3 class="page-header">Your 
+        Details</h3> <div> <span t-field="patient.name"/> </div> <a href="" class="o_my_show_more 
+        btn btn-xs btn-default"><span>Edit Details</span></a> </template> -->
+
+    <template id="app" name="Appointment">
+        <h3 class="page-header">Your Appointment</h3>
+        <t t-if="not apps">
+            <p>There are currently no Appointment available.</p>
+        </t>
+        <t t-if="apps">
+            <table class="table table-hover o_my_status_table">
+                <thead>
+                    <tr class="active">
+                        <th>Reg. No #</th>
+                        <th>Appointment Date</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Report</th>
+                    </tr>
+                </thead>
+                <t t-foreach="apps" t-as="app">
+                    <tr>
+                        <td>
+                            <t t-esc="app.name" />
+                        </td>
+                        <td>
+                            <span t-field="app.date" />
+                        </td>
+                        <td>
+                            <span t-field="app.product_id.name" />
+                        </td>
+                        <td>
+                            <span t-field="app.state" />
+                        </td>
+                        <td t-if="app.state in ['invoiced','done']">
+                            <a class="btn btn-primary" target="_blank" title="Prescription report"
+                                t-att-href="'/report/pdf/shah_opd.report_prescription_order/'+str(app.id)">Print</a>
+                        </td>
+                        <td t-if="app.state not in ['invoiced','done']">
+                            <span style="font-weight:bold;">----</span>
+                        </td>
+                    </tr>
+                </t>
+            </table>
+        </t>
+    </template>
+
+    <template id="invoices" name="Invoices and Payments">
+        <h3 class="page-header">Your Invoices</h3>
+        <t t-if="not invoices">
+            <p>There are currently no invoices for your account.</p>
+        </t>
+        <t t-if="invoices">
+            <table class="table table-hover o_my_status_table">
+                <thead>
+                    <tr class="active">
+                        <th>Invoice #</th>
+                        <th>Invoice Date</th>
+                        <th>Due Date</th>
+                        <th></th>
+                        <th></th>
+                        <th>Total</th>
+			<th>Report</th>
+                    </tr>
+                </thead>
+                <t t-foreach="invoices" t-as="invoice">
+                    <tr
+                        t-att-class="'hidden to_hide' if invoice.state!='open' and invoice_index &gt; 4 else ''">
+                        <td>
+                                <t t-esc="invoice.number" />
+                        </td>
+                        <td>
+                            <span t-field="invoice.date_invoice" />
+                        </td>
+                        <td>
+                            <span t-field="invoice.date_due" />
+                        </td>
+                        <td>
+                            <t t-if="invoice.state == 'open'">
+                                <span class="label label-info">
+                                    <i class="fa fa-fw fa-clock-o" />
+                                    Waiting for Payment
+                                </span>
+                            </t>
+                            <t t-if="invoice.state == 'paid'">
+                                <span class="label label-default">
+                                    <i class="fa fa-fw fa-check" />
+                                    Paid
+                                </span>
+                            </t>
+                            <t t-if="invoice.state == 'cancel'">
+                                <span class="label label-default">
+                                    <i class="fa fa-fw fa-remove" />
+                                    Cancelled
+                                </span>
+                            </t>
+                        </td>
+                        <td>
+                            <a t-if="invoice.state == 'open'"
+                                t-attf-href="/website_payment/pay?reference=#{invoice.number}&amp;amount=#{invoice.amount_total}&amp;currency_id=#{invoice.currency_id.id}&amp;country_id=#{invoice.partner_id.country_id.id}"
+                                alt="Pay Now" class="btn btn-xs btn-primary">
+                                <i class="fa fa-arrow-circle-right" />
+                                Pay Now
+                            </a>
+                        </td>
+                        <td>
+                            <span t-esc="invoice.amount_total"
+                                t-esc-options='{"widget": "monetary", "display_currency": "invoice.currency_id"}' />
+                        </td>
+			<td t-if="invoice.state == 'paid'">
+                            <a class="btn btn-primary" target="_blank" title="Invoice report"
+                                t-att-href="'/report/pdf/account.report_invoice/'+str(invoice.id)">Print</a>
+                        </td>
+			<td t-if="invoice.state in ['open','draft']">
+                            <span style="font-weight:bold;">----</span>
+                        </td>
+                    </tr>
+                </t>
+                <tr t-att-class="'hidden' if len(invoices) &lt; 5 else ''">
+                    <td colspan="5">
+                        <a href="" class="o_my_show_more btn btn-xs btn-default">
+                            <span>Show more</span>
+                            <span class="hidden">Show less</span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </t>
+    </template>
+
+    <template id="appointment_details">
+        <t t-call="website.layout">
+            <script type="text/javascript">
+                $(function() {
+                    $('#datetimepicker1').datetimepicker({
+                    });
+                });
+		
+            </script>
+            <t t-set="additional_title">Appointment Details</t>
+            <div id="wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb mt8">
+                                <li>
+                                    <a href="/my/account">My Account</a>
+                                </li>
+                                <li>Appointment</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <h1>Appointment Details</h1>
+                    <form action="/save/appointment" method="post" role="form"
+                        class="tag_text js_website_submit_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <div class="row o_website_appointment_details">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div t-if="error_message" class="alert alert-danger">
+                                            <t t-foreach="error_message" t-as="err">
+                                                <t t-esc="err" />
+                                                <br />
+                                            </t>
+                                        </div>
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="contact_name">Your Name</label>
+                                        <input type="text" name="name" class="form-control" required="1"
+                                            t-att-value="name or partner.name" />
+                                    </div>
+
+                                    <div
+                                        t-attf-class="form-group #{error.get('mobile') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="mobile">Phone</label>
+                                        <input type="tel" name="mobile" required="1" class="form-control"
+                                            t-att-value="mobile or partner.mobile" />
+                                    </div>
+				    
+				    <div
+                                        t-attf-class="form-group #{error.get('department_id') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="department_id">Department</label>
+                                        <select name="department_id" class="form-control" >
+                                            <t t-foreach="department_id or []" t-as="dept">
+                                                <option t-att-value="dept.id">
+                                                    <t t-esc="dept.name" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                   
+				    <!-- Slot Date field-->
+				    <div
+                                        t-attf-class="slotchanged form-group #{error.get('slot_date') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="slot_date">Appointment Date</label>
+                                        <select name="slot_date" class="form-control slotchanged" >
+                                            <t t-foreach="slots or []" t-as="slot">
+                                                <option t-att-value="slot.id">
+                                                    <t t-esc="slot.slot_date" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+				    
+				    <div t-attf-class="form-group #{error.get('slot_line') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="slot_date">Available Slots</label>
+                                        <select name="slot_lines" class="form-control" >
+                                            <t t-foreach="slot_lines or []" t-as="line">
+                                                <option t-if="line.rem_limit &lt; 5" t-att-value="line.id" t-att-data-slot-id="line.slot_id.id">
+                                                    <t t-esc="line.name" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+				    
+
+                                    <div class="clearfix" />
+
+                                    <input type="hidden" name="redirect" t-att-value="redirect" />
+                                </div>
+				
+                                <div class="clearfix">
+                                    <button type="submit"
+                                        class="btn btn-default btn-primary pull-right mb32 ">
+                                        Confirm
+                                        <span class="fa fa-long-arrow-right" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="change_details">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Contact Details</t>
+            <div id="wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb mt8">
+                                <li>
+                                    <a href="/my/change">My Account</a>
+                                </li>
+                                <li>Details</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <h1>Contact Details</h1>
+                    <form action="/my/change" method="post" role="form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <div class="row o_website_portal_details">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div t-if="error_message" class="alert alert-danger">
+                                            <t t-foreach="error_message" t-as="err">
+                                                <t t-esc="err" />
+                                                <br />
+                                            </t>
+                                        </div>
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="contact_name">Your Name</label>
+                                        <input type="text" name="name" class="form-control"
+                                            t-att-value="name or partner.name" />
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('email') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="contact_name">Email</label>
+                                        <input type="email" name="email" class="form-control"
+                                            t-att-value="email or partner.email" />
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('mobile') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="mobile">Phone</label>
+                                        <input type="tel" name="mobile" class="form-control"
+                                            t-att-value="mobile or partner.mobile" />
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('sex') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="sex">Sex</label>
+                                        <select name="sex" class="form-control">
+                                            <option value="m" t-att-data-sex="male"
+                                                t-att-selected="sex == 'm'">Male</option>
+                                            <option value="f" t-att-data-sex="female"
+                                                t-att-selected="sex == 'f'">Female</option>
+                                            <option value="o" t-att-data-sex="other"
+                                                t-att-selected="sex == 'o'">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="clearfix" />
+                                    <div
+                                        t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="street">Address</label>
+                                        <input type="text" name="street" class="form-control"
+                                            t-att-value="street or partner.street" />
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('city') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="city">City</label>
+                                        <input type="text" name="city" class="form-control"
+                                            t-att-value="city or partner.city" />
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6">
+                                        <label class="control-label" for="zipcode">Zip / Postal Code
+                                        </label>
+                                        <input type="text" name="zipcode" class="form-control"
+                                            t-att-value="zipcode or partner.zip" />
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('state_id') or ''} col-lg-6">
+                                        <label class="control-label" for="state_id">State</label>
+                                        <select name="states" class="form-control">
+                                            <option value="">State...</option>
+                                            <t t-foreach="states or []" t-as="state">
+                                                <option t-att-value="state.id"
+                                                    t-att-selected="state.id == partner.state_id.id">
+                                                    <t t-esc="state.name" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div
+                                        t-attf-class="form-group #{error.get('country_id')  or ''} col-lg-6">
+                                        <label class="control-label" for="country_id">Country</label>
+                                        <select name="country_id" class="form-control">
+                                            <option value="">Country...</option>
+                                            <t t-foreach="countries or []" t-as="country">
+                                                <option t-att-value="country.id"
+                                                    t-att-selected="country.id == partner.country_id.id">
+                                                    <t t-esc="country.name" />
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="redirect" t-att-value="redirect" />
+                                </div>
+                                <div class="clearfix">
+                                    <button type="submit"
+                                        class="btn btn-default btn-primary pull-right mb32 ">
+                                        Confirm
+                                        <span class="fa fa-long-arrow-right" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="hms_portal.login" inherit_id="auth_signup.login"
+        name="Sign up">
+        <xpath expr="//a[@class='btn btn-link pull-right']" position="attributes">
+            <attribute name="class">btn btn-primary pull-right</attribute>
+        </xpath>
+    </template>
+
+    <template id="my_account_hms" name="Link to HMS portal"
+        inherit_id="website.layout">
+        <xpath expr="//li[@id='o_logout']" position="before">
+            <li>
+                <a href="/my/account" role="menuitem">Appointment</a>
+            </li>
+        </xpath>
+    </template>
+
+</odoo>

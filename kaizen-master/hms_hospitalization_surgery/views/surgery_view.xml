@@ -1,0 +1,1371 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!--$$$$$$$ Configuration menu for Pre-Operative Checklist $$$$$$$$-->
+        <record model="ir.ui.view" id="check_list_conf_view">
+            <field name="name">pre.operative.check.list.template.form</field>
+            <field name="model">pre.operative.check.list.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" nolabel="0" required="True" string="Check List Item" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_conf_tree_view">
+            <field name="name">pre.operative.check.list.template.tree</field>
+            <field name="model">pre.operative.check.list.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="Check List Item" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_conf_view">
+            <field name="name">Pre-Operative Checklist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pre.operative.check.list.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_conf_tree_view" />
+        </record>
+        
+        <record model="ir.ui.view" id="view_inpatient_registration_surgery_tree_view">
+            <field name="name">inpatient.registration.surgery.tree</field>
+            <field name="model">inpatient.registration.surgery</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="inpatient_id" string="IP No." />
+                    <field name="patient_id" string="Patient" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_inpatient_registration_surgery_form" model="ir.ui.view">
+            <field name="name">inpatient.registration.surgery.form</field>
+            <field name="model">inpatient.registration.surgery</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_confirm" string="Confirm"
+                            class="oe_highlight" type="object" states="draft"/>
+                        <button name="action_inprogress" string="Progress"
+                            class="oe_highlight" type="object" states="draft,confirm"/>
+                        <button name="action_done" string="Done"
+                            class="oe_highlight" type="object" states="progress"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,progress,done"/>
+                    </header>
+                    <sheet class="indimedi_form_full_width">
+                        <h1>
+                            <label string="Surgery #"/><br/>
+                            <field name="name" readonly="1" class="oe_inline"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="inpatient_id" string="IP No."/>
+                                <field name="patient_id"/>
+                                <field name="appointment_id" invisible="1"/>
+                                <field name="mobile"/>
+                                <field name="hospitalization_date"/>
+                                <field name="department_id"/>
+                                <field name="primary_physician"/>
+                                <field name="attending_physician_ids" widget="many2many_tags"/>
+                                <field name="relative_name"/>
+                                <field name="relative_with_patient"/>
+                                <field name="relative_m_no"/>
+                                <field name="mlc"/>
+                                <field name="company_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="ward_id" attrs="{'required': [('state','in',('confirm'))], 'readonly': [('state','in',('progress'))]}"/>
+                                <field name="bed_id" attrs="{'required': [('state','in',('confirm'))], 'readonly': [('state','in',('progress'))]}" domain="[('ward_id', '=', ward_id), ('state', '=', 'free')]"/>
+                                <field name="admission_type"/>
+                                <field name="admission_reason" invisible="1"/>
+                                <field name="discharge_date" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="ot_pre_check" string="Pre-Operative Checklist" groups="hms.group_hms_nurse,hms.group_hms_medical_officer,hms.group_hms_doctor">
+                                <group col="4">
+                                    <field name="surgery_names" widget="many2many_tags" options="{'no_create_edit':True}"/>
+                                    <field name="pre_op_datetime" />
+                                    <field name="surgeon_id" />
+                                    <field name="anesthetist_id" />
+                                </group>
+                                <group col="6">
+                                    <field name="high_risk" />
+                                    <field name="hiv_positive" />
+                                    <field name="hbsag_preop" />
+                                </group>
+                                <group col="2">
+                                    <field name="allergy_preop" />
+                                </group>
+                                <group col="4">
+                                    <field name="pulse_preop" />
+                                    <field name="temp_preop" />
+                                    <field name="rr_preop" />
+                                    <field name="bp_preop" />
+                                    <field name="spo2_preop" />
+                                    <field name="rbs_preop" />
+                                    <field name="hb_preop" />
+                                    <field name="blood_group_preop" style="width:37%" />
+                                </group>
+                                <label string="Investigation :" />
+                                <field name="investigation_preop_ids" nolabel="1">
+                                    <tree string="Investigation" editable="top">
+                                        <field name="name" />
+                                        <field name="preop_done" />
+                                        <field name="copy_no" />
+                                    </tree>
+                                </field>
+                                <label string="Information :" />
+                                <field name="information_preop_ids" nolabel="1">
+                                    <tree string="Information" editable="top">
+                                        <field name="name" />
+                                        <field name="info_done" />
+                                    </tree>
+                                </field>
+                                <group style="width:50%">
+                                    <field name="ward_nurse_id" />
+                                    <field name="preop_nurse_id" />
+                                    <field name="ot_nurse_id" />
+                                </group>
+                            </page>
+
+                            <!-- start RBK -->
+                            <page string="Intra-Operative">
+                                <notebook>
+                                    <page string="Safe Surgery Checklist" groups="hms.group_hms_medical_officer,hms.group_hms_doctor">
+                                       <notebook>
+                                    <page name="by_fellow" string="By Fellow">
+                                        <field name="fellow_ids" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                            <tree editable="top">
+                                                <field name="name" readonly="1"/>
+                                                <field name="is_done" />
+                                                <field name="remark" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page name="by_anesthetist" string="Anesthetist">
+                                        <field name="anesthetist_ids" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                            <tree editable="top">
+                                                <field name="name" readonly="1"/>
+                                                <field name="is_done" />
+                                                <field name="remark" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page name="by_operation" string="By Operation Surgeon">
+                                        <field name="operating_surgeon_ids" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                            <tree editable="top">
+                                                <field name="name" readonly="1"/>
+                                                <field name="is_done" />
+                                                <field name="remark" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page name="by_scrub_nurse" string="By Anesthetist">
+                                        <field name="scrub_nurse_ids" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                            <tree editable="top">
+                                                <field name="name" readonly="1"/>
+                                                <field name="is_done" />
+                                                <field name="remark" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page name="otincharge" string="By OT In Charge &amp; Anesthetist">
+                                        <field name="otincharge_ids" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                            <tree editable="top">
+                                                <field name="name" readonly="1"/>
+                                                <field name="is_done" />
+                                                <field name="remark" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page name="by_recovery" string="By Recovery Nurse">
+                                        <field name="recovery_nurse_ids" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse">
+                                            <tree editable="top">
+                                                <field name="name" readonly="1"/>
+                                                <field name="is_done" />
+                                                <field name="remark" />
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook> 
+                                    </page>
+                                    <page string="Operative Notes" name="op_notes" groups="hms.group_hms_medical_officer,hms.group_hms_doctor">
+                                        <group>
+                                            <group>
+                                                <field name="surgery_names" widget="many2many_tags"/>
+                                                <field name="surgery_notes"/>
+                                                <label for="start_date" string="Surgery Date" />
+                                                    <div>
+                                                        <field name="start_date" class="oe_inline" />
+                                                        <b> - </b>
+                                                        <field name="end_date" class="oe_inline" />
+                                                    </div>
+                                                <field name="duration" />
+                                                <field name="user_id" context="{'model': 'res.partner','default_is_anesthetist':'True'}" widget="many2many_tags"/>
+                                                <field name="anaesthesia_id" widget="many2many_tags"/>
+                                                
+                                                <field name="fellow" widget="many2many_tags"/>
+                                                <field name="side" invisible="1"/>
+                                                <field name="iitv" invisible="1"/>
+                                                <field name="approach" />
+                                                <field name="position" />
+                                                <field name="incision" />
+                                                <field name="findings"/>
+                                                <field name="co_morbidity" widget="many2many_tags" invisible="1"/>
+                                                <field name="allergy" invisible="1"/>
+                                                <field name="mortality" />
+                                            </group>
+                                            <group>
+                                                <field name="sur_department_id" />
+                                                <field name="hospital_ot" />
+                                                <field name="primary_physician_ids" widget="many2many_tags"
+                                                domain="[('is_primary_surgeon', '=', True)]" />
+                                                <field name="assisting_surgeons" widget="many2many_tags" />
+                                                <field name="scrub_nurse" context="{'model': 'res.partner','default_is_nurse':'True'}" />
+                                                <field name="reason_id" invisible="1"/>
+                                                <field name="implant_name" />
+                                                <field name="implant_company" />
+                                                <field name="implant_size" />
+                                                <field name="drainage" />
+                                                <field name="closure" />
+                                                <field name="histopathology" />
+                                                <field name="comments" />
+                                                <field name="complications" />
+                                                <field name="procedure" invisible="1"/>
+                                                <field name="morbidity_check" />
+                                                <field name="op_morbidity_ids" nolabel="1" colspan="4" attrs="{'invisible': [('morbidity_check', '=', False)]}">
+                                                <tree string="Line" editable="top">
+                                                    <field name="op_morbidity" />
+                                                    <field name="op_grade" />
+                                                    <field name="op_management" />
+                                                    <field name="op_outcome" />
+                                                </tree>
+                                            </field>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="procedure_temp_selection"/>
+                                            <field name="procedure_template" nolabel="1" colspan="2"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </page>
+
+                            <!-- Start Anaesthesia -->
+                            <page string="Anaesthesia" groups="hms.group_hms_medical_officer,hms.group_hms_nurse,hms.group_hms_doctor,hms.group_hms_manager">
+                                <notebook>
+                                    <page string="Anaesthesia Pre Operative Evaluation">
+                                        <group col="6">
+                                            <label string="HBsAg :" />
+                                            <field name="hbsag_ve_p" />
+                                            <field name="hbsag_ve_m" />
+                                        </group>
+                                        <group col="6">
+                                            <label string="HIV :" />
+                                            <field name="hiv_ve_p" />
+                                            <field name="hiv_ve_m" />
+                                        </group>       
+                                        <group col="4">
+                                            <field name="procedure_name" />
+                                            <field name="procedure_date" />
+                                        </group>
+                                        <div colspan="4">
+                                            <label string="Effort telerance NYHA Class :" /> 
+                                            <label for="nyha_1" />
+                                            <field name="nyha_1" />
+                                            <label for="nyha_2" />
+                                            <field name="nyha_2" />
+                                            <label for="nyha_3" />
+                                            <field name="nyha_3" />
+                                            <label for="nyha_4" />
+                                            <field name="nyha_4" />
+                                        </div>
+                                        <group col="2">
+                                            <group string="Past History of Hospitalization">
+                                                <field name="past_hist_hosp_ids" nolabel="1">
+                                                    <tree editable="top">
+                                                        <field name="cause" />
+                                                        <field name="past_hos_duration" />
+                                                    </tree>
+                                                </field>
+                                            </group>
+                                            <group string="Past History of Operation">
+                                                <field name="past_hist_op_ids" nolabel="1">
+                                                    <tree editable="top">
+                                                        <field name="past_op" />
+                                                        <field name="past_op_yr" />
+                                                    </tree>
+                                                </field>
+                                            </group>
+                                        </group>
+                                        <group string="General Examination" col="6">
+                                            <field name="general_look" />
+                                            <field name="tongue" />
+                                            <field name="nail" />
+                                            <field name="dentition" />
+                                            <field name="temperature" />
+                                            <field name="pupils" />
+                                            <field name="sclera" />
+                                            <field name="obesity" />
+                                            <field name="oedema_feed" />
+                                            <field name="spine" />
+                                        </group>
+                                        <group string="Personal History">
+                                            <field name="ane_personal_history_ids" colspan="4" nolabel="1">
+                                                <tree editable="top">
+                                                    <field name="ah_name" />
+                                                    <field name="duration" />
+                                                    <field name="frequency" />
+                                                </tree>
+                                            </field>
+                                        </group>
+                                        <group col="3" string="Systemic Examination">
+                                            <group>
+                                                <field name="se_cvs" />
+                                                <field name="se_pulse" />
+                                                <field name="se_bp" />
+                                                <field name="se_s1s2"/>
+                                                <field name="se_auscultation" />
+                                                <field name="se_cns" />
+                                                <field name="se_gcs"/>
+                                            </group>
+                                            <group>
+                                                <field name="se_gi"/>
+                                                <field name="se_liver"/>
+                                                <field name="se_spieen"/>
+                                                <field name="se_ascites"/>
+                                                <field name="se_mpc"/>
+                                            </group>
+                                            <group>
+                                                <field name="se_rs"/>
+                                                <field name="se_air_entry"/>
+                                                <field name="se_foreign_sounds"/>
+                                                <field name="se_ronchi"/>
+                                                <field name="se_crepts"/>
+                                                <field name="se_spo2"/>
+                                                <field name="se_bht"/>
+                                            </group>
+                                        </group>
+                                        <group string="Blood Group" col="3">
+                                            <group>
+                                                <field name="bg_hb"/>
+                                                <field name="bg_pc"/>
+                                                <field name="bg_tc"/>
+                                                <field name="bg_pt"/>
+                                                <field name="bg_aptt"/>
+                                                <field name="bg_s_billirubin"/>
+                                                <field name="bg_sgpt"/>
+                                                <field name="bg_sgot"/>
+                                            </group>
+                                            <group>
+                                                <field name="bg_alkaline"/>
+                                                <field name="bg_s_aluminum"/>
+                                                <field name="bg_amylase"/>
+                                                <field name="bg_lipase"/>
+                                                <field name="bg_s_creatinine"/>
+                                                <field name="bg_bl_urea"/>
+                                                 <field name="bg_bl_sugar"/>
+                                            </group>
+                                            <group>
+                                                <field name="bg_na_plus"/>
+                                                <field name="bg_k_plus"/>
+                                                <field name="bg_cl_minus"/>
+                                                <field name="bg_ecg"/>
+                                                <field name="bg_cx_ptf"/>
+                                                <field name="bg_blood_gas"/>
+                                                <field name="bg_ctscan"/>
+                                                <field name="bg_mri"/>
+                                            </group>
+                                            <group>
+                                                <label for="bg_sd_echo"/>
+                                                <field name="bg_sd_echo"  colspan="2" nolabel="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="bg_ph"/>
+                                                <field name="bg_pco2"/>
+                                                <field name="bg_po2"/>
+                                                <field name="bg_hco"/>
+                                            </group>
+                                            <group>
+                                                <field name="bg_be"/>
+                                                <field name="bg_spo2"/>
+                                                <field name="bg_tco2"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="other_investigations_ids">
+                                                <tree editable="top">
+                                                    <field name="name"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                        <group string='Operative risk-ASA grade' col="3">
+                                            <group>
+                                                <field name="risk_1"/>
+                                            </group>
+                                            <group>
+                                                <field name="risk_2"/>
+                                            </group>
+                                            <group>
+                                                <field name="risk_3"/>
+                                            </group>
+                                             <group>
+                                                <field name="risk_4"/>
+                                            </group>
+                                            <group>
+                                                <field name="risk_5"/>
+                                            </group>
+                                            <group>
+                                                <field name="risk_e"/>
+                                            </group>
+                                        </group>
+                                        <group string='Pre-operative Instructions'>
+                                            <label for="pre_operative_instructions_ids"/>
+                                            <field name="pre_operative_instructions_ids" colspan="2" nolabel="1">
+                                                <tree editable="top">
+                                                    <field name="name"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                    </page>
+                                    <page string="Anaesthesia Progress Note">
+                                        <notebook>
+                                            <page string="Major">
+                                                <group col="8">
+                                                    <field name="major_datetime" />
+                                                    <field name="inform_consent" />
+                                                    <field name="high_risk_consent" />
+                                                    <field name="major_blood_group" />
+                                                </group>
+                                                <br />
+                                                <group string="Immediate Pr-OP" />
+                                                <group col="8" style="width:100%">
+                                                    <field name="major_temp" style="width:15%"/>
+                                                    <field name="major_pulse" style="width:15%"/>
+                                                    <field name="major_spo2" style="width:15%"/>
+                                                    <field name="major_rr" style="width:15%"/>
+                                                    <field name="urine_output" style="width:15%"/>
+                                                    <field name="major_bp" style="width:15%"/>
+                                                    <label string="/" style="margin-left:-12%;font-weight: bold;"/>
+                                                    <field name="major_bp2" nolabel="1" style="width:15%;margin-left:-130%;"/>
+                                                </group>
+                                                <group col="8" style="width:50%">
+                                                    <field name="nbm_status" />
+                                                    <field name="asa_grade" />
+                                                </group>
+                                                <group col="8">
+                                                    <strong>Anaesthesia Type:</strong>
+                                                    <field name="general_type" />
+                                                    <field name="spinal_type" />
+                                                    <field name="regional_type" />
+                                                </group>
+                                                <br />
+                                                <group string="Premeditation"/>
+                                                <group col="8">
+                                                    <field name="glyco" />
+                                                    <field name="fentanyl" />
+                                                    <field name="rantac_pantodac" />
+                                                    <field name="midaz" />
+                                                    <field name="emset" />
+                                                    <field name="diclofenac" />
+                                                    <field name="xylocard" />
+                                                    <field name="paracetamol" />
+                                                </group>
+                                                <group col="5" style="width:60%">
+                                                    <label string="Dexmeditomidine Infusion Started" style="font-weight: bold;"/>
+                                                    <field name="dex_rate1" nolabel="1" />
+                                                    <label string="(0.5-1 μg/kg) for 20 minutes then" style="font-weight: bold;"/>
+                                                    <field name="dex_rate2" nolabel="1" />
+                                                    <label string="Rate 0.3-0.7 μg/kg/hr" style="font-weight: bold;"/>
+                                                </group>
+                                                <group>
+                                                    <field name="major_antibiotic" />
+                                                </group>
+                                                <br />
+                                                <group string="General Anaesthesia" />
+                                                <b>Preoxygenation with 100% O2 for 3 Minutes</b>
+                                                <group col="8" string="IV Induction">
+                                                    <field name="major_iv_propofol" />
+                                                    <field name="major_iv_pentothal" />
+                                                    <field name="major_iv_ketamine" />
+                                                    <field name="major_iv_etomidate" />
+                                                </group>
+                                                <br />
+                                                <group col="8" string="Muscle Relaxant">
+                                                    <field name="major_mr_succinyl" />
+                                                    <field name="major_mr_atarcurium" />
+                                                    <field name="major_mr_rocuronium" />
+                                                    <field name="major_mr_vecuronium" />
+                                                </group>
+                                                <group col="6">
+                                                    <field name="iv_line_ra" />
+                                                    <field name="iv_line_la" />
+                                                    <field name="ryle_tube" />
+                                                    <field name="folye" />
+                                                    <field name="g_major" />
+                                                    <field name="cvp" />
+                                                    <field name="warmer" />
+                                                    <field name="dvt_pump" />
+                                                    <field name="arterial_line" />
+                                                </group>
+                                                <br />
+                                                <group string="Intubation with" />
+                                                <group col="8">
+                                                    <field name="blade_no" />
+                                                    <field name="endo_tube" />
+                                                    <field name="endo_tube_val" nolabel="1" />
+                                                    <field name="easy_difficult" />
+                                                </group>
+                                                <group col="6">
+                                                    <field name="lma" />
+                                                    <field name="i_gel" />
+                                                    <field name="tracheostomy" />
+                                                </group>
+                                                <br />
+                                                <group string="Maintainance of GA With" />
+                                                <group col="6">
+                                                    <field name="o2_major" />
+                                                    <field name="n2o_air" />
+                                                    <field name="ippv" />
+                                                    <field name="vol_control" />
+                                                    <field name="pressure_control" />
+                                                    <field name="isoflurane" />
+                                                    <field name="sevoflurane" />
+                                                    <field name="rr_major" />
+                                                    <field name="peep" />
+                                                    <field name="atracurium_rocuronium" />
+                                                    <field name="tidal_vol" />
+                                                    <field name="fio2" />
+                                                </group>
+                                                <br />
+                                                <group string="Breathing Circuit">
+                                                    <field name="breath_circuit" style="width:30%" />
+                                                </group>
+                                                <group string="Reversal with" col="4" >
+                                                    <field name="glyco_major" />
+                                                    <field name="neostigmine" />
+                                                </group>
+                                                <group string="Extubation" col="6" >
+                                                    <field name="extubation" />
+                                                </group>
+                                                <group string="Intra Operative Vital Parameters">
+                                                    <field name="intra_op_vital_ids" nolabel="1">
+                                                        <tree editable="bottom">
+                                                            <field name="io_time" />
+                                                            <field name="io_pulse" />
+                                                            <field name="io_bp" />
+                                                            <field name="io_spo2" />
+                                                            <field name="io_etco2" />
+                                                            <field name="io_temp" />
+                                                            <field name="io_pap" />
+                                                            <field name="io_cvp" />
+                                                            <field name="io_urine" />
+                                                            <field name="io_blood_loss" />
+                                                            <field name="io_rl_dns_ns_d5" />
+                                                            <field name="io_colloids" />
+                                                            <field name="io_blood_prod" />
+                                                            <field name="io_intropes" />
+                                                            <field name="io_atracurium" />
+                                                            <field name="io_dexmeditonidine" />
+                                                            <field name="io_others" />
+                                                        </tree>
+                                                    </field>
+                                                </group>
+                                                <group string="Spinal / Epidural Anaesthesia" col="6">
+                                                    <field name="position_major" />
+                                                    <field name="level_major" />
+                                                    <field name="needle_major" />
+                                                </group>
+                                                <group string="Drug" col="4" style="width:50%">
+                                                    <field name="adjuvant" />
+                                                    <field name="effect_level" />
+                                                </group>
+                                                <group string="Epidural Needle" col="6">
+                                                    <field name="position_epidural" />
+                                                    <field name="level_epidural" />
+                                                    <field name="depth_catheter" />
+                                                </group>
+                                                <group string="Post Operative Vital Parameters" />
+                                                <group col="8">
+                                                    <field name="time_po"/>
+                                                </group>
+                                                <group col="8">
+                                                    <field name="puls_po" />
+                                                    <field name="spo2_po" />
+                                                    <field name="blood_loss_po" />
+                                                    <field name="urine_po" />
+                                                    <field name="bp_po" />
+                                                    <strong>/</strong>
+                                                    <field name="bp_po2" nolabel="1" style="margin-left: -55%;" />
+                                                </group>
+                                                <br />
+                                                <group col="6">
+                                                    <field name="consciousness_po" />
+                                                    <field name="crystalloids" />    
+                                                    <field name="colloids" />  
+                                                    <field name="blood_prod_po" />
+                                                    <field name="muscle_tone" />
+                                                    <field name="oxygen_supple" />
+                                                    <field name="pain_po" />
+                                                    <field name="post_op_inv" />
+                                                </group>
+                                                <group string="Post Of Advice">
+                                                    <field name="post_advice_ids" nolabel="1" colspan="4">
+                                                        <tree string="" editable="True">
+                                                            <field name="advice_list_id" string="Instruction"
+                                                                required="1" />
+                                                            <field name="advice_post_ans" />
+                                                        </tree>
+                                                    </field>
+                                                </group>
+                                                <group string="Post Operative Pain Management" />
+                                                <group string="IV Intermittent bolus" col="6">
+                                                    <field name="diclofenac" />
+                                                    <field name="tramadol" />
+                                                    <field name="others_po" />
+                                                </group>
+                                                <group string="I.V. Infusion" />
+                                                <div class="oe_inline">
+                                                    <label string="1." style="width:5%"/>
+                                                    <label for="tramadol_inj" style="width:20%" />
+                                                    <field name="tramadol_inj" style="width:10%" />
+                                                    <label string="+" style="width:5%"/>
+                                                    <label for="emset_inj_to" style="width:10%"/>
+                                                    <field name="emset_inj_to" style="width:10%"/>
+                                                    <label for="ml_from" style="width:10%"/>
+                                                    <field name="ml_from" style="width:10%"/>
+                                                    <label for="ns_trama" style="width:10%"/>
+                                                    <field name="ns_trama" style="width:10%"/>
+                                                    <label string="ml/hr I.V." style="width:10%"/>
+                                                </div>
+                                                <br/>
+                                                <div class="oe_inline">
+                                                    <label string="2." style="width:5%" />
+                                                    <label for="inj_fentanyl" style="width:20%"/>
+                                                    <field name="inj_fentanyl" style="width:10%"/>
+                                                    <label for="ns_from" style="width:10%" />
+                                                    <field name="ns_from" style="width:10%" />
+                                                    <label for="ns_to" style="width:10%" />
+                                                    <field name="ns_to" style="width:10%" />
+                                                    <label string="ml/hr" style="width:10%" />
+                                                </div>
+                                                <br/>
+                                                <div class="oe_inline">
+                                                    <label string="3." style="width:5%" />
+                                                    <label for="inj_midazolam" style="width:20%"/>
+                                                    <field name="inj_midazolam" style="width:10%"/>
+                                                    <label for="minda_fentanyl" style="width:10%"/>
+                                                    <field name="minda_fentanyl" style="width:10%"/>
+                                                    <label for="minda_ns_from" style="width:10%"/>
+                                                    <field name="minda_ns_from" style="width:10%"/>
+                                                    <label for="minda_ns_to" style="width:10%"/>
+                                                    <field name="minda_ns_to" style="width:10%"/>
+                                                    <label string="ml/hr" style="width:10%"/>
+                                                </div>
+                                                <br/>
+                                                <div class="oe_inline">
+                                                    <label string="4." style="width:5%" />
+                                                    <label for="inj_atracurium" style="width:20%"/>
+                                                    <field name="inj_atracurium" style="width:10%"/>
+                                                    <label for="atra_ns" style="width:20%"/>
+                                                    <field name="atra_ns" style="width:10%"/>
+                                                    <label string="ml/hr" style="width:10%"/>
+                                                </div>
+                                                <br/>
+                                                <group string="Epidural" />
+                                                <div class="oe_inline">
+                                                    <label string="1." style="width:5%"/>
+                                                    <label for="inj_ropi" style="width:20%"/>
+                                                    <field name="inj_ropi" style="width:10%"/>
+                                                    <label for="ropi_fentnyl" style="width:10%"/>
+                                                    <field name="ropi_fentnyl" style="width:10%"/>
+                                                    <label for="ropi_ns" style="width:10%"/>
+                                                    <field name="ropi_ns" style="width:10%"/>
+                                                    <label string="ml/hr" style="width:10%"/>
+                                                </div>
+                                                <br/>
+                                                <div class="oe_inline">
+                                                    <label string="2." style="width:5%"/>
+                                                    <label for="inj_trama" style="width:20%"/>
+                                                    <field name="inj_trama" style="width:10%"/>
+                                                    <label for="trama_ns" style="width:10%"/>
+                                                    <field name="trama_ns" style="width:10%"/>
+                                                    <label string="ml/hr" style="width:10%"/>
+                                                </div>
+                                                <br/>
+                                                <group string="Rectal Suppositories">
+                                                    <field name="rectal_sup" nolabel="1"/>
+                                                </group>
+                                                <group>
+                                                    <field name="post_major_anaes" />
+                                                </group>
+                                            </page>
+                                            <page string="Minor">
+                                                <group col="4">
+                                                    <field name="anaesthesia_plan" />
+                                                    <field name="proc_name" />
+                                                </group>
+                                                <group col="12">
+                                                    <label string="ASA Risk" style="font-weight:bold;" />
+                                                    <field name="asa_risk_1" nolabel="1" />
+                                                    <label for="asa_risk_1" style="font-weight:bold;"/>
+                                                    <field name="asa_risk_2" nolabel="1" />
+                                                    <label for="asa_risk_2" style="font-weight:bold;"/>
+                                                    <field name="asa_risk_3" nolabel="1" />
+                                                    <label for="asa_risk_3" style="font-weight:bold;"/>
+                                                    <field name="asa_risk_r" nolabel="1" />
+                                                    <label for="asa_risk_r" style="font-weight:bold;"/>
+                                                    <field name="asa_risk_e" nolabel="1" />
+                                                    <label for="asa_risk_e" style="font-weight:bold;"/>
+                                                </group>
+                                                <group col="4">
+                                                    <field name="pre_illness" />
+                                                    <field name="minor_medication" />
+                                                    <field name="minor_investigation" />
+                                                    <field name="minor_note" />
+                                                    <field name="minor_attending" />
+                                                    <field name="minor_consulting" />
+                                                    <field name="minor_antibiotic" />
+                                                </group>
+                                                <group string="Pre Medication" col="6">
+                                                    <field name="minor_fentanyl" />
+                                                    <field name="minor_midaz" />
+                                                    <field name="minor_emeset" />
+                                                    <field name="minor_pantoprazole" />
+                                                    <field name="minor_glyco" />
+                                                    <field name="minor_rantac" />
+                                                    <field name="minor_xylocard" />
+                                                </group>
+                                                <group col="6">
+                                                    <field name="minor_induction" />
+                                                    <field name="minor_induction_val" nolabel="1" />
+                                                    <field name="minor_endo_tube" />
+                                                    <field name="minor_endo_tube_val" nolabel="1" />
+                                                    <field name="minor_gel" />
+                                                    <field name="minor_gel_val" nolabel="1" />
+                                                    <field name="minor_position" />
+                                                </group>
+                                                <label string="Maintain with:" style="width:10%" />
+                                                <div class="oe_inline">
+                                                    <label for="minor_o2" style="width:10%" />
+                                                    <field name="minor_o2" style="width:10%" />
+                                                    <label string="+" style="width:5%" />
+                                                    <label for="minor_n2o_air" style="width:10%" />
+                                                    <field name="minor_n2o_air" style="width:10%" />
+                                                    <label string="+" style="width:5%" />
+                                                    <label for="minor_ippv" style="width:10%" />
+                                                    <field name="minor_ippv" style="width:10%" />
+                                                    <label string="+" style="width:5%" />
+                                                    <label for="minor_iso_sevo" style="width:10%" />
+                                                    <field name="minor_iso_sevo" style="width:10%" />
+                                                    <label string="+" style="width:5%" />
+                                                    <label for="minor_atracurium" style="width:10%" />
+                                                    <field name="minor_atracurium" style="width:10%" />
+                                                </div>
+                                                <group string="Post Operative Advice" col="4">
+                                                    <field name="minor_advice_nbm" />
+                                                    <field name="minor_advice_inform" />
+                                                </group>
+                                                <group col="6">
+                                                    <field name="minor_advice_head" />
+                                                    <field name="minor_advice_hydration" />
+                                                    <field name="minor_advice_vital" />
+                                                    <field name="minor_advice_conscious" />
+                                                    <field name="minor_advice_pain" />
+                                                </group>
+                                                <group>
+                                                    <field name="post_minor_anaes" />
+                                                </group>
+                                            </page>
+                                        </notebook>
+                                    </page>
+                                </notebook>    
+                            </page> 
+                    <!-- End Anaesthesia -->
+                    <!-- Stop By RBK -->
+
+                            <page string="Medicines and Consumables" groups="hms.group_hms_medical_officer,hms.group_hms_doctor">
+                                <group string="Medicines Group">
+                                    <field name="medicaments_grps_ids"/>
+                                </group>
+                                
+                                <group string="List of Consumables">
+                                    <field name="consumable_line" nolabel="1" colspan="4">
+                                        <tree string="Line" editable="top">
+                                            <field name="product_id" expand="1" required="1" />
+                                            <field name="product_uom" required="1" />
+                                            <field name="qty" required="1" />
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group string="List of Medicaments">
+                                    <field name="medicament_line" nolabel="1" colspan="4">
+                                        <tree editable="top">
+                                            <field name="id" />
+                                            <field name="product_id" expand="1" required="1" />
+                                            <field name="dosage_ml" />
+                                            <field name="common_dosage_ml" />
+                                            <field name="qty" />
+                                            <field name="route_ml" />
+                                            <field name="t1_ml" />
+                                            <field name="t2_ml" />
+                                            <field name="t3_ml" />
+                                            <field name="t4_ml" />
+                                            <field name="t5_ml" />
+                                            <field name="t6_ml" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="post_op_order" string="Post-Operative Orders" groups="hms.group_hms_medical_officer,hms.group_hms_doctor">
+                                <!-- <group string="General Instruction">
+                                    <field name="post_instruction_ids" nolabel="1" colspan="4">
+                                        <tree string="" editable="True">
+                                            <field name="instruction_list_id" string="Instruction"
+                                                required="1" />
+                                            <field name="instruction_done" />
+                                            <field name="instruction_time_ins" />
+                                        </tree>
+                                    </field>
+                                </group> -->
+                                <group col="6">
+                                    <field name="stage_post" string="Type"/>
+                                    <field name="start_time_post" style="width:50%" invisible="1"/>
+                                    <field name="comp_time_post" style="width:50%" invisible="1"/>
+                                </group>
+                                <br />
+                                <group col="4">
+                                    <field name="lap_post" string="Type Of Surgery"/>
+                                    <field name="under_post"/>
+                                </group>
+                                <br />
+                                <group string="Post-Operative Treatment">
+                                    <field name="antibiotic_ids" nolabel="1" colspan="4">
+                                        <tree string="Antibiotic &amp; PPI" editable="bottom">
+                                            <field name="anti_id" />
+                                            <!-- <field name="sos" />
+                                            <field name="t1" />
+                                            <field name="b1" />
+                                            <field name="time1" readonly="1" />
+                                            <field name="t2" />
+                                            <field name="b2" />
+                                            <field name="time2" readonly="1" />
+                                            <field name="t3" />
+                                            <field name="b3" />
+                                            <field name="time3" readonly="1" />
+                                            <field name="t4" />
+                                            <field name="b4" />
+                                            <field name="time4" readonly="1" /> -->
+                                            <field name="dosage_anti" />
+                                            <field name="route_anti" />
+                                            <field name="common_dosage_anti" />
+                                            <field name="t1_anti" />
+                                            <field name="t2_anti" />
+                                            <field name="t3_anti" />
+                                            <field name="t4_anti" />
+                                            <field name="t5_anti" />
+                                            <field name="t6_anti" />
+                                        </tree>
+                                    </field>
+                                </group>
+                                <br />
+                                <group string="I/V Fluids" invisible="1">
+                                    <field name="fluid_ids" nolabel="1" colspan="4">
+                                        <tree string="I/V Fluids" editable="bottom">
+                                            <!-- <field name="fluid_id" required="1" />
+                                            <field name="rate" />
+                                            <field name="quantity" /> -->
+                                            <field name="iv_id" />
+                                            <field name="dosage_iv" />
+                                            <field name="route_iv" />
+                                            <field name="common_dosage_iv" />
+                                            <field name="t1_iv" />
+                                            <field name="t2_iv" />
+                                            <field name="t3_iv" />
+                                            <field name="t4_iv" />
+                                            <field name="t5_iv" />
+                                            <field name="t6_iv" />
+                                        </tree>
+                                    </field>
+                                </group>
+                                <br />
+                                <!-- <group string="Miscellaneous Drugs">
+                                    <field name="miscellaneous_ids" nolabel="1" colspan="4">
+                                        <tree string="Line" editable="top">
+                                            <field name="misc_id" />
+                                            <field name="sos" />
+                                            <field name="t5" />
+                                            <field name="b5" />
+                                            <field name="time5" readonly="1" />
+                                            <field name="t6" />
+                                            <field name="b6" />
+                                            <field name="time6" readonly="1" />
+                                            <field name="t7" />
+                                            <field name="b7" />
+                                            <field name="time7" readonly="1" />
+                                            <field name="t8" />
+                                            <field name="b8" />
+                                            <field name="time8" readonly="1" />
+                                        </tree>
+                                    </field>
+                                </group>
+                                <newline /> -->
+                                <label for="special_precautions_id" />
+                                <field name="special_precautions_id" />
+                                <group string="Instructions" col="6">
+                                    <field name="nbm_post" />
+                                    <field name="do_monitor_post" />
+                                    <field name="vitals_monitor_post" />
+                                    <field name="ag_monitor_post" />
+                                    <field name="io_monitor_post" />
+                                </group>
+                                <group string="Intra-Operative Details" col="6">
+                                    <field name="io_uop_post" />
+                                    <field name="io_pcv_post" />
+                                    <field name="io_blood_loss_post" />
+                                    <field name="ffp_post" />
+                                    <field name="duration_post" />
+                                    <field name="crystalloids_post" />
+                                </group>
+                                <group col="8">
+                                    <field name="specimen_post" />
+                                    <label for="plus_post" style="margin-left:70%" />
+                                    <field name="plus_post" nolabel="1" />
+                                    <label for="bile_post" style="margin-left:70%" />
+                                    <field name="bile_post" nolabel="1" />
+                                    <label for="ascitic_post" style="margin-left:40%" />
+                                    <field name="ascitic_post" nolabel="1" />
+                                </group>
+                                <group string="Investigation Sent" col="8">
+                                    <label for="rm_post" style="margin-left:70%" />
+                                    <field name="rm_post" nolabel="1" style="padding-right:-10%" />
+                                    <label for="cs_post" style="margin-left:70%" />
+                                    <field name="cs_post" nolabel="1" style="padding-right:-10%" />
+                                    <label for="cytology_post" style="margin-left:50%" />
+                                    <field name="cytology_post" nolabel="1"  />
+                                    <label for="amylase_post" style="margin-left:50%" />
+                                    <field name="amylase_post" nolabel="1" />
+                                    <label for="ada_post" style="margin-left:70%" />
+                                    <field name="ada_post" nolabel="1"  />
+                                    <label for="hpe_post" style="margin-left:70%" />
+                                    <field name="hpe_post" nolabel="1"  />
+                                    <label for="fnac_post" style="margin-left:70%" />
+                                    <field name="fnac_post" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                            groups="base.group_user" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_inpatient_registration_surgery_clickable_form" model="ir.ui.view">
+            <field name="name">inpatient.registration.surgery.state.clickable.form</field>
+            <field name="model">inpatient.registration.surgery</field>
+            <field name="inherit_id" ref="view_inpatient_registration_surgery_form"/>
+            <field name="groups_id" eval="[(4, ref('hms_hospitalization.group_hms_hospitalization_state_clickable'))]"/>
+            <field name="arch" type="xml">
+                <field name="state" position="attributes">
+                    <attribute name="clickable">True</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_inpatient_registration_surgery" model="ir.actions.act_window">
+            <field name="name">Surgery</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.registration.surgery</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_inpatient_registration_surgery_tree_view" />
+        </record>
+        <menuitem id="menu_action_inpatient_registration_surgery" name="Surgery" groups="hms.group_hms_jr_doctor,hms.group_hms_nurse,hms.group_hms_medical_officer" action="action_inpatient_registration_surgery" parent="hms_hospitalization.menu_hospitalization" />
+       <!--  <menuitem id="conf_check_list" name="Pre-Operative Checklist"
+            parent="hms_hospitalization.checklist_configuration" action="action_check_list_conf_view" /> -->
+
+        <!-- View for By Fellow Tab in Surgery -->
+        <record model="ir.ui.view" id="check_list_by_fellow_form_view">
+            <field name="name">inpatient.checklist.fellow.template.form</field>
+            <field name="model">inpatient.checklist.fellow.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="By Fellow Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_by_fellow_tree_view">
+            <field name="name">inpatient.checklist.fellow.template.tree</field>
+            <field name="model">inpatient.checklist.fellow.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="By Fellow Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_by_fellow_view">
+            <field name="name">By Fellow Checklist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.checklist.fellow.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_by_fellow_tree_view" />
+        </record>
+
+        <menuitem id="conf_check_list_by_fellow_list" name="Fellow Checklist"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_by_fellow_view" />
+
+        <!-- View for By Anesthetist Tab in Surgery -->
+        <record model="ir.ui.view" id="check_list_by_anesthetist_form_view">
+            <field name="name">inpatient.checklist.anesthetist.template.form</field>
+            <field name="model">inpatient.checklist.anesthetist.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="By Anesthetist Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_by_anesthetist_tree_view">
+            <field name="name">inpatient.checklist.anesthetist.template.tree</field>
+            <field name="model">inpatient.checklist.anesthetist.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="By Anesthetist Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_by_anesthetist_view">
+            <field name="name">By Anesthetist Checklist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.checklist.anesthetist.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_by_anesthetist_tree_view" />
+        </record>
+
+        <menuitem id="conf_check_list_by_anesthetist_list" name="Anesthetist Checklist"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_by_anesthetist_view" />
+
+        <!-- View for By Operating Surgeon Tab in Surgery -->
+        <record model="ir.ui.view" id="check_list_by_op_surgeon_form_view">
+            <field name="name">inpatient.checklist.operating.surgeon.template.form</field>
+            <field name="model">inpatient.checklist.operating.surgeon.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="By Operating Surgeon Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_by_op_surgeon_tree_view">
+            <field name="name">inpatient.checklist.operating.surgeon.template.tree</field>
+            <field name="model">inpatient.checklist.operating.surgeon.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="By Operating Surgeon Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_op_surgeon_view">
+            <field name="name">By Operating Surgeon Check List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.checklist.operating.surgeon.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_by_op_surgeon_tree_view" />
+        </record>
+
+        <menuitem id="conf_check_list_op_surgeon_list" name="Operating Surgeon Check List"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_op_surgeon_view" />
+
+        <!-- View for By Scrub Nurse Tab in Surgery -->
+        <record model="ir.ui.view" id="check_list_by_scrub_nurse_form_view">
+            <field name="name">inpatient.checklist.scrub.nurse.template.form</field>
+            <field name="model">inpatient.checklist.scrub.nurse.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="By Scrub Nurse Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_by_scrub_nurse_tree_view">
+            <field name="name">inpatient.checklist.scrub.nurse.template.tree</field>
+            <field name="model">inpatient.checklist.scrub.nurse.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="By Scrub Nurse Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_scrub_nurse_view">
+            <field name="name">By Scrub Nurse Check List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.checklist.scrub.nurse.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_by_scrub_nurse_tree_view" />
+        </record>
+
+        <menuitem id="conf_check_list_scrub_nurse_list" name="Scrub Nurse Check List"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_scrub_nurse_view" />
+
+        <!-- View for OT in Charge&Anesthetist Tab in Surgery -->
+        <record model="ir.ui.view" id="check_list_by_otincharge_form_view">
+            <field name="name">inpatient.checklist.otincharge.template.form</field>
+            <field name="model">inpatient.checklist.otincharge.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="By OT in Charge&amp;Anesthetist Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_by_otincharge_tree_view">
+            <field name="name">inpatient.checklist.otincharge.template.tree</field>
+            <field name="model">inpatient.checklist.otincharge.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="By OT in Charge&amp;Anesthetist Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_otincharge_view">
+            <field name="name">By OT in Charge&amp; Anesthetist Check List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.checklist.otincharge.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_by_otincharge_tree_view" />
+        </record>
+
+        <menuitem id="conf_check_list_otincharge_list" name="OT in Charge&amp;Anesthetist Check List"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_otincharge_view" />
+
+        <!-- View for Recovery Tab in Surgery -->
+        <record model="ir.ui.view" id="check_list_by_recovery_form_view">
+            <field name="name">inpatient.checklist.recovery.checklist.template.form</field>
+            <field name="model">inpatient.checklist.recovery.checklist.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="Recovery Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_by_recovery_tree_view">
+            <field name="name">inpatient.checklist.recovery.checklist.template.tree</field>
+            <field name="model">inpatient.checklist.recovery.checklist.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="Recovery Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_recoverye_view">
+            <field name="name">Recovery Check List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">inpatient.checklist.recovery.checklist.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_by_recovery_tree_view" />
+        </record>
+
+        <menuitem id="conf_check_list_recovery_list" name="Recovery Check List"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_recoverye_view" />
+
+        <!-- View for Preoperative Investigation Checklist -->
+         <record model="ir.ui.view" id="check_list_inv_pre_op_view">
+            <field name="name">preoperative.investigation.template.form</field>
+            <field name="model">preoperative.investigation.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="Pre-Op Investigation Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_inv_pre_op_tree_view">
+            <field name="name">preoperative.investigation.template.tree</field>
+            <field name="model">preoperative.investigation.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="Pre-Op Investigation Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_inv_pre_op_view">
+            <field name="name">Pre-Op Investigation Checklist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">preoperative.investigation.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_inv_pre_op_tree_view" />
+        </record>
+
+        <!-- View for Preoperative Information Checklist -->
+        <record model="ir.ui.view" id="check_list_pre_op_info_view">
+            <field name="name">preoperative.information.template.form</field>
+            <field name="model">preoperative.information.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" nolabel="0" required="True" string="Pre-Op Information Check List" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="check_list_pre_op_info_tree_view">
+            <field name="name">preoperative.information.template.tree</field>
+            <field name="model">preoperative.information.template</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" nolabel="0" required="True" string="Pre-Op Information Check List" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_check_list_pre_op_info_view">
+            <field name="name">Investigation Checklist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">preoperative.information.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="check_list_inv_pre_op_tree_view" />
+        </record>
+
+        <menuitem id="conf_pre_op_inv_check_list" name="Pre Operative Investigation"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_inv_pre_op_view" />
+        <menuitem id="conf_pre_op_info_list" name="Pre Operative Information"
+        parent="hms_hospitalization.checklist_configuration" action="action_check_list_pre_op_info_view" />
+
+
+        <!--Procedure Template-->
+        <record model="ir.ui.view" id="hms_procedure_template_selection_form_view">
+            <field name="name">Procedure</field>
+            <field name="model">procedure.template.selection</field>
+                <field name="arch" type="xml">
+                    <form string="Consent">
+                        <group>
+                            <field name="name"/>
+                            <field name="template" nolabel="1" colspan="2"/>
+                        </group>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="hms_procedure_template_selection_tree_view">
+            <field name="name">Procedure</field>
+            <field name="model">procedure.template.selection</field>
+                <field name="arch" type="xml">
+                    <tree string="Consent">
+                        <field name="name"/>
+                        <field name="template" nolabel="1" colspan="2"/>
+                    </tree>
+                </field>
+        </record>
+
+        <record id="action_hms_procedure_template_selection_view" model="ir.actions.act_window">
+            <field name="name">Procedure Template</field>
+            <field name="res_model">procedure.template.selection</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_hms_procedure_template_selection_view" name="Procedure Template"
+            parent="hms_insurance.menu_configuration_insurance_hospitalization" action="action_hms_procedure_template_selection_view" groups="hms.group_hms_doctor" sequence="5"/>
+
+        <!--Advices-->
+        <record model="ir.ui.view" id="hms_medicaments_group_tree">
+            <field name="name">medicaments.grps.tree</field>
+            <field name="model">medicaments.grps</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hms_medicaments_form">
+            <field name="name">medicaments.grps.form</field>
+            <field name="model">medicaments.grps</field>
+            <field name="arch" type="xml">
+                <form string="Medicines Group">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                        <field name="medicaments_line">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_hms_medicaments_view" model="ir.actions.act_window">
+            <field name="name">Medicaments Group</field>
+            <field name="res_model">medicaments.grps</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_hms_medicaments_view" name="Medicaments Group"
+            sequence="3" parent="hms_hospitalization.indimedi_inpatient_menu" action="action_hms_medicaments_view"/>
+
+
+    </data>
+</openerp>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- <record model="ir.ui.view" id="view_purchase_order_filter_inh">
+            <field name="name">purchase.order.inh</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+            <field name="arch" type="xml">
+                <filter name="message_unread" position="after">
+                    <separator/>
+                    <filter
+                        string="Today"
+                        domain="[('date_approve', '!=', False), ('date_approve', '=', (context_today()).strftime('%%Y-%%m-%%d'))]"
+                        help="Today's Confirmed Orders" />
+                </filter> -->
+                <!-- <filter string="Expected Month" position="after">
+                    <filter string="Confirm Date" domain="[]" context="{'group_by':'date_approve'}"/>
+                </filter> -->
+            <!-- </field>
+        </record> -->
+        <record id="product_template_only_form_view_inherit_po_uom_price" model="ir.ui.view">
+            <field name="name">product.template.product.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <field name="uom_po_id" position="before">
+                    <field name="po_uom_rate"/>
+                    <field name="so_uom_rate"/>
+                </field>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="purchase_order_form_view1">
+                <field name="name">purchase.order.form.view1</field>
+                <field name="model">purchase.order</field>
+                <field name="inherit_id" ref="purchase.purchase_order_form"/>
+                <field name="priority" eval="16" />
+                <field name="arch" type="xml">
+                    <xpath expr="//page" position="replace">
+                     <!--xpath expr="//page[@string='Products']" position="replace"-->
+                        <page string="Products">
+                            <field name="order_line">
+                                <tree string="Purchase Order Lines" editable="bottom">
+                                    <field name="product_id" on_change="onchange_product_id(parent.pricelist_id,product_id,0,False,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,False,parent.state,context)"/>
+                                    <field name="name"/>
+                                    <field name="date_planned"/>
+                                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}" invisible="1"/>
+                                    <field name="account_analytic_id" groups="purchase.group_analytic_accounting" domain="[('type','not in',('view','template'))]"/>
+                                    <field name="product_qty" on_change="onchange_product_id(parent.pricelist_id,product_id,product_qty,product_uom,parent.partner_id,parent.date_order,parent.fiscal_position,date_planned,name,False,parent.state,context)"/>
+                                    <field name="product_uom" groups="product.group_uom" on_change="onchange_product_uom(parent.pricelist_id,product_id,product_qty,product_uom,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,False,parent.state,context)"/>
+                                    <field name="price_unit"/>
+                                    <field name="taxes_id" widget="many2many_tags" domain="[('parent_id','=',False),('type_tax_use','!=','sale')]"/>
+                                    <field name="price_subtotal"/>
+                                    <field name="state" invisible="1"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="amount_untaxed" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <field name="amount_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total"/>
+                                    <button name="button_dummy"
+                                        states="draft" string="(update)" type="object" class="oe_edit_only oe_link"/>
+                                </div>
+                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </group>
+                            <div class="oe_clear"/>
+                            <field name="notes" class="oe_inline" placeholder="Terms and conditions..."/>
+                        </page>
+                    </xpath>
+                </field>
+        </record>
+        
+    </data>
+</openerp>

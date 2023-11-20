@@ -1,0 +1,56 @@
+<openerp>
+	<data noupdate="1">
+		<!-- Data For Information Content in Pre Operative Checklist in Nursing -->
+		<record id="pre_op_info_content_data_1" model="preoperative.information.template">
+            <field name="name">ID bend with MRD no</field>
+        </record>
+        <record id="pre_op_info_content_data_2" model="preoperative.information.template">
+            <field name="name">Consent for operation/ansthesia/high risk</field>
+        </record>
+        <record id="pre_op_info_content_data_3" model="preoperative.information.template">
+            <field name="name">Pre-operative anesthetic check up done</field>
+        </record>
+        <record id="pre_op_info_content_data_4" model="preoperative.information.template">
+            <field name="name">Physician reference done</field>
+        </record>
+        <record id="pre_op_info_content_data_5" model="preoperative.information.template">
+            <field name="name">Any specific medicine before surgery</field>
+        </record>
+        <record id="pre_op_info_content_data_6" model="preoperative.information.template">
+            <field name="name">Any specific medication-omitted</field>
+        </record>
+        <record id="pre_op_info_content_data_7" model="preoperative.information.template">
+            <field name="name">NBM from</field>
+        </record>
+        <record id="pre_op_info_content_data_8" model="preoperative.information.template">
+            <field name="name">Preparation of operative parts done</field>
+        </record>
+        <record id="pre_op_info_content_data_9" model="preoperative.information.template">
+            <field name="name">Shaving of operative parts</field>
+        </record>
+        <record id="pre_op_info_content_data_10" model="preoperative.information.template">
+            <field name="name">Operative site is marked</field>
+        </record>
+        <record id="pre_op_info_content_data_11" model="preoperative.information.template">
+            <field name="name">Prosthesis/denture/ornaments/contact lens/nail polish removed</field>
+        </record>
+        <record id="pre_op_info_content_data_12" model="preoperative.information.template">
+            <field name="name">OT dress</field>
+        </record>
+        <record id="pre_op_info_content_data_13" model="preoperative.information.template">
+            <field name="name">bladder evacuated</field>
+        </record>
+        <record id="pre_op_info_content_data_14" model="preoperative.information.template">
+            <field name="name">Bowel preparation done</field>
+        </record>
+        <record id="pre_op_info_content_data_15" model="preoperative.information.template">
+            <field name="name">Mouth care / gargles done</field>
+        </record>
+        <record id="pre_op_info_content_data_16" model="preoperative.information.template">
+            <field name="name">PCV/FFP required</field>
+        </record>
+        <record id="pre_op_info_content_data_17" model="preoperative.information.template">
+            <field name="name">PCV/FFP ready in blood bank</field>
+        </record>
+	</data>
+</openerp>

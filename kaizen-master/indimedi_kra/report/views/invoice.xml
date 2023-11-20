@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+         <template id="all_consultation_invoice_qweb_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size: 12px !important; padding:0; margin:0 0;">
+                        <div class="row mt32 mb32">
+                        <div class="page-header" style='width:100%; height:145px; padding:0; margin:90 0 0 0;border-bottom:1px solid black;'>
+                            <div>
+                                <div style='width:65%;margin-top:-90px;'>
+                                    <img class="image" t-att-src="'data:image/png;base64,%s' % res_company.logo"
+                                        width="auto" height="100px" style="margin-right:1%;" />
+                                </div>
+                                <div style='width:35%;float:right;margin-top:-80px;'>
+                                    <span t-field="res_company.name" />
+                                    <br />
+                                    <span t-field="res_company.street" />
+                                    <br />
+                                    <span t-field="res_company.street2" />
+                                    <br />
+                                    <span t-field="res_company.city" />
+                                    <span t-field="res_company.zip" />
+                                    <br />
+                                    <span t-field="res_company.state_id" />
+                                    <br />
+                                    <span t-field="res_company.country_id" />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <h2 style="font-size: 16px !important; text-align: center;"><i><u><strong>Invoices #<span t-att-style="style" t-field="o.invoice_id.number"/></strong></u></i></h2>
+                        <div class="row mt32 mb32">
+                                <table class="table table-condensed" style="padding:0; margin:0">
+                                    <tbody>
+                                        <tr>
+                                            <td style="border: none; width: 700; height: 20; padding-top:0;">
+                                                <strong>Patient Name:</strong>
+                                                <span t-att-style="style" t-esc="o.patient_id.name"/>
+                                            </td>
+                                            <td style="border: none; width: 400; height: 20; padding-top:0;">
+                                                <strong>Reg No:</strong>
+                                                <t t-if="o.patient_id.identification_code"><span t-field="o.patient_id.identification_code"/></t>
+                                            </td>
+                                        </tr>  
+                                        <tr>
+                                            <td style="border: none; width: 700; height: 20; padding-top:0;">
+                                                <strong>Address:</strong>
+                                                <t t-if="o.patient_id.street"><span t-field="o.patient_id.street"/>,<br/> </t>
+                                                <t t-if="o.patient_id.street2"><span t-field="o.patient_id.street2"/>, <br/></t>
+                                                <t t-if="o.patient_id.city_id.name"><span t-field="o.patient_id.city_id.name"/>, </t>
+                                                <t t-if="o.patient_id.state_id.name"><span t-field="o.patient_id.state_id.name"/>, </t>
+                                                <t t-if="o.patient_id.zip"><span t-field="o.patient_id.zip"/>, </t>
+                                            </td>
+                                            <td style="border: none; width: 400; height: 20; padding-top:0;">
+                                                <strong>Age:</strong>
+                                                <t t-if="o.patient_id.sex"><span t-field="o.patient_id.age"/></t>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: none; width: 700; height: 20; margin-top: 40; padding-top:0;">
+                                                <strong>Consulting Doctor:</strong>
+                                                <t t-if="o.doctor.name"><span t-field="o.doctor.name"/></t>
+                                            </td>
+                                            <td style="border: none; width: 400; height: 20; margin-top: 40; padding-top:0;">
+                                                <strong>Contact No:</strong>
+                                                <t t-if="o.patient_id.age"><span t-field="o.patient_id.mobile"/></t>
+                                            </td>
+                                        </tr> 
+                                        <tr>
+                                            <td style="border: none; width: 700; height: 20; padding-top:0;">
+                                                <strong>Invoice Date:</strong>
+                                                <t t-if="o.patient_id.sex"><span t-field="o.date"/></t>
+                                                <!-- <t t-if="o.doctor.name"><span t-field="o.doctor.name"/></t> -->
+                                            </td>
+                                            <td style="border: none; width: 400; height: 20; padding-top:0;">
+                                                <!-- <strong>Referring Doctor:</strong> -->
+                                                <strong>Gender :</strong>
+                                                <t t-if="o.patient_id.sex"><span t-field="o.patient_id.sex"/></t>
+                                            </td>
+                                        </tr> 
+                                    </tbody>
+                                </table>
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <t>
+                                            <tr>
+                                                <th style="border: none !important; height: 30; text-align: left;"><span t-att-style="style">Description</span></th>
+                                                <th style="border: none !important; height: 30; text-align: right;padding-right: 40px">Unit Charges</th>
+                                                
+                                                <th style="border: none !important; height: 30; text-align: left;">Taxes</th>
+                                                <th style="border: none !important; height: 30; text-align: right;">Amount</th>
+                                            </tr>
+                                        </t>
+                                    </thead>
+                                
+                                    <tbody>
+                                        <t t-foreach="get_investigation_invoice(o.id, False)" t-as="invoice">
+                                            <tr>
+                                                <td style=" width:580; height: 20; border-top:1px solid #DDD; padding-top:1; padding-bottom:1;">
+                                                    <span t-att-style="style" t-esc="invoice.name"/>
+                                                </td>
+                                           
+                                                <td style="width:150; height: 20; text-align: right; padding-right: 40px; border-top:1px solid #DDD; padding-top:1; padding-bottom:1;">
+                                                    <span t-att-style="style" t-esc="invoice.price_unit"/>
+                                                </td>
+                                                <td style="width:200; height: 20; border-top:1px solid #DDD; padding-top:1; padding-bottom:1;">
+                                                    <t t-foreach="invoice.invoice_line_tax_id" t-as="tax">
+                                                        <span t-att-style="style" t-esc="tax.name"/>
+                                                    </t>
+                                                </td>
+                                                <td style="width:130; height: 20; text-align: right; border-top:1px solid #DDD; padding-top:1; padding-bottom:1;">
+                                                    <span t-att-style="style" t-esc="invoice.price_subtotal"/>
+                                                    
+                                                </td>
+                                            </tr>  
+                                        </t>      
+                                    </tbody>
+                                </table>
+                                <table class="table table-condensed" style="padding:0; margin:0">
+                                    <tbody>
+                                        <t t-foreach="get_investigation_invoice(o.id, True)" t-as="amount_total">
+                                            <tr >
+                                                <td style=" width: 625; height: 30; border: none;">
+                                                </td>
+                                                <td style=" width: 175; height: 30; border: none;">
+                                                    <strong>Total:</strong>
+                                                </td>
+                                                <td style=" width: 300; height: 30; text-align: right; border: none;">
+                                                    <t><span t-esc="amount_total['amount_total']"/></t>
+                                                    
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="border: none; width: 625; height: 30">
+                                                </td>
+                                                <td style="border-top:1px solid #DDD; width: 175; height: 30">
+                                                    <strong>Amount in Words:</strong>
+                                                </td>
+                                                <td style="border-top:1px solid #DDD; width: 300; height: 30; text-align: left">
+                                                    <t ><span t-esc="amount_total['amount_in_word']"/></t>
+                                                    
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </t>
+            </t>
+          </template>
+    </data>
+</openerp>

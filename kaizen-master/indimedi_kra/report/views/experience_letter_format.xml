@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report.style" name="style">
+            <style type="text/css">
+                body {
+                color: #000 !important;
+                }
+                .table table-condensed {
+                border-top: 1px solid black !important;
+                }
+
+             </style>
+          </template>
+
+        <template id="experience_letter_format_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div>
+                            <table class="table table-condensed" style="width:100%;" >
+                                <tbody>
+                                    <tr style="border-top:hidden;">
+                                        <td align="right">
+                                            <strong>KH/HRD/EL/<t t-esc="o.employee_code"/></strong>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="right">
+                                            <span>Date -<span t-esc="datetime.datetime.now().date()" /> </span>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="center" style="text-decoration:underline;adding-top:15;">
+                                            <strong>TO WHOMSOEVER IT MAY CONCERN 
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" style="adding-top:15;">
+                                            <p>This is to certify that <strong><t t-esc="o.full_name"/></strong> has worked with Kaizen Hospital, Institute of Gastroenterology and Research Centre from <strong><t t-esc="o.date_joining"/></strong>  to  <strong><t t-esc="o.last_date"/></strong> as <strong><t t-esc="o.job_id.name"/></strong> .</p>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" style="adding-top:15;">
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" >
+                                            <p t-if="o.gender == 'Male'">
+                                            <span> He has been committed, responsible and hard working employee and exhibited good interpersonal skills and a high level of acceptance among colleagues at various levels.</span></p>
+                                            <p t-elif="o.gender == 'Female'">
+                                                <span> He has been committed, responsible and hard working employee and exhibited good interpersonal skills and a high level of acceptance among colleagues at various levels.</span>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>We wish her/him success in all future endeavors.</span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>For, Kaizen Hospital </span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>Dr Nehal B Gadhavi  </span></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>Hospital Administrator </span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_experience_letter_format" model="report.paperformat">
+            <field name="name">Probation Extension</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">35</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="report_experience_letter_format" 
+            string="Experience Letter Format" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.experience_letter_format_report" 
+            name="indimedi_kra.experience_letter_format_report"
+            paperformat="indimedi_kra.paperformat_experience_letter_format"
+        />
+
+
+    </data>
+</openerp>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="product_template_package" model="ir.ui.view">
+            <field name="name">product.template.package</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id"
+                ref="hms.product_template_only_form_view_inherit_apagen_ids"/>
+            <field name="arch" type="xml">
+                <field name="hospital_product_type" position="after">
+                    <field name="package_note"
+                        attrs="{'invisible': [('hospital_product_type', '!=', 'package')]}"
+                        placeholder="Package description" />
+                </field>
+            </field>
+        </record>
+
+        <record id="view_ot_booking_form" model="ir.ui.view">
+            <field name="name">ot.booking.form</field>
+            <field name="model">ot.booking</field>
+            <field name="priority" eval="4" />
+            <field name="arch" type="xml">
+                <form string="OT Booking">
+                    <header>
+                        <button name="button_confirm" states="draft" string="Confirm"
+                            type="object" />
+                        <button name="button_cancel" states="draft,confirm" string="Cancel"
+                            type="object" />
+                        <button name="button_done" states="confirm" string="Done"
+                            class="oe_highlight" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"
+                            statusbar_colors="{&quot;cancel&quot;:&quot;red&quot;}" />
+                    </header>
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar"/>
+                        <div class="oe_title">
+                            <h1>
+                                <!-- <label for="name" class="oe_inline" /> -->
+                                <field name="name" class="oe_inline" />
+                            </h1>
+                        </div>
+                        <group colspan="4">
+                            <group name="left">
+                                <field name="start_date"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="patient_id"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="operation_id"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="product_id"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="side"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="cashles" widget="radio"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                            </group>
+                            <group name="right">
+                                <field name="end_date"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="implant"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="implant_company"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}" />
+                                <field name="ward" invisible="1" />
+                                <field name="bed"
+                                    attrs="{'readonly': [('state','in',
+                                'done')]}"></field>
+                            <field name="ot_id" attrs="{'readonly': [('state','in', 'done')]}"/>
+                            <field name="end_time"/>
+                            </group>
+                        </group>
+                        <field name="note" nolabel="1" placeholder="Note" />
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_ot_booking_tree">
+            <field name="name">ot.booking.tree</field>
+            <field name="model">ot.booking</field>
+            <field name="arch" type="xml">
+                <tree string="OT Booking">
+                    <field name="name" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                    <field name="patient_id" />
+                    <field name="operation_id" />
+                    <field name="implant_company" />
+                    <field name="cashles" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_ot_booking_search">
+            <field name="name">ot.booking.search</field>
+            <field name="model">ot.booking</field>
+            <field name="arch" type="xml">
+                <search string="OT Booking">
+                    <field name="name" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                    <field name="patient_id" />
+                    <field name="operation_id" />
+                    <field name="implant_company" />
+                    <field name="cashles" />
+                </search>
+            </field>
+        </record>
+
+        <record id="view_ot_booking_calendar" model="ir.ui.view">
+            <field name="name">Ot Booking Status</field>
+            <field name="model">ot.booking</field>
+            <field name="arch" type="xml">
+                <calendar date_start="start_date" date_end="end_date"
+                    color="product_id" string="Calendar View">
+                    <field name="end_time" colspan="6"/>
+                    <field name="patient_id" />
+                    <field name="ot_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ot_booking">
+            <field name="name">OT Booking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ot.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="view_ot_booking_tree" />
+            <field name="search_view_id" ref="view_ot_booking_search" />
+        </record>
+
+        <!-- Under HMS menu -->
+        <menuitem id="hms_menu_ot_booking" name="OT Booking" action="action_ot_booking"
+            parent="hms_hospitalization.indimedi_inpatient_menu" sequence="2" />
+
+        <!-- Under Hospitalization menu -->
+        <menuitem id="menu_ot_booking" name="OT Booking" action="action_ot_booking" groups="hms.group_hms_jr_doctor"
+            parent="hms_hospitalization.menu_hospitalization" sequence="2" />
+
+        <!-- Main OT Booking 
+        <menuitem id="main_menu_ot_booking" name="OT Booking" action="action_ot_booking"
+            groups="hms.group_hms_receptionist" sequence="1"/> -->
+
+    </data>
+</openerp>

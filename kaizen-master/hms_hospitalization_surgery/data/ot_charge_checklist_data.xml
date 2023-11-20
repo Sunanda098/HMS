@@ -1,0 +1,65 @@
+<openerp>
+    <data noupdate="1">
+        <!--By OT in Charge&Anesthetist-->
+
+        <record id="admission_checklist_otincharge_1" model="inpatient.checklist.otincharge.template">
+            <field name="name">Specimen/Fluid</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_2" model="inpatient.checklist.otincharge.template">
+            <field name="name">Specimen/Fluid-Labeling</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_3" model="inpatient.checklist.otincharge.template">
+            <field name="name">Specimen/Fluid-Investigation Sent</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_4" model="inpatient.checklist.otincharge.template">
+            <field name="name">Specimen/Fluid-C/S /Cytology,Biopsy</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_5" model="inpatient.checklist.otincharge.template">
+            <field name="name">Specimen demonstration/Procedure explained to relatives</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_6" model="inpatient.checklist.otincharge.template">
+            <field name="name">Post Operative Chart</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_7" model="inpatient.checklist.otincharge.template">
+            <field name="name">Shift-ICU</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_10" model="inpatient.checklist.otincharge.template">
+            <field name="name">Shift-Ward</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_11" model="inpatient.checklist.otincharge.template">
+            <field name="name">Drain Output</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_12" model="inpatient.checklist.otincharge.template">
+            <field name="name">Urine Output</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_13" model="inpatient.checklist.otincharge.template">
+            <field name="name">Intra operative IV Fluids</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_otincharge_14" model="inpatient.checklist.otincharge.template">
+            <field name="name">Intra operative Blood Products</field>
+            <field name="remark"></field>
+        </record>
+    </data>
+</openerp>

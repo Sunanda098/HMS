@@ -1,0 +1,40 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_patient_user,Patient,hms.model_hms_patient,hms.group_hms_user,1,0,0,0
+access_hms_litho_stone_user,Indimedi Litho Stone,model_litho_stone,hms.group_hms_user,1,0,0,0
+access_hms_litho_stone_line_user,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_user,1,0,0,0
+access_hms_hms_lithotripsy_user,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_receptionist,Patient,hms.model_hms_patient,hms.group_hms_receptionist,1,0,0,0
+access_hms_litho_stone_receptionist,Indimedi Litho Stone,model_litho_stone,hms.group_hms_receptionist,1,0,0,0
+access_hms_litho_stone_line_receptionist,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_hms_lithotripsy_receptionist,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_doctor,Patient,hms.model_hms_patient,hms.group_hms_doctor,1,1,1,1
+access_hms_litho_stone_doctor,Indimedi Litho Stone,model_litho_stone,hms.group_hms_doctor,1,1,1,1
+access_hms_litho_stone_line_doctor,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_lithotripsy_doctor,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_hms_patient_nurse,Patient,hms.model_hms_patient,hms.group_hms_nurse,1,0,0,0
+access_hms_litho_stone_nurse,Indimedi Litho Stone,model_litho_stone,hms.group_hms_nurse,1,0,0,0
+access_hms_litho_stone_line_nurse,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_nurse,1,0,0,0
+access_hms_hms_lithotripsy_nurse,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_jr_doctor,Patient,hms.model_hms_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_litho_stone_jr_doctor,Indimedi Litho Stone,model_litho_stone,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_litho_stone_line_jr_doctor,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_lithotripsy_jr_doctor,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_hms_patient_manager,Patient,hms.model_hms_patient,hms.group_hms_manager,1,0,0,0
+access_hms_litho_stone_manager,Indimedi Litho Stone,model_litho_stone,hms.group_hms_manager,1,0,0,0
+access_hms_litho_stone_line_manager,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_manager,1,0,0,0
+access_hms_hms_lithotripsy_manager,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_manager,1,0,0,0
+,,,,,,,
+access_hms_patient_pharmacist,Patient,hms.model_hms_patient,hms.group_hms_pharmacist,1,0,0,0
+access_hms_litho_stone_pharmacist,Indimedi Litho Stone,model_litho_stone,hms.group_hms_pharmacist,1,0,0,0
+access_hms_litho_stone_line_pharmacist,Indimedi Litho Stone Line,model_litho_stone_line,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_lithotripsy_pharmacist,Indimedi Lithotripsy,model_hms_lithotripsy,hms.group_hms_pharmacist,1,0,0,0

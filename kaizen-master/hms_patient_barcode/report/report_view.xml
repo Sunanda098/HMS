@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record id="action_patient_barcode" model="ir.actions.report.xml">
+            <field name="name">Patient BarCode</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="model">hms.patient</field>
+            <field name="report_name">hms_patient_barcode.report_patient_barcode</field>
+            <field name="report_file">hms_patient_barcode.report_patient_barcode</field>
+            <field name="paperformat_id" ref="hms_patient_barcode.paperformat_indimedi_barcode" />
+        </record>
+
+    </data>
+</openerp>

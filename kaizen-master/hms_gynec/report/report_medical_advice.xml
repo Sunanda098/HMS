@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report_indimedi_medical_advice">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="margin-left:90px !important;margin-right:50px !important;">
+                        <div class="mt64 oe_structure" />
+                        <div class="col-md-12 mt32">
+                            <font color="white">...</font>
+                        </div>
+                        <div class="mt64">
+                            <div class="text-center">
+                                <h3>
+                                    <strong>
+                                        <u>
+                                            <i>Medical Advice</i>
+                                        </u>
+                                    </strong>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row mt32 mb32" id="informations">
+                            <table class="table" style="margin-top:30px !important">
+                                <tr>
+                                    <td style="border: none;">
+                                        <strong>Patient: </strong>
+                                        <span t-field="o.patient_id.name" />
+                                    </td>
+                                    <td style="border: none;">
+                                        <strong>Advice Date: </strong>
+                                        <span t-field="o.date" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: none;">
+                                        <strong>Advicing Doctor: </strong><span t-field="o.physician_id"/>
+                                    </td>
+                                    <td style="border: none;">
+                                        <strong>Age: </strong>
+                                        <span t-field="o.patient_id.age" />
+                                    </td>
+                                </tr>
+                                <tr></tr>
+                            </table>
+                            <div class="col-md-12 mb64 mt32">
+                                <span>
+                                    <u>
+                                        <b>Comments</b>
+                                    </u>: </span>
+                                <font color="white">...</font>
+                                <span t-field="o.medical_advice" />
+                            </div>
+                            <div class="col-md-12 mt32 mb32">
+                                <font color="white">...</font>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="col-md-12 mb32 mt64">
+                                <span>
+                                    <u>
+                                        <b>Doctor's Stamp/Signature</b>
+                                    </u>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="oe_structure" />
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report id="report_indimedi_medical_advice_id"
+            string="Medical Advice"
+            model="hms.appointment"
+            report_type="qweb-pdf"
+            file="hms_gynec.report_indimedi_medical_advice" 
+            name="hms_gynec.report_indimedi_medical_advice"/>
+    </data>
+</openerp>

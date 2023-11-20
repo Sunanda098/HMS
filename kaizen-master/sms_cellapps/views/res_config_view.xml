@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_general_configuration_sms" model="ir.ui.view">
+            <field name="name">General Settings</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="after">
+                    <group>
+                        <label for="is_sms_user" />
+                        <div>
+                            <div>
+                                <field name="is_sms_user" class="oe_inline" />
+                            </div>
+                            <div>
+                                <field name="url" placeholder="URL" class="oe_inline" attrs="{'required':[('is_sms_user', '=',True )], 'invisible':[('is_sms_user', '=',False )]}"/>
+                            </div>
+                            <div>
+                                <field name="user_name" placeholder="User Name" class="oe_inline" attrs="{'required':[('is_sms_user', '=',True )],'invisible':[('is_sms_user', '=',False )]}"/>
+                            </div>
+                            <div>
+                                <field name="password" placeholder="Password" class="oe_inline" attrs="{'required':[('is_sms_user', '=',True )],'invisible':[('is_sms_user', '=',False )]}"/>
+                            </div>
+                            <div>
+                                <field name="sender_id" placeholder="Sender ID" class="oe_inline" attrs="{'required':[('is_sms_user', '=',True )], 'invisible':[('is_sms_user', '=',False )]}"/>
+                            </div>
+                            <!--button name="test_sms" type="object" string="Test" icon="gtk-network" attrs="{'required':[('is_sms_user', '=',True )], 'invisible':[('is_sms_user', '=',False )]}"/-->
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,17 @@
+odoo.define('hms_portal.hms_portal', function (require) {
+"use strict";
+
+var core = require('web.core');
+var Model = require('web.Model');
+console.log("oo11");
+
+function slotchanged (slot) {
+    
+    console.log("oo11",slot);
+        new Model('appointment.schedual.slot.lines').call('search', [[['slot_id', '=', parseInt(slot)]]]).then(function(record) {
+            console.log(record);
+            return true
+        })
+}
+
+});

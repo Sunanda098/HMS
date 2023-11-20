@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+        <template id="report_consent_form">
+	    <t t-call="hms.hms_external_layout_consent">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size:16px;font-family: 'Arial';">
+			<div class="row" style="border-bottom:2px solid black;">
+				<!-- <img  style="height:250px;width:100%;" src="/shah_consent/static/src/img/consent_form.png"/> -->
+			</div>
+			
+			<t t-if="o.language == 'gujarati'">
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">દર્દીનું નામ :  </strong></span>  <span t-field="o.patient_id.name" /><br/>
+			    <span><strong style="font-size:18px !important;">ઉંમર :  </strong></span>  <span t-field="o.patient_id.age" /> <span><strong>  ગામ :  </strong></span>  <t t-if="o.patient_id.city_id"><span t-field="o.patient_id.city_id.name" /></t><t t-if="not o.patient_id.city_id"> <span>__________</span> </t><span><strong>  તારીખ :  </strong></span>  <span t-esc="time.strftime('%d-%m-%Y')"/><br/>
+			</div>
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">શસ્ત્રક્રિયાનું નામ : </strong> </span>  <span t-field="o.inpatient_id.surgery_id.description" /><br/>
+			    <span><strong style="font-size:18px !important;">તપાસણીનું નામ : </strong>  </span>  <br/>
+			    <span><strong style="font-size:18px !important;">બેહોશ કરવાની પદ્ધતિનું નામ : </strong>   </span>  <span t-field="o.inpatient_id.anaesthesia_id.name" /><br/>
+			    <span><strong style="font-size:18px !important;">ઉપચાર પદ્ધતિનું નામ </strong>  </span> <br/>
+			</div>
+			<div class="row" style="font-size:18px;letter-spacing: 0.5px;">
+			    <style>font{font-size:18px !important;}</style>
+			    <p t-raw="o.patient_id.user_id.company_id.terms_consent_form_gj"/>
+			    <br/>
+			</div>
+			<div class="row" >
+			    <span><strong style="font-size:18px !important;">ડોક્ટર (સર્જન) </strong></span>  <span t-esc="o.inpatient_id.primary_physician.name"/> <br/>
+			    <span><strong style="font-size:18px !important;">ડોક્ટર (એનેસ્થેટીસ્ટ) </strong></span> <span t-field="o.inpatient_id.user_id.name" /> <br/>
+			    <span><strong style="font-size:18px !important;"> તેમજ જરૂર પડે તો તેણે આપેલી સુચના અથવા બીજી ડોક્ટરની મદદ લેશે તેની મને ખાત્રી છે. તેમજ સંભવિત ભયની મને સમજણ આપી છે. </strong></span> <br/>
+			</div>
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">________  ઉપરની સર્વ વિગતો મેં સાનભાન સાથે દબાણ વગર વાંચી છે. </strong></span> <br/>
+			    <span><strong style="font-size:18px !important;">________  મને વાંચી બતાવવામાં આવી છે સમજણ પડે તે ભાષામાં. </strong></span> <br/>
+			    <span><strong style="font-size:18px !important;">________  તે મારી સમજમાં આવી છે તેમજ મને સંપૂર્ણ માન્ય છે. </strong></span> <br/><br/>
+			</div>
+                        <table class="table table-condensed" style="border:none">
+			    <tr>
+				<td style="border: none;width:50%;" >
+                                   <strong style="font-size:18px !important;">સાક્ષી :  </strong> <span t-field="o.relation"/>
+                                </td>
+				<td style="border: none;width:50%;" >
+                                   <span><strong style="font-size:18px !important;"> દર્દીની સહી / અંગુઠો : </strong></span> <span>__________________</span>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <strong style="font-size:18px !important;">સહી/અંગુઠો :  </strong> <span>_______________</span>
+                                </td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> પૂરું નામ  : </strong></span> <span t-field="o.patient_id.name"/>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <strong style="font-size:18px !important;"> પૂરું નામ :  </strong> <span t-field="o.relative_name"/>
+                                </td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> ફોન : (ઘર) : </strong></span> <t t-if="o.patient_id.phone"><span t-field="o.patient_id.phone" /></t><t t-if="not o.patient_id.phone"> <span>____</span> </t><span><strong>  (ઓ):  </strong> <span>_________</span></span>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> ફોન : (ઘર) : </strong></span> <t t-if="o.relative_phone"><span t-field="o.relative_phone" /></t><t t-if="not o.relative_phone"> <span>____</span> </t><span><strong>  (ઓ):  </strong> <span>_________</span></span>
+                                </td>
+				<td style="border: none;" >
+                                   <span style="font-size:18px !important;"> મો. :  </span> <span t-field="o.patient_id.mobile"/>
+                                </td>
+                            </tr>
+			    
+			    <tr>
+				<td style="border: none;" >
+                                  <strong style="font-size:18px !important;">સરનામું: </strong><t t-if="o.relative_street">
+				  <span t-field="o.relative_street"/>,
+				  </t><t t-if="o.relative_street2">
+				  <span t-field="o.relative_street2"/>,
+				  </t>
+				  <t t-if="o.relative_state"><span t-field="o.relative_state"/>.</t>
+				</td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;">સરનામું: </strong></span> <t t-if="o.patient_id.street">
+				  <span t-field="o.patient_id.street"/>,
+				  </t><t t-if="o.patient_id.street2">
+				  <span t-field="o.patient_id.street2"/>,
+				  </t>
+				  <t t-if="o.patient_id.area_id"><span t-field="o.patient_id.area_id"/>,</t> <t t-if="o.patient_id.city_id"><span t-field="o.patient_id.city_id"/>, </t><t t-if="o.patient_id.state_id"><span t-field="o.patient_id.state_id"/>.</t>
+                                </td>
+                            </tr>
+                        </table>
+		    </t>
+
+
+		    <t t-if="o.language == 'english'">
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">Patient :  </strong></span>  <span t-field="o.patient_id.name" /><br/>
+			    <span><strong style="font-size:18px !important;">Age :  </strong></span>  <span t-field="o.patient_id.age" /> <span><strong>  Area :  </strong></span>  <t t-if="o.patient_id.city_id"><span t-field="o.patient_id.city_id.name" /></t><t t-if="not o.patient_id.city_id"> <span>__________</span> </t><span><strong>  Date :  </strong></span>  <span t-esc="time.strftime('%d-%m-%Y')"/><br/>
+			</div>
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">Name of Surgery : </strong>  </span>  <span t-field="o.inpatient_id.surgery_id.description" /><br/>
+			    <span><strong style="font-size:18px !important;">Name of Investigation/Procedure:  </strong></span>  <br/>
+			    <span><strong style="font-size:18px !important;"> Name of Anesthesia: </strong>  </span>  <span t-field="o.inpatient_id.anaesthesia_id.name" /><br/>
+			    <span><strong style="font-size:18px !important;">Name of Treatment: </strong> </span> <br/>
+			</div>
+			<div class="row" style="font-size:18px;letter-spacing: 0.5px;">
+			    <style>font{font-size:18px !important;}</style>
+			    <p t-raw="o.patient_id.user_id.company_id.terms_consent_form"/>
+			    <!-- <br/> -->
+			</div>
+			<div class="row" >
+			    <span><strong style="font-size:18px !important;">Doctor(Surgeon) </strong></span>  <span t-esc="o.inpatient_id.primary_physician.name"/> <br/>
+			    <span><strong style="font-size:18px !important;">Doctor (Anaesthetist) </strong></span> <span t-field="o.inpatient_id.user_id.name" /> <br/>
+			    <span><strong style="font-size:18px !important;">And if required, I am sure that the doctor may take help of any other doctor and follow their instructions. Also I am given the understanding of the potential danger. </strong></span> <br/>
+			</div>
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">________ I have consciously read all the above information without any pressure.</strong></span> <br/>
+			    <span><strong style="font-size:18px !important;">________ It has been read to me in the language I understand.</strong></span> <br/>
+			    <span><strong style="font-size:18px !important;">________ I have understood it and fully agree to it. </strong></span> <br/><br/>
+			</div>
+			<table class="table table-condensed" style="border:none">
+			    <tr>
+				<td style="border: none;width:50%;" >
+                                   <strong style="font-size:18px !important;">Relationship:  </strong> <span t-field="o.relation"/>
+                                </td>
+				<td style="border: none;width:50%;" >
+                                   <span><strong style="font-size:18px !important;"> Signature / thumb of patient : </strong></span> <span>___________</span>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <strong style="font-size:18px !important;">Signature / Thumb:  </strong> <span>_______________</span>
+                                </td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> Full Name  : </strong></span> <span t-field="o.patient_id.name"/>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <strong style="font-size:18px !important;"> Full Name :  </strong> <span t-field="o.relative_name"/>
+                                </td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> Phone (H): </strong></span> <t t-if="o.patient_id.phone"><span t-field="o.patient_id.phone" /></t><t t-if="not o.patient_id.phone"> <span>____</span> </t><span><strong>  (Mo.):  </strong> <span>_________</span></span>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> Phone (H): </strong></span> <t t-if="o.relative_phone"><span t-field="o.relative_phone" /></t><t t-if="not o.relative_phone"> <span>____</span> </t><span><strong>  (Mo.):  </strong> <span>_________</span></span>
+                                </td>
+				<td style="border: none;" >
+                                   <span style="font-size:18px !important;"> Mobile. :  </span> <span t-field="o.patient_id.mobile"/>
+                                </td>
+                            </tr>
+			    
+			    <tr>
+				<td style="border: none;" >
+                                  <strong style="font-size:18px !important;">Address: </strong><t t-if="o.relative_street">
+				  <span t-field="o.relative_street"/>,
+				  </t><t t-if="o.relative_street2">
+				  <span t-field="o.relative_street2"/>,
+				  </t>
+				  <t t-if="o.relative_state"><span t-field="o.relative_state"/>.</t>
+				</td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;">Address: </strong></span> <t t-if="o.patient_id.street">
+				  <span t-field="o.patient_id.street"/>,
+				  </t><t t-if="o.patient_id.street2">
+				  <span t-field="o.patient_id.street2"/>,
+				  </t>
+				  <t t-if="o.patient_id.area_id"><span t-field="o.patient_id.area_id"/>,</t> <t t-if="o.patient_id.city_id"><span t-field="o.patient_id.city_id"/>, </t><t t-if="o.patient_id.state_id"><span t-field="o.patient_id.state_id"/>.</t>
+                                </td>
+                            </tr>
+                        </table>
+		    </t>
+
+
+
+		    <t t-if="o.language == 'hindi'">
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">मरीज :  </strong></span>  <span t-field="o.patient_id.name" /><br/>
+			    <span><strong style="font-size:18px !important;">आयु :  </strong></span>  <span t-field="o.patient_id.age" /> <span><strong>  गांव :  </strong></span>  <t t-if="o.patient_id.city_id"><span t-field="o.patient_id.city_id.name" /></t><t t-if="not o.patient_id.city_id"> <span>__________</span> </t><span><strong>  तारीख :  </strong></span>  <span t-esc="time.strftime('%d-%m-%Y')"/><br/>
+			</div>
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;"> सर्जरी : </strong>  </span>  <span t-field="o.inpatient_id.surgery_id.description" /><br/>
+			    <span><strong style="font-size:18px !important;">निरीक्षण : </strong>  </span>  <br/>
+			    <span><strong style="font-size:18px !important;">बेहोश विधि नाम : </strong>  </span>  <span t-field="o.inpatient_id.anaesthesia_id.name" /><br/>
+			    <span><strong style="font-size:18px !important;">उपचार पद्धति का नाम</strong> </span> <br/>
+			</div>
+			<div class="row" style="font-size:18px;letter-spacing: 0.5px;">
+			    <style>font{font-size:18px !important;}</style>
+			    <p t-raw="o.patient_id.user_id.company_id.terms_consent_form_hi"/>
+			    <br/>
+			</div>
+			<div class="row" >
+			    <span><strong style="font-size:18px !important;">चिकित्सक (सर्जन) </strong></span> <span t-esc="o.inpatient_id.primary_physician.name"/> <br/> 
+			    <span><strong style="font-size:18px !important;">डॉक्टर (एनेस्थेटिस्ट) </strong></span> <span t-field="o.inpatient_id.user_id.name" /> <br/>
+			    <span><strong style="font-size:18px !important;"> यदि आवश्यक हो, वह डॉक्टरों के आदेश अनुसार अन्य मदद करेगा यह मुजे सुनिश्चित किया गया हे ।इसके साथ ही संभावित भय के बारे मे मुझे समझ दी गयी हे ।</strong></span> <br/>
+			</div>
+			<div class="row mt16" >
+			    <span><strong style="font-size:18px !important;">________  यह सुचना अनुदेश मेने दबाव के बिना पढ़ा है ।</strong></span> <br/>
+			    <span><strong style="font-size:18px !important;">________ मुजे यह अनुदेश मेरी समझ कि भाषा मे बताया गया हे । </strong></span> <br/>
+			    <span><strong style="font-size:18px !important;">________  यह अनुदेश मेरी समझ मे आ गया हे और मुजे मान्य  हे । </strong></span> <br/><br/>
+			</div>
+			
+			<table class="table table-condensed" style="border:none">
+			    <tr>
+				<td style="border: none;width:50%;" >
+                                   <strong style="font-size:18px !important;">गवाह :  </strong> <span t-field="o.relation"/>
+                                </td>
+				<td style="border: none;width:50%;" >
+                                   <span><strong style="font-size:18px !important;"> मरीज की हस्ताक्षर / अंगूठे का निशान : </strong></span> <span>__________________</span>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <strong style="font-size:18px !important;">हस्ताक्षर / अंगूठे का निशान :  </strong> <span>_______________</span>
+                                </td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> पूरा नाम  : </strong></span> <span t-field="o.patient_id.name"/>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <strong style="font-size:18px !important;"> पूरा नाम  :  </strong> <span t-field="o.relative_name"/>
+                                </td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> फोन: (गृह) </strong></span> <t t-if="o.patient_id.phone"><span t-field="o.patient_id.phone" /></t><t t-if="not o.patient_id.phone"> <span>____</span> </t><span><strong>  (मो):  </strong> <span>_________</span></span>
+                                </td>
+                            </tr>
+			    <tr>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;"> फोन: (गृह) </strong></span> <t t-if="o.relative_phone"><span t-field="o.relative_phone" /></t><t t-if="not o.relative_phone"> <span>____</span> </t><span><strong>  (मो):  </strong> <span>_________</span></span>
+                                </td>
+				<td style="border: none;" >
+                                   <span style="font-size:18px !important;"> मो :  </span> <span t-field="o.patient_id.mobile"/>
+                                </td>
+                            </tr>
+			    
+			    <tr>
+				<td style="border: none;" >
+                                  <strong style="font-size:18px !important;">पता: </strong><t t-if="o.relative_street">
+				  <span t-field="o.relative_street"/>,
+				  </t><t t-if="o.relative_street2">
+				  <span t-field="o.relative_street2"/>,
+				  </t>
+				  <t t-if="o.relative_state"><span t-field="o.relative_state"/>.</t>
+				</td>
+				<td style="border: none;" >
+                                   <span><strong style="font-size:18px !important;">पता: </strong></span> <t t-if="o.patient_id.street">
+				  <span t-field="o.patient_id.street"/>,
+				  </t><t t-if="o.patient_id.street2">
+				  <span t-field="o.patient_id.street2"/>,
+				  </t>
+				  <t t-if="o.patient_id.area_id"><span t-field="o.patient_id.area_id"/>,</t> <t t-if="o.patient_id.city_id"><span t-field="o.patient_id.city_id"/>, </t><t t-if="o.patient_id.state_id"><span t-field="o.patient_id.state_id"/>.</t>
+                                </td>
+                            </tr>
+                        </table>
+		    </t>
+
+			
+			
+			
+			
+                    </div>
+                </t>
+	    </t>
+        </template>
+        <report
+            id="consent_form_report"
+            string="General Consent Form"
+            model="consent.form" 
+            report_type="qweb-pdf"
+            file="shah_consent.report_consent_form" 
+            name="shah_consent.report_consent_form"
+            groups="hms.group_hms_receptionist,hms.group_hms_nurse,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor"
+        />
+	
+	<record id="shah_consent.consent_form_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_consent_letterpad_report" />
+        </record>
+
+        <report
+            id="consent_for_admission_report"
+            string="General Consent For Admission"
+            model="consent.form" 
+            report_type="qweb-pdf"
+            file="shah_consent.report_consent_for_admission" 
+            name="shah_consent.report_consent_for_admission"
+            groups="hms.group_hms_receptionist,hms.group_hms_nurse,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor"
+        />
+	
+	<record id="shah_consent.consent_for_admission_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_consent_letterpad_report" />
+        </record>
+
+        <report
+            id="consent_for_blood_report"
+            string="Consent For Blood"
+            model="consent.form" 
+            report_type="qweb-pdf"
+            file="shah_consent.report_consent_for_blood" 
+            name="shah_consent.report_consent_for_blood"
+            groups="hms.group_hms_receptionist,hms.group_hms_nurse,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor"
+        />
+	
+	<record id="shah_consent.consent_for_blood_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="paperformat_consent_letterpad_report" />
+        </record>
+    </data>
+</openerp>

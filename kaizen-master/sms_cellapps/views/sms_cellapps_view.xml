@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!-- ** Global menu for SMS Client ******************************** -->
+        <menuitem name="SMS" id="menu_smscellapps_administration_server" parent="base.menu_custom" sequence="1"/>
+
+        <!-- ** History of sending message ******************************** -->
+        <record model="ir.ui.view" id="sms_smscellapps_history_tree">
+            <field name="name">sms.smscellapps.history.tree</field>
+            <field name="model">sms.smscellapps.history</field>
+            <field name="arch" type="xml">
+                <tree string="Gateway History">
+                    <field name="date_create"/>
+                    <field name="user_id"/>
+                    <field name="name"/>
+                    <field name="to"/>
+                    <field name="sms"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sms_smscellapps_history_form">
+            <field name="name">sms.smscellapps.history.form</field>
+            <field name="model">sms.smscellapps.history</field>
+            <field name="arch" type="xml">
+                <form string="Gateway History">
+                    <field name="date_create" select="1"/>
+                    <field name="user_id" select="1"/>
+                    <field name="name" select="1"/>
+                    <field name="to" select="1"/>
+                    <field name="sms" colspan="4" select="1"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sms_smscellapps_history_tree">
+            <field name="name">SMS Gateway History</field>
+            <field name="res_model">sms.smscellapps.history</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="sms_smscellapps_history_tree" />
+        </record>
+
+        <menuitem name="SMS History" id="menu_smscellapps_administration_sms_server_history" parent="menu_smscellapps_administration_server" action="action_sms_smscellapps_history_tree"/>
+
+        <act_window id="act_sms_gateway_2_sms_history" name="SMS History" res_model="sms.smscellapps.history" src_model="res.company"/>
+
+        <!-- ** Message queue ********************************************* -->
+        <record model="ir.ui.view" id="sms_smscellapps_message_queue_tree">
+            <field name="name">sms.smscellapps.queue.tree</field>
+            <field name="model">sms.smscellapps.queue</field>
+            <field name="arch" type="xml">
+                <tree string="Message Queue">
+                    <field name="date_create"/>
+                    <field name="mobile"/>
+                    <field name="msg"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sms_smscellapps_message_queue_form">
+            <field name="name">sms.smscellapps.history.form</field>
+            <field name="model">sms.smscellapps.queue</field>
+            <field name="arch" type="xml">
+                <form string="Gateway History">
+                    <sheet>
+                        <group>
+                            <field name="date_create" select="1"/>
+                            <field name="mobile" select="1"/>
+                            <field name="state" select="1"/>
+                            <separator string="SMS Message" colspan="4"/>
+                            <field name="msg" colspan="4" select="2" nolabel="1"/>
+                            <separator string="Last Error"  colspan="4"/>
+                            <field name="error" colspan="4" select="2" nolabel="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sms_smscellapps_queue_tree">
+            <field name="name">Message Queue</field>
+            <field name="res_model">sms.smscellapps.queue</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="view_id" ref="sms_smscellapps_message_queue_tree" />
+        </record>
+        
+        <record id="view_res_company_sms_cellapps" model="ir.ui.view">
+            <field name="name">Company</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                 <notebook position="inside">
+                    <page string="SMS Getway">
+                        <group>
+                            <field name="url" placeholder="URL" />
+                            <field name="user_name" placeholder="User Name" />
+                            <field name="password" placeholder="Password" />
+                            <field name="sender_id" placeholder="API ID" />
+                        </group>
+                    </page>
+                 </notebook>
+            </field>
+        </record>
+
+        <menuitem name="SMS Queue" id="menu_smscellapps_administration_sms_server_queue" parent="menu_smscellapps_administration_server" action="action_sms_smscellapps_queue_tree"/>
+
+        <act_window id="act_sms_gateway_2_sms_queue" name="Message Queue" res_model="sms.smscellapps.queue" src_model="res.company"/>
+
+    </data>
+</openerp>

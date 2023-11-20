@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+      <template id="indi_layout">
+          <div class="header">
+          </div>
+          <t t-raw="0" />
+        </template>
+        <template id="report_patient_barcode">
+            <t t-call="hms_patient_barcode.indi_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <t t-foreach="starting_position" t-as="s">
+                            <div style="width:392px;height:152px;float:left;margin:0 40px;font-size:13px;margin-bottom:1px;border:0px solid #fff;margin-left:10px;">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </table>
+                            </div>
+                        </t>
+                        <t t-foreach="quantity" t-as="l">
+                             <div style="width:392px;height:152px;float:left;margin:0 10px;font-size:13px;margin-bottom:1px;border:0px solid #fff;margin-left:10px;">
+                                <table class="table ">
+                                    <tr>
+                                        <td style="float:right;">
+                                            <strong t-field="o.first_name" style="font-size:10px"/> <strong t-field="o.middel_name" style="font-size:10px"/> <strong t-field="o.last_name" style="font-size:10px"/>
+                                            <div t-field="o.partner_id"
+                                                t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true}' />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="float:left;">
+                                            <center>
+                                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('Code128',o.barcode,440,25)"/>
+                                            </center>
+                                            <center>
+                                                <strong t-field="o.barcode"/>
+                                            </center>
+                                            <center>
+                                                
+                                            </center>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</openerp>

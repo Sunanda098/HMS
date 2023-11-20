@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="oop_discharge_summary">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size: 14px !important; margin:0 0 0 60; padding:0">
+                        <h2 style="text-align: center;"><i><u><strong>Lithotripsy Department</strong></u></i></h2>
+                        <h4 style="text-align: center;"><i><u><strong>Discharge Summary</strong></u></i></h4>
+                        <div class="oe_structure"/>
+                        <div class="row mt32 mb32">
+                            <table class="table" style="padding:0; margin:0">
+                                <tbody>
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Registration No:</strong>
+                                            <span t-att-style="style" t-field="o.patient_id.code"/>
+                                        </td>
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Patient Name:</strong>
+                                            <span t-att-style="style" t-field="o.patient_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Lithotripsy #:</strong>
+                                            <span t-att-style="style" t-field="o.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Sex:</strong>
+                                            <span t-att-style="style" t-field="o.patient_id.sex"/>
+                                        </td>
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Age:</strong>
+                                             <span t-att-style="style" t-field="o.patient_id.age"/>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Consultant Name:</strong>
+                                            <span t-att-style="style" t-field="o.doctor_id.name"/>
+                                        </td>
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td  style="border: none; width: 500; height: 30">
+                                            <strong>Date/Time of Admission:</strong>
+                                             <span t-att-style="style" t-field="o.date_start"/>
+                                        </td> 
+                                        
+                                    </tr>
+                                     <tr>
+                                        <td  style="border: none; width: 500; height: 30">
+                                            <strong>Date/Time of Discharge:</strong>
+                                            <span t-att-style="style" t-field="o.discharge_date"/>
+                                        </td> 
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="border: none; width: 500; height: 30">
+                                            <strong>Diagnosis:</strong><br/>
+                                             <span t-att-style="style" t-field="o.diagnosis"/>
+                                        </td> 
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td  style="border: none; width: 500; height: 30">
+                                            <strong>Procedure:</strong><br/>
+                                             <span t-att-style="style" t-field="o.procedure"/>
+                                        </td> 
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td  style="border: none; width: 500; height: 30">
+                                            <strong>Advices:</strong><br/>
+                                             <span t-att-style="style" t-field="o.advice"/>
+                                        </td> 
+                                        
+                                    </tr> 
+                                    <tr><td style="border: none ; margin-top:0"><strong><b>Doctor’s Stamp/Signature:</b></strong></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

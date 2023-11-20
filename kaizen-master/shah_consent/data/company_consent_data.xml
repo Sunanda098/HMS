@@ -1,0 +1,236 @@
+<openerp>
+    <data noupdate="1">
+	<!-- Consent for blood English part 1-->
+        <record id="base.main_company" model="res.company">
+            <field name="terms_consent_blood1">
+		<![CDATA[ 
+		<b>INFORMATION FOR THE PATIENT / LEGAL GUARDIAN / LEGAL REPRESENTATIVE OF THE PATEINT</b>
+		
+<p>Your doctor has recommended blood / blood components transfusion as an effective form of thereapy for you. You can discuss alternatives of blood transfusion with him.</p>
+
+<p>Along with blood, you will be receiveing a small amount of anticoagulant also which is used to preserve blood and / its components.</p>
+
+<p>Blood transfusion is life saving but may be life threatening through inherent risks of adverse affects including Hemolytic reaction, Allergic reactions, Febrile reactions, TRALI, Fluid overload, GVHD, Purpura, iron overload, infections and many more Depending on the adverse effects various symptoms may be felt by the patient including but not limted to urticaria, itching, fever, chills, sweating, flushing, increased pulse rate, muscle aching, chest pain, back pain, pain at infusion site, nausea, dark or red urine, jaundice, decreased urine, headache, low blood pressure, breathlessness, cough, vomiting, abdominal cramps, cyanosis or shock and in rare occasions, death.</p>
+
+<p>Although all blood units are screened for mandatory transfusion transmissible infections (HIV 1 &amp; 2, HbsAg, HCV, Syphilis and malaria) in accordance with national regulations, there may rarely be instances of transmittance of infections such as HIV / AIDS, Hepatitis and other diseases as there are certain limitations of the tests employed for screening of the blood.</p>
+
+<p>Although we always try to use fully compatible blood components to the patient, but in certain medical conditions, unavailability of fully compatible blood components or emergency where either the time doesn't permit or compatible units can not be found due to pre existing antbodies, we may use least incompatible blood components for the patients.</p>]]>
+	    
+	    </field>
+        </record>
+	
+	<!-- Consent for blood English part 2-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_blood2">
+		<![CDATA[ 
+	<p>have read and understood the possible consequences of blood transfusion. I understood that the physician has recommended this therapy with the belief that it is ablsoutely essential for the treatment, I have had the opportunity to ask questions about transfusion and its alternatives and the benefits as well as risks involve and i believe that i have sufficient knowledge to take an informed decision. I will be responsible for any adverse effects due to transfusion of blood or blood components.</p>
+
+	<p>I here by authorize the administration of blood/blood components to me/my patient of whom i am legal guardian/legal representative.</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for blood Hindi part 1-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_blood1_hi">
+		<![CDATA[ 
+	<b>मरीज के लिए जानकारी / कानूनी अभिभावक / मरीज के कानूनी प्रतिनिधि</b>
+
+<p>आपके चिकित्सक आप के लिए चिकित्सा के लिए एक प्रभावी फार्म के रूप में रक्त / रक्त आधान घटकों की सिफारिश की है | आप उनके साथ रक्त आधान के विकल्प पर चर्चा कर सकते हैं।</p>
+
+<p>खून के साथ साथ, तुम जो रक्त और / उसके घटकों की रक्षा करने के लिए प्रयोग किया जाता है थक्कारोधी भी की एक छोटी राशि प्राप्त करने के लिए किया जाएगा |</p>
+
+<p>रक्त आधान संजीवनी है, लेकिन रक्तसंलायी प्रतिक्रिया, एलर्जी, ज्वर प्रतिक्रियाओं, निशान, द्रव अधिभार, GVHD, परपूरा, लोहे अधिभार, संक्रमण जीवन के लिए खतरनाक हो सकता है, और कई और अधिक प्रतिकूल प्रभाव विभिन्न लक्षणों सहित मरीज द्वारा महसूस किया जा सकता है, लेकिन सीमित नहीं पर निर्भर करता है और कई और अधिक प्रतिकूल प्रभाव विभिन्न लक्षणों लेकिन सहित मरीज द्वारा महसूस किया जा सकता है न ही सीमित पित्ती करने के लिए, संचार स्थल पर खुजली, बुखार, ठंड लगना, पसीना, फ्लशिंग, नाड़ी दर में वृद्धि हुई, मांसपेशियों में दर्द, सीने में दर्द, पीठ दर्द, दर्द पर निर्भर करता है । मतली, काले या लाल मूत्र, पीलिया, मूत्र, सिर दर्द, निम्न रक्तचाप, सांस लेने में तकलीफ, खांसी, उल्टी, पेट में ऐंठन, नीलिमा या सदमा और दुर्लभ अवसरों में, मृत्यु की कमी।</p>
+
+<p>हालांकि सभी रक्त आधान यूनिट (एचआईवी 1 और 2, HbsAG, एचसीवी, सिफलिस और मलेरिया) अनिवार्य संक्रामक संक्रमण के लिए राष्ट्रीय नियमों के अनुसार जांच होते हे ।एचआईवी / एड्स, हेपेटाइटिस और अन्य रोग जहा खून की जांच के लिए कार्यरत परीक्षण के कुछ सीमाएं हैं वहाँ शायद ही कभी संक्रमण के संप्रेषण के उदाहरण हो सकता है।</p>
+
+<p>हम हमेशा से मरीज को पूरी तरह से अनुकूल रक्त घटकों का उपयोग करने की कोशिश करते है, लेकिन कुछ चिकित्सा परिस्थिति में, पूरी तरह से अनुरूप रक्त घटकों की अनुपलब्धता या आपात स्थिति जहां या तो समय अनुमति नहीं देता या संगत पूर्व-मौजूदा एंटीबॉडी नहीं पाया जा सकता, तब हम मरीज के लिए कम से कम असंगत रक्त घटकों का उपयोग कर सकते हैं।</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for blood Hindi part 2-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_blood2_hi">
+		<![CDATA[ 
+
+<p>मैंने रक्त आधान के संभावित परिणामों को पढ़ा है और समझ लिया है। मैं समझता हूँ कि चिकित्सक विश्वास के साथ इस थेरेपी की सिफारिश की है कि वह इलाज के लिए जरूरी है ! मुझे इसमें शामिल आधान के बारे में इसके विकल्प और लाभ साथ ही साथ शामिल जोखिम के रूप में अच्छी तरह से सवाल पूछने का मौका मिला है । मेरा मानना है कि मैं सूचित निर्णय लेने के लिए पर्याप्त ज्ञान है। मैं स्वयं रक्त या रक्त घटकों के आधान के कारण किसी भी प्रतिकूल प्रभाव के लिए जिम्मेदार होगा।मैं खून / रक्त घटकों के प्रशासन को मेरे या / मेरे मरीज जिनका मैं कानूनी अभिभावक / कानूनी प्रतिनिधि हूँ के लिये प्राधिकृत करता हूं ।</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for blood Gujarati part 1-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_blood1_gj">
+		<![CDATA[ 
+
+<b>દર્દી અને દર્દીના કાનૂની વાલી /કાનૂની પ્રતિનિઘી માટે માહિતી.</b>
+
+<p>તમારા ડૉક્ટર તમારા અસરકારક ઉપચાર ના સ્વરૂપ તરીકે રક્ત/રક્તના ઘટકોની મિશ્રણ ની ભલામણ કરી છે. તમે તેમની સાથે રક્ત મિશ્રણ ના વિકલ્પોની ચર્ચા કરી શકો છો.</p>
+
+<p>રક્ત સાથે તમો નાની માત્રામાં પ્રતિગંઠન તત્વો પણ પ્રાપ્ત કરશો જે રક્ત અને તેના ઘટકોને જાળવી રાખવા માટે વપરાય છે.</p>
+
+<p>રક્ત મિશ્રણ જીવન બચાવે છે, પરંતુ હિમોલીટીક પ્રતિક્રિયા, એલર્જીક પ્રતિક્રિયા, તાવ કે તાવ જેવું હોય તેની પ્રતિક્રિયાઓ, ટી.આર.એ.એલ.આઈ., પ્રવાહીનો ભાર, જી.વી.એચ.ડી., પુરપુરા, વધારે પડતું લોહ તત્વ, ચેપ અને એવા ઘણા જીવન સહજ જોખમોને લીધે રક્તમિશ્રણ જોખમી બની શકે છે. પ્રતિકૂળ અસરોના આધારે દર્દીઓ અથવા આમાંના કોઈપણ (પરંતુ આને મર્યાદિત નહી) લક્ષણો અનુભવી શકે છે, જેવા કે શિળસ, ખંજવાળ,તાવ,ઠંડી,પરસેવો,પલ્સરેટમાં વધારો,સ્નાયુઓની પીડા, છાતીમાં દુઃખાવો,કમરનો દુઃખાવો, રક્ત ચડાવેલી જગ્યાએ દુઃખાવો ,ઉબકા, શ્યામ કે લાલ પેશાબ, કમળો, ઓછો પેશાબ, માથુ દુઃખવું, લોહીનું નીચું દબાણ, હાંફી જવું, ખાંસી, ઉલટી, પેટમાં ખેંચાણ, સાયનોસિસ અથવા આઘાત અને ભાગ્યે કોઈ જ પ્રસંગમાં મૃત્યું.</p>
+
+<p>તમામ રક્ત મિશ્રણના એકમોનું ફરજીયાત ચેપી રોગો(એચ.આઈ.વી., એચ.બી.એચ.એસ.જી., એચ.એસ.વી., સિફિલિસ અને મેલેરિયા)નું રાષ્ટ્રીય નિયમો અનુસાર સ્ક્રીનીંગ થાય છે, તેમ છતાં ભાગ્યે કોઈ વખત HIV/AIDS કે કમળા નો ચેપ લાગવાની સંભાવના હોય છે કારણકે રક્તના સ્ક્રીનીંગ માટેની ટેસ્ટ મર્યાદાને લીધે.</p>
+
+<p>જો કે અમે હંમેશા દર્દી માટે સંપૂર્ણપણે સુસંગત રક્ત ઘટકોનો ઉપયોગ કરવાનો પ્રયાસ કરીએ છીએ, પરંતુ કેટલાક તબીબી હાલતોમાં સુસંગત રક્ત ઘટકો ઉપબબ્ધ ન હોય ,અથવા કટોકટી ના સમયે જયારે સુસંગત ઘટકો શોધવાનો સમયે પૂર્વ હયાત એન્ટિબાયોટીઝને કારણે ન હોય , તો અમે કદાચ દર્દી માટે ઓછા અસંગત રક્ત ઘટકો નો ઉપયોગ કરીએ.</p>]]>
+	    </field>
+        </record>
+
+	<!-- Consent for blood Gujarati part 2-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_blood2_gj">
+		<![CDATA[ 
+
+<p>નો નિવાસી આ વાંચી અને રક્ત પ્રતિગંઠનના શક્ય પરિણામ સમજ્યા છે. હું સમજુ છું કે ફિઝિશિયને આ ઉપચારનો આગ્રહ એટલા માટે રાખ્યો છે કારણકે સંપૂર્ણપણે આવશ્યક છે. મને પ્રતિગંઠન અને તેના વિકલ્પો, લાભ અને સામેલ જોખમો વિષે પ્રશ્નો પૂછવાની તક મળી છે અને હું માનું છું કે એ જાણકારીને આધારે નિર્ણય લેવાનું પુરતું જ્ઞાન છે. રક્ત અને રક્ત ઘટકોની તબદિલીની જે પ્રતિકૂળ અસરો માટે હું જવાબદાર છું.</p>
+
+<p>આથી હું રક્ત/રક્ત ઘટકો ની મિશ્રણ મને/મારા દર્દી માટે કે જેનો હું કાનૂની પ્રતિનિધી છું માટે મંજૂરી આપું છું.</p>]]>
+	    </field>
+        </record>
+	
+	
+	<!-- Consent for Admission English-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_admission_en">
+		<![CDATA[ 
+
+
+<p>The Scope of general consent for admission in the hospital includes.</p>
+
+
+
+<p>1. Admission in the inpatient area of the hospital.</p>
+
+<p>2. Clinical consultation.</p>
+
+<p>3. Disclosure of information required for clinical management to health care team (under confidence).</p>
+
+<p>4. Routine medical examination.</p>
+
+<p>5. Routine Laboratory investigations.</p>
+
+<p>6. Routine imaging investigations.</p>
+
+<p>7. Nursing care.</p>
+
+<p>8. Adherence to hospital's rules, regulations and policies.</p>
+
+<p>The general consent does not includes consent for specialized procedures for which a separate informed consent will be taken.</p>
+
+
+
+                                                                         <center><b>Declaration by patient</b></center>
+
+<p>I hereby provide my general consent for the scope mentioned above, I also declare that by providing this consent I will adhere to the hospital's rules, regulations and policies till the time I am admitted in the hospital. </p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for Admission Hindi-->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_admission_hi">
+		<![CDATA[ 
+
+<p>अस्पताल में प्रवेश के लिए सामान्य सहमति के दायरे में शामिल।</p>
+
+<p>1. अस्पताल के मरीज क्षेत्र में प्रवेश ।</p>
+
+<p>2. क्लीनिकल परामर्श ।</p>
+
+<p>3. स्वास्थ्य देखभाल टीम के क्लिनिकल प्. रबंधन के लिए आवश्यक प्रकटीकरण की जानकारी ।</p>
+
+<p>4. नियमित चिकित्सा परीक्षा ।</p>
+
+<p>5. नियमित प्रयोगशाला जांच ।</p>
+
+<p>6. नियमित इमेजिंग(एक्स-रे) जांच ।</p>
+
+<p>7. नर्सिंग देखभाल ।</p>
+
+<p>8. अस्पताल के नियमों, विनियमों और नीतियों का पालन ।</p>
+
+
+<p>ये सामान्य सहमति कोई भी विशेष  प्रक्रिया के लिए नही है, और उनके लिए अलग से सूचित सहमति ली जायेगी ।</p>
+
+<center><b>मरीज द्वारा घोषणा</b></center>
+
+
+<p>मै इसके द्वारा ऊपर उल्लेख को मेरी सामान्य सहमति प्रदान करता हु | जब तक मैं अस्पताल में भर्ती हू इस दौरान मैं अस्पताल के नियमों, विनियमों और नीतियों का पालन करूँगा।</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for Admission Gujarati -->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_admission_gj">
+		<![CDATA[ 
+
+<p>આ સામાન્ય સર્વગ્રાહી સંમતિમાં નીચેની બાબતોનો સમાવેશ થાય છે.</p>
+
+<p>1. હોસ્પિટલમાં દાખલ કરવા પરવાનગી.</p>
+
+<p>2. તબીબી તપાસ.</p>
+
+<p>3. તેના માટે જરૂરી અંગત તબીબી માહિતી (ખાનગી રાખવાની વિનંતી સહ).</p>
+
+<p>4. સામાન્ય શારીરિક તપાસ.</p>
+
+<p>5. સામાન્ય લેબોરેટરી તપાસ.</p>
+
+<p>6. સામાન્ય એક્ષ-રે તપાસ .</p>
+
+<p>6. નર્સીગ સેવા.</p>
+
+<p>7. હોસ્પિટલના કાયદા તથા નીતિ નિયમોનું પાલન .</p>
+
+આ સર્વગ્રાહી સંમતિમાં ખાસ તપાસ કે સારવાર કે જેમાં જોખમની માત્રા છે, તેનો સમાવેશ થતો નથી. તે માટે અલગથી વિશિષ્ટ સંમંતિ લેવાની રહેશે.
+
+<center><b>દર્દી દ્વારા સંમતિ</b></center>
+
+<p>આથી હું આ હોસ્પિટલ ખાતે દાખલ થઇ સારવાર માટે ઉપર જણાવેલ તમામ બાબતો અંગે હું પૂરી સુજબુજ અને રાજીખુશીથી સંમતિ આપું છુ. હું દાખલ હોઈશ એ દરમિયાન હોસ્પિટલના નીતિ-નિયમોનું પાલન કરીશ.</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for Form Surgury English -->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_form">
+		<![CDATA[ 
+
+<p> 1. I give consent form for _____ me / ______the patient to carry out surgery as written above, and for medications as well as for giving anesthesia, I agree as follows. The doctor has explained to me in detail the side effects of this medications / inspection / surgery / treatment method as well as the effects of not undergoing this line of treatment, the risk involved by using alternative treatment instead of surgery, and the dangers involved.</p>
+
+<p>2. No surgery is completely safe and medications / inspection / surgery / treatment method as well as the anesthesia given involve the danger to life, which is possible commonly even for a healthy person, and this information is shared with me.</p>
+
+<p>3. The doctor has informed me that excessive bleeding, infections, heart abatement, cessation of tumor in the lungs and / or several unexpected / accidental other complications may arise due to surgery or the anesthesia given.</p>
+
+<p>4. During the medications / inspection / surgery / treatment method if the doctor observes that during surgery or after giving anesthesia, that instead of the expected results some side effects are arising, then I give my consent for correcting them and taking due care.</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for Form Surgury Hindi -->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_form_hi">
+		<![CDATA[ 
+
+<p>1. मैं _____ अपने लिए / _____ मरीज के लिए जैसा कि ऊपर लिखा मरीज सर्जरी के लिए बाहर ले जाने के लिए, और दवाओं के साथ ही संज्ञाहरण देने के लिए, मैं सहमति फार्म देता हू | डॉक्टर विस्तार से मुझे समझाया गया है कि इस दवाएं / निरीक्षण / शल्य चिकित्सा / उपचार पद्धति के साइड इफेक्ट के साथ ही उपचार, जोखिम सर्जरी के बजाय वैकल्पिक उपचार का उपयोग करके शामिल की इस पंक्ति के दौर से गुजर नहीं के प्रभाव, और खतरों शामिल किया गया।</p>
+
+<p>2. कोई सर्जरी पूरी तरह से सुरक्षित नहीं है और दवाओं / निरीक्षण / शल्य चिकित्सा / उपचार पद्धति साथ ही साथ संज्ञाहरण दिया होवा जीवन के लिए खतरा है, जो आमतौर पर भी एक स्वस्थ व्यक्ति के लिए संभव है, और इस जानकारी को मुझे बताया गया है।</p>
+
+<p>3. डॉक्टर ने मुझे सूचित किया है की अत्यधिक रक्तस्राव, संक्रमण, दिल का रुकना, फेफड़ों के ट्यूमर की समाप्ति ,और / या कई अप्रत्याशित / आकस्मिक अन्य जटिलताओं सर्जरी या संज्ञाहरण दिया के कारण उत्पन्न हो सकती है।</p>
+
+<p>4. दवाओं / निरीक्षण / शल्य चिकित्सा / उपचार पद्धति करते समय चिकित्सक को सर्जरी या संज्ञाहरण देने के बाद शायद अपेक्षित परिणाम के बजाय कुछ दुष्प्रभाव उत्पन्न होता है, फिर मैं उन्हें सही और उचित देखभाल लेने के लिए अपनी सहमति देता हु।</p>]]>
+	    </field>
+        </record>
+	
+	<!-- Consent for Form Surgury Gujarati -->
+	<record id="base.main_company" model="res.company">
+            <field name="terms_consent_form_gj">
+		<![CDATA[ 
+
+<p>૧. ______ મારા ઉપર / ________ દર્દી ઉપર જણાવેલ શસ્ત્રક્રિયા માટે અને ઔષધોપચાર તપાસણી માટે તેમજ બેહોશ કરનારી દવા ઉપચાર પદ્ધતિ માટે નીચે પ્રમાણેનું સંમતિપત્ર આપું છું. આ ઔષધોપચાર / તપાસણી / શસ્ત્રક્રિયા / ઉપચાર પદ્ધતિની પોતાની આડઅસરો અને પ્રક્રિયાની જરૂરીયાત હોવા છતાં ન કરવાથી થનારા પરિણામો, ઓપરેશન સિવાય અન્ય ઉપચારોથી થતું નુકશાન, ભય વગેરે બાબતોની ડોક્ટર સાહેબે સમજણ આપી છે.</p>
+
+<p>૨.કોઈપણ ઓપરેશન સંપૂર્ણ રીતે સુરક્ષિત હોતું નથી અને ઔષધોપચાર/તપાસણી/શસ્ત્રક્રિયા/ઉપચાર પદ્ધતિ અને બેહોશ કરવાની પ્રક્રિયાના લીધે જીવને ભય કે ઈજા થવાની સંપૂર્ણ શક્યતા સર્વસામાન્ય રીતે નીરોગીને પણ હોય છે તે મને યોગ્ય માહિતી પણ આપવામાં આવી છે.</p>
+
+<p>૩.વધારે પડતા રક્તસ્ત્રાવ,ચેપ લાગવો,હૃદય બંધ પડવું,ફેફસામાં ગાંઠનું અટકવું એ; આના જેવી ઈતર અકલ્પિત/આકસ્મિક બીજી કેટલીક ગુંચવણો શસ્ત્રક્રિયામાંથી કે બેહોશ કરવાની દવા દ્વારા થઇ શકે છે, તેની જાણ મને ડોક્ટરે આપેલી છે.</p>
+
+<p>૪.ઔષધોપચાર/તપાસણી/શસ્ત્રક્રિયા/ઉપચાર પદ્ધતિ કરતી વખતે ડોક્ટરને કોઈ કારણસર શસ્ત્રક્રિયા અને બેહોશ કરવાની દવા આપ્યા પછી કદાચ ઈચ્છિત ફાયદો થવા કરતા બીજી કોઈ આડઅસર ચાલુ થઇ શકે, પણ તે ટાળવા અને શક્ય થાય તો સુધારવા માટેની જરૂરી કાળજી.</p>]]>
+	    </field>
+        </record>
+	
+    </data>
+</openerp>

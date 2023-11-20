@@ -1,0 +1,70 @@
+<openerp>
+    <data noupdate="1">
+        <!--By Recovery Checklist-->
+
+        <record id="admission_checklist_recovery_checklist_1" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Consciousness</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_2" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Pain Score</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_3" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Vitals-Pulse</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_4" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Vitals-B.P.</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_5" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Vitals-SPO2</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_6" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Urine Output</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_7" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Drain Output</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_8" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Post Operative Orders</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_9" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Operative Notes Written</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_10" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Open Operative notes filed in Patient file</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_11" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Photo Summary &amp; Tagging</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_12" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">OT Billing From Signed &amp; Send to Billing Department</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_recovery_checklist_13" model="inpatient.checklist.recovery.checklist.template">
+            <field name="name">Re-estimate of OT Clearance</field>
+            <field name="remark"></field>
+        </record>
+    </data>
+</openerp>

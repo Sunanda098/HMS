@@ -1,0 +1,114 @@
+<openerp>
+	<data noupdate="1">
+		<!-- Data For Information Content in Fellow Checklist in Surgery -->
+		<record id="admission_checklist_fellow_1" model="inpatient.checklist.fellow.template">
+			<field name="name">Patient Confirmation</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_2" model="inpatient.checklist.fellow.template">
+			<field name="name">Consent</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_3" model="inpatient.checklist.fellow.template">
+			<field name="name">Site Marking</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_4" model="inpatient.checklist.fellow.template">
+			<field name="name">Physician Clearance</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_5" model="inpatient.checklist.fellow.template">
+			<field name="name">Anesthetist Clearance</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_6" model="inpatient.checklist.fellow.template">
+			<field name="name">Review of all Investigations</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_7" model="inpatient.checklist.fellow.template">
+			<field name="name">Patient Medical History-DM</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_8" model="inpatient.checklist.fellow.template">
+			<field name="name">Patient Medical History-HT</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_9" model="inpatient.checklist.fellow.template">
+			<field name="name">Patient Medical History-IHD</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_10" model="inpatient.checklist.fellow.template">
+			<field name="name">Patient Medical History-HIV</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_11" model="inpatient.checklist.fellow.template">
+			<field name="name">Patient Medical History-HBsAG</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_12" model="inpatient.checklist.fellow.template">
+			<field name="name">Antibiotic prophylaxis</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_13" model="inpatient.checklist.fellow.template">
+			<field name="name">Anti thrombotic prophylaxis</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_14" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Confimation</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_15" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Confirmation-Open</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_16" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Confirmation-Laproscopic</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_17" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Confirmation-Procedure(1)</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_18" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Confirmation-Procedure(2)</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_19" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Confirmation-Procedure(3)</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_21" model="inpatient.checklist.fellow.template">
+			<field name="name">Additional Procedure</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_22" model="inpatient.checklist.fellow.template">
+			<field name="name">Procedure Name</field>
+			<field name="remark"></field>
+		</record>
+
+		<record id="admission_checklist_fellow_23" model="inpatient.checklist.fellow.template">
+			<field name="name">Position</field>
+			<field name="remark"></field>
+		</record>
+	</data>
+</openerp>

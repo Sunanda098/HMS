@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="hms_consultation_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size: 120%;">
+                        <center>
+                            <strong style="font-size: 120%;">Consultation Report # <span t-field="o.name" /></strong>
+                        </center>
+                        <center>
+                        <table style="width:775px;height:100px;margin:10 10 10 10">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Patient:</strong>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.patient_id.name" />
+                                    </td>
+                                    <td>
+                                        <strong>Appointment Date:</strong>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.date" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Department:</strong>
+                                    </td>
+                                    <td>
+                                        <!-- <span t-field="o." /> -->
+                                    </td>
+                                    <td>
+                                        <strong>Doctor:</strong>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.physician_id.name" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="width:775px;height:100px;margin:10 10 10 10">
+                            <tbody>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <strong>Chief Complaint</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <span t-field="o.chief_complain" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <strong>History Of Present Illness</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <span t-field="o.present_illness" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <strong>Differencial Diagnosis</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <span t-field="o.differencial_diagnosis" />
+                                    </td>
+                                </tr>
+                                <tr>    
+                                    <td style="padding-bottom:5px">
+                                        <strong>Medical Advice</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom:5px">
+                                        <span t-field="o.medical_advice" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:50px">
+                                        <strong>Doctor’s Stamp/Signature</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </center>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report id="hms_consultation_report_id"
+            string="Consultation Report"
+            model="hms.appointment"
+            report_type="qweb-pdf"
+            file="hms_gynec.hms_consultation_report"
+            name="hms_gynec.hms_consultation_report"/>
+
+    </data>
+</openerp>

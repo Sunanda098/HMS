@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="internal_layout_claim">
+        <!-- Multicompany -->
+        <span t-esc="o"/>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+
+        <div class="header" style="border-bottom: 1px solid black;">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <h2>
+                        
+                    </h2>
+                    <div>
+                        <strong><span t-field="company.street"/>
+                        <span t-field="company.street2"/><br/>
+                        <span t-field="company.city"/> - <span t-field="company.zip"/><br/>
+                        Phone: <span t-field="company.phone"/><br/>
+                        Email: <span t-field="company.email"/></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <t t-raw="0" />
+    </template>
+    <template id="claim_report">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                 <t t-call="hms_insurance.internal_layout_claim">
+                <div class="page">
+                    <br />
+                    <div>
+                    <div class="row pull-right">
+                        <strong>Date:</strong>
+                        <span t-esc="datetime.datetime.today().date()" ></span>
+                    </div>
+                    <div class="row text-center">
+                        <h3>Claim Report</h3>
+                        <br />
+                        <strong>
+                            <span t-field="doc.date_from" t-field-options="{&quot;format&quot;: &quot;d/MMM/y&quot;}" /> - <span t-field="doc.date_to" t-field-options="{&quot;format&quot;: &quot;d/MMM/y&quot;}" /></strong>
+                    </div>
+                </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Claim No.</th>
+                                <th>Hosp.ID</th>
+                                <th>Patient Name</th>
+                                <th>Policy No</th>
+                                <th>Insurance Company</th>
+                                <th>T.P.A</th>
+                                <th>Created On Date.</th>
+                                <th>Total Claim Amount</th>
+                                <th>Passed Amount</th>
+                                <th>Difference Amount</th>
+                                <th>Amount Received Date</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="no" t-value="1" />
+                            <t t-foreach="doc.get_claim()" t-as="line">
+                                <tr>
+                                    <td>
+                                        <center>
+                                            <span t-esc="no" />
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.claim_number" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.hosp_id.name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.patient_id.name" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.policy_number" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.insurance_company_id.name" />
+                                    </td>
+                                    <td>
+                                        <t t-if="line.tpa_id.name">
+                                        <span t-field="line.tpa_id.name"/>
+                                        </t>
+                                    
+                                    </td>
+                                    <td>
+                                        <span t-field="line.created_date" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.amount_requested" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.amount_pass" />
+                                    </td>
+                                    <td>
+                                    
+                                        <span t-field="line.amount_difference" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.date_received" />
+                                    </td>
+                                    <td>
+                                        <span t-field="line.state" />
+                                    </td>
+                                    
+                                </tr>
+                                <t t-set="no" t-value="no+1" />
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <report id="action_claim_report" model="claim.report" string="Claim Report" report_type="qweb-pdf" name="hms_insurance.claim_report" file="hms_insurance.claim_report" />
+
+     <record id="hms_insurance.action_claim_report" model="ir.actions.report.xml">
+    <field name="paperformat_id" ref="hms.paperformat_hms_landscape_report" />
+        </record>
+</odoo>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- spine Form -->
+        <record id="view_spine_tree" model="ir.ui.view">
+            <field name="name">shah.spine.tree</field>
+            <field name="model">shah.spine</field>
+            <field name="arch" type="xml">
+                <tree string="Spine">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="inpatient_id" />
+                    <field name="date_hipjoint" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_spine_form" model="ir.ui.view">
+            <field name="name">shah.spine.form</field>
+            <field name="model">shah.spine</field>
+            <field name="arch" type="xml">
+                <form string="Spine">
+                    <header>
+                        <button name="button_done" states="draft" string="Done" type="object" />
+                        <button name="button_cancel" states="draft" string="Cancel" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done" statusbar_colors="{&quot;draft&quot;:&quot;blue&quot;,&quot;cancel&quot;:&quot;red&quot;}" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1" />
+                            </h1>
+                        </div>
+                        <group colspan="2" string="Spine">
+                            <group>
+                                <field name="inpatient_id" attrs="{'readonly': [('state','!=','draft')]}" invisible="1" />
+                                <field name="patient_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="date_hipjoint" attrs="{'readonly': [('state','!=','draft')]}" />
+                            </group>
+                            <group>
+                                <field name="chief_complaint_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="spine_data_ids" colspan="4">
+                                    <tree editable="top" string="Note">
+                                        <field name="val_name" readonly="1" />
+                                        <field name="val" />
+                                    </tree>
+                                </field>
+                            </group>
+                            <group>
+                                <field name="spine_sdata_ids" colspan="4">
+                                    <tree editable="top" string="Note">
+                                        <field name="val_name" readonly="1" />
+                                        <field name="val" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="spine_tdata_ids" colspan="4">
+                                    <tree editable="top" string="Note">
+                                        <field name="val_name" readonly="1" />
+                                        <field name="val" />
+                                    </tree>
+                                </field>
+                            </group>
+                            <group>
+                                <field name="spine_fdata_ids" colspan="4">
+                                    <tree editable="top" string="Note">
+                                        <field name="val_name" readonly="1" />
+                                        <field name="val" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                        <group col="4" string="Investigation">
+                            <field name="advice_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                            <field name="xray_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                            <field name="mri_id" />
+                            <field name="other_id" />
+                            <field name="ctscan_id" />
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_spine_search" model="ir.ui.view">
+            <field name="name">shah.spine.search</field>
+            <field name="model">shah.spine</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Spine">
+                    <field name="patient_id" />
+                </search>
+            </field>
+        </record>
+        <record id="action_spine_form" model="ir.actions.act_window">
+            <field name="name">Spine</field>
+            <field name="res_model">shah.spine</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+        <record id="view_shah_spine_appointment" model="ir.ui.view">
+            <field name="name">hms.appointment.form</field>
+            <field name="model">hms.appointment</field>
+            <field name="inherit_id" ref="hms.view_hms_appointment_form" />
+            <field name="arch" type="xml">
+                <button name="view_invoice" position="before">
+                    <button name="action_spine" string="Spine" type="object" attrs="{'invisible':['|',('department_name','!=','Orthopedic'),('state','not in',['in_consultation','invoiced','done','sr_dr'])]}" class="btn btn-sm oe_button oe_button oe_form_button oe_highlight" groups="hms.group_hms_jr_doctor,hms.group_hms_doctor,hms.group_hms_medical_officer" style="width:31%;"/>
+                </button>
+            </field>
+        </record>
+    </data>
+</openerp>

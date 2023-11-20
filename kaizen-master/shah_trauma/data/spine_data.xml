@@ -1,0 +1,134 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Data for OPD Phy hand Note -->
+        <record id="shah_spine_template_11" model="shah.spine.note.template">
+            <field name="val_name">Back Pain :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_12" model="shah.spine.note.template">
+            <field name="val_name">Leg Pain :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_13" model="shah.spine.note.template">
+            <field name="val_name">Back Pain/leg Pain :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_14" model="shah.spine.note.template">
+            <field name="val_name">Rt/lt Leg :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_15" model="shah.spine.note.template">
+            <field name="val_name">Neck Pain :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_16" model="shah.spine.note.template">
+            <field name="val_name">Arm Pain :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_17" model="shah.spine.note.template">
+            <field name="val_name">Arm/Neck Pain :</field>
+            <field name="val_selection">top</field>
+        </record>
+        <record id="shah_spine_template_21" model="shah.spine.note.template">
+            <field name="val_name">Rt Arm/Lt Arm :</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_22" model="shah.spine.note.template">
+            <field name="val_name">Duration :</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_23" model="shah.spine.note.template">
+            <field name="val_name">Pain :</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_24" model="shah.spine.note.template">
+            <field name="val_name">Pain Score:</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_25" model="shah.spine.note.template">
+            <field name="val_name">Aggravating Factor :</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_26" model="shah.spine.note.template">
+            <field name="val_name">Relieving factor :</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_27" model="shah.spine.note.template">
+            <field name="val_name">Claudication factor :</field>
+            <field name="val_selection">left</field>
+        </record>
+        <record id="shah_spine_template_31" model="shah.spine.note.template">
+            <field name="val_name">Associated  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_32" model="shah.spine.note.template">
+            <field name="val_name">Bematome  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_33" model="shah.spine.note.template">
+            <field name="val_name">Severity  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_34" model="shah.spine.note.template">
+            <field name="val_name">S/H:Smoking  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_35" model="shah.spine.note.template">
+            <field name="val_name">Alcohol  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_36" model="shah.spine.note.template">
+            <field name="val_name">Mensuration  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_37" model="shah.spine.note.template">
+            <field name="val_name">Scoliosis  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_38" model="shah.spine.note.template">
+            <field name="val_name">Age Of Identification :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_39" model="shah.spine.note.template">
+            <field name="val_name">Assciated Problems  :</field>
+            <field name="val_selection">bottom</field>
+        </record>
+        <record id="shah_spine_template_41" model="shah.spine.note.template">
+            <field name="val_name">Walking Imbalancer :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_42" model="shah.spine.note.template">
+            <field name="val_name">Fine Hand Function :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_43" model="shah.spine.note.template">
+            <field name="val_name">Bladder/Bowel Function :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_44" model="shah.spine.note.template">
+            <field name="val_name">P/H :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_45" model="shah.spine.note.template">
+            <field name="val_name">Others:</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_46" model="shah.spine.note.template">
+            <field name="val_name">Treatment :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_47" model="shah.spine.note.template">
+            <field name="val_name">Self Image :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_48" model="shah.spine.note.template">
+            <field name="val_name">Bracing :</field>
+            <field name="val_selection">right</field>
+        </record>
+        <record id="shah_spine_template_49" model="shah.spine.note.template">
+            <field name="val_name">Associated Diseases :</field>
+            <field name="val_selection">right</field>
+        </record>
+
+    </data>
+</openerp>

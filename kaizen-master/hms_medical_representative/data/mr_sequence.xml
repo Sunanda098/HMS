@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+         <!-- Sequences for mr -->
+
+        <record id="seq_mr" model="ir.sequence">
+            <field name="name">MR</field>
+            <field name="code">hms.mr</field>
+            <field name="prefix">MR</field>
+            <field name="padding">3</field>
+        </record>
+
+        <record id="seq_for_mr_appointment" model="ir.sequence">
+            <field name="name">MAP</field>
+            <field name="code">medical.visit</field>
+            <field name="prefix">MAP</field>
+            <field name="padding">3</field>
+        </record>
+       
+    </data>
+</openerp>

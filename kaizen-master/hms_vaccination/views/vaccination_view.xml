@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="product_template_vaccination_inherit" model="ir.ui.view">
+            <field name="name">product.template.vaccination</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="hms.product_template_only_form_view_inherit_apagen_ids"/>
+            <field name="arch" type="xml">
+                <field name="hospital_product_type" position="after">
+                    <field name="date_due_day" attrs="{'invisible': [('hospital_product_type', '!=', 'vaccination')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_patient_vaccination_form" model="ir.ui.view">
+            <field name="name">patient.vaccination.form</field>
+            <field name="model">hms.patient</field>
+            <field name="inherit_id" ref="hms.view_patient_form"/>
+            <field name="arch" type="xml">
+                <page name="basic_medical" position="after">
+                    <page name="Vaccination" string="Vaccination" invisible="1" >
+                        <group>
+                            <!-- <field name="vaccination_group_id"/> -->
+                        </group>
+                        <group name="vaccine_info" string="Vaccination">
+                        <field name="vaccination_line" nolabel="1">
+                            <tree string="vaccination" editable="top">
+                            <field name="product_id" domain="[('hospital_product_type','=','vaccination')]"/>
+                            <field name="date_check_due"/>
+                            <field name="check"/>
+                            <field name="given_date"/>
+                            <field name="batch"/>
+                            </tree>
+                        </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_vaccination_vac_form" model="ir.ui.view">
+            <field name="name">vaccination.form</field>
+            <field name="model">vaccination.vaccination</field>
+            <field name="arch" type="xml">
+                 <form string="Vaccination">
+                    <sheet>
+                    <group>   
+                        <group>             
+                            <field name="product_id" domain="[('hospital_product_type','=','vaccination')]"/>
+                            <field name="date_check_due"/>
+                            <field name="check"/>
+                            <field name="given_date"/>
+                            <field name="batch"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_vaccination_vac" model="ir.actions.act_window">
+            <field name="name">Vaccination</field>
+            <field name="res_model">vaccination.vaccination</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+       
+        <record id="view_hms_vaccination_group_form" model="ir.ui.view">
+            <field name="name">vaccination.group</field>
+            <field name="model">vaccination.group</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <group string="Vaccination Group">
+                            <field name="group_line" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="product_id" domain="[('hospital_product_type','=','vaccination')]"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_hms_vaccination_group" model="ir.actions.act_window">
+            <field name="name">Vaccination Group</field>
+            <field name="res_model">vaccination.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="vaccination_menu" name="Vaccination Configure" parent="hms.menu_hms_cofig" sequence="45"/>
+
+        <menuitem id="vaccination_sub_menu" name="Vaccination"   sequence="3" parent="vaccination_menu" action="action_hms_vaccination_group"/> 
+    </data>
+</openerp>

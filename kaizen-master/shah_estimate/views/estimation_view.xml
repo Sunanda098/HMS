@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_estimate_tree" model="ir.ui.view">
+            <field name="name">estimate.tree</field>
+            <field name="model">hms.estimate</field>
+            <field name="arch" type="xml">
+                <tree string="Estimate">
+                    <field name="patient_id" />
+                    <field name="admission_date"/>
+                    <field name="expected_stay" />
+                    <field name="is_package" />
+                    <field name="product_id" />
+		    <field name="estimate_lines" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_estimate_form" model="ir.ui.view">
+            <field name="name">estimate.form</field>
+            <field name="model">hms.estimate</field>
+            <field name="arch" type="xml">
+                <form string="Estimate">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="patient_id" required="1"/>
+                                <field name="diagnosis_id" required="1"/>
+                                <field name="surgery_id" required="1" widget="many2many_tags"/>
+                                <field name="expected_stay" required="1" style="width:33px;" class="oe_line"/>
+                                <field name="is_package"  style="width:10px;" class="oe_line"/>
+                                <field name="consultant_id"/>
+                                <field name="surgery_procedure"/>
+                                <field name="case_type"/>
+                                <field name="surgery_grade"/>
+                                <field name="room_category"/>
+                            </group>
+                            <group>
+                                <field name="age" readonly="1"/>
+                                <field name="inpatient_id" />
+                                <field name="admission_date"/>
+                                <field name="surgery_date" />
+                                <field name="product_id" attrs="{'invisible': [('is_package', '!=', True)], 'required': [('is_package', '=', True)]}" context="{'default_type':'service','default_hospital_product_type':'package'}"/>
+                                <field name="estimate_price" attrs="{'invisible':[('is_package', '!=', True)]}"/>
+                               
+                            </group>
+                        </group>
+			<group string="Estimate" attrs="{'invisible':[('is_package', '=', True)]}">
+			    <field name="estimate_lines" nolabel="1">
+				<tree editable="top">
+				    <field name="product_id" string="Service"/>
+				    <field name="amount" sum="Total"/>
+				</tree>
+			    </field>
+			</group>
+
+                    <!--Room Charges-->
+                    <group>
+                        <label for="room_facility_charges_ids" string="ROOM FACILITY CHARGES"/>
+                        <field name="room_facility_charges_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom" options='{"no_open": True, "no_create": True}'>
+                                <field name="name" readonly="1"/>
+                                <field name="room_type"/>
+                                <field name="stay_day"/>
+                                <field name="room_charges"/>
+                                <field name="room_total_amount"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <!--Surgical Charges-->
+                    <group>
+                        <label for="surgical_charges_ids" string="SURGICAL CHARGES"/>
+                        <field name="surgical_charges_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom" options='{"no_open": True, "no_create": True}'>
+                                <field name="risk_type"/>
+                                <field name="name" readonly="1"/>
+                                <field name="room_type"/>
+                                <field name="stay_day"/>
+                                <field name="room_charges"/>
+                                <field name="room_total_amount"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <!--Operation Theatre & Equip Charges-->
+                    <group>
+                        <label for="operation_equip_charges_ids" string="OPERATION THEATRE &amp; EQUIP. CHARGES"/>
+                        <field name="operation_equip_charges_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom">
+                                <field name="name" readonly="1"/>
+                                <field name="room_type"/>
+                                <field name="stay_day"/>
+                                <field name="room_charges"/>
+                                <field name="room_total_amount"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <!--INVESTIGATION & PHARMACY Charges-->
+                    <group>
+                        <label for="investigation_pharmacy_charges_ids" string="INVESTIGATION &amp; PHARMACY CHARGES"/>
+                        <field name="investigation_pharmacy_charges_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom">
+                                <field name="name" readonly="1"/>
+                                <field name="room_type"/>
+                                <field name="room_charges"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_estimate_search" model="ir.ui.view">
+            <field name="name">estimate.search</field>
+            <field name="model">hms.estimate</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Estimate">
+                    <field name="patient_id" />
+                    <field name="diagnosis_id" />
+		    <field name="surgery_id" />
+                </search>
+            </field>
+        </record>
+        <record id="action_estimate" model="ir.actions.act_window">
+            <field name="name">Estimate</field>
+            <field name="res_model">hms.estimate</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+	
+	<record id="view_hms_patient_estimation" model="ir.ui.view">
+            <field name="name">hms.patient.form</field>
+            <field name="model">hms.patient</field>
+            <field name="inherit_id" ref='hms.view_patient_form'/>
+            <field name="arch" type="xml">
+                <button name="action_appointment" position="after">
+		    <button name="action_button_estimation" string="Estimation"
+                            type="object" class="oe_stat_button" icon="fa-file-text-o" groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor"/>
+                </button>
+            </field>
+        </record>
+	
+	<record id="view_hms_inpatient_registration_estimation" model="ir.ui.view">
+            <field name="name">inpatient.registration.form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="inherit_id" ref='hms_hospitalization.view_inpatient_registration_form'/>
+            <field name="arch" type="xml">
+                <button name="action_view_invoice_hms" position="after">
+		    <button type="object" class="oe_stat_button oe_right" icon="fa-file-text-o" name="action_button_estimation" groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor" >
+			<div>Estimation</div>
+		    </button>
+                </button>
+            </field>
+        </record>
+	
+	<menuitem id="action_menu_hospitalization_estimate_report"
+            name="Estimate Sheet"
+            groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor" action="action_estimate" parent="hms_hospitalization.menu_hospitalization_report" sequence="2" />
+
+       <!--  <report
+            id="report_hms_cost_estimation"
+            string="Cost Estimation Report"
+            model="hms.estimate"
+            report_type="qweb-pdf"
+            file="hms_hospitalization.hms_cost_estimation_report"
+            name="hms_hospitalization.hms_cost_estimation_report"/> -->
+    </data>
+</openerp>
+
+

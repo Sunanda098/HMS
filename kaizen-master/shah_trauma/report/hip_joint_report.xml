@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="hip_joint_report">
+            <t t-call="hms.hms_letterpad_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page" style="font-size: 14px">
+                        <div class="oe_structure" />
+                        <div class="col-xs-5 col-xs-offset-6">
+                            <strong>
+                                <span>Date:</span>
+                                <span t-field="doc.date_hipjoint" />
+                            </strong>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <h4>
+                                <span t-esc="doc.get_name(doc)" />
+                                <span>,</span>
+                                <span t-field="doc.patient_id.age" />
+                            </h4>
+                        </div>
+                        <div class="row">
+                            <table class="table table-bordered" style="border-style:solid">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="1" style="border: none;">
+                                            <strong>Chief Complaints:</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.chief_complaint_id"><span t-esc="doc.chief_complaint_id" />
+                                            </t>
+                                            <t t-if="not doc.chief_complaint_id"><span> -----</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>History :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.history_id"><span t-esc="doc.history_id.name" />
+                                            </t>
+                                            <t t-if="not doc.history_id"><span> --</span>
+                                            </t>
+                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <strong>On Examination :</strong>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Gait:</strong>
+                                        </td>
+                                        <td colspan="2"><t t-if="doc.gait"><span t-esc="doc.gait" />
+                                            </t>
+                                            <t t-if="not doc.gait"><span> -</span>
+                                            </t>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Limb Length Discrepancy:</strong>
+                                        </td>
+                                        <td colspan="2"><t t-if="doc.limb"><span t-esc="doc.limb.name" />
+                                            </t>
+                                            <t t-if="not doc.limb"><span> -</span>
+                                            </t>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Deformity:</strong>
+                                        </td>
+                                        <td colspan="1"><t t-if="doc.deformaty_left"><span t-esc="doc.deformaty_left" />
+                                            </t>
+                                            <t t-if="not doc.deformaty_left"><span> -(Left)</span>
+                                            </t>
+
+                                        </td>
+                                        <td colspan="1"><t t-if="doc.deformaty_right"><span t-esc="doc.deformaty_right" />
+                                            </t>
+                                            <t t-if="not doc.deformaty_right"><span> -(Right)</span>
+                                            </t>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <strong>Range of Motion :</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                        </td>
+                                        <td colspan="1">
+                                            <strong>Left </strong>
+                                        </td>
+                                        <td colspan="1">
+                                            <strong>Right </strong>
+                                        </td>
+                                    </tr>
+
+                                        <t t-foreach="doc.hip_data_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span t-esc="line.val_name" />
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <t t-if="line.val_one"><span t-esc="line.val_one" />
+                                            </t>
+                                            <t t-if="not line.val_one"><span> -</span>
+                                            </t>
+                            
+                                        </td>
+                                        <td>
+                                            <t t-if="line.val_two"><span t-esc="line.val_two" />
+                                            </t>
+                                            <t t-if="not line.val_two"><span> -</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                </t>
+
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>X-Ray :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.xray_id"><span t-esc="doc.xray_id.name" />
+                                            </t>
+                                            <t t-if="not doc.xray_id"><span> -</span>
+                                            </t>
+                                        
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Advice :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.advice_id"><span t-esc="doc.advice_id.name" />
+                                            </t>
+                                            <t t-if="not doc.advice_id"><span> -</span>
+                                            </t>
+                                        
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row text-right">
+                            <br />
+                            <img t-if="doc.patient_id.primary_doctor.signature" width="150" height="90" alt="Signature" t-attf-src="data:image/gif;base64, #{doc.patient_id.primary_doctor.signature}" />
+                            <br />
+                            <strong>
+                                <span t-field="doc.patient_id.primary_doctor.name" />
+                            </strong>
+                        </div>
+                        <div class="oe_structure" />
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report id="report_shah_hip_joint" string="Report" model="shah.hipjoint" report_type="qweb-pdf" file="shah_trauma.hip_joint_report" name="shah_trauma.hip_joint_report" />
+        
+        <record id="report_shah_hip_joint" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hms.paperformat_hms_letterpad_report" />
+        </record>
+    </data>
+</openerp>

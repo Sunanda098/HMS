@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_zero_error_document">
+            <!--t t-call="Hospital.new_external_layout" -->
+            <t t-foreach="docs" t-as="o">
+                <div class="page col-xs-offset-1" style="font-size: 18px">
+                    <div class="row pull-right">
+                        <strong>Date:</strong>
+                        <span t-field-options='{"format":"dd-MM-YYYY"}' t-field="o.date_zero_error" style="padding-right: 120px" />
+                    </div>
+                    <br />
+                    <br/>
+                    <div class="row text-center">
+                        <span style="color: blue">
+                            '0' - '0' Technique
+                        </span><br/>
+                        <span>
+                            Surgery with 100% Precision '0' - '0' Errors
+                        </span><br/>
+                        <span>
+                            Perfect Result: Each Time, Every Time with '0' - '0' Errors
+                        </span><br/>
+                        <span>
+                            For Longger Life of the Joint
+                        </span><br/>
+                    </div>
+                    <div class="row text-left">
+                        <span style="color: blue">
+                            <span t-field="o.patient_id.name"/><t t-if="o.left_right">(<span t-field="o.left_right"/>)</t>
+                        </span>
+                    </div>
+                    <div class="row" style="width:600px">
+                        <img width="600" height="300" alt="" t-attf-src="data:image/gif;base64, #{o.image_one}"/>
+                    </div>
+                    <div class="row" style="width:600px">
+                        <img width="297" height="200" alt="" t-attf-src="data:image/gif;base64, #{o.image_two}"/>
+                        <img width="297" height="200" alt="" t-attf-src="data:image/gif;base64, #{o.image_three}"/>
+                    </div>
+                    <div class="row" style="width:600px">
+                        <img width="297" height="200" alt="" t-attf-src="data:image/gif;base64, #{o.image_four}"/>
+                        <img width="297" height="200" alt="" t-attf-src="data:image/gif;base64, #{o.image_five}"/>
+                    </div>
+                    <div class="oe_structure" />
+                </div>
+            </t>
+        </template>
+        <report id="report_zero_error" string="Zero Error"
+            model="hms.insurance.zero_error" report_type="qweb-pdf"
+            file="hms_insurance.report_zero_error_document"
+            name="hms_insurance.report_zero_error_document" 
+            groups="hms.group_hms_receptionist,hms_insurance.group_hms_insurance_officer"/>
+
+        <record id="hms_insurance.report_zero_error" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hms.paperformat_hms_letterpad_report" />
+        </record>
+
+    </data>
+</openerp>

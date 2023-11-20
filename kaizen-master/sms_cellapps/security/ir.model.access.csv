@@ -1,0 +1,25 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_smscellapps_queue_user,sms.smscellapps.queue User,model_sms_smscellapps_queue,group_sms_user,1,1,1,1
+access_sms_smscellapps_history_user,sms.smscellapps.history User,model_sms_smscellapps_history,group_sms_user,1,1,1,0
+access_ partner_sms_send,sms,model_partner_sms_send,group_sms_user,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_partner_sms_send_doctor,partner.sms.send,model_partner_sms_send,hms.group_hms_doctor,1,1,1,1
+access_partner_sms_send_jr_,partner.sms.send,model_partner_sms_send,hms.group_hms_jr_doctor,1,1,1,0
+access_partner_sms_send_mo,partner.sms.send,model_partner_sms_send,hms.group_hms_medical_officer,1,1,1,1
+access_partner_sms_send_receptionist,partner.sms.send,model_partner_sms_send,hms.group_hms_receptionist,1,1,1,0
+access_partner_sms_send_nurse,partner.sms.send,model_partner_sms_send,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_sms_smscellapps_queue_doctor,sms.smscellapps.queue,model_sms_smscellapps_queue,hms.group_hms_doctor,1,1,1,1
+access_sms_smscellapps_queue_jr_doctor,sms.smscellapps.queue,model_sms_smscellapps_queue,hms.group_hms_jr_doctor,1,1,1,0
+access_sms_smscellapps_queue_mo,sms.smscellapps.queue,model_sms_smscellapps_queue,hms.group_hms_medical_officer,1,1,1,1
+access_sms_smscellapps_queue_receptionist,sms.smscellapps.queue,model_sms_smscellapps_queue,hms.group_hms_receptionist,1,1,1,0
+access_sms_smscellapps_queue_nurse,sms.smscellapps.queue,model_sms_smscellapps_queue,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_sms_smscellapps_history_doctor,sms.smscellapps.history,model_sms_smscellapps_history,hms.group_hms_doctor,1,1,1,1
+access_sms_smscellapps_history_jr_doctor,sms.smscellapps.history,model_sms_smscellapps_history,hms.group_hms_jr_doctor,1,1,1,0
+access_sms_smscellapps_history_mo,sms.smscellapps.history,model_sms_smscellapps_history,hms.group_hms_medical_officer,1,1,1,1
+access_sms_smscellapps_history_receptionist,sms.smscellapps.history,model_sms_smscellapps_history,hms.group_hms_receptionist,1,1,1,0
+access_sms_smscellapps_history_nurse,sms.smscellapps.history,model_sms_smscellapps_history,hms.group_hms_nurse,1,0,0,0

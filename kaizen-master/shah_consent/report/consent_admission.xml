@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report_consent_for_admission">
+            <t t-call="hms.hms_external_layout_consent">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size:17px;">
+                        <div class="row" style="border-bottom:2px solid black;">
+                            <!-- <img style="height:250px;width:100%;" src="/shah_consent/static/src/img/consent_admission.png" /> -->
+                        </div>
+                        <div class="row pull-right">
+                            <strong>DATE:</strong>
+                            <span t-esc="time.strftime('%d-%m-%Y')"/>
+                        </div>
+                        <br/>
+                        <div class="row" style="font-size:17px;letter-spacing: 0.5px;">
+                            <t t-if="o.language == 'english'">
+                                <p t-raw="o.patient_id.user_id.company_id.terms_consent_admission_en" />
+                            </t>
+                            <t t-if="o.language == 'hindi'">
+                                <p t-raw="o.patient_id.user_id.company_id.terms_consent_admission_hi" />
+                            </t>
+                            <t t-if="o.language == 'gujarati'">
+                                <p t-raw="o.patient_id.user_id.company_id.terms_consent_admission_gj" />
+                            </t>
+                            <br />
+                        </div>
+                        <table class="table table-condensed" style="border:none">
+                            <tr>
+                                <t t-if="o.language == 'english'">
+                                    <td style="border: none;">
+                                        <span>Signature or thumb impression: </span> <span>_____________________</span>
+                                    </td>
+                                </t>
+                                <t t-if="o.language == 'hindi'">
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>हस्ताक्षर या अंगूठे का निशान:</strong> <span>_____________________</span>
+                                        </span>
+                                    </td>
+                                </t>
+                                <t t-if="o.language == 'gujarati'">
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>દર્દીની સહી અથવા અંગૂઠાનું નિશાન : </strong> <span>_____________________</span>
+                                        </span>
+                                    </td>
+                                </t>
+                            </tr>
+                            <tr>
+                                <t t-if="o.language == 'english'">
+                                    <td style="border: none;">
+                                        <span>Name of the Patient: </span>
+                                        <span t-field="o.patient_id.name" />
+                                    </td>
+                                </t>
+                                <t t-if="o.language == 'hindi'">
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>मरीज का नाम:  </strong>
+                                        </span>
+                                        <span t-field="o.patient_id.name" />
+                                    </td>
+                                </t>
+                                <t t-if="o.language == 'gujarati'">
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>દર્દીનું નામ :  </strong>
+                                        </span>
+                                        <span t-field="o.patient_id.name" />
+                                    </td>
+                                </t>
+                            </tr>
+                            <tr>
+                                <t t-if="o.language == 'english'">
+                                    <td style="border: none;">
+                                        <span>Address: </span>
+                                        <t t-if="o.patient_id.street">
+                                            <span t-field="o.patient_id.street" />,
+				  </t>
+                                        <t t-if="o.patient_id.street2">
+                                            <span t-field="o.patient_id.street2" />,
+				  </t>
+                                        <t t-if="o.patient_id.area_id">
+                                            <span t-field="o.patient_id.area_id" />,</t>
+                                        <t t-if="o.patient_id.city_id">
+                                            <span t-field="o.patient_id.city_id" />, </t>
+                                        <t t-if="o.patient_id.state_id">
+                                            <span t-field="o.patient_id.state_id" />.</t>
+                                    </td>
+                                </t>
+                                <t t-if="o.language == 'hindi'">
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>पता: </strong>
+                                        </span>
+                                        <t t-if="o.patient_id.street">
+                                            <span t-field="o.patient_id.street" />,
+				  </t>
+                                        <t t-if="o.patient_id.street2">
+                                            <span t-field="o.patient_id.street2" />,
+				  </t>
+                                        <t t-if="o.patient_id.area_id">
+                                            <span t-field="o.patient_id.area_id" />,</t>
+                                        <t t-if="o.patient_id.city_id">
+                                            <span t-field="o.patient_id.city_id" />, </t>
+                                        <t t-if="o.patient_id.state_id">
+                                            <span t-field="o.patient_id.state_id" />.</t>
+                                    </td>
+                                </t>
+                                <t t-if="o.language == 'gujarati'">
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>સરનામું: </strong>
+                                        </span>
+                                        <t t-if="o.patient_id.street">
+                                            <span t-field="o.patient_id.street" />,
+                  </t>
+                                        <t t-if="o.patient_id.street2">
+                                            <span t-field="o.patient_id.street2" />,
+                  </t>
+                                        <t t-if="o.patient_id.area_id">
+                                            <span t-field="o.patient_id.area_id" />,</t>
+                                        <t t-if="o.patient_id.city_id">
+                                            <span t-field="o.patient_id.city_id" />, </t>
+                                        <t t-if="o.patient_id.state_id">
+                                            <span t-field="o.patient_id.state_id" />.</t>
+                                    </td>
+                                </t>
+                            </tr>
+			    <t t-if="o.language == 'english'">
+				<tr>
+                                    <td style="border: none;">
+                                        <span>Signature of Patient's relative: </span>
+                                        <span>______________________</span>
+                                    </td>
+				</tr>
+				<tr>
+                                    <td style="border: none;">
+                                        <span>Name: </span>
+                                        <span t-field="o.relative_name" />
+                                    </td>
+				</tr>
+				<tr>
+                                    <td style="border: none;">
+                                        <span>Relation to Patient: </span>
+                                        <span t-field="o.relation" />
+                                    </td>
+				</tr>
+			    </t>
+
+			    <t t-if="o.language == 'gujarati'">
+				<tr>
+				    <td style="border: none;">
+					<span>
+					    <strong>દર્દીના સગાની સહી:  </strong>
+					</span>
+					<span>_________________________________</span>
+				    </td>
+				</tr>
+				<tr>
+				    <td style="border: none;">
+					<span>
+					    <strong>નામ:  </strong>
+					</span>
+					<span t-field="o.relative_name" />
+				    </td>
+				</tr>
+				<tr>
+				    <td style="border: none;">
+					<span>
+					    <strong>દર્દી સાથેનો સંબંધ:  </strong>
+					</span>
+					<span t-field="o.relation" />
+				    </td>
+				</tr>
+			    </t>
+                               
+			    <t t-if="o.language == 'hindi'">
+				<tr>
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>मरीज के रिश्तेदार के हस्ताक्षर: </strong>
+                                        </span>
+                                        <span>_____________________</span>
+                                    </td>
+				</tr>
+				<tr>
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>नाम:  </strong>
+                                        </span>
+                                        <span t-field="o.relative_name" />
+                                    </td>
+				</tr>
+				<tr>
+                                    <td style="border: none;">
+                                        <span>
+                                            <strong>मरीज के संबंध:  </strong>
+                                        </span>
+                                        <span t-field="o.relation" />
+                                    </td>
+				</tr>
+			    </t>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

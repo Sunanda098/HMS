@@ -1,0 +1,119 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Data For Information Content in By Anesthetist Check List in Surgery -->
+        <record id="admission_checklist_anesthetist_1" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Has the Patient Confirmed His/Her:</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_2" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Identity:</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_3" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Site:</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_4" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Procedure:</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_5" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Consent:</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_6" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Is the site marked?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_7" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Anesthesia safety check completed?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_8" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Pulse Oxymeter on the patient and functioning?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_9" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Does the Patent have a know allergy?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_10" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Type of Anesthesia-GA</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_11" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Type of Anesthesia-SA</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_12" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Type of Anesthesia-LA</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_13" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Difficult airway or aspiration risk?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_14" model="inpatient.checklist.anesthetist.template">
+            <field name="name">If yes, and equipment assistance available</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_15" model="inpatient.checklist.anesthetist.template">
+            <field name="name">RT</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_16" model="inpatient.checklist.anesthetist.template">
+            <field name="name">RT-Catheter</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_17" model="inpatient.checklist.anesthetist.template">
+            <field name="name">RT-CVP</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_18" model="inpatient.checklist.anesthetist.template">
+            <field name="name">RT-Epidural</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_19" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Imaging in View</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_20" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Imaging in View X-ray</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_21" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Imaging in View CT Scan</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_22" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Risk of>500 ml blood loss(7ml/kg in Children)</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_anesthetist_23" model="inpatient.checklist.anesthetist.template">
+            <field name="name">Blood for cross Match given</field>
+            <field name="remark"></field>
+        </record>
+    </data>
+</openerp>

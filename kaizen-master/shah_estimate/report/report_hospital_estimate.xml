@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_hospital_estimate_document">
+            <!--t t-call="Hospital.new_external_layout" -->
+            <t t-foreach="docs" t-as="o">                
+               <div class="page"> 
+                <!--4-->
+                <div class="row">
+                    <div style="font-size:15px; color:#7C7BAD;">
+                        <p><strong>ICU Patient Details</strong></p>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr style="background-color:#DBE1E5;">
+                                <td style="border: 1px solid black;">Particulars</td>
+                                <td style="border: 1px solid black;">Room Type</td>
+                                <td style="border: 1px solid black;">Charges</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.investigation_pharmacy_charges_ids" t-as="line">
+                              <tr>
+                                <td style="border: 1px solid black;">
+                                    <span t-esc="line.name"/>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span t-esc="line.room_type"/>
+                                </td>
+                                <td style="border: 1px solid black;">
+                                    <span t-esc="line.room_charges"/>
+                                </td>
+                              </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+              </div>  
+            </t>
+        </template>
+        
+	
+	       <report 
+                id="report_hospitalization_estimate" 
+                string="Estimate Report"
+                model="hms.estimate" 
+                report_type="qweb-pdf"
+                file="shah_estimate.report_hospital_estimate_document"
+                name="shah_estimate.report_hospital_estimate_document" 
+                groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor"/>
+
+
+       <!--  <record id="report_hospitalization_estimate" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hms.paperformat_hms_letterpad_report" />
+        </record>
+ -->
+    </data>
+</openerp>

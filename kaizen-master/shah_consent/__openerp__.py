@@ -1,0 +1,27 @@
+{
+    'name': 'Hospitalization Consent Form',
+    'version': '1.0',
+    'sequence': 2,
+    'category': 'HMS',
+    'summary': 'Hospitalization form',
+    'description': """
+    Consent Form,
+    """,
+    'author': 'Indimedi Solutions Pvt. Ltd.',
+    'website': 'www.indimedi.com',
+    'depends': ['base','hms', 'hms_hospitalization','hms_insurance'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/consent_sequence.xml',
+        'report/consent_papper_format.xml',
+	    'views/consent_view.xml',
+	    'data/company_consent_data.xml',
+        'report/consent_admission.xml',
+        'report/consent_form.xml',
+        'report/report_consent_for_blood.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+}

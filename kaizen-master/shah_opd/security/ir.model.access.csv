@@ -1,0 +1,58 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prescription_group_line_user,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_user,1,0,0,0
+access_prescription_group_user,Indimedi Prescription Group,model_prescription_group,hms.group_hms_user,1,0,0,0
+access_report_shah_opd_report_prescription_order_app_user,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_prescription_group_line_receptionist,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_receptionist,1,0,0,0
+access_prescription_group_receptionist,Indimedi Prescription Group,model_prescription_group,hms.group_hms_receptionist,1,0,0,0
+access_report_shah_opd_report_prescription_order_app_receptionist,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_prescription_group_line_doctor,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_doctor,1,1,1,1
+access_prescription_group_doctor,Indimedi Prescription Group,model_prescription_group,hms.group_hms_doctor,1,1,1,1
+access_report_shah_opd_report_prescription_order_app_doctor,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_prescription_group_line_nurse,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_nurse,1,0,0,0
+access_prescription_group_nurse,Indimedi Prescription Group,model_prescription_group,hms.group_hms_nurse,1,0,0,0
+access_report_shah_opd_report_prescription_order_app_nurse,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_prescription_group_line_pharmacist,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_pharmacist,1,0,0,0
+access_prescription_group_pharmacist,Indimedi Prescription Group,model_prescription_group,hms.group_hms_pharmacist,1,0,0,0
+access_report_shah_opd_report_prescription_order_app_pharmacist,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+access_prescription_group_line_jr_doctor,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_jr_doctor,1,1,1,1
+access_prescription_group_jr_doctor,Indimedi Prescription Group,model_prescription_group,hms.group_hms_jr_doctor,1,1,1,1
+access_report_shah_opd_report_prescription_order_app_jr_doctor,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_prescription_group_line_manager,Indimedi Prescription Group Line,model_prescription_group_line,hms.group_hms_manager,1,1,1,1
+access_prescription_group_manager,Indimedi Prescription Group,model_prescription_group,hms.group_hms_manager,1,1,1,1
+access_report_shah_opd_report_prescription_order_app_manager,Report Shah Opd Report Prescription Order App,model_report_shah_opd_report_prescription_order_app,hms.group_hms_manager,1,1,1,1
+access_payment_history,Indimedi Account Payment Group,model_account_payment_history,base.group_user,1,1,1,0
+access_prescription_line_price,access.prescription.line.price,model_prescription_line_price,base.group_user,1,1,1,1
+access_provisional_investigation,access.provisional.investigation,model_provisional_investigation,base.group_user,1,1,1,1
+access_patient_bmi,Patient bmi,model_patient_bmi,hms.group_hms_user,1,1,1,0
+,,,,,,,
+access_abdominal_examination_manager,abdominal.examination,model_abdominal_examination,hms.group_hms_manager,1,1,1,1
+access_abdominal_examination_doctor,abdominal.examination,model_abdominal_examination,hms.group_hms_doctor,1,1,1,1
+access_abdominal_examination_jr_doctor,abdominal.examination,model_abdominal_examination,hms.group_hms_jr_doctor,1,1,1,1
+access_abdominal_examination_receptionist,abdominal.examination,model_abdominal_examination,hms.group_hms_receptionist,1,1,1,0
+access_abdominal_examination_mo,abdominal.examination,model_abdominal_examination,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_rectal_examination_manager,rectal.examination,model_rectal_examination,hms.group_hms_manager,1,1,1,1
+access_rectal_examination_doctor,rectal.examination,model_rectal_examination,hms.group_hms_doctor,1,1,1,1
+access_rectal_examination_jr_doctor,rectal.examination,model_rectal_examination,hms.group_hms_jr_doctor,1,1,1,1
+access_rectal_examination_receptionist,rectal.examination,model_rectal_examination,hms.group_hms_receptionist,1,1,1,0
+access_rectal_examination_mo,rectal.examination,model_rectal_examination,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_advices_group_lines_manager,advices.group.lines,model_advices_group_lines,hms.group_hms_manager,1,1,1,1
+access_advices_group_lines_doctor,advices.group.lines,model_advices_group_lines,hms.group_hms_doctor,1,1,1,1
+access_advices_group_lines_jr_doctor,advices.group.lines,model_advices_group_lines,hms.group_hms_jr_doctor,1,1,1,1
+access_advices_group_lines_receptionist,advices.group.lines,model_advices_group_lines,hms.group_hms_receptionist,1,1,1,0
+access_advices_group_lines_mo,advices.group.lines,model_advices_group_lines,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_session1_image_manager,session1.image,model_session1_image,hms.group_hms_manager,1,1,1,1
+accesssession1_image_doctor,session1.image,model_session1_image,hms.group_hms_doctor,1,1,1,1
+access_session1_image_jr_doctor,session1.image,model_session1_image,hms.group_hms_jr_doctor,1,1,1,1
+access_session1_image_receptionist,session1.image,model_session1_image,hms.group_hms_receptionist,1,1,1,0
+access_session1_image_mo,session1.image,model_session1_image,hms.group_hms_medical_officer,1,1,1,1

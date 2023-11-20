@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="shah_hospitalization_apn_ansh_view_form" model="ir.ui.view">
+            <field name="name">inpatient.registration.form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="priority" eval="9" />
+            <field name="inherit_id" ref="hms_hospitalization.view_inpatient_registration_form" />
+            <field name="arch" type="xml">
+                <page name='patient_assessment' position="after">
+                    <page string="Investigation" groups="hms.group_hms_medical_officer,hms.group_hms_nurse,hms.group_hms_medical_officer">
+                        <field name="invesigation_ids" colspan="4" context="{'default_patient_id': patient_id,'default_careplan_investigation_id': id}">
+                            <tree>
+                                <field name="date_investigation" />
+                                <!-- <field name="day_careplan"/> -->
+                                <!-- Extra -->
+                                <field name="patient_id" invisible="1"/>
+                                <field name="careplan_investigation_id" invisible="1"/>
+                                <field name="bg" />
+                                <field name="hb" placeholder="M:13-17 F:12-15 g/dL"/>                               
+                                <field name="tc" placeholder="4000-10000"/>
+                                <field name="dc" />
+                                <field name="platelet_count" placeholder="150000-450000/cmm"/>
+                                <field name="esr" placeholder="&lt;12mm/hr"/>
+                                <field name="peripheral_smear" />
+                                <field name="bt_ct" />
+                                <field name="pt" />
+                                <field name="hiv" />
+                                <field name="hbsg" />
+                                <field name="aptt" />
+                                <field name="urine" string="Urine R&amp;M" />                              
+                                <field name="fbs_rbs" placeholder="70-160 mg/dL"/>
+                                <field name="ppbs" />
+                                <field name="urea" placeholder="19.2-42.8 mg/dL"/>
+                                <field name="creatinine" placeholder="0.66-1.25 mg/dL"/>
+                                <field name="na_plus" placeholder="136-145 mmol/L"/>
+                                <field name="k_plus" placeholder="3.5-5.1 mmol/L"/>
+                                <field name="cl_minus" placeholder="98-107 mmol/L"/>
+                                <field name="ca_plus" />
+                                <!-- Extra -->
+                                <field name="s_bili_direct" placeholder="0-1.2 mmol/L"/>
+                                <field name="s_bili_indirect" placeholder="0-0.3 mmol/L"/>
+                                <field name="sgpt" placeholder="0-41 U/L"/>
+                                <field name="sgot" placeholder="0-40 U/L"/>
+                                <field name="s_alk" placeholder="40-130 U/L"/>
+                                <field name="s_pro" placeholder="6.4-8.3 g/dL"/>
+                                <field name="alb" placeholder="3.5-5.2 g/dL"/>
+                                <field name="glob" placeholder="2.4-3.5 g/dL"/>
+                                <field name="ag_ratio" placeholder="1.2-2.2"/>
+                                <field name="s_amylase" placeholder="30-110 U/L"/>
+                                <field name="s_lipase" placeholder="13-60 U/L"/>
+                                <field name="ldh" />
+                                <field name="crp" placeholder="0-6.0 mg/dL"/>
+                                <field name="pro_calcitonin" placeholder="&lt;0.05 ng/mL"/>
+                                <field name="cea" placeholder="0-5 ng/mL"/>
+                                <field name="afp" placeholder="0-8 ng/mL"/>
+                                <field name="b12" placeholder="200-900 pg/ml"/>
+                                <field name="vitamin_d3" /> 
+                                <field name="xray_inv" />
+                                <field name="usg_inv" />
+                                <field name="mri_inv" />
+                                <field name="ecg_inv" />
+                                <field name="abg_inv" />
+                                <field name="echo_inv" />
+                                <field name="oth_inv" />
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+        <!-- <record id="shah_hospitalization_surgery_view_form" model="ir.ui.view">
+            <field name="name">inpatient.registration.form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="priority" eval="9" />
+            <field name="inherit_id" ref="hms_hospitalization.view_hospitalization_surgery_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]" position="after">
+                    <page string="ANS Note &amp; APN" groups="hms.group_hms_medical_officer,hms.group_hms_doctor" invisible="1">
+                        <group col="6">
+                            <field name="informed_consent" />
+                            <field name="high_risk_consent" />
+                            <field name="relative_informed" />
+                        </group>
+                        <group>
+                            <div class="address_format">
+                                <group>
+                                    <field name="ot_time_in" style="width: 50%" />
+                                    <field name="ant_time_in" style="width: 50%" />
+                                </group>
+                            </div>
+                            <div class="address_format">
+                                <group>
+                                    <field name="ot_time_out" style="width: 50%" />
+                                    <field name="ant_time_out" style="width: 50%" />
+                                </group>
+                            </div>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="blood_group" />
+                                <field name="medical_history_id" />
+                                <field name="asa_id" />
+                                <field name="anaesthesia_type" />
+                            </group>
+                            <group>
+                                <field name="pre_medication_id" />
+                                <field name="pre_operation_id" />
+                                <field name="position_patient_id" />
+                                <field name="ana_technique_id" />
+                            </group>
+                        </group>
+                        <group string="General Anesthesia" attrs="{'invisible': [('anaesthesia_type', '!=','general')]}">
+                            <group>
+                                <field name="ana_inducing_id" />
+                                <field name="ana_muscle_relaxant_id" />
+                                <field name="laryngoscopy_refex_id" />
+                                <field name="et_lml_id" />
+                                <field name="induction_id" />
+                            </group>
+                            <group>
+                                <field name="inhalation_agent_id" />
+                                <field name="circuit_id" />
+                                <field name="ventilation_id" />
+                                <field name="reversal_id" />
+                            </group>
+                        </group>
+                        <group string="Regional Anesthesia" attrs="{'invisible': [('anaesthesia_type', '!=','regional')]}">
+                            <group>
+                                <field name="spinal_id" />
+                                <field name="epidural_id" />
+                            </group>
+                            <group>
+                                <field name="block_id" />
+                                <field name="intra_op_complications_id" />
+                            </group>
+                        </group>
+                        <group string="On Transfer">
+                            <group>
+                                <field name="consciousness" />
+                                <field name="muscle_tone" />
+                                <field name="pain" />
+                                <field name="rt_aspiration" />
+                                <field name="blood_loss" />
+                            </group>
+                            <group>
+                                <field name="urine" />
+                                <field name="isolyte" />
+                                <field name="colloids" />
+                                <field name="transfusion" />
+                                <field name="remark" />
+                            </group>
+                        </group>
+                        <div class="address_format" style="padding-right: 21px;!important;">
+                            <label for="pulse" style="width: 40%;padding-right: 21px;" />
+                            <field name="pulse" style="width: 10%;padding-right: 21px;" nolabel="1" />
+                            <label for="bp" style="width: 25%;padding-right: 21px;" />
+                            <field name="bp" style="width:10%;padding-right: 21px;" nolabel="1" />
+                            <label for="spo" style="width: 45%;padding-right: 21px;" />
+                            <field name="spo" style="width: 10%;padding-right: 21px;" nolabel="1" />
+                            <span colspan="2"></span>
+                            <label for="rl" style="width: 10%;padding-right: 21px;" />
+                            <field name="rl" style="width: 10%;padding-right: 21px;" nolabel="1" />
+                            <label for="ns" style="width: 25%;padding-right: 21px;" />
+                            <field name="ns" style="width: 10%;padding-right: 21px;" nolabel="1" />
+                            <label for="dns" style="width: 45%;padding-right: 21px;" />
+                            <field name="dns" style="width: 10%;padding-right: 21px;" nolabel="1" />
+                        </div>
+                        <group string="Apn Notes">
+                            <group>
+                                <field name="ans_date" />
+                                <field name="risk_factor" />
+                                <field name="pre_anesthetic_medication_id" />
+                                <field name="ans_induction_id" />
+                            </group>
+                            <group>
+                                <field name="ans_reversal_id" />
+                                <field name="maintenance_id" />
+                                <field name="pre_op_course_id" />
+                                <field name="post_op_course_id" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="eng_inst" placeholder="Do not give any thing orally up to ..." />
+                            <field name="hindi_inst" placeholder="...बजे तक मुंह से कुछ नही देना" />
+                            <field name="guj_inst" placeholder="વાગયા સુધી મોઢેથી કશું આપવુ નહીં" />
+                        </group>
+                    </page>   
+                </xpath>
+            </field>
+        </record> -->
+        <record id="investigation_hms_detail_tree_view" model="ir.ui.view">
+            <field name="name">Investigation Form</field>
+            <field name="model">careplan.investigation</field>
+            <field name="arch" type="xml">
+                <tree string="Investigstion Form">
+                    <field name="date_investigation" />
+                    <field name="patient_id" invisible="1"/>
+                    <field name="careplan_investigation_id" invisible="1"/>
+                    <field name="bg" />
+                    <field name="hb" placeholder="M:13-17 F:12-15 g/dL"/>                                
+                    <field name="tc" placeholder="4000-10000"/>
+                    <field name="dc" />
+                    <field name="platelet_count" placeholder="150000-450000/cmm"/>
+                    <field name="esr" placeholder="&lt;12mm/hr"/>
+                    <field name="peripheral_smear" />
+                    <field name="bt_ct" />
+                    <field name="pt" />
+                    <field name="hiv" />
+                    <field name="hbsg" />
+                    <field name="aptt" />
+                    <field name="urine" string="Urine R&amp;M" />                               
+                    <field name="fbs_rbs" placeholder="70-160 mg/dL"/>
+                    <field name="ppbs" />
+                    <field name="urea" placeholder="19.2-42.8 mg/dL"/>
+                    <field name="creatinine" placeholder="0.66-1.25 mg/dL"/>
+                    <field name="na_plus" placeholder="136-145 mmol/L"/>
+                    <field name="k_plus" placeholder="3.5-5.1 mmol/L"/>
+                    <field name="cl_minus" placeholder="98-107 mmol/L"/>
+                    <field name="ca_plus" />
+                    <field name="s_bili_direct" placeholder="0-1.2 mmol/L"/>
+                    <field name="s_bili_indirect" placeholder="0-0.3 mmol/L"/>
+                    <field name="sgpt" placeholder="0-41 U/L"/>
+                    <field name="sgot" placeholder="0-40 U/L"/>
+                    <field name="s_alk" placeholder="40-130 U/L"/>
+                    <field name="s_pro" placeholder="6.4-8.3 g/dL"/>
+                    <field name="alb" placeholder="3.5-5.2 g/dL"/>
+                    <field name="glob" placeholder="2.4-3.5 g/dL"/>
+                    <field name="ag_ratio" placeholder="1.2-2.2"/>
+                    <field name="s_amylase" placeholder="30-110 U/L"/> 
+                    <field name="s_lipase" placeholder="13-60 U/L"/>  
+                    <field name="ldh" />
+                    <field name="crp" placeholder="0-6.0 mg/dL"/> 
+                    <field name="pro_calcitonin" placeholder="&lt;0.05 ng/mL"/>
+                    <field name="cea" placeholder="0-5 ng/mL"/>
+                    <field name="afp" placeholder="0-8 ng/mL"/>
+                    <field name="b12" placeholder="200-900 pg/ml"/>
+                    <field name="vitamin_d3" />      
+                    <field name="xray_inv" />
+                    <field name="usg_inv" />
+                    <field name="mri_inv" />
+                    <field name="ecg_inv" />
+                    <field name="abg_inv" />
+                    <field name="echo_inv" />
+                    <field name="oth_inv" />
+                </tree>
+            </field>
+        </record>
+        <record id="investigation_hms_detail_view" model="ir.ui.view">
+            <field name="name">Investigation Form</field>
+            <field name="model">careplan.investigation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_investigation" />
+                                <field name="patient_id" invisible="1"/>
+                                <field name="careplan_investigation_id" invisible="1"/>
+                                <field name="bg" />
+                                <field name="hb" placeholder="M:13-17 F:12-15 g/dL"/>                                
+                                <field name="tc" placeholder="4000-10000"/>
+                                <field name="dc" />
+                                <field name="platelet_count" placeholder="150000-450000/cmm"/>
+                                <field name="esr" placeholder="&lt;12mm/hr"/>
+                                <field name="peripheral_smear" />
+                                <field name="bt_ct" />
+                                <field name="pt" />
+                                <field name="hiv" />
+                                <field name="hbsg" />
+                                <field name="aptt" />
+                                <field name="urine" string="Urine R&amp;M" />                              
+                                <field name="fbs_rbs" placeholder="70-160 mg/dL"/>
+                                <field name="ppbs" />
+                                <field name="urea" placeholder="19.2-42.8 mg/dL" />
+                                <field name="creatinine" placeholder="0.66-1.25 mg/dL"/>
+                                <field name="na_plus" placeholder="136-145 mmol/L"/>
+                                <field name="k_plus" placeholder="3.5-5.1 mmol/L"/>             
+                            </group>
+                            <group>
+                                <!-- Extra -->
+                                <field name="s_bili_direct" placeholder="0-1.2 mmol/L"/>
+                                <field name="s_bili_indirect" placeholder="0-0.3 mmol/L"/>
+                                <field name="sgpt" placeholder="0-41 U/L"/>
+                                <field name="sgot" placeholder="0-40 U/L"/>
+                                <field name="s_alk" placeholder="40-130 U/L"/>
+                                <field name="s_pro" placeholder="6.4-8.3 g/dL"/>
+                                <field name="alb" placeholder="3.5-5.2 g/dL"/>
+                                <field name="glob" placeholder="2.4-3.5 g/dL"/>
+                                <field name="ag_ratio" placeholder="1.2-2.2"/>
+                                <field name="s_amylase" placeholder="30-110 U/L"/>
+                                <field name="s_lipase" placeholder="13-60 U/L"/>
+                                <field name="ldh" />
+                                <field name="crp" placeholder="0-6.0 mg/dL"/>
+                                <field name="pro_calcitonin" placeholder="&lt;0.05 ng/mL"/>
+                                <field name="cea" placeholder="0-5 ng/mL"/>
+                                <field name="afp" placeholder="0-8 ng/mL"/>
+                                <field name="b12" placeholder="200-900 pg/ml"/>
+                                <field name="vitamin_d3" />
+                                <field name="cl_minus" placeholder="98-107 mmol/L"/>
+                                <field name="ca_plus" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="xray_inv" />
+                            <field name="usg_inv" />
+                            <field name="mri_inv" />
+                            <field name="ecg_inv" />
+                            <field name="abg_inv" />
+                            <field name="echo_inv" />
+                            <field name="oth_inv" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_investigation_hms_detail_view">
+            <field name="name">Investigation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">careplan.investigation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="investigation_hms_detail_tree_view" />
+            <!-- <field name="search_view_id" ref="view_ot_booking_search"/> -->
+        </record>
+        <menuitem id="menu_investigation_hms_detail_view" name="Investigation Form" action="action_investigation_hms_detail_view" parent="hms_hospitalization.indimedi_inpatient_menu" sequence="4" />
+        <menuitem id="menu_investigation_hms_detail_view_root" name="Investigation Form" groups="hms.group_hms_jr_doctor,hms.group_hms_nurse,hms.group_hms_medical_officer" action="action_investigation_hms_detail_view" parent="hms_hospitalization.menu_hospitalization" />
+    </data>
+</openerp>

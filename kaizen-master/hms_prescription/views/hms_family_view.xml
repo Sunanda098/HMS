@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_indimedi_family_tree" model="ir.ui.view">
+            <field name="name">indimedi.family.tree</field>
+            <field name="model">indimedi.family</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Family">
+                    <field name="name" />
+                    <field name="operational_sector" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indimedi_family_form" model="ir.ui.view">
+            <field name="name">indimedi.family.form</field>
+            <field name="model">indimedi.family</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indimedi Family" version="7.0">
+                    <sheet>
+                        <H1>
+                            <label string="Family: " />
+                            <field name="name" />
+                        </H1>
+                        <notebook>
+                            <page string="Main">
+                                <group>
+                                    <field name="operational_sector">
+                                        <tree>
+                                            <field name="name" />
+                                            <field name="operational_area_id" />
+                                        </tree>
+                                        <form>
+                                            <field name="name" />
+                                            <field name="operational_area_id" />
+                                            <group colspan="4" string="Extra Infomation">
+                                                <field name="info" />
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                                <group colspan="4" col="4" string="Members">
+                                    <field name="members" colspan="4" nolabel="1">
+                                        <tree>
+                                            <field name="role" />
+                                            <field name="member" />
+                                            <field name="family_id" />
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <field name="role" />
+                                                <field name="member" />
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Info">
+                                <group colspan="4" col="4" string="Info">
+                                    <field name="info" colspan="4" nolabel="1" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_indimedi_family_search" model="ir.ui.view">
+            <field name="name">indimedi.family.search</field>
+            <field name="model">indimedi.family</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indimedi Family">
+                    <field name="info" />
+                    <field name="operational_sector" />
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Operational Sector" domain="[]" context="{'group_by':'operational_sector'}" />
+                        <filter string="Family" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_indimedi_family_view">
+            <field name="name">Family</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">indimedi.family</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_indimedi_family_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_family_view_form">
+            <field name="act_window_id" ref="act_open_indimedi_family_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_indimedi_family_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_family_view_tree">
+            <field name="act_window_id" ref="act_open_indimedi_family_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_indimedi_family_tree" />
+        </record>
+       <!--  <menuitem id="hos_fam" parent="hms.menu_patient" name=" Family" action="act_open_indimedi_family_view" sequence="1" /> -->
+       
+       <!-- Family Member Views -->
+       
+               <record id="view_indimedi_family_member_tree" model="ir.ui.view">
+            <field name="name">indimedi.family_member.tree</field>
+            <field name="model">indimedi.family_member</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Family_Member">
+                    <field name="family_id" />
+                    <field name="role" />
+                    <field name="member" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indimedi_family_member_form" model="ir.ui.view">
+            <field name="name">indimedi.family_member.form</field>
+            <field name="model">indimedi.family_member</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indimedi Family_Member">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="family_id" colspan="4" />
+                                <field name="member" colspan="4" />
+                            </group>
+                            <group>
+                                <field name="role" colspan="4" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_indimedi_family_member_search" model="ir.ui.view">
+            <field name="name">indimedi.family_member.search</field>
+            <field name="model">indimedi.family_member</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indimedi Family_Member">
+                    <field name="role" />
+                    <field name="member" />
+                    <field name="family_id" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Party" domain="[]" context="{'group_by':'member'}" />
+                        <filter string="Role" domain="[]" context="{'group_by':'role'}" />
+                        <filter string="Family" domain="[]" context="{'group_by':'family_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_indimedi_family_member_view">
+            <field name="name">Family Member</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">indimedi.family_member</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_indimedi_family_member_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_family_member_view_form">
+            <field name="act_window_id" ref="act_open_indimedi_family_member_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_indimedi_family_member_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_family_member_view_tree">
+            <field name="act_window_id" ref="act_open_indimedi_family_member_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_indimedi_family_member_tree" />
+        </record>
+       <!--  <menuitem id="hos_fam_mem" parent="hms.menu_patient" name=" Family Member" action="act_open_indimedi_family_member_view" sequence="15" /> -->
+
+       <!-- Operational Areas -->
+
+               <record id="view_indimedi_operational_area_tree" model="ir.ui.view">
+            <field name="name">indimedi.operational_area.tree</field>
+            <field name="model">indimedi.operational_area</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Operational_Area">
+                    <field name="info" />
+                    <!--field name="operational_sector"/ -->
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indimedi_operational_area_form" model="ir.ui.view">
+            <field name="name">indimedi.operational_area.form</field>
+            <field name="model">indimedi.operational_area</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indimedi Operational_Area">
+                    <group>
+                        <field name="info" />
+                        <!--field name="operational_sector"/ -->
+                        <field name="name" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_indimedi_operational_area_search" model="ir.ui.view">
+            <field name="name">indimedi.operational_area.search</field>
+            <field name="model">indimedi.operational_area</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indimedi Operational_Area">
+                    <field name="info" />
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Extra Information" domain="[]" context="{'group_by':'info'}" />
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_indimedi_operational_area_view">
+            <field name="name">Operational Area</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">indimedi.operational_area</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_indimedi_operational_area_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_operational_area_view_form">
+            <field name="act_window_id" ref="act_open_indimedi_operational_area_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_indimedi_operational_area_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_operational_area_view_tree">
+            <field name="act_window_id" ref="act_open_indimedi_operational_area_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_indimedi_operational_area_tree" />
+        </record>
+       
+       <!-- Operational Sector -->
+       
+               <record id="view_indimedi_operational_sector_tree" model="ir.ui.view">
+            <field name="name">indimedi.operational_sector.tree</field>
+            <field name="model">indimedi.operational_sector</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Operational_Sector">
+                    <field name="name" />
+                    <field name="operational_area_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indimedi_operational_sector_form" model="ir.ui.view">
+            <field name="name">indimedi.operational_sector.form</field>
+            <field name="model">indimedi.operational_sector</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indimedi Operational_Sector">
+                    <group>
+                        <field name="name" />
+                        <field name="operational_area_id" />
+                    </group>
+                    <group colspan="4" string="Extra Infomation">
+                        <field name="info" colspan="4" nolabel="1" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_indimedi_operational_sector_search" model="ir.ui.view">
+            <field name="name">indimedi.operational_sector.search</field>
+            <field name="model">indimedi.operational_sector</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indimedi Operational_Sector">
+                    <field name="info" />
+                    <field name="operational_area_id" />
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Extra Information" domain="[]" context="{'group_by':'info'}" />
+                        <filter string="Operational Area" domain="[]" context="{'group_by':'operational_area_id'}" />
+                        <filter string="Op. Sector" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_indimedi_operational_sector_view">
+            <field name="name">Operational Sector</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">indimedi.operational_sector</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_indimedi_operational_sector_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_operational_sector_view_form">
+            <field name="act_window_id" ref="act_open_indimedi_operational_sector_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_indimedi_operational_sector_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_operational_sector_view_tree">
+            <field name="act_window_id" ref="act_open_indimedi_operational_sector_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_indimedi_operational_sector_tree" />
+        </record>
+
+    </data>
+</openerp>

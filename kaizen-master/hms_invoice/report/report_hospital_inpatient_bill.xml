@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_hospital_inpatient_bill_document">
+        	<!-- <t t-call="report.html_container"> -->
+                <t t-foreach="docs" t-as="o">
+		        	<div class="page" style="font-size:14px;margin-bottom:20 px;">
+		                        <h4 class="text-center" style="border-bottom:1px black;"><strong>INPATIENT BILL</strong></h4>
+		                        <div class="row mt32 mb32">
+		                            <table class="table table-condensed" style="padding:0; margin:0 0 0 0">
+		                                <tbody>
+		                                    <tr>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>IPD No :</strong>
+		                                            <span t-esc="o.hospital_id.name" />
+		                                        </td>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Bill No :</strong>
+		                                            <span t-esc="o.number" />
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Patient Name :</strong>
+		                                            <span t-esc="o.patient_id.name" />
+		                                        </td>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Bill Date :</strong>:
+		                                            <span t-esc="o.date_invoice"/>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Age / Gender :</strong>
+		                                            <span t-esc="o.patient_id.age" /> /
+		                                            <span t-esc="o.patient_id.sex" />
+		                                        </td>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Admission Date /Time :</strong>
+		                                            <span t-esc="o.hospital_id.hospitalization_date"/>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Doctor Name :</strong>
+		                                            <span t-esc="o.hospital_id.primary_physician.name"/>
+		                                        </td>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Discharge Date / Time :</strong>
+		                                            <span t-esc="o.hospital_id.discharge_date"/>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Category :</strong>
+		                                            <span t-esc="o.hospital_id.payment_category"/>
+		                                        </td>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>Class :</strong>
+		                                            <span t-field="o.hospital_id.bed_id.ward_id.ward_room_type"/>
+		                                        </td>
+		                                    </tr>
+		                                    <tr>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>PAN No. Hosp :</strong>
+		                                            <span t-esc="o.env.user.company_id.pan_no_hosp"/>
+		                                        </td>
+		                                        <td colspan="2" style="border:none;width: 500; padding-top:0;">
+		                                            <strong>AADHAR No. Patient :</strong>
+		                                            <span t-field="o.patient_id.gov_code"/>
+		                                        </td>
+		                                    </tr>
+		                                    <br/>
+		                                </tbody>
+		                            </table>
+		                            <table class="table table-condensed" style="padding:0; margin:0 0 0 0">
+                                        <tr style="border-bottom:1px solid black;border-top:1px solid black;">
+                                            <td colspan="5" style="border-bottom:1px solid black;border-top:1px solid black;width: 1500; padding-top:0;">
+                                                <strong>Particular</strong>     
+                                            </td>
+                                            <td colspan="5" style="text-align:center;border-bottom:1px solid black;border-top:1px solid black;width: 500; padding-top:0;">
+                                                <strong>Rate</strong>
+                                            </td>
+                                            <td colspan="5" style="text-align:right;border-bottom:1px solid black;border-top:1px solid black;width: 500; padding-top:0;">
+                                                <strong>Qty</strong>
+                                            </td>
+                                            <td colspan="5" style="text-align:right;border-bottom:1px solid black;border-top:1px solid black;width: 500; padding-top:0;">
+                                                <strong>Discount</strong>
+                                            </td>
+                                            <td colspan="5" style="text-align:right;border-bottom:1px solid black;border-top:1px solid black;width: 500; padding-top:0;">
+                                                <strong>Amount</strong>
+                                            </td>
+                                        </tr>
+                                        <t t-foreach="o.invoice_line_ids" t-as="line">
+	                                        <tr>
+	                                            <td colspan="5" style="border:none;width: 1500; padding-top:0;">
+	                                                <span t-field="line.product_id"></span>
+	                                            </td>
+	                                            <td colspan="5" style="text-align:center;border:none;width: 500; padding-top:0;">
+	                                                <span t-field="line.price_unit"></span>
+	                                            </td>
+	                                            <td colspan="5" style="text-align:right;border:none;width: 500; padding-top:0;">
+	                                                <span t-field="line.quantity"></span>
+	                                            </td>
+	                                            <td colspan="5" style="text-align:right;border:none;width: 500; padding-top:0;">
+	                                                <span t-field="line.discount_price"></span>
+	                                            </td>
+	                                            <td colspan="5" style="text-align:right;border:none;width: 500; padding-top:0;">
+	                                                <span t-field="line.price_subtotal"></span>
+	                                            </td>
+	                                            <br/>
+	                                        </tr>
+                                        </t>
+                                    </table>
+                                    <table class="table table-condensed" style="border:none;">
+                                    	<tr style="border:none;">
+                                            <td align="right"><strong>Total Bill Amount:</strong>
+                                            <span t-field="o.amount_total"></span>
+                                            </td>
+                                        </tr>
+                                        <tr style="border:none;">
+                                            <td align="right"><strong>Tax:</strong>
+                                            <span t-field="o.amount_tax"></span>
+                                            </td>
+                                        </tr>
+                                        <tr style="border:none;">
+                                            <td align="right"><strong>Due Amount:</strong>
+                                            <span t-field="o.residual"></span>   
+                                            </td>
+                                        </tr>
+                                        <tr style="border-bottom:none;">
+                                            <td align="left" style="border:none;"><strong>₹ <span t-esc="o.amount_to_text(o.amount_total)" /><strong>Only</strong></strong>
+                                            </td>
+                                        </tr>
+                                        <tr style="border-bottom:none;">
+                                        	<td style="border:none;">
+                                        		<br/>
+                                        	</td>
+                                        </tr>
+                                        <tr align="left" style="border-bottom:none;">
+                                            <td style="border:none;">
+                                      			<strong>For Kaizen Hospital</strong>
+                                            </td>
+                                        </tr>
+                                        <tr style="border-bottom:none;">
+                                        	<td style="border:none;">
+                                        		<br/>
+                                        	</td>
+                                        </tr>
+                                        <tr style="border-bottom:none;">
+                                        	<td style="border:none;">
+                                        		<br/>
+                                        	</td>
+                                        </tr>
+                                        <tr align="left" style="border-bottom:none;">
+                                        	<td style="border:none;">
+                                                <strong>Authorised Signatory</strong>
+                                            </td>
+                                        </tr>
+                                        <!-- <tr align="left">
+                                        	<strong>Hospital Remarks:</strong>
+                                        </tr> -->
+                                    </table>
+		                        </div>
+		            </div>
+		        </t>
+		    <!-- </t> -->
+		</template>
+		<report id="report_hospital_inpatient_bill"
+				string="Inpatient Bill"
+            	model="account.invoice" 
+                report_type="qweb-pdf"
+                file="hms_invoice.report_hospital_inpatient_bill"
+                name="hms_invoice.report_hospital_inpatient_bill_document"/>
+	</data>
+</openerp>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+         <!-- Sequences for CM-->
+        <record id="seq_trauma_form" model="ir.sequence">
+            <field name="name">Shah Trauma</field>
+            <field name="code">shah.trauma</field>
+            <field name="prefix">KZ/TR-</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="seq_hipjoint_form" model="ir.sequence">
+            <field name="name">Shah Hip Joint</field>
+            <field name="code">shah.hipjoint</field>
+            <field name="prefix">KZ/HJ-</field>
+            <field name="padding">4</field>
+        </record>
+       
+       <record id="seq_spine_form" model="ir.sequence">
+            <field name="name">Shah Spine</field>
+            <field name="code">shah.spine</field>
+            <field name="prefix">KZ/SP-</field>
+            <field name="padding">4</field>
+        </record>
+
+       <record id="seq_oa_form" model="ir.sequence">
+            <field name="name">Shah Oa</field>
+            <field name="code">shah.oa</field>
+            <field name="prefix">KZ/OA-</field>
+            <field name="padding">4</field>
+        </record>
+
+
+    </data>
+</openerp>

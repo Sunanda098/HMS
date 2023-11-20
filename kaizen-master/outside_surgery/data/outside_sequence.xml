@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- Sequences for Surgery Outside Done -->
+        <record id="seq_outside_surgery_order" model="ir.sequence">
+            <field name="name">Outside Surgery</field>
+            <field name="code">surgery.outside</field>
+            <field name="prefix">KZ/SO</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record id="outside_surgery_product_one" model="product.product">
+            <field name="name">Surgery</field>
+            <field name="type">service</field>
+            <field name="hospital_product_type">surgery</field>
+<!--            <field name="department_type">orthopedic</field-->
+            <field name="list_price">0</field>
+        </record>
+
+    </data>
+</openerp>

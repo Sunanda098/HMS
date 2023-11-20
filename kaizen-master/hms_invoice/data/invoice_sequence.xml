@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <!-- Sequences for hms.appointment -->
+        <record id="seq_for_receipt_ipd" model="ir.sequence">
+            <field name="name">IPD</field>
+            <field name="code">receipt.ipd</field>
+            <!-- <field name="prefix">SH/%(range_y)s-17/</field> -->
+            <field name="padding">0</field>
+        </record>
+
+        <record id="seq_for_receipt_opd" model="ir.sequence">
+            <field name="name">OPD</field>
+            <field name="code">receipt.opd</field>
+            <!-- <field name="prefix">SH/%(range_y)s-17/</field> -->
+            <field name="padding">5</field>
+        </record>
+
+        <record id="seq_for_receipt_physiotherphy" model="ir.sequence">
+            <field name="name">Physiotheraphy</field>
+            <field name="code">receipt.physiotherphy</field>
+           <!--  <field name="prefix">SH/%(range_y)s-17/</field> -->
+            <field name="padding">0</field>
+        </record>
+
+        <record id="seq_for_receipt_radiology" model="ir.sequence">
+            <field name="name">Radiology</field>
+            <field name="code">receipt.radiology</field>
+            <!-- <field name="prefix">SH/%(range_y)s-17/</field> -->
+            <field name="padding">0</field>
+        </record>
+
+        <record id="seq_for_receipt_padetric" model="ir.sequence">
+            <field name="name">Padetric</field>
+            <field name="code">receipt.padetric</field>
+            <!-- <field name="prefix">SH/%(range_y)s-17/</field> -->
+            <field name="padding">0</field>
+        </record>
+
+    </data>
+</openerp>

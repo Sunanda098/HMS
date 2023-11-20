@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+       <!--cashless payment-->
+	<record id="cashless_payment_journal_1" model="account.journal">
+            <field name="name">Cashless</field>
+            <field name="code">cashl</field>
+            <field name="type">bank</field>
+    </record>
+    </data>
+</openerp>
+

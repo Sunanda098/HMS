@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--form view for Xray Investigation -->
+        <record id="view_xray_investigation_form" model="ir.ui.view">
+            <field name="name">xray Investigation</field>
+            <field name="model">xray.investigation</field>
+            <field name="arch" type="xml">
+                <form string="Xray Investigation">
+                    <header>
+                        <button name="action_done" string="Done" class="oe_highlight"
+                            type="object" states="draft"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="patient_id" attrs="{'readonly': [('state','=','done')]}" required="True" />
+                                <field name="doctor_id" attrs="{'readonly': [('state','=','done')]}" required="True"/>
+                                <field name="investigation_id" attrs="{'readonly': [('state','=','done')]}"/>
+                            </group>
+                            <group>
+                                <field name="date_attachment" attrs="{'readonly': [('state','=','done')]}" required="True"/>
+                                <field name="template_id" attrs="{'readonly': [('state','=','done')]}" required="True"/>
+                                <field name="investigation_type" attrs="{'readonly': [('state','=','done')]}" required="True"/>
+                            </group>
+                        </group>
+                            <field name="xray_content" nolabel="1" placeholder="Xray Content" attrs="{'readonly': [('state','=','done')]}"/>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_xray_investigation_tree" model="ir.ui.view">
+            <field name="name">xray Investigation</field>
+            <field name="model">xray.investigation</field>
+            <field name="arch" type="xml">
+                <tree string="xray Investigation">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="investigation_id"/>
+                    <field name="doctor_id"/>
+                    <field name="date_attachment"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_xray_investigation_search" model="ir.ui.view">
+            <field name="name">xray Investigation</field>
+            <field name="model">xray.investigation</field>
+            <field name="priority" eval="1" />
+            <field name="arch" type="xml">
+                <search string="xray Investigation">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="investigation_id"/>
+                    <field name="doctor_id"/>
+                    <field name="date_attachment"/>
+                    <field name="state"/>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_xray_investigation_view" model="ir.actions.act_window">
+            <field name="name">xray Investigation</field>
+            <field name="res_model">xray.investigation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_xray_investigation_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a Xray.
+                </p>
+            </field>
+        </record>
+
+        <!--Template Configuration For Certificate -->
+
+        <record id="view_xray_template_form" model="ir.ui.view">
+            <field name="name">Xray Template</field>
+            <field name="model">xray.template</field>
+            <field name="arch" type="xml">
+                <form string="Xray Template">
+                    <sheet>
+                        <group>
+                            <field name="name" required="True"/>
+                        </group>
+                        <div>
+                            <label for="xray_content"/>
+                            <field name="xray_content" placeholder="Xray Content"/>
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_xray_template_tree" model="ir.ui.view">
+            <field name="name">Xray Template</field>
+            <field name="model">xray.template</field>
+            <field name="arch" type="xml">
+                <tree string="Xray Template">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_xray_template_search" model="ir.ui.view">
+            <field name="name">Xray Template</field>
+            <field name="model">xray.template</field>
+            <field name="priority" eval="1" />
+            <field name="arch" type="xml">
+                <search string="Xray Template">
+                    <field name="name"/>
+                    <field name="xray_content"/>
+                    <newline/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_xray_template_view" model="ir.actions.act_window">
+            <field name="name">Xray Template</field>
+            <field name="res_model">xray.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_xray_template_search" />
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add Xray Template.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_xray_template_config0" name="Xray Template" sequence="21" parent="hms_investigation.menuitem_investigation" action="action_xray_template_view" />
+        <menuitem id="menu_xray_investigation_data" name="Investigation Report" sequence="20"
+            parent="hms_investigation.menuitem_investigation" action="action_xray_investigation_view"/>
+        <menuitem id="menu_xray_template_data" name="Investigation Report Configuration"
+            sequence="25" parent="hms.menu_hms_cofig" action="action_xray_template_view"/>
+
+        <record model="ir.ui.view" id="view_hms_patient_xray_form">
+            <field name="name">hms.patient.xray.view.inherit</field>
+            <field name="model">hms.patient</field>
+            <field name="inherit_id" ref="hms.view_patient_form" />
+            <field name="arch" type="xml">
+                <button name='view_invoice' position="after">
+                    <button name="action_open_xray" groups="hms.group_hms_jr_doctor" string="X-Ray Report"  type="object" class="oe_stat_button" icon="fa-xing" invisible="1"/>
+                </button>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_hms_investigation_xray_form">
+            <field name="name">hms.investigation.xray.view.inherit</field>
+            <field name="model">hms.investigation</field>
+            <field name="inherit_id" ref="hms_investigation.hms_investigation_form" />
+            <field name="arch" type="xml">
+                <div class="oe_button_box" name="button_box" position="inside">
+                    <button name="action_open_xray" string="Investigation Report" groups="hms.group_hms_jr_doctor" type="object" class="oe_stat_button" icon="fa-xing" attrs="{'invisible':[('investigation_type','!=','radiology')]}"/>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</openerp>

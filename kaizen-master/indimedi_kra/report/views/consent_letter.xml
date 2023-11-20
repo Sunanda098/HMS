@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <template id="consent_letter_report_temp">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row pull-right text-right">
+                            <p style="font-size:20px;">Date:<span t-field="o.date_joining"/></p>
+                        </div><br/><br/>
+                        <div class="row">
+                            <p style="font-size:20px;margin-left:400px;"><u><b>Consent</b></u></p>
+                        </div>
+                        <div>
+                            <p style="font-size:20px;">In consideration of my employment with the Kaizen Hospital and as part of the services being furnished by me to said hospital, I hereby give my consent to the photographing of myself and to the recording of my voice.  The hospital is hereby authorized to use or cause to be used said still photographs or motion picture footage, recordings of my voice and my name for advertising, publicity, commercial or other business purposes.  Said photographs and/or recordings may be used singularly or in conjunction with other photographs and/or recordings.</p>
+                            <p style="font-size:20px;">The hospital has my authorization to reproduce, or cause to be reproduced and used such photographs and voice recordings.  The same may be exhibited in all domestic and foreign markets.  I understand that others may use and/or reproduce said photographs and/or recordings with or without the hospital’s consent.</p>
+                            <p style="font-size:20px;">I hereby release the hospital, their directors, officers, agents, employees, customers and the hospital’s appointed advertising agencies, officers, directors, agents and employees, from all claims of any kind on account of such use.</p>
+                        </div><br/><br/>
+                        <div>
+                            <p style="font-size:20px;"><b>Name of Employee: </b><span t-field="o.full_name"/></p>
+                            <p style="font-size:20px;"><b>Signature of HR: </b></p>
+                            <p style="font-size:20px;"><b>Employee ID: </b><span t-field="o.employee_code"/></p>
+                            <p style="font-size:20px;"><b>Designation: </b><span t-field="o.job_id"/></p>
+                            <p style="font-size:20px;"><b>Signature: </b></p>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report 
+            id="report_consent_letter" 
+            string="Consent Letter" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.consent_letter_report" 
+            name="indimedi_kra.consent_letter_report_temp"
+        />
+
+    </data>
+</openerp>

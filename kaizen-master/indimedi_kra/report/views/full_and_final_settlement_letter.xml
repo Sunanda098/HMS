@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report.style" name="style">
+            <style type="text/css">
+                body {
+                color: #000 !important;
+                }
+                .table table-condensed {
+                border-top: 1px solid black !important;
+                }
+
+             </style>
+          </template>
+
+        <template id="full_and_final_letter_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div>
+                            <table class="table table-condensed" style="width:100%;" >
+                                <tbody>
+                                    <tr style="border-top:hidden;">
+                                        <td align="right">
+                                            <span>Date: </span><span t-esc="datetime.datetime.now().date()" />
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="center" style="text-decoration:underline;adding-top:15;">
+                                            <strong>FULL AND FINAL SETTLEMENT
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" style="adding-top:15;">
+                                            <span>To, </span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" style="adding-top:15;">
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left" >
+                                            <span>Kaizen Hospital,<br/>132 ft. Ring Road, Helmet Circle,<br/>Memnagar,<br/>Ahmedabad 380 052,<br/>Dear Sir / Madam,</span>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td><span>I <strong><t t-esc="o.full_name"/></strong>, received payment of Rs. <strong>
+                                        <t t-set="net" t-value="o.remain_salary"/>
+                                            <t t-foreach="o.contract_ids" t-as="a">
+                                                <t t-if="a.state == 'open'">
+                                                    <t t-foreach="a._get_amount_result()" t-as="b">
+                                                        <t t-if="(b['category'] != 'Basic') &amp;  (b['category'] != 'Gross') &amp; (b['category'] != 'Net')">
+
+                                                            <t t-if="b['category'] != 'Deduction'">
+                                                                <t t-if="b['amount_select'] == 'fix'">
+                                                                    <t t-set="net" t-value="net+(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'percentage'">
+                                                                    <t t-set="net" t-value="net+(o.remain_salary*(b['rate']/100))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'code'">
+                                                                    <t t-set="net" t-value="net+(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+
+                                                            </t>
+                                                            <t t-if="b['category'] == 'Deduction'">
+                                                                <t t-if="b['amount_select'] == 'fix'">
+                                                                    <t t-set="net" t-value="net-(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'percentage'">
+                                                                    <t t-set="net" t-value="net-(o.remain_salary*(b['rate']/100))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'code'">
+                                                                    <t t-set="net" t-value="net-(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </t>
+
+                                            </t>
+                                            
+                                            <t t-esc="'%.2f' %(net)"/></strong>/- towards Full and final settlement of all my dues mentioned below:</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed" style="width:100%;" >
+                                <tbody>
+                                    <tr style="border-top:1px solid black;border-right:1px solid black;border-left:1px solid black;border-bottom:1px solid black;" >
+                                        <td align="center" colspan="2" style="width:100%;border-top:1px solid black;">
+                                           <strong><t t-esc="o.full_name"/></strong> 
+                                        </td>
+                                    </tr>
+                                    <tr style="border-top:1px solid black;border-right:1px solid black;border-left:1px solid black">
+                                        <td align="left" style="width:50%;border-right:1px solid black;border-top:1px solid black;">
+                                            <span>Remaining Salary
+                                            </span>
+                                        </td>
+                                        <td align="right" style="width:50%;border-top:1px solid black;"><t t-esc="o.remain_salary"/></td>
+                                    </tr>
+                                    <t t-foreach="o.contract_ids" t-as="a">
+                                        <t t-if="a.state == 'open'">
+                                            <t t-foreach="a._get_amount_result()" t-as="b">
+                                                <t t-if="(b['category'] != 'Basic') &amp;  (b['category'] != 'Gross') &amp; (b['category'] != 'Net')">
+
+
+                                                    <tr style="border-top:1px solid black;border-right:1px solid black;border-left:1px solid black">
+                                                        <td align="left" style="width:50%;border-right:1px solid black;border-top:1px solid black;">
+                                                            <span><t t-esc="b['name']"/>
+                                                            </span>
+                                                        </td>
+                                                        <t t-if="b['amount_select'] == 'fix'">
+                                                            <td align="right" style="width:50%;border-top:1px solid black;"><t t-esc="'%.2f' %(o.number_of_days*(b['amount']/30))"/></td>
+                                                        </t>
+                                                        <t t-if="b['amount_select'] == 'percentage'">
+                                                            <td align="right" style="width:50%;border-top:1px solid black;">
+                                                                <t t-set="sal" t-value="'%.2f' %(o.remain_salary*(b['rate']/100))"/>
+                                                                <t t-esc="sal"/>
+                                                            </td>
+                                                        </t>
+                                                        <t t-if="b['amount_select'] == 'code'">
+                                                            <td align="right" style="width:50%;border-top:1px solid black;"><t t-esc="'%.2f' %(o.number_of_days*(b['amount']/30)])"/></td>
+                                                            
+                                                        </t>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </t>
+                                    </t>
+                                    
+                                    <tr style="border-top:1px solid black;border-right:1px solid black;border-left:1px solid black">
+                                        <td align="left" style="width:50%;border-right:1px solid black;border-top:1px solid black;border-bottom:1px solid black;">
+                                            <strong>NET SALARY 
+                                            </strong>
+                                        </td>
+                                        <td align="right" style="width:50%;border-top:1px solid black;border-bottom:1px solid black;">
+                                            <t t-set="net" t-value="o.remain_salary"/>
+                                            <t t-foreach="o.contract_ids" t-as="a">
+                                                <t t-if="a.state == 'open'">
+                                                    <t t-foreach="a._get_amount_result()" t-as="b">
+                                                        <t t-if="(b['category'] != 'Basic') &amp;  (b['category'] != 'Gross') &amp; (b['category'] != 'Net')">
+
+                                                            <t t-if="b['category'] != 'Deduction'">
+                                                                <t t-if="b['amount_select'] == 'fix'">
+                                                                    <t t-set="net" t-value="net+(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'percentage'">
+                                                                    <t t-set="net" t-value="net+(o.remain_salary*(b['rate']/100))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'code'">
+                                                                    <t t-set="net" t-value="net+(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+
+                                                            </t>
+                                                            <t t-if="b['category'] == 'Deduction'">
+                                                                <t t-if="b['amount_select'] == 'fix'">
+                                                                    <t t-set="net" t-value="net-(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'percentage'">
+                                                                    <t t-set="net" t-value="net-(o.remain_salary*(b['rate']/100))"/>
+                                                                </t>
+                                                                <t t-if="b['amount_select'] == 'code'">
+                                                                    <t t-set="net" t-value="net-(o.number_of_days*(b['amount']/30))"/>
+                                                                </t>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </t>
+
+                                            </t>
+                                            
+                                            <t t-esc="'%.2f' %(net)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed" style="width:100%;" >
+                                <tbody>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <span>It is further certified that subject to the realization of <strong>cheque no. (<t t-esc="o.cheque_no"/>)  dated. (<t t-esc="o.cheque_date"/>),</strong> I have no further claims whatsoever against the said management. I also declare that I have received the above said amount as the settlement of all legal and statutory dues against Kaizen Hospital.</span>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <span>Upon receiving the above said amount I hereby declare the hospital has no financial liability with regard to all my salary and dues.</span>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <strong>Name: <t t-esc="o.full_name"/></strong>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <strong>EID: <t t-esc="o.employee_code"/></strong>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <strong>Designation: <t t-esc="o.job_id.name"/></strong>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <strong>Date: <t t-esc="datetime.datetime.now().date()" /></strong>
+                                        </td> 
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td></td>
+                                    </tr>
+                                    <tr style="border-top:hidden;">
+                                        <td align="left">
+                                            <strong>Signature:</strong>
+                                        </td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_full_and_final_letter" model="report.paperformat">
+            <field name="name">Appointment Letter</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="report_full_and_final_letter" 
+            string="Full &amp; Final Letter" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.full_and_final_letter_report" 
+            name="indimedi_kra.full_and_final_letter_report"
+            paperformat="indimedi_kra.paperformat_full_and_final_letter"
+        />
+
+
+    </data>
+</openerp>

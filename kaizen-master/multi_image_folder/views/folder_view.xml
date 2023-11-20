@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_investigation_folder_form" model="ir.ui.view">
+			<field name="name">investigation.folder.form</field>
+			<field name="model">hms.investigation</field>
+			<field name="inherit_id" ref="hms_investigation.hms_investigation_form"/>
+			<field name="arch" type="xml">
+				<button name="action_open_preview" position="before">
+					<button name="load_image_from_folder" type="object" string="Load" class="oe_highlight oe_right"/>
+				</button>
+			</field>
+		</record>
+	</data>
+</openerp>

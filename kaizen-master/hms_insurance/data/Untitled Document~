@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+       
+        <!--delete id="seq_hms_check_payment_journal" model="account.journal"/-->
+
+	<record id="check_payment_journal_1" model="account.journal">
+            <field name="name">Cheque</field>
+            <field name="code">cheq</field>
+            <field name="type">bank</field>
+        </record>
+        
+        <!--delete id="credit_card_payment_journal" model="account.journal"/-->
+
+	<record id="credit_card_payment_journal_1" model="account.journal">
+            <field name="name">Credit Card</field>
+            <field name="code">credt</field>
+            <field name="type">bank</field>
+    </record>
+    </data>
+</openerp>
+

@@ -1,0 +1,54 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_treatment_user,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_user,1,0,0,0
+access_hms_prescription_line_treatment_user,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_user,1,0,0,0
+access_hms_report_hms_treatment_report_treatmentsheet_user,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_hms_treatment_receptionist,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_receptionist,1,0,0,0
+access_hms_prescription_line_treatment_receptionist,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_receptionist,1,0,1,0
+access_hms_report_hms_treatment_report_treatmentsheet_receptionist,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_hms_treatment_doctor,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_doctor,1,1,1,1
+access_hms_prescription_line_treatment_doctor,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_doctor,1,1,1,1
+access_hms_report_hms_treatment_report_treatmentsheet_doctor,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_treatment_nurse,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_nurse,1,0,0,0
+access_hms_prescription_line_treatment_nurse,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_nurse,1,0,0,0
+access_hms_report_hms_treatment_report_treatmentsheet_nurse,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_hms_treatment_pharmacist,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_pharmacist,1,0,0,0
+access_hms_prescription_line_treatment_pharmacist,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_pharmacist,1,0,0,0
+access_hms_report_hms_treatment_report_treatmentsheet_pharmacist,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+access_hms_treatment_jr_doctor,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_prescription_line_treatment_jr_doctor,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_report_hms_treatment_report_treatmentsheet_jr_doctor,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_treatment_manager,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_manager,1,1,1,1
+access_hms_prescription_line_treatment_manager,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_manager,1,1,1,1
+access_hms_report_hms_treatment_report_treatmentsheet_manager,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+access_hms_treatment_medical_officer,Indimedi Treatment,hms_treatment.model_hms_treatment,hms.group_hms_medical_officer,1,1,1,0
+access_hms_prescription_line_treatment_medical_officer,Prescription Line Treatment,hms_treatment.model_prescription_line_treatment,hms.group_hms_medical_officer,1,1,1,0
+access_hms_report_hms_treatment_report_treatmentsheet_medical_officer,Report Hms Treatment Report Treatmentsheet,hms_treatment.model_report_hms_treatment_report_treatmentsheet,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_appointment_history_doctor,appointment.history,model_appointment_history,hms.group_hms_doctor,1,1,1,1
+access_appointment_history_jr_doctor,appointment.history,model_appointment_history,hms.group_hms_jr_doctor,1,1,1,1
+access_appointment_history_mo,appointment.history,model_appointment_history,hms.group_hms_medical_officer,1,1,1,1
+access_appointment_history_receptionist,appointment.history,model_appointment_history,hms.group_hms_receptionist,1,1,1,0
+access_appointment_history_nurse,appointment.history,model_appointment_history,hms.group_hms_nurse,1,1,1,0
+access_appointment_history_manager,appointment.history,model_appointment_history,hms.group_hms_manager,1,1,1,1
+
+access_personal_history_doctor,personal.history,model_personal_history,hms.group_hms_doctor,1,1,1,1
+access_personal_history_jr_doctor,personal.history,model_personal_history,hms.group_hms_jr_doctor,1,1,1,1
+access_personal_history_mo,personal.history,model_personal_history,hms.group_hms_medical_officer,1,1,1,1
+access_personal_history_receptionist,personal.history,model_personal_history,hms.group_hms_receptionist,1,1,1,0
+access_personal_history_nurse,personal.history,model_personal_history,hms.group_hms_nurse,1,1,1,0
+access_personal_history_manager,personal.history,model_personal_history,hms.group_hms_manager,1,1,1,1
+
+access_rbs_line_doctor,rbs.line,model_rbs_line,hms.group_hms_doctor,1,1,1,1
+access_rbs_line_jr_doctor,rbs.line,model_rbs_line,hms.group_hms_jr_doctor,1,1,1,0
+access_rbs_line_mo,rbs.line,model_rbs_line,hms.group_hms_medical_officer,1,1,1,1
+access_rbs_line_receptionist,rbs.line,model_rbs_line,hms.group_hms_receptionist,1,1,1,0
+access_rbs_line_nurse,rbs.line,model_rbs_line,hms.group_hms_nurse,1,1,1,0
+access_rbs_line_manager,rbs.line,model_rbs_line,hms.group_hms_manager,1,1,1,1

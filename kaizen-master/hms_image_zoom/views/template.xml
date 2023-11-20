@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_frontend" inherit_id="website.assets_frontend"
+            name="Image zoom on click" customize_show="False">
+            <xpath expr="." position="inside">
+                <!-- For zoom -->
+                <!-- jQuery addons -->
+                <script type="text/javascript"
+                    src="/web/static/lib/jquery.validate/jquery.validate.js"></script>
+                <script type="text/javascript"
+                    src="/web/static/lib/jquery.scrollTo/jquery.scrollTo.js"></script>
+                <link rel="stylesheet" href="/web/static/lib/jquery.textext/jquery.textext.css" />
+                <script type="text/javascript"
+                    src="/web/static/lib/jquery.textext/jquery.textext.js"></script>
+                <!-- Added PlugIn files required for magnifying image -->
+                <link rel="stylesheet" href="/hms_image_zoom/static/src/css/multizoom.css" />
+                <script type="text/javascript" src="/hms_image_zoom/static/src/js/multizoom.js"></script>
+                <script type="text/javascript" src="/hms_image_zoom/static/src/js/zoom.js"></script>
+                <!-- PlugIn for touch and scroll -->
+                <link rel="stylesheet" type="text/css"
+                    href="/hms_image_zoom/static/src/css/jquery.mCustomScrollbar.min.css" />
+                <link rel="stylesheet" href="/hms_image_zoom/static/src/css/pro_img.css" />
+                <script type="text/javascript" src="/hms_image_zoom/static/src/js/website_hms_image.js"></script>
+            </xpath>
+        </template>
+
+        <template id="image_preview" name="Image Preview">
+            <t t-call="website.layout">
+                <div itemscope="itemscope" id="wrap" class="hms_image_preview">
+                    <section id="doc_detail">
+                        <div class="col-sm-7 col-md-7 col-lg-7">
+                            <t t-set="count" t-value="1"/>
+                            <t t-foreach="record" t-as="rec">
+                                <t t-if="rec.doc_ids and len(rec.doc_ids) &gt; 0"><t t-if="count">
+                                <input type="hidden" id="product_img_display" t-att-value="rec.doc_ids[0].is_document" />
+				<div class="col-md-3" style="height: 700px;overflow-y: auto;">
+				    <div id="thumb_img_add">
+					<div id='carousel-custom' class='carousel slide'>
+					    
+					    <!-- Indicators -->
+					    <ol class='carousel-indicators'>
+						<t t-foreach="record" t-as="rec">
+						    <t t-foreach="rec.doc_ids" t-as="i">
+							<li>
+							    <img onclick="pro_img_click(this)" class="image_thumb img-responsive" t-att-name="i.name"
+								t-att-src="'data:image/jpeg;base64,%s' %i.is_document" />
+							</li>
+							<br/>
+						    </t>
+						</t>
+					    </ol>
+					</div>
+				    </div>
+				</div>
+				<div class="col-md-9">
+				    <div class="image_bigsize">
+					<div id="ex1" onclick='full_img(this)'>
+					    <span itemprop="image" t-field="rec.doc_ids[0].is_document" 
+						t-field-options='{"widget": "image", "class": "img_set"}'/>
+					</div>
+				    </div>
+				    <div>
+					<!--<t t-if="'pathology_line' in rec.fields_get() and rec.pathology_line" ><strong>Investigations: </strong><span t-esc="', '.join(map(lambda x: x.product_id.name, rec.pathology_line))"></span><br/></t>-->
+					<strong>X-Ray: </strong><span id="xray-name" t-esc="rec.doc_ids[0].name"></span><br/>
+					<t t-if="'date_investigation' in rec.fields_get()" ><strong>Date: </strong><span t-field="rec.date_investigation"></span></t>
+				    </div>
+				</div>
+                                <t t-set="count" t-value="0"/>
+                            </t>
+                            </t>
+                            </t>
+                            <!-- Model to display image instead of image zoom when in mobile view -->
+                            <div class="modal fade" tabindex="-1" role="dialog" id="img_modal"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close" style="padding:5px;margin-bottom:-8%;color:red;">x
+                                        </button>
+                                        <img class="img img-responsive" id="modal_img" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+        <!-- Preview for past investigation -->
+        <template id="image_session_1_preview" name="Image Preview Session-1">
+            <t t-call="website.layout">
+                <div itemscope="itemscope" id="wrap" class="hms_image_preview">
+                    <section id="doc_detail">
+                        <div class="col-sm-7 col-md-7 col-lg-7">
+                            <t t-set="count" t-value="1"/>
+                            <t t-foreach="record_s1" t-as="rec">
+                                <t t-if="rec.session1_image_ids and len(rec.session1_image_ids) &gt; 0"><t t-if="count">
+                                <input type="hidden" id="product_img_display" t-att-value="rec.session1_image_ids[0].s_image1" />
+                <div class="col-md-3" style="height: 700px;overflow-y: auto;">
+                    <div id="thumb_img_add">
+                    <div id='carousel-custom' class='carousel slide'>
+                        <!-- Indicators -->
+                        <ol class='carousel-indicators'>
+                        <t t-foreach="record_s1" t-as="rec">
+                            <t t-foreach="rec.session1_image_ids" t-as="i">
+                            <li>
+                                <img onclick="pro_img_click(this)" class="image_thumb img-responsive" t-att-name="i.name"
+                                t-att-src="'data:image/jpeg;base64,%s' %i.s_image1" />
+                            </li>
+                            <br/>
+                            </t>
+                        </t>
+                        </ol>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="image_bigsize">
+                    <div id="ex1" onclick='full_img(this)'>
+                        <span itemprop="image" t-field="rec.session1_image_ids[0].s_image1"
+                        t-field-options='{"widget": "image", "class": "img_set"}'/>
+                    </div>
+                    </div>
+                    <div>
+                    <strong>Image: </strong><span id="xray-name" t-esc="rec.session1_image_ids[0].s_date1"></span><br/>
+                    </div>
+                </div>
+                                <t t-set="count" t-value="0"/>
+                            </t>
+                            </t>
+                            </t>
+                            <!-- Model to display image instead of image zoom when in mobile view -->
+                            <div class="modal fade" tabindex="-1" role="dialog" id="img_modal"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close" style="padding:5px;margin-bottom:-8%;color:red;">x
+                                        </button>
+                                        <img class="img img-responsive" id="modal_img" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+    </data>
+</openerp>

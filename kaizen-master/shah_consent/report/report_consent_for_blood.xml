@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report_consent_for_blood">
+            <t t-call="hms.hms_external_layout_consent">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="font-size:17px;">
+                        <div class="row" style="border-bottom:2px solid black;">
+                           <!--  <img style="height:250px;width:100%;" src="/shah_consent/static/src/img/consent_blood.png" /> -->
+                        </div>
+
+
+                        <t t-if="o.language == 'english'">
+                        <div class="row pull-right">
+                            <strong>DATE:</strong>
+                            <span t-esc="time.strftime('%d-%m-%Y')"/>
+                        </div>
+                        <div class="row mt16"></div>
+                        <div class="row" style="font-size:17px;letter-spacing: 0.5px;">
+                            <p t-raw="o.patient_id.user_id.company_id.terms_consent_blood1" />
+                        </div>
+                        <div class="row">
+                            <span>I  </span>
+                            <strong>
+                                <span t-field="o.patient_id.name" />
+                            </strong>....... Age: <strong><span t-field="o.patient_id.age"> Years.</span></strong><br /><span>Resident of....... <strong><t t-if="o.patient_id.street"><span t-field="o.patient_id.street" />,
+            </t><t t-if="o.patient_id.street2"><span t-field="o.patient_id.street2" />,
+            </t><span t-field="o.patient_id.area_id" />, <span t-field="o.patient_id.city_id" />, <span t-field="o.patient_id.state_id" />.</strong></span><br /></div>
+                        <div class="row" style="font-size:17px;letter-spacing: 0.5px;">
+                            <p t-raw="o.patient_id.user_id.company_id.terms_consent_blood2" />
+                            <!-- <br /> -->
+                        </div>
+                        <table class="table table-condensed" style="border:none">
+                            <tr>
+                                <td style="border: none;">
+                                    <span>Datetime: </span>
+                                    <span t-field="o.consent_date" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>Name of the Patient: </span>
+                                    <span t-field="o.patient_id.name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>Name of the Unit Nurse: </span>
+                                    <span t-field="o.nurse_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>Sign. of the Patient: </span>
+                                    <span>...................................</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>Sign. of the Unit Nurse: </span>
+                                    <span>...................................</span>
+                                </td>
+                                <td style="border: none;">
+                                    <span>Name of the Relative: </span>
+                                    <span t-field="o.relative_name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>Name of the Doctor: </span>
+                                    <span t-field="o.doctor_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>Relation with patient: </span>
+                                    <span t-field="o.relation" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>Sign. of the Doctor: </span>
+                                    <span>...................................</span>
+                                </td>
+                                <td style="border: none;">
+                                    <span>Sign. of the Relative: </span>
+                                    <span>...................................</span>
+                                </td>
+                            </tr>
+                        </table>
+                      </t>
+                      
+
+                       <t t-if="o.language == 'gujarati'">
+                        <div class="row pull-right">
+                            <strong>તારીખ:</strong>
+                            <span t-esc="time.strftime('%d-%m-%Y')"/>
+                        </div>
+                        <div class="row mt16"></div>
+                        <div class="row" style="font-size:17px;letter-spacing: 0.5px;">
+                            <p t-raw="o.patient_id.user_id.company_id.terms_consent_blood1_gj" />
+                        </div>
+                        <div class="row">
+                            <span>હું  </span>
+                            <strong>
+                                <span t-field="o.patient_id.name" />
+                            </strong>....... ઉંમર: <strong><span t-field="o.patient_id.age"> વર્ષ.</span></strong><br /><span>નિવાસી:...... <strong><t t-if="o.patient_id.street"><span t-field="o.patient_id.street" />,
+            </t><t t-if="o.patient_id.street2"><span t-field="o.patient_id.street2" />,
+            </t><span t-field="o.patient_id.area_id" />, <span t-field="o.patient_id.city_id" />, <span t-field="o.patient_id.state_id" />.</strong></span><br /></div>
+                        <div class="row" style="font-size:17px;letter-spacing: 0.5px;">
+                            <p t-raw="o.patient_id.user_id.company_id.terms_consent_blood2_gj" />
+                            <br />
+                        </div>
+                        <table class="table table-condensed" style="border:none">
+                            <tr>
+                                <td style="border: none;">
+                                    <span>તારીખ સમય: </span>
+                                    <span t-field="o.consent_date" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>દર્દી નુ નામ: </span>
+                                    <span t-field="o.patient_id.name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>એકમ નર્સ નામ: </span>
+                                    <span t-field="o.nurse_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>દર્દી ના હસ્તાક્ષર: </span>
+                                    <span>...................................</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>એકમ નર્સ ના હસ્તાક્ષર: </span>
+                                    <span>...................................</span>
+                                </td>
+                                <td style="border: none;">
+                                    <span>સંબંધિત નુ નામ: </span>
+                                    <span t-field="o.relative_name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>ડોક્ટર નુ નામ: </span>
+                                    <span t-field="o.doctor_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>દર્દી સાથે સંબંધ:</span>
+                                    <span t-field="o.relation" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>ડોક્ટર ના હસ્તાક્ષર: </span>
+                                    <span>...................................</span>
+                                </td>
+                                <td style="border: none;">
+                                    <span>સંબંધિત ના હસ્તાક્ષર: </span>
+                                    <span>...................................</span>
+                                </td>
+                            </tr>
+                        </table>
+                      </t>
+
+                       <t t-if="o.language == 'hindi'">
+                        <div class="row pull-right">
+                            <strong>तारीख:</strong>
+                            <span t-esc="time.strftime('%d-%m-%Y')"/>
+                        </div>
+                        <div class="row mt16"></div>
+                        <div class="row" style="font-size:17px;letter-spacing: 0.5px;">
+                            <p t-raw="o.patient_id.user_id.company_id.terms_consent_blood1_hi" />
+                        </div>
+                        <div class="row">
+                            <span>मैं  </span>
+                            <strong>
+                                <span t-field="o.patient_id.name" />
+                            </strong>....... 
+वर्ष: <strong><span t-field="o.patient_id.age"> वर्षों.</span></strong><br /><span>का निवासी...... <strong><t t-if="o.patient_id.street"><span t-field="o.patient_id.street" />,
+            </t><t t-if="o.patient_id.street2"><span t-field="o.patient_id.street2" />,
+            </t><span t-field="o.patient_id.area_id" />, <span t-field="o.patient_id.city_id" />, <span t-field="o.patient_id.state_id" />.</strong></span><br /></div>
+                        <div class="row" style="background-color:none;font-size:17px;letter-spacing: 0.5px;">
+                            <p t-raw="o.patient_id.user_id.company_id.terms_consent_blood2_hi" />
+                            <br />
+                        </div>
+                        <table class="table table-condensed" style="border:none">
+                            <tr>
+                                <td style="border: none;">
+                                    <span>दिनांक समय: </span>
+                                    <span t-field="o.consent_date" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>मरीज का नाम: </span>
+                                    <span t-field="o.patient_id.name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>
+यूनिट नर्स का नाम: </span>
+                                    <span t-field="o.nurse_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>मरीज के हस्ताक्षर: </span>
+                                    <span>...................................</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>यूनिट नर्स के हस्ताक्षर: </span>
+                                    <span>...................................</span>
+                                </td>
+                                <td style="border: none;">
+                                    <span>रिश्तेदार के नाम: </span>
+                                    <span t-field="o.relative_name" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>
+डॉक्टर का नाम: </span>
+                                    <span t-field="o.doctor_id.name" />
+                                </td>
+                                <td style="border: none;">
+                                    <span>मरीज के साथ संबंध: </span>
+                                    <span t-field="o.relation" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <span>चिकित्सक के हस्ताक्षर:
+</span>
+                                    <span>...................................</span>
+                                </td>
+                                <td style="border: none;">
+                                    <span>
+रिश्तेदार के हस्ताक्षर: </span>
+                                    <span>...................................</span>
+                                </td>
+                            </tr>
+                        </table>
+                      </t>
+
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

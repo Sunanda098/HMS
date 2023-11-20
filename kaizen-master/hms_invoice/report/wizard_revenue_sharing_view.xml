@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="revenue_sharing_report_view" model="ir.ui.view">
+            <field name="name">Revenue Sharing Report</field>
+            <field name="model">revenue.sharing.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                        	<field name="date_from" required="1"/>
+                        	<field name="date_to" required="1"/>
+                            <field name="type" class="oe_line" options="{'horizontal': true}"/>
+                            <field name="service_group" attrs="{'invisible':[('type','!=','group')], 'required':[('type','==','group')]}"/>
+                            <field name="product_id" attrs="{'invisible':[('type','!=','service')], 'required':[('type','==','service')]}"/>
+                            <field name="person_id" attrs="{'invisible':[('type','!=','person')], 'required':[('type','==','person')]}"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="print_report" string="Print" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_revenue_sharing_report_menu" model="ir.actions.act_window">
+            <field name="name">Revenue Sharing Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">revenue.sharing.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="revenue_sharing_report_view"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem
+            id="menu_revenue_sharing_report"
+            name="Revenue Sharing Report"
+            action="action_revenue_sharing_report_menu" 
+            parent="menu_revenue_sharing" sequence="25" />
+        
+</data>
+</openerp>

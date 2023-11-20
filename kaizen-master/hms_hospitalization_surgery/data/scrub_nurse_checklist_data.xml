@@ -1,0 +1,80 @@
+<openerp>
+    <data noupdate="1">
+        <!--By Scrub Nurse-->
+
+        <record id="admission_checklist_scrub_nurse_1" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Counting</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_2" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Counting-Needle</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_3" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Counting-Instrument</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_4" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Counting-Mop</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_5" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Counting-Gauze</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_6" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Counting-Specimen</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_7" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Hameostasis Achieved</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_8" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Accessory tube Placement</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_9" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Accessory tube Placement Drain</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_10" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Accessory tube Placement NG/NJ</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_11" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Feeding Jejunostomy</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_12" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Additional Procedure</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_13" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Closure</field>
+            <field name="remark"></field>
+        </record>
+        
+        <record id="admission_checklist_scrub_nurse_15" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Closure-Tension</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="admission_checklist_scrub_nurse_16" model="inpatient.checklist.scrub.nurse.template">
+            <field name="name">Closure-Simple</field>
+            <field name="remark"></field>
+        </record>
+    </data>
+</openerp>

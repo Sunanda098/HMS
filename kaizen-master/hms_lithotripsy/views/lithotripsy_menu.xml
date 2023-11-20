@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="menu_lithotripsy" name="Lithotripsy" sequence="3" parent="hms_hospitalization.indimedi_inpatient_menu" action="hms_lithotripsy.action_lithotripsy" />
+
+    </data>
+</openerp>

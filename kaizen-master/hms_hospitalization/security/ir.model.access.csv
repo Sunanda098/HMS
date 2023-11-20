@@ -1,0 +1,565 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_patient_user,Patient,hms.model_hms_patient,hms.group_hms_user,1,0,0,0
+access_hms_hospital_bed_user,Hospital Bed,model_hospital_bed,hms.group_hms_user,1,0,0,0
+access_hms_hospital_ward_user,Hospital Ward,model_hospital_ward,hms.group_hms_user,1,0,0,0
+access_hms_hospital_building_user,Hospital Building,model_hospital_building,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_hospital_or_user,Hospital Or,model_indimedi_hospital_or,hms.group_hms_user,1,0,0,0
+access_hms_ipd_instruction_user,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_hms_ward_round_detail_user,Ward Round Detail,model_ward_round_detail,hms.group_hms_user,1,0,0,0
+access_hms_anaesthesia_user,Anaesthesia,model_anaesthesia,hms.group_hms_user,1,0,0,0
+access_hms_hospitalization_tpa_user,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_hms_pre_operative_check_list_user,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_user,1,0,0,0
+access_hms_patient_accomodation_history_user,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_user,1,0,0,0
+access_hms_hms_reason_user,Indimedi Reason,model_hms_reason,hms.group_hms_user,1,0,0,0
+access_hms_hospital_stone_user,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_user,1,0,0,0
+access_hms_hospital_stone_line_user,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_user,1,0,0,0
+access_hms_hospital_prostate_user,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_user,1,0,0,0
+access_hms_hospital_prostate_line_user,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_user,1,0,0,0
+access_hms_hospital_reconstructive_user,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_user,1,0,0,0
+access_hms_hospital_reconstructive_line_user,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_user,1,0,0,0
+access_hms_hospital_ablative_user,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_user,1,0,0,0
+access_hms_hospital_ablative_line_user,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_user,1,0,0,0
+access_hms_hospital_female_urology_user,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_user,1,0,0,0
+access_hms_hospital_female_urology_line_user,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_user,1,0,0,0
+access_hms_hospital_onco_urology_user,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_user,1,0,0,0
+access_hms_hospital_onco_urology_line_user,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_user,1,0,0,0
+access_hms_ward_rounds_user,Ward Rounds,model_ward_rounds,hms.group_hms_user,1,0,0,0
+,,,,,,,
+access_inpatient_registration_doctor,inpatient_registration,model_inpatient_registration,hms.group_hms_doctor,1,1,1,1
+access_inpatient_registration_jr_doctor,inpatient_registration,model_inpatient_registration,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_registration_mo,inpatient_registration,model_inpatient_registration,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_registration_rec,inpatient_registration,model_inpatient_registration,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_registration_nurse,inpatient_registration,model_inpatient_registration,hms.group_hms_nurse,1,0,0,0
+access_inpatient_registration_user,inpatient_registration,model_inpatient_registration,hms.group_hms_user,1,0,0,0
+access_inpatient_registration_manager,inpatient_registration,model_inpatient_registration,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_user,Past Surgeries,model_past_surgeries,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_user,Pre Ward User,model_pre_ward_check_list_template,hms.group_hms_user,1,0,0,0
+access_hms_pre_ward_check_list_user,Pre Ward User,model_pre_ward_check_list,hms.group_hms_user,1,0,0,0
+access_inpatient_checklist_user,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_user,1,1,0,0
+access_inpatient_checklist_template_user,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_user,1,1,0,0
+access_hms_res2_users_user,Res Users,base.model_res_users,hms.group_hms_user,1,0,0,0
+access_hms_instruction_user,Instruction Set,model_hms_instruction,hms.group_hms_user,0,0,0,0
+,,,,,,,
+,,,,,,,
+access_apn_induction_receptionist,Indimedi Reversal Instruction,model_apn_induction,hms.group_hms_receptionist,1,0,0,0
+access_apn_reversal_receptionist,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_receptionist,1,0,0,0
+access_hms_patient_receptionist,Patient,hms.model_hms_patient,hms.group_hms_receptionist,1,1,1,0
+access_hms_hospital_bed_receptionist,Hospital Bed,model_hospital_bed,hms.group_hms_receptionist,1,1,0,0
+access_hms_hospital_ward_receptionist,Hospital Ward,model_hospital_ward,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_building_receptionist,Hospital Building,model_hospital_building,hms.group_hms_receptionist,1,1,1,0
+access_hms_indimedi_hospital_or_receptionist,Hospital Or,model_indimedi_hospital_or,hms.group_hms_receptionist,1,1,1,0
+access_hms_ipd_instruction_receptionist,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_receptionist,1,1,1,0
+,,,,,,,
+access_hms_ward_round_detail_receptionist,Ward Round Detail,model_ward_round_detail,hms.group_hms_receptionist,1,1,1,0
+access_hms_anaesthesia_receptionist,Anaesthesia,model_anaesthesia,hms.group_hms_receptionist,1,1,1,0
+access_hms_hospitalization_tpa_receptionist,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_receptionist,1,1,1,0
+,,,,,,,
+access_hms_pre_operative_check_list_receptionist,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_receptionist,1,1,1,0
+access_hms_patient_accomodation_history_receptionist,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_reason_receptionist,Indimedi Reason,model_hms_reason,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_stone_receptionist,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_stone_line_receptionist,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_prostate_receptionist,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_prostate_line_receptionist,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_reconstructive_receptionist,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_reconstructive_line_receptionist,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_ablative_receptionist,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_ablative_line_receptionist,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_female_urology_receptionist,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_female_urology_line_receptionist,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_onco_urology_receptionist,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_receptionist,1,0,0,0
+access_hms_hospital_onco_urology_line_receptionist,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_ward_rounds_receptionist,Ward Rounds,model_ward_rounds,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_receptionist,Past Surgeries,model_past_surgeries,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_receptionist,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_receptionist,1,1,1,0
+access_hms_pre_ward_check_list_receptionist,Pre Ward Check List,model_pre_ward_check_list,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_receptionist,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_template_receptionist,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_receptionist,1,1,0,0
+access_hms_res_users_receptionist,Res Users,base.model_res_users,hms.group_hms_receptionist,1,0,0,0
+access_apn_induction_doctor,Indimedi Reversal Instruction,model_apn_induction,hms.group_hms_doctor,1,1,1,1
+access_apn_reversal_doctor,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_doctor,Patient,hms.model_hms_patient,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_bed_doctor,Hospital Bed,model_hospital_bed,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_ward_doctor,Hospital Ward,model_hospital_ward,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_building_doctor,Hospital Building,model_hospital_building,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_hospital_or_doctor,Hospital Or,model_indimedi_hospital_or,hms.group_hms_doctor,1,1,1,1
+access_hms_ipd_instruction_doctor,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_ward_round_detail_doctor,Ward Round Detail,model_ward_round_detail,hms.group_hms_doctor,1,1,1,1
+access_hms_anaesthesia_doctor,Anaesthesia,model_anaesthesia,hms.group_hms_doctor,1,1,1,1
+access_hms_hospitalization_tpa_doctor,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_pre_operative_check_list_doctor,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_accomodation_history_doctor,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_accomodation_history_doctor,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_reason_doctor,Indimedi Reason,model_hms_reason,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_stone_doctor,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_stone_line_doctor,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_prostate_doctor,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_prostate_line_doctor,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_reconstructive_doctor,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_reconstructive_line_doctor,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_ablative_doctor,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_ablative_line_doctor,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_female_urology_doctor,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_female_urology_line_doctor,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_onco_urology_doctor,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_onco_urology_line_doctor,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_doctor,1,1,1,1
+access_hms_ward_rounds_doctor,Ward Rounds,model_ward_rounds,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_doctor,Past Surgeries,model_past_surgeries,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_doctor,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_doctor,1,1,1,1
+access_hms_pre_ward_check_list_doctor,Pre Ward Check List,model_pre_ward_check_list,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_doctor,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_template_doctor,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_doctor,1,1,1,1
+access_hms_res_users_doctor,Res Users,base.model_res_users,hms.group_hms_doctor,1,1,1,1
+access_hms_instruction_doctor,Hms Instruction,model_hms_instruction,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_patient_nurse,Patient,hms.model_hms_patient,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_bed_nurse,Hospital Bed,model_hospital_bed,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_ward_nurse,Hospital Ward,model_hospital_ward,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_building_nurse,Hospital Building,model_hospital_building,hms.group_hms_nurse,1,0,0,0
+access_hms_indimedi_hospital_or_nurse,Hospital Or,model_indimedi_hospital_or,hms.group_hms_nurse,1,0,0,0
+access_hms_ipd_instruction_nurse,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_hms_ward_round_detail_nurse,Ward Round Detail,model_ward_round_detail,hms.group_hms_nurse,1,0,0,0
+access_hms_anaesthesia_nurse,Anaesthesia,model_anaesthesia,hms.group_hms_nurse,1,0,0,0
+access_hms_hospitalization_tpa_nurse,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_hms_pre_operative_check_list_nurse,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_nurse,1,0,0,0
+access_hms_patient_accomodation_history_nurse,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_nurse,1,1,0,0
+access_hms_hms_reason_nurse,Indimedi Reason,model_hms_reason,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_stone_nurse,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_stone_line_nurse,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_prostate_nurse,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_prostate_line_nurse,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_reconstructive_nurse,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_reconstructive_line_nurse,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_ablative_nurse,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_ablative_line_nurse,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_female_urology_nurse,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_female_urology_line_nurse,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_onco_urology_nurse,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_nurse,1,0,0,0
+access_hms_hospital_onco_urology_line_nurse,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_nurse,1,0,0,0
+access_hms_ward_rounds_nurse,Ward Rounds,model_ward_rounds,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_nurse,Past Surgeries,model_past_surgeries,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_nurse,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_nurse,1,1,0,0
+access_hms_pre_ward_check_list_nurse,Pre Ward Check List ,model_pre_ward_check_list,hms.group_hms_nurse,1,1,0,0
+access_inpatient_checklist_nurse,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_nurse,1,1,0,0
+access_inpatient_checklist_template_nurse,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_nurse,1,1,0,0
+access_hms_res_users_nurse,Res Users,base.model_res_users,hms.group_hms_nurse,1,1,0,0
+access_hms_precription_order_nurse,prescription order,hms_prescription.model_prescription_order,hms.group_hms_nurse,1,1,1,0
+access_hms_hospital_bed_nurse,Hospital Bed,model_hospital_bed,hms.group_hms_nurse,1,1,0,0
+access_hms_hospital_ward_nurse,Hospital Ward,model_hospital_ward,hms.group_hms_nurse,1,1,0,0
+access_hms_account_move_line_nurse,Account Move Line,account.model_account_move_line,hms.group_hms_nurse,1,0,0,0
+access_hms_instruction_nurse,Hms Instruction,model_hms_instruction,hms.group_hms_nurse,1,0,0,0
+access_apn_reversal_nurse,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_nurse,1,0,0,0
+access_apn_induction_nurse,Indimedi Reversal Instruction,model_apn_induction,hms.group_hms_nurse,1,0,0,0
+access_hms_patient_pharmacist,Patient,hms.model_hms_patient,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_bed_pharmacist,Hospital Bed,model_hospital_bed,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hospital_ward_pharmacist,Hospital Ward,model_hospital_ward,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hospital_building_pharmacist,Hospital Building,model_hospital_building,hms.group_hms_pharmacist,1,1,1,0
+access_hms_indimedi_hospital_or_pharmacist,Hospital Or,model_indimedi_hospital_or,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_hms_ipd_instruction_pharmacist,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_hms_ward_round_detail_pharmacist,Ward Round Detail,model_ward_round_detail,hms.group_hms_pharmacist,1,1,1,0
+access_hms_anaesthesia_pharmacist,Anaesthesia,model_anaesthesia,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospitalization_tpa_pharmacist,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_hms_pre_operative_check_list_pharmacist,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_accomodation_history_pharmacist,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_patient_accomodation_history_pharmacist,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hms_reason_pharmacist,Indimedi Reason,model_hms_reason,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_stone_pharmacist,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_stone_line_pharmacist,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_prostate_pharmacist,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_prostate_line_pharmacist,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_reconstructive_pharmacist,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_reconstructive_line_pharmacist,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_ablative_pharmacist,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_ablative_line_pharmacist,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_female_urology_pharmacist,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_female_urology_line_pharmacist,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_onco_urology_pharmacist,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_pharmacist,1,1,1,0
+access_hms_hospital_onco_urology_line_pharmacist,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_ward_rounds_pharmacist,Ward Rounds,model_ward_rounds,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_pharmacist,Past Surgeries,model_past_surgeries,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_pharmacist,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_pharmacist,1,1,1,0
+access_hms_pre_ward_check_list_pharmacist,Pre Ward Check List,model_pre_ward_check_list,hms.group_hms_pharmacist,1,1,1,0
+access_inpatient_checklist_pharmacist,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_pharmacist,1,1,1,0
+access_inpatient_checklist_template_pharmacist,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_pharmacist,1,1,1,0
+access_hms_res_users_pharmacist,Res Users,base.model_res_users,hms.group_hms_pharmacist,1,1,1,0
+access_apn_reversal_pharmacist,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_pharmacist,1,1,1,0
+access_apn_induction_pharmacist,Indimedi Reversal Instruction,model_apn_induction,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_apn_induction_jr_doctor,Indimedi Reversal Instruction,model_apn_induction,hms.group_hms_jr_doctor,1,1,1,1
+access_apn_reversal_jr_doctor,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_jr_doctor,Patient,hms.model_hms_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_bed_jr_doctor,Hospital Bed,model_hospital_bed,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_ward_jr_doctor,Hospital Ward,model_hospital_ward,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_building_jr_doctor,Hospital Building,model_hospital_building,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_hospital_or_jr_doctor,Hospital Or,model_indimedi_hospital_or,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_instruction_jr_doctor,Hms Instruction,model_hms_instruction,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_ipd_instruction_jr_doctor,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_ward_round_detail_jr_doctor,Ward Round Detail,model_ward_round_detail,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_anaesthesia_jr_doctor,Anaesthesia,model_anaesthesia,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospitalization_tpa_jr_doctor,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_pre_operative_check_list_jr_doctor,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_accomodation_history_jr_doctor,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_accomodation_history_jr_doctor,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_reason_jr_doctor,Indimedi Reason,model_hms_reason,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_stone_jr_doctor,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_stone_line_jr_doctor,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_prostate_jr_doctor,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_prostate_line_jr_doctor,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_reconstructive_jr_doctor,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_reconstructive_line_jr_doctor,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_ablative_jr_doctor,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_ablative_line_jr_doctor,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_female_urology_jr_doctor,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_female_urology_line_jr_doctor,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_onco_urology_jr_doctor,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_onco_urology_line_jr_doctor,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ward_rounds_jr_doctor,Ward Rounds,model_ward_rounds,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_jr_doctor,Past Surgeries,model_past_surgeries,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_jr_doctor,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_pre_ward_check_list_jr_doctor,Pre Ward Check List,model_pre_ward_check_list,hms.group_hms_jr_doctor,1,1,1,1
+access_inpatient_checklist_jr_doctor,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_jr_doctor,1,1,1,1
+access_inpatient_checklist_template_jr_doctor,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_res_users_jr_doctor,Res Users,base.model_res_users,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_doctor_manager,Patient,hms.model_hms_patient,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_bed_doctor_manager,Hospital Bed,model_hospital_bed,hms.group_hms_manager,1,0,0,0
+access_hms_hospital_ward_doctor_manager,Hospital Ward,model_hospital_ward,hms.group_hms_manager,1,0,0,0
+access_hms_hospital_building_doctor_manager,Hospital Building,model_hospital_building,hms.group_hms_manager,1,1,1,1
+access_hms_indimedi_hospital_or_doctor_manager,Hospital Or,model_indimedi_hospital_or,hms.group_hms_manager,1,1,1,1
+access_hms_instruction_manager,Hms Instruction,model_hms_instruction,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_hms_ipd_instruction_doctor_manager,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+access_hms_ward_round_detail_doctor_manager,Ward Round Detail,model_ward_round_detail,hms.group_hms_manager,1,1,1,1
+access_hms_anaesthesia_doctor_manager,Anaesthesia,model_anaesthesia,hms.group_hms_manager,1,1,1,1
+access_hms_hospitalization_tpa_doctor_manager,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+access_hms_pre_operative_check_list_doctor_manager,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_manager,1,1,1,1
+access_hms_patient_accomodation_history_doctor_manager,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_manager,1,1,1,1
+access_hms_patient_accomodation_history_doctor_manager,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_manager,1,1,1,1
+access_hms_hms_reason_doctor_manager,Indimedi Reason,model_hms_reason,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_stone_doctor_manager,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_stone_line_doctor_manager,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_prostate_doctor_manager,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_prostate_line_doctor_manager,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_reconstructive_doctor_manager,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_reconstructive_line_doctor_manager,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_ablative_doctor_manager,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_ablative_line_doctor_manager,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_female_urology_doctor_manager,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_female_urology_line_doctor_manager,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_onco_urology_doctor_manager,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_manager,1,1,1,1
+access_hms_hospital_onco_urology_line_doctor_manager,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_manager,1,1,1,1
+access_hms_ward_rounds_doctor_manager,Ward Rounds,model_ward_rounds,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_doctor_manager,Past Surgeries,model_past_surgeries,hms.group_hms_manager,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_manager,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_manager,1,1,1,1
+access_hms_pre_ward_check_list_manager,Pre Ward Check List ,model_pre_ward_check_list,hms.group_hms_manager,1,1,1,1
+access_inpatient_checklist_manager,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_manager,1,1,1,1
+access_inpatient_checklist_template_manager,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_manager,1,1,1,1
+access_hms_res_users_manager,Res Users,base.model_res_users,hms.group_hms_manager,1,1,1,1
+access_apn_reversal_manager,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_manager,1,1,1,0
+access_apn_induction_manager,Indimedi Induction Instruction,model_apn_induction,hms.group_hms_manager,1,1,1,0
+,,,,,,,
+access_hms_ipd_instruction_medical_officer,Indimedi Ipd Instruction,model_ipd_instruction,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+access_hms_ward_round_detail_medical_officer,Ward Round Detail,model_ward_round_detail,hms.group_hms_medical_officer,1,1,1,0
+access_hms_anaesthesia_medical_officer,Anaesthesia,model_anaesthesia,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospitalization_tpa_medical_officer,Hospitalization tpa,model_hospitalization_tpa,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+access_hms_pre_operative_check_list_medical_officer,Pre Operative Check List,model_pre_operative_check_list,hms.group_hms_medical_officer,1,1,1,0
+access_hms_patient_accomodation_history_medical_officer,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_medical_officer,1,1,1,0
+access_hms_patient_accomodation_history_medical_officer,Patient Accomodation History,model_patient_accomodation_history,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hms_reason_medical_officer,Indimedi Reason,model_hms_reason,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_stone_medical_officer,Indimedi Hospital Stone,model_hospital_stone,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_stone_line_medical_officer,Indimedi Hospital Stone Line,model_hospital_stone_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_prostate_medical_officer,Indimedi Hospital Prostate,model_hospital_prostate,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_prostate_line_medical_officer,Indimedi Hospital Prostate Line,model_hospital_prostate_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_reconstructive_medical_officer,Indimedi Hospital Reconstructive,model_hospital_reconstructive,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_reconstructive_line_medical_officer,Indimedi Hospital Reconstructive Line,model_hospital_reconstructive_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_ablative_medical_officer,Indimedi Hospital Ablative,model_hospital_ablative,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_ablative_line_medical_officer,Indimedi Hospital Ablative line,model_hospital_ablative_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_female_urology_medical_officer,Indimedi Hospital Femal Urology,model_hospital_female_urology,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_female_urology_line_medical_officer,Indimedi Hospital Femal Urology Line,model_hospital_female_urology_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_onco_urology_medical_officer,Indimedi Hospital Onco Urology,model_hospital_onco_urology,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_onco_urology_line_medical_officer,Indimedi Hospital Onco Urology Line,model_hospital_onco_urology_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ward_rounds_medical_officer,Ward Rounds,model_ward_rounds,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_past_surgeries_medical_officer,Past Surgeries,model_past_surgeries,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_pre_ward_check_list_template_medical_officer,Pre Ward Check List Template,model_pre_ward_check_list_template,hms.group_hms_medical_officer,1,1,1,0
+access_hms_pre_ward_check_list_medical_officer,Pre Ward Check List,model_pre_ward_check_list,hms.group_hms_medical_officer,1,1,1,0
+access_inpatient_checklist_medical_officer,Indimedi Inpatient Checklist,model_inpatient_checklist,hms.group_hms_medical_officer,1,1,1,0
+access_inpatient_checklist_template_medical_officer,Indimedi Inpatient Checklist Template,model_inpatient_checklist_template,hms.group_hms_medical_officer,1,1,1,0
+access_hms_res_users_medical_officer,Res Users,base.model_res_users,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hms_instruction_medical_officer,Indimedi Instruction,model_hms_instruction,hms.group_hms_medical_officer,1,1,1,0
+access_ipd_discharge_instruction_medical_officer,Indimedi ipd discharge instruction,model_ipd_discharge_instruction,hms.group_hms_medical_officer,1,1,1,0
+access_apn_induction_medical_officer,Indimedi Induction Instruction,model_apn_induction,hms.group_hms_medical_officer,1,1,1,0
+access_apn_reversal_medical_officer,Indimedi Reversal Instruction,model_apn_reversal,hms.group_hms_medical_officer,1,1,1,0
+access_hms_account_move_line_medical_officer,Account Move Line,account.model_account_move_line,hms.group_hms_medical_officer,1,0,0,0
+access_hms_hospital_bed_medical_officer,Hospital Bed,model_hospital_bed,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_ward_medical_officer,Hospital Ward,model_hospital_ward,hms.group_hms_medical_officer,1,1,1,0
+access_hms_hospital_building_medical_officer,Hospital Building,model_hospital_building,hms.group_hms_medical_officer,1,1,1,0
+access_hms_instruction_medical_officer,Hms Instruction,model_hms_instruction,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_ipd_instruction_group_medical_officer,Ipd Instruction Group,model_ipd_instruction_group,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ipd_instruction_group_doctor,Ipd Instruction Group,model_ipd_instruction_group,hms.group_hms_doctor,1,1,1,1
+access_hms_ipd_instruction_group_nurse,Ipd Instruction Group,model_ipd_instruction_group,hms.group_hms_nurse,1,0,0,0
+access_hms_ipd_instruction_group_jr_doctor,Ipd Instruction Group,model_ipd_instruction_group,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_account_invoice_dr,invoice,account.model_account_invoice,hms.group_hms_doctor,1,1,1,0
+,,,,,,,
+access_hms_account_invoice_tax_dr,invoice tax,account.model_account_invoice_tax,hms.group_hms_doctor,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_investigation_pharmacy_charges_doctor,investigation.pharmacy.charges,model_investigation_pharmacy_charges,hms.group_hms_doctor,1,1,1,1
+access_investigation_pharmacy_charges_jr_doctor,investigation.pharmacy.charges,model_investigation_pharmacy_charges,hms.group_hms_jr_doctor,1,1,1,0
+access_investigation_pharmacy_charges_mo,investigation.pharmacy.charges,model_investigation_pharmacy_charges,hms.group_hms_medical_officer,1,1,1,1
+access_investigation_pharmacy_charges_receptionist,investigation.pharmacy.charges,model_investigation_pharmacy_charges,hms.group_hms_receptionist,1,1,1,0
+access_investigation_pharmacy_charges_nurse,investigation.pharmacy.charges,model_investigation_pharmacy_charges,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_operation_equip_charges_doctor,operation.equip.charges,model_operation_equip_charges,hms.group_hms_doctor,1,1,1,1
+access_operation_equip_charges_jr_doctor,operation.equip.charges,model_operation_equip_charges,hms.group_hms_jr_doctor,1,1,1,0
+access_operation_equip_charges_mo,operation.equip.charges,model_operation_equip_charges,hms.group_hms_medical_officer,1,1,1,1
+access_operation_equip_charges_receptionist,operation.equip.charges,model_operation_equip_charges,hms.group_hms_receptionist,1,1,1,0
+access_operation_equip_charges_nurse,operation.equip.charges,model_operation_equip_charges,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_room_facility_charges_doctor,room.facility.charges,model_room_facility_charges,hms.group_hms_doctor,1,1,1,1
+access_room_facility_charges_jr_doctor,room.facility.charges,model_room_facility_charges,hms.group_hms_jr_doctor,1,1,1,0
+access_room_facility_charges_mo,room.facility.charges,model_room_facility_charges,hms.group_hms_medical_officer,1,1,1,1
+access_room_facility_charges_receptionist,room.facility.charges,model_room_facility_charges,hms.group_hms_receptionist,1,1,1,0
+access_room_facility_charges_nurse,room.facility.charges,model_room_facility_charges,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_surgical_charges_doctor,surgical.charges,model_surgical_charges,hms.group_hms_doctor,1,1,1,1
+access_surgical_charges_jr_doctor,surgical.charges,model_surgical_charges,hms.group_hms_jr_doctor,1,1,1,0
+access_surgical_charges_mo,surgical.charges,model_surgical_charges,hms.group_hms_medical_officer,1,1,1,1
+access_surgical_charges_receptionist,surgical.charges,model_surgical_charges,hms.group_hms_receptionist,1,1,1,0
+access_surgical_charges_nurse,surgical.charges,model_surgical_charges,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_cost_estimation_receptionist,cost.estimation,model_cost_estimation,hms.group_hms_receptionist,1,1,1,1
+access_cost_estimation_doctor,cost.estimation,model_cost_estimation,hms.group_hms_doctor,1,1,1,0
+access_cost_estimation_jr_doctor,cost.estimation,model_cost_estimation,hms.group_hms_jr_doctor,1,1,1,0
+access_cost_estimation_mo,cost.estimation,model_cost_estimation,hms.group_hms_medical_officer,1,1,1,0
+access_cost_estimation_nurse,cost.estimation,model_cost_estimation,hms.group_hms_nurse,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_admission_note_doctor,admission.note,model_admission_note,hms.group_hms_doctor,1,1,1,1
+access_admission_note_jr_doctor,admission.note,model_admission_note,hms.group_hms_jr_doctor,1,1,1,1
+access_admission_note_manager,admission.note,model_admission_note,hms.group_hms_manager,1,1,1,1
+access_admission_note_receptionist,admission.note,model_admission_note,hms.group_hms_receptionist,1,1,1,0
+access_admission_note_nurse,admission.note,model_admission_note,hms.group_hms_nurse,1,1,1,0
+access_admission_note_medical_officer,admission.note,model_admission_note,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_preoperative_investigation_template_doctor,access_preoperative_investigation_template,model_preoperative_investigation_template,hms.group_hms_doctor,1,1,1,1
+access_preoperative_investigation_template_jr_doctor,access_preoperative_investigation_template,model_preoperative_investigation_template,hms.group_hms_jr_doctor,1,1,1,1
+access_preoperative_investigation_template_manager,access_preoperative_investigation_template,model_preoperative_investigation_template,hms.group_hms_manager,1,1,1,1
+access_preoperative_investigation_template_receptionist,access_preoperative_investigation_template,model_preoperative_investigation_template,hms.group_hms_receptionist,1,1,1,0
+access_preoperative_investigation_template_nurse,access_preoperative_investigation_template,model_preoperative_investigation_template,hms.group_hms_nurse,1,1,1,0
+access_preoperative_investigation_template_medical_officer,access_preoperative_investigation_template,model_preoperative_investigation_template,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_preoperative_information_template_doctor,access_preoperative_information_template,model_preoperative_information_template,hms.group_hms_doctor,1,1,1,1
+access_preoperative_information_template_jr_doctor,access_preoperative_information_template,model_preoperative_information_template,hms.group_hms_jr_doctor,1,1,1,1
+access_preoperative_information_template_manager,access_preoperative_information_template,model_preoperative_information_template,hms.group_hms_manager,1,1,1,1
+access_preoperative_information_template_receptionist,access_preoperative_information_template,model_preoperative_information_template,hms.group_hms_receptionist,1,1,1,0
+access_preoperative_information_template_nurse,access_preoperative_information_template,model_preoperative_information_template,hms.group_hms_nurse,1,1,1,0
+access_preoperative_information_template_medical_officer,access_preoperative_information_template,model_preoperative_information_template,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_past_surgeries_doctor,access_past_surgeries,model_past_surgeries,hms.group_hms_doctor,1,1,1,1
+access_past_surgeries_jr_doctor,access_past_surgeries,model_past_surgeries,hms.group_hms_jr_doctor,1,1,1,1
+access_past_surgeries_manager,access_past_surgeries,model_past_surgeries,hms.group_hms_manager,1,1,1,1
+access_past_surgeries_receptionist,access_past_surgeries,model_past_surgeries,hms.group_hms_receptionist,1,1,1,0
+access_past_surgeries_nurse,access_past_surgeries,model_past_surgeries,hms.group_hms_nurse,1,1,1,0
+access_past_surgeries_medical_officer,access_past_surgeries,model_past_surgeries,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_hms_surgery_dietician_doctor,hms.surgery.dietician,model_hms_surgery_dietician,hms.group_hms_doctor,1,1,1,1
+access_hms_surgery_dietician_jr_doctor,hms.surgery.dietician,model_hms_surgery_dietician,hms.group_hms_jr_doctor,1,1,1,0
+access_hms_surgery_dietician_mo,hms.surgery.dietician,model_hms_surgery_dietician,hms.group_hms_medical_officer,1,1,1,1
+access_hms_surgery_dietician_receptionist,hms.surgery.dietician,model_hms_surgery_dietician,hms.group_hms_receptionist,1,1,1,0
+access_hms_surgery_dietician_nurse,hms.surgery.dietician,model_hms_surgery_dietician,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_dietician_gi_symptoms_doctor,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_doctor,1,1,1,1
+access_dietician_gi_symptoms_jr_doctor,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_jr_doctor,1,1,1,0
+access_dietician_gi_symptoms_mo,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_medical_officer,1,1,1,1
+access_dietician_gi_symptoms_receptionist,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_receptionist,1,1,1,0
+access_dietician_gi_symptoms_nurse,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_patient_progess_doctor,patient.progess,model_patient_progess,hms.group_hms_doctor,1,1,1,1
+access_patient_progess_jr_doctor,patient.progess,model_patient_progess,hms.group_hms_jr_doctor,1,1,1,0
+access_patient_progess_mo,patient.progess,model_patient_progess,hms.group_hms_medical_officer,1,1,1,1
+access_patient_progess_receptionist,patient.progess,model_patient_progess,hms.group_hms_receptionist,1,1,1,0
+access_patient_progess_nurse,patient.progess,model_patient_progess,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_hms_progress_note_doctor,hms.progress.note,model_hms_progress_note,hms.group_hms_doctor,1,1,1,1
+access_hms_progress_note_jr_doctor,hms.progress.note,model_hms_progress_note,hms.group_hms_jr_doctor,1,1,1,0
+access_hms_progress_note_mo,hms.progress.note,model_hms_progress_note,hms.group_hms_medical_officer,1,1,1,1
+access_hms_progress_note_receptionist,hms.progress.note,model_hms_progress_note,hms.group_hms_receptionist,1,1,1,0
+access_patient_progess_nurse,hms.progress.note,model_hms_progress_note,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_dietician_gi_symptoms_doctor,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_doctor,1,1,1,1
+access_dietician_gi_symptoms_jr_doctor,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_jr_doctor,1,1,1,0
+access_dietician_gi_symptoms_mo,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_medical_officer,1,1,1,1
+access_dietician_gi_symptoms_receptionist,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_receptionist,1,1,1,0
+access_dietician_gi_symptoms_nurse,dietician.gi.symptoms,model_dietician_gi_symptoms,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_phy_notes_doctor,phy.notes,model_phy_notes,hms.group_hms_doctor,1,1,1,1
+access_phy_notes_jr_doctor,phy.notes,model_phy_notes,hms.group_hms_jr_doctor,1,1,1,0
+access_phy_notes_mo,phy.notes,model_phy_notes,hms.group_hms_medical_officer,1,1,1,1
+access_phy_notes_receptionist,phy.notes,model_phy_notes,hms.group_hms_receptionist,1,1,1,0
+access_phy_notes_nurse,phy.notes,model_phy_notes,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_personals_historys_id_doctor,personals.historys.id,model_personals_historys_id,hms.group_hms_doctor,1,1,1,1
+access_personals_historys_id_jr_doctor,personals.historys.id,model_personals_historys_id,hms.group_hms_jr_doctor,1,1,1,0
+access_personals_historys_id_mo,personals.historys.id,model_personals_historys_id,hms.group_hms_medical_officer,1,1,1,1
+access_personals_historys_id_receptionist,personals.historys.id,model_personals_historys_id,hms.group_hms_receptionist,1,1,1,0
+access_personals_historys_id_nurse,personals.historys.id,model_personals_historys_id,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_ph_operation_doctor,ph.operation,model_ph_operation,hms.group_hms_doctor,1,1,1,1
+access_ph_operation_jr_doctor,ph.operation,model_ph_operation,hms.group_hms_jr_doctor,1,1,1,1
+access_ph_operation_mo,ph.operation,model_ph_operation,hms.group_hms_medical_officer,1,1,1,1
+access_ph_operation_receptionist,ph.operation,model_ph_operation,hms.group_hms_receptionist,1,1,1,1
+access_ph_operation_nurse,ph.operation,model_ph_operation,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_personals_history_id_doctor,personals.history.id,model_personals_history_id,hms.group_hms_doctor,1,1,1,1
+access_personals_history_id_jr_doctor,personals.history.id,model_personals_history_id,hms.group_hms_jr_doctor,1,1,1,0
+access_personals_history_id_mo,personals.history.id,model_personals_history_id,hms.group_hms_medical_officer,1,1,1,1
+access_personals_history_id_receptionist,personals.history.id,model_personals_history_id,hms.group_hms_receptionist,1,1,1,0
+access_personals_history_id_nurse,personals.history.id,model_personals_history_id,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_significant_lab_report_doctor,significant.lab.report,model_significant_lab_report,hms.group_hms_doctor,1,1,1,1
+access_significant_lab_report_jr_doctor,significant.lab.report,model_significant_lab_report,hms.group_hms_jr_doctor,1,1,1,0
+access_significant_lab_report_mo,significant.lab.report,model_significant_lab_report,hms.group_hms_medical_officer,1,1,1,1
+access_significant_lab_report_receptionist,significant.lab.report,model_significant_lab_report,hms.group_hms_receptionist,1,1,1,0
+access_significant_lab_report_nurse,significant.lab.report,model_significant_lab_report,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_ph_hospitalization_doctor,ph.hospitalization,model_ph_hospitalization,hms.group_hms_doctor,1,1,1,1
+access_ph_hospitalization_jr_doctor,ph.hospitalization,model_ph_hospitalization,hms.group_hms_jr_doctor,1,1,1,0
+access_ph_hospitalization_mo,ph.hospitalization,model_ph_hospitalization,hms.group_hms_medical_officer,1,1,1,1
+access_ph_hospitalization_receptionist,ph.hospitalization,model_ph_hospitalization,hms.group_hms_receptionist,1,1,1,0
+access_ph_hospitalization_nurse,ph.hospitalization,model_ph_hospitalization,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_ahps_allergies_doctor,ahps.allergies,model_ahps_allergies,hms.group_hms_doctor,1,1,1,1
+access_ahps_allergies_jr_doctor,ahps.allergies,model_ahps_allergies,hms.group_hms_jr_doctor,1,1,1,0
+access_ahps_allergies_mo,ahps.allergies,model_ahps_allergies,hms.group_hms_medical_officer,1,1,1,1
+access_ahps_allergies_receptionist,ahps.allergies,model_ahps_allergies,hms.group_hms_receptionist,1,1,1,0
+access_ahps_allergies_nurse,ahps.allergies,model_ahps_allergies,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_bmi_line_by_doctor,bmi.line.by.doctor,model_bmi_line_by_doctor,hms.group_hms_doctor,1,1,1,1
+access_bmi_line_by_jr_doctor,bmi.line.by.doctor,model_bmi_line_by_doctor,hms.group_hms_jr_doctor,1,1,1,0
+access_bmi_line_by_mo,bmi.line.by.doctor,model_bmi_line_by_doctor,hms.group_hms_medical_officer,1,1,1,1
+access_bmi_line_by_receptionist,bmi.line.by.doctor,model_bmi_line_by_doctor,hms.group_hms_receptionist,1,1,1,0
+access_bmi_line_by_nurse,bmi.line.by.doctor,model_bmi_line_by_doctor,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_services_by_doctor,services.by.doctor,model_hospitalization_services,hms.group_hms_doctor,1,1,1,1
+access_services_by_jr_doctor,services.by.jr.doctor,model_hospitalization_services,hms.group_hms_jr_doctor,1,1,1,0
+access_services_by_mo,services.by.mo.doctor,model_hospitalization_services,hms.group_hms_medical_officer,1,1,1,1
+access_services_by_receptionist,services.by.receptinist,model_hospitalization_services,hms.group_hms_receptionist,1,1,1,0
+access_services_by_nurse,services.by.nurse,model_hospitalization_services,hms.group_hms_nurse,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_by_doctor_past_history_doctor,by.doctor.past.history,model_by_doctor_past_history,hms.group_hms_doctor,1,1,1,1
+access_by_doctor_past_history_jr_doctor,by.doctor.past.history,model_by_doctor_past_history,hms.group_hms_jr_doctor,1,1,1,0
+access_by_doctor_past_history_mo,by.doctor.past.history,model_by_doctor_past_history,hms.group_hms_medical_officer,1,1,1,1
+access_by_doctor_past_history_receptionist,by.doctor.past.history,model_by_doctor_past_history,hms.group_hms_receptionist,1,1,1,0
+access_by_doctor_past_history_nurse,by.doctor.past.history,model_by_doctor_past_history,hms.group_hms_nurse,1,1,1,0

@@ -1,0 +1,61 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_insurance_claim_insurance_officer,Indimedi Insurance Claim,model_hms_insurance_claim,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_mediclaim_insurance_officer,Indimedi Insurance Mediclaim,model_hms_insurance_mediclaim,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_req_doc_insurance_officer,Indimedi Insurance Req Doc,model_hms_insurance_req_doc,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_mediclaim_doc_type_insurance_officer,Indimedi Insurance Mediclaim Doc Type,model_hms_insurance_mediclaim_doc_type,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_mediclaim_doc_insurance_officer,Indimedi Insurance Mediclaim Doc,model_hms_insurance_mediclaim_doc,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_zero_error_binary_insurance_officer,Indimedi Insurance Zero Error Binary,model_hms_insurance_zero_error_binary,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_zero_error_insurance_officer,Indimedi Insurance Zero Error,model_hms_insurance_zero_error,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_inpatient_registration_insurance_officer,Indimedi Inpatient Registration,hms_hospitalization.model_inpatient_registration,hms_insurance.group_hms_insurance_officer,1,1,0,0
+access_hms_insurance_checklist_insurance_officer,insurance checklist,model_hms_insurance_checklist,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_inpatient_insurance_checklist_receptionist,Hms Inpatient Insurance Checklist,model_hms_inpatient_insurance_checklist,hms.group_hms_receptionist,1,1,1,0
+access_hms_insurance_checklist_receptionist,Hms insurance checklist,model_hms_insurance_checklist,hms.group_hms_receptionist,1,1,1,0
+access_hms_insurance_ot_booking,HMS ot booking,hms_operation_theatre.model_ot_booking,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_checklist_insurance_officer,HMS Checklist,model_hms_inpatient_insurance_checklist,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_insurance_nurse_checklist_inpatient,checklist inpatient,model_hms_inpatient_insurance_checklist,hms.group_hms_nurse,1,1,1,0
+access_hms_insurance_nurse_checklist,checklist,model_hms_insurance_checklist,hms.group_hms_nurse,1,1,1,0
+access_hms_insurance_vaccination,vaccination,hms_vaccination.model_vaccination_vaccination,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_inpatient_insurance_checklist_mo,Hms Inpatient Insurance Checklist,model_hms_inpatient_insurance_checklist,hms.group_hms_medical_officer,1,1,1,0
+access_hms_insurance_checklist_receptionist_mo,Hms insurance checklist,model_hms_insurance_checklist,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+access_hms_hms_insurance_claim_receptionist,Indimedi Insurance Claim,model_hms_insurance_claim,hms.group_hms_receptionist,1,0,0,0
+,,,,,,,
+access_account_jounral_insurance,Account Jounal,account.model_account_journal,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_insurance_stock_warehouse,Hms insurance stock,stock.model_stock_warehouse_orderpoint,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_insurance_product,Hms insurance Product,product.model_product_template,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_account_invoice_insurance,invoice,account.model_account_invoice,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_account_invoice_tax_insurance,invoice tax,account.model_account_invoice_tax,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_account_invoice_line_insurance,invoice line,account.model_account_invoice_line,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_account_move_insurance,move ,account.model_account_move,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_account_move_line_insurance,move line,account.model_account_move_line,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_account_partial_reconcile_insurance,reconcile,account.model_account_partial_reconcile,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_account_full_reconcile_insurance,full reconcile,account_full_reconcile.model_account_full_reconcile,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_hms_account_type_insurance,account type,account.model_account_account_type,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_account_analytic_line_insurance,analytical line,account.model_account_analytic_line,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_account_payment_method_insurance,payment line,account.model_account_payment_method,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_account_payment_insurance,account Payment,account.model_account_payment,hms_insurance.group_hms_insurance_officer,1,1,1,0
+,,,,,,,
+access_hms_insurance_zero_dr,doctor,model_hms_insurance_zero_error,hms.group_hms_doctor,1,1,1,0
+,,,,,,,
+access_hms_insurance_reqdoc_doctor,DOCTOR,model_hms_insurance_req_doc,hms.group_hms_doctor,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_hms_insurance_claim_doctor,hms.insurance.claim,model_hms_insurance_claim,hms.group_hms_doctor,1,1,1,1
+access_hms_insurance_claim_jr_doctor,hms.insurance.claim,model_hms_insurance_claim,hms.group_hms_jr_doctor,1,1,1,0
+access_hms_insurance_claim_mo,hms.insurance.claim,model_hms_insurance_claim,hms.group_hms_medical_officer,1,1,1,1
+access_hms_insurance_claim_receptionist,hms.insurance.claim,model_hms_insurance_claim,hms.group_hms_receptionist,1,1,1,0
+access_hms_insurance_claim_nurse,hms.insurance.claim,model_hms_insurance_claim,hms.group_hms_nurse,1,0,0,0
+access_hms_insurance_claim_pharmacist,hms.insurance.claim,model_hms_insurance_claim,hms.group_hms_pharmacist,1,1,1,1
+access_hms_insurance_claim_insurance_officer,hms.insurance.claim,model_hms_insurance_claim,hms_insurance.group_hms_insurance_officer,1,1,1,1

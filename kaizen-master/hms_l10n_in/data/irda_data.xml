@@ -1,0 +1,1152 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Resource: irda.category 100000 -->
+        <record id="irda_category_100000" model="irda.category">
+            <field name="name">Room &amp; Nursing Charge</field>
+            <field name="code">100000</field>
+        </record>
+
+        <record id="irda_category_101000" model="irda.category">
+            <field name="name">Room Charges</field>
+            <field name="code">101000</field>
+            <field name="parent_id" ref="irda_category_100000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+        <record id="irda_category_101001" model="irda.category">
+            <field name="name">General Ward Charges</field>
+            <field name="code">101001</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101002" model="irda.category">
+            <field name="name">Semi-Private Room charges</field>
+            <field name="code">101002</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+
+		<record id="irda_category_101003" model="irda.category">
+            <field name="name">Single Room charges</field>
+            <field name="code">101003</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+
+		<record id="irda_category_101004" model="irda.category">
+            <field name="name">Single Deluxe Room charges</field>
+            <field name="code">101004</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101005" model="irda.category">
+            <field name="name">Deluxe Room charges</field>
+            <field name="code">101005</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101006" model="irda.category">
+            <field name="name">Suite Charges</field>
+            <field name="code">101006</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101007" model="irda.category">
+            <field name="name">Electricity Charges</field>
+            <field name="code">101007</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101008" model="irda.category">
+            <field name="name">Bed Sheet Charges</field>
+            <field name="code">101008</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101009" model="irda.category">
+            <field name="name">Hot Water Charges</field>
+            <field name="code">101009</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+		<record id="irda_category_101010" model="irda.category">
+            <field name="name">Establishment Charges</field>
+            <field name="code">101010</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101011" model="irda.category">
+            <field name="name">Alpha/Water Bed Charges</field>
+            <field name="code">101011</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+
+		<record id="irda_category_101012" model="irda.category">
+            <field name="name">Attendant Bed Charges</field>
+            <field name="code">101012</field>
+            <field name="parent_id" ref="irda_category_101000"/>
+            <field name="parent_code">100000</field>
+        </record>
+               
+        <record id="irda_category_102000" model="irda.category">
+            <field name="name">Nursing Charges</field>
+            <field name="code">102000</field>
+            <field name="parent_id" ref="irda_category_100000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102001" model="irda.category">
+            <field name="name">Nursing fees</field>
+            <field name="code">102001</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102002" model="irda.category">
+            <field name="name">Dressing</field>
+            <field name="code">102002</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102003" model="irda.category">
+            <field name="name">Nebulization</field>
+            <field name="code">102003</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102004" model="irda.category">
+            <field name="name">Injection Charges</field>
+            <field name="code">102004</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102005" model="irda.category">
+            <field name="name">Infusion pump  charges</field>
+            <field name="code">102005</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102006" model="irda.category">
+            <field name="name">Aya charges</field>
+            <field name="code">102006</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_102007" model="irda.category">
+            <field name="name">Blood Transfusion charges</field>
+            <field name="code">102007</field>
+            <field name="parent_id" ref="irda_category_102000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_103000" model="irda.category">
+            <field name="name">Duty Doctor fee</field>
+            <field name="code">103000</field>
+            <field name="parent_id" ref="irda_category_100000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_103001" model="irda.category">
+            <field name="name">Duty Doctor fee</field>
+            <field name="code">103001</field>
+            <field name="parent_id" ref="irda_category_103000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_103002" model="irda.category">
+            <field name="name">RMO fees</field>
+            <field name="code">103002</field>
+            <field name="parent_id" ref="irda_category_103000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+        <record id="irda_category_104000" model="irda.category">
+            <field name="name">Moniter Charges</field>
+            <field name="code">104000</field>
+            <field name="parent_id" ref="irda_category_100000"/>
+            <field name="parent_code">100000</field>
+        </record>
+        
+		<record id="irda_category_104001" model="irda.category">
+            <field name="name">Pulse Oxymeter charges</field>
+            <field name="code">104001</field>
+            <field name="parent_id" ref="irda_category_104000"/>
+            <field name="parent_code">100000</field>
+        </record>
+		
+		<!-- Resource: irda.category 200000 -->
+        <record id="irda_category_200000" model="irda.category">
+            <field name="name">ICU Charges</field>
+            <field name="code">200000</field>
+        </record>
+        
+        <record id="irda_category_201000" model="irda.category">
+            <field name="name">ICU Charges</field>
+            <field name="code">201000</field>
+            <field name="parent_id" ref="irda_category_200000"/>
+            <field name="parent_code">200000</field>
+        </record>
+
+        <record id="irda_category_201001" model="irda.category">
+            <field name="name">Bums Ward</field>
+            <field name="code">201001</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201002" model="irda.category">
+            <field name="name">HDU Charges</field>
+            <field name="code">201002</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201003" model="irda.category">
+            <field name="name">ICCU Charges</field>
+            <field name="code">201003</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201004" model="irda.category">
+            <field name="name">Isolation ward Charges</field>
+            <field name="code">201004</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201005" model="irda.category">
+            <field name="name">Neuro ICU Charges</field>
+            <field name="code">201005</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201006" model="irda.category">
+            <field name="name">Pediatric/neonatal ICU charges</field>
+            <field name="code">201006</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201007" model="irda.category">
+            <field name="name">Post Operative ICU</field>
+            <field name="code">201007</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201008" model="irda.category">
+            <field name="name">Recovery Room</field>
+            <field name="code">201008</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_201009" model="irda.category">
+            <field name="name">Surgical ICU</field>
+            <field name="code">201009</field>
+            <field name="parent_id" ref="irda_category_201000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        
+        <record id="irda_category_202000" model="irda.category">
+            <field name="name">ICU Nursing Charges</field>
+            <field name="code">202000</field>
+            <field name="parent_id" ref="irda_category_200000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_202001" model="irda.category">
+            <field name="name">Nursing fees</field>
+            <field name="code">202001</field>
+            <field name="parent_id" ref="irda_category_202000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_202002" model="irda.category">
+            <field name="name">Dressing</field>
+            <field name="code">202002</field>
+            <field name="parent_id" ref="irda_category_202000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_202003" model="irda.category">
+            <field name="name">Nesbulization</field>
+            <field name="code">202003</field>
+            <field name="parent_id" ref="irda_category_202000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_202004" model="irda.category">
+            <field name="name">Injection charges</field>
+            <field name="code">202004</field>
+            <field name="parent_id" ref="irda_category_202000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_202005" model="irda.category">
+            <field name="name">Infusion pump charges</field>
+            <field name="code">202005</field>
+            <field name="parent_id" ref="irda_category_202000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_203000" model="irda.category">
+            <field name="name">Moniter Charges</field>
+            <field name="code">203000</field>
+            <field name="parent_id" ref="irda_category_200000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_203001" model="irda.category">
+            <field name="name">Monitor charges</field>
+            <field name="code">203001</field>
+            <field name="parent_id" ref="irda_category_203000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_203002" model="irda.category">
+            <field name="name">Pulse Oxymeter charges</field>
+            <field name="code">203002</field>
+            <field name="parent_id" ref="irda_category_203000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_203003" model="irda.category">
+            <field name="name">Cardiac Monitor charges</field>
+            <field name="code">203003</field>
+            <field name="parent_id" ref="irda_category_203000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_203004" model="irda.category">
+            <field name="name">IABP charges</field>
+            <field name="code">203004</field>
+            <field name="parent_id" ref="irda_category_203000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_203005" model="irda.category">
+            <field name="name">Phototherapy charges</field>
+            <field name="code">203005</field>
+            <field name="parent_id" ref="irda_category_203000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_204000" model="irda.category">
+            <field name="name">ICU Supplies &amp; equipment</field>
+            <field name="code">204000</field>
+            <field name="parent_id" ref="irda_category_200000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_204001" model="irda.category">
+            <field name="name">Oxygen charges</field>
+            <field name="code">204001</field>
+            <field name="parent_id" ref="irda_category_204000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_204002" model="irda.category">
+            <field name="name">Ventilator charges</field>
+            <field name="code">204002</field>
+            <field name="parent_id" ref="irda_category_204000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        
+        <record id="irda_category_204003" model="irda.category">
+            <field name="name">Suction pump charges</field>
+            <field name="code">204003</field>
+            <field name="parent_id" ref="irda_category_204000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        <record id="irda_category_204004" model="irda.category">
+            <field name="name">Bipap charges</field>
+            <field name="code">204004</field>
+            <field name="parent_id" ref="irda_category_204000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        <record id="irda_category_204005" model="irda.category">
+            <field name="name">Pacing charges</field>
+            <field name="code">204005</field>
+            <field name="parent_id" ref="irda_category_204000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        <record id="irda_category_204006" model="irda.category">
+            <field name="name">Defibrillator charge</field>
+            <field name="code">204006</field>
+            <field name="parent_id" ref="irda_category_204000"/>
+            <field name="parent_code">200000</field>
+        </record>
+        <!-- Resource: irda.category 300000 -->
+        <record id="irda_category_300000" model="irda.category">
+            <field name="name">OT Charges</field>
+            <field name="code">300000</field>
+        </record>
+        
+        <record id="irda_category_301000" model="irda.category">
+            <field name="name">OT rent</field>
+            <field name="code">301000</field>
+            <field name="parent_id" ref="irda_category_300000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_301001" model="irda.category">
+            <field name="name">Major OT charges</field>
+            <field name="code">301001</field>
+            <field name="parent_id" ref="irda_category_301000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_301002" model="irda.category">
+            <field name="name">Minor OT charges</field>
+            <field name="code">301002</field>
+            <field name="parent_id" ref="irda_category_301000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_301003" model="irda.category">
+            <field name="name">Cath Lab charges</field>
+            <field name="code">301003</field>
+            <field name="parent_id" ref="irda_category_301000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_301004" model="irda.category">
+            <field name="name">Theatre charges</field>
+            <field name="code">301004</field>
+            <field name="parent_id" ref="irda_category_301000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_301005" model="irda.category">
+            <field name="name">Labour Room charges</field>
+            <field name="code">301005</field>
+            <field name="parent_id" ref="irda_category_301000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302000" model="irda.category">
+            <field name="name">OT Equipment charges</field>
+            <field name="code">302000</field>
+            <field name="parent_id" ref="irda_category_300000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302001" model="irda.category">
+            <field name="name">C-arm charges</field>
+            <field name="code">302001</field>
+            <field name="parent_id" ref="irda_category_302000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302002" model="irda.category">
+            <field name="name">Endoscopy charges</field>
+            <field name="code">302002</field>
+            <field name="parent_id" ref="irda_category_302000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302003" model="irda.category">
+            <field name="name">Laproscope charges</field>
+            <field name="code">302003</field>
+            <field name="parent_id" ref="irda_category_302000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302004" model="irda.category">
+            <field name="name">Equipment charges</field>
+            <field name="code">302004</field>
+            <field name="parent_id" ref="irda_category_302000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302005" model="irda.category">
+            <field name="name">Monitor charges</field>
+            <field name="code">302005</field>
+            <field name="parent_id" ref="irda_category_302000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_302006" model="irda.category">
+            <field name="name">Instrument charges</field>
+            <field name="code">302006</field>
+            <field name="parent_id" ref="irda_category_302000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        
+        <record id="irda_category_303000" model="irda.category">
+            <field name="name">OT Drugs &amp; Consumbles</field>
+            <field name="code">303000</field>
+            <field name="parent_id" ref="irda_category_300000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_303001" model="irda.category">
+            <field name="name">OT Drugs</field>
+            <field name="code">303001</field>
+            <field name="parent_id" ref="irda_category_303000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_303002" model="irda.category">
+            <field name="name">Implants</field>
+            <field name="code">303002</field>
+            <field name="parent_id" ref="irda_category_303000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_303003" model="irda.category">
+            <field name="name">OT Consumables</field>
+            <field name="code">303003</field>
+            <field name="parent_id" ref="irda_category_303000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_303004" model="irda.category">
+            <field name="name">OT Materials</field>
+            <field name="code">303004</field>
+            <field name="parent_id" ref="irda_category_303000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_303005" model="irda.category">
+            <field name="name">OT Gases</field>
+            <field name="code">303005</field>
+            <field name="parent_id" ref="irda_category_303000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_303006" model="irda.category">
+            <field name="name">Anaesthetic drugs</field>
+            <field name="code">303006</field>
+            <field name="parent_id" ref="irda_category_303000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_304000" model="irda.category">
+            <field name="name">OT Sterlization</field>
+            <field name="code">304000</field>
+            <field name="parent_id" ref="irda_category_300000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <record id="irda_category_304001" model="irda.category">
+            <field name="name">CSSD charges</field>
+            <field name="code">304001</field>
+            <field name="parent_id" ref="irda_category_304000"/>
+            <field name="parent_code">300000</field>
+        </record>
+        
+        <!-- Resource: irda.category 400000 -->
+        <record id="irda_category_400000" model="irda.category">
+            <field name="name">Medicine &amp; Consumables Charges</field>
+            <field name="code">400000</field>
+        </record>
+        
+        <record id="irda_category_401000" model="irda.category">
+            <field name="name">Medicine &amp; Consumables Charges</field>
+            <field name="code">401000</field>
+            <field name="parent_id" ref="irda_category_400000"/>
+            <field name="parent_code">400000</field>
+        </record>
+      
+         <record id="irda_category_401001" model="irda.category">
+            <field name="name">Ward Medicines</field>
+            <field name="code">401001</field>
+            <field name="parent_id" ref="irda_category_401000"/>
+            <field name="parent_code">400000</field>
+        </record>
+        
+        <record id="irda_category_401002" model="irda.category">
+            <field name="name">Ward Consumables</field>
+            <field name="code">401002</field>
+            <field name="parent_id" ref="irda_category_401000"/>
+            <field name="parent_code">400000</field>
+        </record>
+        
+        <record id="irda_category_401003" model="irda.category">
+            <field name="name">Ward Disposables</field>
+            <field name="code">401003</field>
+            <field name="parent_id" ref="irda_category_401000"/>
+            <field name="parent_code">400000</field>
+        </record>
+        
+        <record id="irda_category_401004" model="irda.category">
+            <field name="name">Ward Materials</field>
+            <field name="code">401004</field>
+            <field name="parent_id" ref="irda_category_401000"/>
+            <field name="parent_code">400000</field>
+        </record>
+        
+        <record id="irda_category_401005" model="irda.category">
+            <field name="name">Vaccination drugs</field>
+            <field name="code">401005</field>
+            <field name="parent_id" ref="irda_category_401000"/>
+            <field name="parent_code">400000</field>
+        </record>
+        
+        <!-- Resource: irda.category 500000 -->
+        <record id="irda_category_500000" model="irda.category">
+            <field name="name">Professional fees Charges</field>
+            <field name="code">500000</field>
+        </record>
+        
+        <record id="irda_category_501000" model="irda.category">
+            <field name="name">Visit charges</field>
+            <field name="code">501000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+        
+        <record id="irda_category_501001" model="irda.category">
+            <field name="name">Consultation Charges</field>
+            <field name="code">501001</field>
+            <field name="parent_id" ref="irda_category_501000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_501002" model="irda.category">
+            <field name="name">Medical Supervision Charges</field>
+            <field name="code">501002</field>
+            <field name="parent_id" ref="irda_category_501000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_501003" model="irda.category">
+            <field name="name">Proffessional Fees</field>
+            <field name="code">501003</field>
+            <field name="parent_id" ref="irda_category_501000"/>
+            <field name="parent_code">500000</field>
+        </record>
+        
+        <record id="irda_category_502000" model="irda.category">
+            <field name="name">Surgery Charges</field>
+            <field name="code">502000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_502001" model="irda.category">
+            <field name="name">Surgeon Charges</field>
+            <field name="code">502001</field>
+            <field name="parent_id" ref="irda_category_502000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_502002" model="irda.category">
+            <field name="name">Assistant Surgeon Fees</field>
+            <field name="code">502002</field>
+            <field name="parent_id" ref="irda_category_502000"/>
+            <field name="parent_code">500000</field>
+        </record>
+        
+        <record id="irda_category_503000" model="irda.category">
+            <field name="name">Anaesthetists Fee</field>
+            <field name="code">503000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+        
+        <record id="irda_category_503001" model="irda.category">
+            <field name="name">Anesthetists Fee</field>
+            <field name="code">503001</field>
+            <field name="parent_id" ref="irda_category_503000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_503002" model="irda.category">
+            <field name="name">OT Standby Charges</field>
+            <field name="code">503002</field>
+            <field name="parent_id" ref="irda_category_503000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_504000" model="irda.category">
+            <field name="name">Intesivist Charges</field>
+            <field name="code">504000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_504000" model="irda.category">
+            <field name="name">Procedure Charges</field>
+            <field name="code">504000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_504001" model="irda.category">
+            <field name="name">Bedside Procedures</field>
+            <field name="code">504001</field>
+            <field name="parent_id" ref="irda_category_504000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_504002" model="irda.category">
+            <field name="name">Suture Charges</field>
+            <field name="code">504002</field>
+            <field name="parent_id" ref="irda_category_504000"/>
+            <field name="parent_code">500000</field>
+        </record>
+        
+        <record id="irda_category_505000" model="irda.category">
+            <field name="name">Physiotherapy</field>
+            <field name="code">505000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_505000" model="irda.category">
+            <field name="name">Techical Charges</field>
+            <field name="code">505000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+
+        <record id="irda_category_505000" model="irda.category">
+            <field name="name">OT/Cath Lab Technician</field>
+            <field name="code">505000</field>
+            <field name="parent_id" ref="irda_category_500000"/>
+            <field name="parent_code">500000</field>
+        </record>
+        
+        <!-- Resource: irda.category 600000 -->
+        <record id="irda_category_600000" model="irda.category">
+            <field name="name">Investigation Charges</field>
+            <field name="code">600000</field>
+        </record>
+        
+        <record id="irda_category_601000" model="irda.category">
+            <field name="name">Bio Chemistry</field>
+            <field name="code">601000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_602000" model="irda.category">
+            <field name="name">Cardiology Charges</field>
+            <field name="code">602000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_603000" model="irda.category">
+            <field name="name">Haemotology Charges</field>
+            <field name="code">603000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_604000" model="irda.category">
+            <field name="name">Microbiology Charges</field>
+            <field name="code">604000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_605000" model="irda.category">
+            <field name="name">Neurology</field>
+            <field name="code">605000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_606000" model="irda.category">
+            <field name="name">Nuclear Medicine</field>
+            <field name="code">606000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_607000" model="irda.category">
+            <field name="name">Pathology Charges</field>
+            <field name="code">607000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_608000" model="irda.category">
+            <field name="name">Radiology Services</field>
+            <field name="code">608000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_609000" model="irda.category">
+            <field name="name">Serology Charges</field>
+            <field name="code">609000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_610000" model="irda.category">
+            <field name="name">Medical Genetics</field>
+            <field name="code">610000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        <record id="irda_category_611000" model="irda.category">
+            <field name="name">Profiles</field>
+            <field name="code">611000</field>
+            <field name="parent_id" ref="irda_category_600000"/>
+            <field name="parent_code">600000</field>
+        </record>
+        
+        
+        
+        <!-- Resource: irda.category 700000 -->
+        <record id="irda_category_700000" model="irda.category">
+            <field name="name">Ambulance Charges</field>
+            <field name="code">700000</field>
+        </record>
+
+		<record id="irda_category_701000" model="irda.category">
+            <field name="name">Ambulance Charges</field>
+            <field name="code">701000</field>
+            <field name="parent_id" ref="irda_category_700000"/>
+            <field name="parent_code">700000</field>
+        </record>  
+              
+        <!-- Resource: irda.category 800000 -->
+        <record id="irda_category_800000" model="irda.category">
+            <field name="name">Miscellaneous Charges</field>
+            <field name="code">800000</field>
+        </record>
+        
+        <record id="irda_category_801000" model="irda.category">
+            <field name="name">Admission charges</field>
+            <field name="code">801000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_802000" model="irda.category">
+            <field name="name">Attended food charges</field>
+            <field name="code">802000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_803000" model="irda.category">
+            <field name="name">Patient food charges</field>
+            <field name="code">803000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_804000" model="irda.category">
+            <field name="name">Registration charges</field>
+            <field name="code">804000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_805000" model="irda.category">
+            <field name="name">MRD Charges</field>
+            <field name="code">805000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_806000" model="irda.category">
+            <field name="name">Documentation charges</field>
+            <field name="code">806000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_807000" model="irda.category">
+            <field name="name">Telephone charges</field>
+            <field name="code">807000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_808000" model="irda.category">
+            <field name="name">Bio Medical Waste Charges</field>
+            <field name="code">808000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        <record id="irda_category_809000" model="irda.category">
+            <field name="name">Taxes</field>
+            <field name="code">809000</field>
+            <field name="parent_id" ref="irda_category_800000"/>
+            <field name="parent_code">800000</field>
+        </record>
+
+        <record id="irda_category_" model="irda.category">
+            <field name="name">Luxury Tax/Surcharge/Service Charge</field>
+            <field name="code"></field>
+            <field name="parent_id" ref="irda_category_809000"/>
+            <field name="parent_code">800000</field>
+        </record>
+        
+        
+        <!-- Resource: irda.category 900000 -->
+        <record id="irda_category_900000" model="irda.category">
+            <field name="name">Package Charges</field>
+            <field name="code">900000</field>
+        </record>
+        
+        <record id="irda_category_901000" model="irda.category">
+            <field name="name">Cardiac Surgery</field>
+            <field name="code">901000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">CABG</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_901000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_902000" model="irda.category">
+            <field name="name">Cardiology Packages</field>
+            <field name="code">902000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">PTCA</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_902000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_903000" model="irda.category">
+            <field name="name">CATHLAB</field>
+            <field name="code">903000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">CAG</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_903000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_904000" model="irda.category">
+            <field name="name">Dental Procedures</field>
+            <field name="code">904000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Root Cananl Treatment</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_904000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_905000" model="irda.category">
+            <field name="name">ENT</field>
+            <field name="code">905000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">FESS</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_905000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_906000" model="irda.category">
+            <field name="name">Gastroenterology</field>
+            <field name="code">906000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Gastectomy - Partial</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_906000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_907000" model="irda.category">
+            <field name="name">General Surgery</field>
+            <field name="code">907000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Inguinal Hernia</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_907000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_908000" model="irda.category">
+            <field name="name">Gynaecology</field>
+            <field name="code">908000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">LSCS</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_908000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_909000" model="irda.category">
+            <field name="name">Nephrology</field>
+            <field name="code">909000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Nephrectomy</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_909000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_910000" model="irda.category">
+            <field name="name">Neuro Surgery</field>
+            <field name="code">910000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Craniotomy</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_910000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_911000" model="irda.category">
+            <field name="name">Oncology Procedures</field>
+            <field name="code">911000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">IMRT</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_911000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_912000" model="irda.category">
+            <field name="name">Opthalmology procedures</field>
+            <field name="code">912000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Cataract</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_912000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_913000" model="irda.category">
+            <field name="name">Orthopaedic Surgery</field>
+            <field name="code">913000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Bilateral TKR</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_913000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_914000" model="irda.category">
+            <field name="name">Plastic Surgery</field>
+            <field name="code">914000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Skin Grafting</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_914000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_915000" model="irda.category">
+            <field name="name">Pulmunology Packages</field>
+            <field name="code">915000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Pleural Tapping</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_915000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_916000" model="irda.category">
+            <field name="name">Urology</field>
+            <field name="code">916000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">ERCP</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_916000"/>
+            <field name="parent_code">900000</field>
+        </record>
+        
+        <record id="irda_category_917000" model="irda.category">
+            <field name="name">Vascular Surgery</field>
+            <field name="code">917000</field>
+            <field name="parent_id" ref="irda_category_900000"/>
+            <field name="parent_code">900000</field>
+        </record>
+
+        <record id="irda_category_ICD_10_PCS" model="irda.category">
+            <field name="name">Embolectomy</field>
+            <field name="code">ICD_10_PCS</field>
+            <field name="parent_id" ref="irda_category_917000"/>
+            <field name="parent_code">900000</field>
+        </record>
+    </data>
+</openerp>

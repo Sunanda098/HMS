@@ -1,0 +1,25 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_job_user,Hr job user access,model_hr_job,base.group_user,1,1,0,0
+access_employee_kra_user,Employee kra user access,model_employee_kra,base.group_user,1,1,0,0
+access_employee_kra_question_user,Employee kra question user access,model_employee_kra_question,base.group_user,1,1,0,0
+access_indimedi_kra_user,Indimedi kra user access,model_indimedi_kra,base.group_user,1,1,0,0
+access_kra_question_user,Kra question user access,model_kra_question,base.group_user,1,1,0,0
+access_indimedi_year,indimedi year user access,model_indimedi_year,base.group_user,1,0,0,0
+,,,,,,,
+access_hr_job_officer,Hr job user access manager,model_hr_job,base.group_hr_user,1,1,1,0
+access_hr_job_officer,Employee kra user access manager,model_employee_kra,base.group_hr_user,1,1,1,0
+access_employee_kra_question_officer,Employee kra question manager access ,model_employee_kra_question,base.group_hr_user,1,1,1,0
+access_indimedi_kra_officer,Indimedi kra manager access,model_indimedi_kra,base.group_hr_user,1,1,1,0
+access_kra_question_officer,Kra question manager access,model_kra_question,base.group_hr_user,1,1,1,0
+access_indimedi_year_officer,indimedi year user access,model_indimedi_year,base.group_hr_user,1,1,1,0
+,,,,,,,
+access_hr_job_manager,Hr job user access manager,model_hr_job,base.group_hr_manager,1,1,1,1
+access_hr_job_manager,Employee kra user access manager,model_employee_kra,base.group_hr_manager,1,1,1,1
+access_employee_kra_question_manager,Employee kra question manager access ,model_employee_kra_question,base.group_hr_manager,1,1,1,1
+access_indimedi_kra_manager,Indimedi kra manager access,model_indimedi_kra,base.group_hr_manager,1,1,1,1
+access_kra_question_manager,Kra question manager access,model_kra_question,base.group_hr_manager,1,1,1,1
+access_indimedi_year_manager,indimedi year user access,model_indimedi_year,base.group_user,1,1,1,1
+,,,,,,,
+access_indimedi_value_rating_user,Indimedi Value rating user access,model_value_rating,base.group_user,1,1,0,0
+access_indimedi_value_rating_officer,Indimedi Value rating officer access,model_value_rating,base.group_hr_user,1,1,1,0
+access_indimedi_value_rating_manager,Indimedi Value rating Manager access,model_value_rating,base.group_hr_manager,1,1,1,1

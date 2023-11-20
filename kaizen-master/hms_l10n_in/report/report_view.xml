@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>      
+        <report id="report_account_standard_bill"
+               string="Standard Billing"
+               model="account.invoice"
+               report_type="qweb-pdf"
+               file="hms_l10n_in.report_standard_bill"
+               name="hms_l10n_in.report_standard_bill_qweb"
+              />
+
+        <report id="report_account_standard_discharge"
+               string="Standard Discharge"
+               model="account.invoice"
+               report_type="qweb-pdf"
+               file="hms_l10n_in.report_standard_discharge"
+               name="hms_l10n_in.report_standard_discharge_qweb"
+              />
+        
+    </data>
+</openerp>

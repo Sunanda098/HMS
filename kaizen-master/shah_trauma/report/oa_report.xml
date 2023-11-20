@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="oa_report">
+            <t t-call="hms.hms_letterpad_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page" style="font-size: 14px">
+                        <div class="oe_structure" />
+                        <div class="col-xs-5 col-xs-offset-6">
+                            <strong>
+                                <span>Date : </span>
+                                <span t-field="doc.date_oa"/>
+                            </strong>
+                        </div>
+                          <div class="row">
+                            <h4>
+                                <span t-esc="doc.get_name(doc)"/>
+                                <!-- <span>(</span><span t-field="doc.patient_id.sex" /> -->
+                                <span>,</span>
+                                <span t-field="doc.patient_id.age"/>
+                            </h4>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-xs-6">
+                                <span>Age : </span>
+                                <span t-field="doc.patient_id.age" />
+                                <span>/</span>
+                                <span t-field="doc.patient_id.sex" />
+                            </div>
+                        </div> -->
+                        
+                        <div class="row">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Complaints Of</th>
+                                    <th>Left</th>
+                                    <th>Right</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.oa_complaint_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span t-esc="line.val_name" />
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.months_left" />
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.months_right" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="row">
+                        <span><b>History Of:</b></span>
+                        <span t-esc="doc.history_id.name"/>
+                        </div>
+                        
+                        <div class="row">
+                            <table class="table">
+                                 <thead>
+                                <tr>
+                                    <th>On Examination:both knees</th>
+                                    <th>Left</th>
+                                    <th>Right</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.oa_data_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                <span t-esc="line.val_name" />
+                                            </strong>
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.val_one" />
+                                        </td>
+                                        <td>
+                                            <span t-esc="line.val_two" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="row">
+                        <span><b>Hips/Spine:</b></span>
+                        <span t-esc="doc.hip_id.name" /><br/>
+                        <span><b>X-Ray:</b></span>
+                        <span t-esc="doc.xray_id.name" /><br/>
+                        <span><b>Advice:</b></span>
+                        <span t-esc="doc.advice_id.name" /><br/>
+                        </div>
+                        <div class="row text-right">
+                            <br />
+                            <img t-if="doc.patient_id.primary_doctor.signature" width="150" height="90" alt="Signature" t-attf-src="data:image/gif;base64, #{doc.patient_id.primary_doctor.signature}" />
+                            <br />
+                            <strong>
+                                <span t-field="doc.patient_id.primary_doctor.name" />
+                            </strong>
+                        </div>
+                        <div class="oe_structure" />
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report id="report_shah_oa" string="Report" model="shah.oa" report_type="qweb-pdf" file="shah_trauma.oa_report" name="shah_trauma.oa_report" />
+        <record id="report_shah_oa" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hms.paperformat_hms_letterpad_report" />
+        </record>
+    </data>
+</openerp>

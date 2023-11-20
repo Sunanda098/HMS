@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_patient_user,Patient,hms.model_hms_patient,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_doctor,Patient,hms.model_hms_patient,hms.group_hms_doctor,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_receptionist,Patient,hms.model_hms_patient,hms.group_hms_receptionist,,,,

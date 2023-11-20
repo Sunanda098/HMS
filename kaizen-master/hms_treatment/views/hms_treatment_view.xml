@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_dashboard_hms_prescription_line_treatment_tree" model="ir.ui.view">
+            <field name="name">prescription.line.tree.dashboard</field>
+            <field name="model">prescription.line.treatment</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Prescription Line">
+                    <field name="patient_id"/>
+                    <field name="product_id" string="Medicine Name" />
+                    <field name="bed_id"/>
+                    <field name="t1" string="Time"/>
+                    <field name="date_time"/>
+                    <field name="exc_time"/>
+                    <field name="completed" invisible="1"/>
+                    <button name="medicine_done" string="Done" type="object" attrs="{'invisible':[('completed','=',True)]}" icon="fa-square-o"/>
+                    <button name="medicine_undone" string="Undone" type="object" attrs="{'invisible':[('completed','=',False)]}" icon="fa-check-square-o" />
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_dashboard_prescription_line_treatment_unc_view">
+            <field name="name">PM : Remaining Prescription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">prescription.line.treatment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_dashboard_hms_prescription_line_treatment_tree"/>
+            <field name="domain">[('completed','=',False), ('date_time', '&gt;=', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d 00:00:00')), ('date_time', '&lt;=', time.strftime('%Y-%m-%d 23:59:59'))]</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="view_prescription_line_treatment_search" model="ir.ui.view">
+             <field name="name">prescription.line.treatment.search</field>
+             <field name="model">prescription.line.treatment</field>
+             <field name="priority" eval="1" />
+             <field name="arch" type="xml">
+                 <search string="Patient">
+                    <filter name="past_1d_and_pre_1day" string="Past 1d &amp; Pre 1d" domain="[('completed','=',False), ('date_time', '&gt;=', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')), ('date_time', '&lt;=', time.strftime('%Y-%m-%d 23:59:59'))]"/>
+                    <!-- <separator /> -->
+                    <field name="patient_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Date" domain="[]" context="{'group_by':'create_date'}" />
+                    </group>
+                 </search>
+             </field>
+         </record>
+        <record model="ir.actions.act_window" id="act_dashboard_prescription_line_treatment_all_view">
+            <field name="name">All Prescription Tre.</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">prescription.line.treatment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_dashboard_hms_prescription_line_treatment_tree"/>
+            <field name="domain"></field>
+            <field name="context">{}</field>
+        </record>
+        <menuitem id="prescriotion_line_treatment_unc" name="PM : Remaining Prescription" parent="hms_prescription.indoor_medication_root" action="act_dashboard_prescription_line_treatment_unc_view" groups="base.group_no_one" sequence="11"/>
+        <menuitem id="prescriotion_line_treatment_all" name="Treatment" parent="hms_prescription.indoor_medication_root" action="act_dashboard_prescription_line_treatment_all_view" groups="base.group_no_one" sequence="13"/>
+
+        <menuitem id="prescriotion_line_treatment_unc_dash"
+            name="PM : Remaining Prescription"
+            parent="base.menu_reporting_dashboard"
+            action="act_dashboard_prescription_line_treatment_unc_view"
+            sequence="6"/>
+
+        
+
+        <record model="ir.actions.act_window" id="act_dashboard_prescription_line_treatment_view">
+            <field name="name">PM : Done Prescription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">prescription.line.treatment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_dashboard_hms_prescription_line_treatment_tree"/>
+            <field name="domain">[('completed','=',True)]</field>
+            <field name="context">{}</field>
+        </record>
+        <menuitem id="prescriotion_line_treatment" name="PM : Done Prescription" parent="hms_prescription.indoor_medication_root" action="act_dashboard_prescription_line_treatment_view" groups="base.group_no_one" sequence="12"/>
+
+        <menuitem id="prescriotion_line_treatment_dash" name="PM : Done Prescription" parent="base.menu_reporting_dashboard" action="act_dashboard_prescription_line_treatment_view"  sequence="7"/>
+
+       
+
+        <record id="view_hospital_hms_treatment_form" model="ir.ui.view">
+            <field name="name">Treatment.form</field>
+            <field name="model">hms.treatment</field>
+            <field name="arch" type="xml">
+                <form string="Treetment Sheet">
+                    <sheet>
+                        <group col="4">
+                            <field name="patient_id" invisible="1"/> 
+                            <field name="sex" invisible="1"/>
+                            <field name="treatment_date" />
+                            <field name="diagnosis_id" />
+                            <field name="pres_group_id" domain="[('diagnosis_id', '=', diagnosis_id)]" />
+                            <field name="primary_doctor" />
+                            <field name="attending_physician_ids" string="Attending Doctor" widget="many2many_tags" />
+                        </group>
+                        <group>
+                                <field name="prescription_line" string="Medicine">
+                                <tree string="Medicine" editable="bottom">
+                                    <field name="product_id" string="Medicine Name"/>
+                                    <field name="product_unit"/>
+                                    <field name="dose" string="Dose" />
+                                    <field name="route_treat"/>
+                                    <field name="days" required="1"/>
+                                    <field name="common_dosage"/>
+                                    <!-- <field name="stat"/> -->
+                                    <field name="t1"/>
+                                    <field name="t2"/>
+                                    <field name="t3"/>
+                                    <field name="t4"/>
+                                    <field name="t5"/>
+                                    <field name="t6"/>
+                                </tree>
+                            </field>
+                            <field name="fill" invisible="1"/>
+                            <field name="physiotherapy" />
+                            <field name="finding" />
+                            <field name="rbs_line">
+                                <tree string="RBS" editable="bottom">
+                                    <field name="rbs_time" />
+                                    <field name="rbs_value" />
+                                    <field name="rbs_insulin" />
+                                </tree>
+                            </field>
+                            <field name="lab_group_id" />
+                            <field name="pathology_line">
+                                <tree string="Pathology" editable="bottom">
+                                    <field name="product_id" string="Pathology"
+                                        context="{'default_type':'service','default_hospital_product_type':'pathology'}" />
+                                    <field name="price" string="Cost" sum="Total" />
+                                    <field name="instruction" />
+                                </tree>
+                            </field>
+                            <!-- <field name="radio_group_id" /> -->
+                            <field name="radiology_line">
+                                <tree string="Radiology" editable="bottom">
+                                    <field name="product_id" string="Radiology"
+                                        context="{'default_type':'service','default_hospital_product_type':'radiology'}" />
+                                    <field name="price" string="Cost" sum="Total" />
+                                    <field name="instruction" />
+                                </tree>
+                            </field>
+                            <field name="manometry_line" nolable="1">
+                                <tree string="Manometry" editable="bottom">
+                                    <field name="product_id" string="Manometry" context="{'default_type':'service','default_hospital_product_type':'manometry'}"/>
+                                    <field name="price" sum="Total"/>
+                                    <field name="instruction"/>
+                                    <button class="oe_highlight oe_right" name="action_open_preview" string="Preview" type="object"></button>
+                                </tree>
+                            </field>
+                            <!-- <label for="endoscopy_line" string="Endoscopy"/> -->
+                            <field name="endoscopy_line" nolable="1">
+                                <tree string="Endoscopy" editable="bottom">
+                                    <field name="product_id" string="Endoscopy" context="{'default_type':'service','default_hospital_product_type':'endoscopy'}"/>
+                                    <field name="price" sum="Total"/>
+                                    <field name="instruction"/>
+                                    <button class="oe_highlight oe_right" name="action_open_preview" string="Preview" type="object"></button>
+                                </tree>
+                            </field>
+                            <field name="instruction_group_id" style="width:50%" domain="[('gender', '=',sex)]" invisible="1"/>
+                            <field name="instruction" invisible="1">
+                                <tree string="Instruction" editable="bottom">
+                                    <field name="inst_id" style="width:50%" context="{'patient_id':parent.patient_id,'instruction_group_id':parent.instruction_group_id}"/>
+                                </tree>
+                                <form string="Instruction" editable="bottom">
+                                    <group>
+                                        <field name="inst_id" context="{'instruction_group_id':parent.instruction_group_id}"/>
+                                        <field name="treatment_id" />
+                                    </group>
+                                </form>
+                            </field>
+                            <field name="medical_emergency" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_hospital_hms_treatment_tree">
+            <field name="name">Treatment.form</field>
+            <field name="model">hms.treatment</field>
+            <field name="arch" type="xml">
+                <tree string="Treatment Sheet">
+                    <field name="patient_id" />
+                    <field name="treatment_date" />
+                    <field name="hospitalization_id" />
+                    <field name="medical_emergency" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="indimedi_action_form_hospital_treatment">
+            <field name="name">Treatment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hms.treatment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_hospital_hms_treatment_tree" />
+        </record>
+
+        <record id="view_hospitalization_hms_treatment_form"  model="ir.ui.view">
+            <field name="name">inpatient.registration form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="inherit_id"
+                ref="hms_hospitalization.view_inpatient_registration_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='progress_note']" position="after">
+                    <page string="Treatment History" name="treatment_sheet"
+                        groups="hms.group_hms_medical_officer,hms.group_hms_doctor">
+                        <group>
+                            <field name="treatment_ids" nolabel="1"
+                                context="{'default_patient_id': patient_id,'default_diagnosis_id': admission_reason,'default_attending_physician_ids': attending_physician_ids}">
+                                    <tree string="Medicine" create="false">
+                                        <field name="diagnosis_id" />
+                                        <field name="pres_group_id" />
+                                        <field name="treatment_date" />
+                                        <field name="medical_emergency" />
+                                        <button name="%(action_report_line_treatment)d"  class="oe_highlight" type="action" icon="gtk-print"/>
+                                    </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_hospitalization_hms_treatment_ins_form"  model="ir.ui.view">
+            <field name="name">inpatient.registration form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="inherit_id" ref="hms_insurance.view_inpatient_insu_form" />
+            <field name="arch" type="xml">
+                
+                <field name="op_note" position="after">
+                    <label for="admission_weight" />
+                    <field name="admission_weight" string="Weight on Admission" />
+                    <label for="discharge_weight" />
+                    <field name="discharge_weight" string="Weight on Discharge" />
+                    <!-- <label for="diet" />
+                    <field name="diet" string="Diet" /> -->
+                    <!-- <label for="gen_advice" />
+                    <field name="gen_advice" string="General Advice" /> -->
+                    <!-- <label for="warning" />
+                    <field name="warning" string="Warning Signs Symptoms" /> -->
+                    <!-- <label for="follow_datetime" />
+                    <field name="follow_datetime" string="Follow Up Date Time" /> -->
+                    <!-- <label for="mo_summary" />
+                    <field name="mo_summary" string="M.O. Preparing Summary" /> -->
+                    
+
+                    <!--Treatment Medicine Start-->
+                    <!-- <label for="treatment_ids"/>
+                    <field name="treatment_ids" nolabel="1"
+                                context="{'default_patient_id': patient_id,'default_diagnosis_id': admission_reason,'default_attending_physician_ids': attending_physician_ids}">
+                        <tree string="Medicine" create="false">
+                            <field name="diagnosis_id" />
+                            <field name="pres_group_id" />
+                            <field name="treatment_date" />
+                            <field name="medical_emergency" />
+                            <button name="%(action_report_line_treatment)d"  class="oe_highlight" type="action" icon="gtk-print"/>
+                        </tree>
+                    </field> -->
+                    <!--Treatment Medicine End-->
+                    <label for="medicine_at_home_ids" />
+                    <field name="medicine_at_home_ids">
+                        <tree string="Medicine" editable="bottom">
+                            <field name="medicine_type" />
+                            <field name="product_id" string="Medicine Name" />                          
+                            <field name="common_dosage" />
+                            <field name="suffix_freq_id" />
+                            <field name="time_interval" />
+                            <field name="dose" />
+                            
+                            <!-- <field name="stat"/>
+                            <field name="t1"/>
+                            <field name="t2"/>
+                            <field name="t3"/>
+                            <field name="t4"/> -->
+                        </tree>
+                    </field>
+                </field>
+                <!--D.Summary Changes Start-->
+                <field name="hospitalization_injury" position="before">
+                    <field name="diet" string="Diet"/>
+                    <field name="follow_datetime" string="Follow Up Date Time" />
+                    <field name="gen_advice" string="General Advice" />
+                    <field name="warning" string="Warning Signs Symptoms" />
+                    <field name="mo_summary" string="M.O. Preparing Summary" />
+                </field>
+                <!--D.Summary Changes End-->
+                <field name="past_surgical_history" position="after">
+                    <label for="latest_op_note"/>
+                    <field name='latest_op_note'/>
+                    <label for="care_plan" />
+                    <field name="care_plan" string="Plan of Care" />
+                    <label for="discharge_inv" />
+                    <field name="discharge_inv" string="Investigations" />
+                    <label for="pending_report" />
+                    <field name="pending_report" string="Pending Reports" />
+                    <label for="histo_report" />
+                    <field name="histo_report" string="Histopatho Reports" />
+                </field>
+                <xpath expr="//label[@for='instruction']" position="before">
+                    <group col="4">
+                        <field name="instruction_group_id" style="width:50%" domain="[('gender', '=',sex)]"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_hms_appointment_treatment_form" model="ir.ui.view">
+            <field name="name">hms.appointment.form</field>
+            <field name="model">hms.appointment</field>
+            <field name="inherit_id" ref="shah_opd.view_hms_appointment_form" />
+            <field name="arch" type="xml">
+                <!--<xpath expr="//page[@name='history']" position="after">
+                    <page name="ipd_history" string="IPD History" groups="hms.group_hms_jr_doctor">
+                        <field name="medicine_at_home_ids">
+                            <tree string="Medicine" editable="bottom">
+                                <field name="product_id" string="Medicine Name" />
+                                <field name="dose" />
+                                <field name="common_dosage"/>
+                                <field name="stat"/>
+                                <field name="t1"/>
+                                <field name="t2"/>
+                                <field name="t3"/>
+                                <field name="t4"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>-->
+                <xpath expr="//div[@class='pager_hiding']" position="after">
+                    <div style="float:left; width:79%">
+                        <!-- <separator string="Past Surgeries"/> -->
+                        <group>
+                            
+                            <group>
+                                <separator string="Past Surgeries"/>
+                                <field name="past_surgeries_ids" colspan="4" nolabel="1">
+                                    <tree editable="top">
+                                        <field name="appointment_id" invisible="1"/>
+                                        <field name="date"/>
+                                        <field name="description"/>
+                                        <field name="result"/>
+                                        <field name="hosp_or_doctor"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            
+                            <group>
+                                <separator string="Personal History"/>
+                                <field name="personal_his_ids" colspan="4" nolabel="1">
+                                    <tree editable="top">
+                                        <!-- <field name="appointment_id" invisible="1"/> -->
+                                        <field name="personal_his_id" required="1"/>
+                                        <field name="personal_his"/>
+                                    </tree>
+                                </field>   
+                            </group>
+
+                        </group>    
+                        
+                        <group col="4">
+                            <field name="post_medication"/>                          
+                            <field name="family_ho"/>
+                            <field name="previous_inv"/>                            
+                        </group>                        
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        <!-- Under HMS Menu -->
+        <!--<menuitem id="action_menu_treatment_sheet" name="Treatment Sheet"
+            sequence="5" groups="hms.group_hms_medical_officer" parent="hms_hospitalization.indimedi_inpatient_menu"
+            action="indimedi_action_form_hospital_treatment" />-->
+
+        <!-- Under Hospitalization menu -->
+        <!--<menuitem id="action_menu_hospitalization_treatment_sheet"
+            name="Treatment Sheet"
+            groups="hms.group_hms_nurse,hms.group_hms_medical_officer,hms.group_hms_doctor"
+            action="indimedi_action_form_hospital_treatment" parent="hms_hospitalization.menu_hospitalization" />-->
+    </data>
+</openerp>

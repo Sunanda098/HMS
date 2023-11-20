@@ -1,0 +1,2 @@
+import indimedi_product_barcode
+

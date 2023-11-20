@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+         <!-- Sequences for Ot -->
+        <record id="seq_hms_operation_theatre" model="ir.sequence">
+            <field name="name">OT</field>
+            <field name="code">ot.booking</field>
+            <field name="prefix">OT</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+</openerp>

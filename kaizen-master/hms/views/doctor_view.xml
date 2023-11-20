@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_physician_tree" model="ir.ui.view">
+            <field name="name">physician.tree</field>
+            <field name="model">hms.physician</field>
+            <field name="arch" type="xml">
+                <tree string="Physician">
+                    <field name="name" />
+                    <field name="code" string="Doctor ID" />
+                    <field name="government_id" />
+                    <field name="mobile" />
+                    <field name="email" />
+                    <field name="cabin_no"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_physician_form" model="ir.ui.view">
+            <field name="name">physician.form</field>
+            <field name="model">hms.physician</field>
+            <field name="arch" type="xml">
+                <form string="Physician">
+                    <sheet>
+                        <field name="image" widget="image" class="oe_left oe_avatar" />
+                        <div class="oe_title">
+                            <label for="name" string="Name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" placeholder="Doctor's Name" />
+                            </h1>
+                            <label for="degree_ids" string="Education" class="oe_edit_only" />
+                            <field name="degree_ids" widget="many2many_tags" placeholder="e.g. MBBS" />
+                            <label for="login" string="Login" class="oe_edit_only" />
+                            <field name="login" required="True" />
+                            <label for="active" string="Active" class="oe_edit_only" />
+                            <field name="active" />
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code" string="Doctor ID" style="width: 20%%" readonly="1" />
+                                <field name="cabin_no"/>
+                                <field name="type" required="1"/>
+                                <field name="user_id" required="False" invisible="1" />
+                                <field name="consul_service" required="True" domain="[('type','=','service'),('sale_ok','=',True)]" 
+                                    context="{'default_type':'service','default_hospital_product_type':'consultation'}" />
+                                <field name="consul_charge"/>
+                                <field name="is_primary_surgeon" />
+                                <field name="is_consultation_doctor" />
+                            </group>
+                            <group>
+                                <field name="government_id" />
+                                <field name="specialty" required="True" />
+                                <field name="department_ids" widget="many2many_tags"/>
+				                <field name="reg_number" />
+                                <field name="highest_qualification_id" />
+                                <field name="designation"/>
+                                <field name="relation"/>
+                                <field name="age"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="General Information">
+                                <group>
+                                    <group>
+                                        <label for="street" string="Address" />
+                                        <div>
+                                            <field name="use_parent_address" invisible="1" />
+                                            <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                            <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                            <div class="address_format">
+                                                <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                                <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                                <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                            </div>
+                                            <field name="country_id" placeholder="Country" class="oe_no_button" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                        </div>
+                                        <field name="website" />
+                                    </group>
+                                    <group>
+                                        <field name="phone" placeholder="e.g. +506 5555 5555" />
+                                        <field name="mobile" />
+                                        <field name="fax" />
+                                        <field name="user_ids" invisible="1" />
+                                        <field name="email" widget="email" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Special Services">
+                                <field name="special_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="amount"/>
+                                        <field name="hospital_share"/>
+                                        <field name="ksga_share"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Signature">
+                                <br/>
+                                <field name="signature" widget="image" class="oe_left oe_avatar" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_physician_search" model="ir.ui.view">
+            <field name="name">physician.search</field>
+            <field name="model">hms.physician</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Physician">
+                    <field name="name" />
+                    <field name="code" />
+                </search>
+            </field>
+        </record>
+        <record id="action_physician" model="ir.actions.act_window">
+            <field name="name">Physician</field>
+            <field name="res_model">hms.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+    </data>
+</openerp>
+
+

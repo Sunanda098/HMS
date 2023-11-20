@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem id="hos_fam_mem" parent="hms.menu_patient" name="Family Member" action="act_open_indimedi_family_member_view" sequence="15" />
+        <menuitem id="hos_fam" parent="hms.menu_patient" name="Family" action="act_open_indimedi_family_view" sequence="1" />
+        <menuitem id="hos_pres" name="Prescription" parent="hms.menu_hms" sequence="5" groups="hms.group_hms_pharmacist,hms.group_hms_jr_doctor"/>
+        <menuitem id="indoor_medication" name="IP Medicine Request" parent="hms_prescription.hos_pres" action="act_indoor_Patient_medicine_request_view" />
+        <menuitem id="hos_prescription" name="Prescription" parent="hos_pres" action="act_open_hms_prescription_order_view" />
+        <!--menuitem id="hos_vacc_apagen" name="Vaccination" parent="hms.menu_hms_cofig" action="act_open_indimedi_vaccination_view" sequence="15" /-->
+        
+        <!--Root menu for prescription-->
+        <menuitem id="hos_pres_root" name="Prescription" sequence="4" groups="hms.group_hms_pharmacist,hms.group_hms_jr_doctor"/>
+        <menuitem id="indoor_medication_root" name="IP Medicine Request" parent="hms_prescription.hos_pres_root"/>
+        <menuitem id="indoor_medication_ip_root" name="IP Medicine Request" parent="indoor_medication_root" action="act_indoor_Patient_medicine_request_view"/>
+        <menuitem id="hos_prescription_root" name="Prescription" parent="hos_pres_root"/>
+        <menuitem id="hos_prescption_inner_root" name="Prescription" parent="hos_prescription_root" action="act_open_hms_prescription_order_view" />
+        <menuitem id="prescriotion_line" name="Prescription Line" parent="indoor_medication_root" action="act_dashboard_prescription_line_view" groups="base.group_no_one"/>
+
+   </data>
+</openerp>

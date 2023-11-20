@@ -1,0 +1,307 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_patient_user,Patient,model_hms_patient,hms.group_hms_user,1,1,0,0
+access_hms_hms_appointment_purpose_user,Appointment Purpose,model_appointment_purpose,hms.group_hms_user,1,0,0,0
+access_hms_hms_appointment_user,Appointment,model_hms_appointment,hms.group_hms_user,1,0,1,0
+access_hms_hms_reason_user,Oemedical Reason,model_hms_reason,hms.group_hms_user,1,0,0,0
+access_hms_physician_specialty_user,Physician Specialty,model_physician_specialty,hms.group_hms_user,1,0,0,0
+access_hms_physician_degree_user,Physician Degree,model_physician_degree,hms.group_hms_user,1,0,0,0
+access_hms_indimedi_physician_user,physician,model_hms_physician,hms.group_hms_user,1,0,0,0
+access_hms_referring_doctors_user,Referring Doctors,model_referring_doctors,hms.group_hms_user,1,0,0,0
+access_hms_medicament_content_user,Indimedi Medicament Content,model_medicament_content,hms.group_hms_user,1,0,0,0
+access_hms_medicament_flavour_user,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_user,1,0,0,0
+access_hms_hms_diseases_user,Indimedi Diseases,model_hms_diseases,hms.group_hms_user,1,0,0,0
+access_hms_indiemdi_diseases_category_user,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_user,1,0,0,0
+access_hms_hms_patient_disease_user,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_user,1,0,0,0
+access_hms_disease_gene_user,Indimedi Disease Gene,model_disease_gene,hms.group_hms_user,1,0,0,0
+access_hms_hms_patient_genetic_risk_user,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_user,1,0,0,0
+access_hms_hms_patient_family_diseases_user,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_user,1,0,0,0
+access_hms_drug_form_user,Indimedi Drug Form,model_drug_form,hms.group_hms_user,1,0,0,0
+access_hms_active_comp_user,Indimedi Active Comp,model_active_comp,hms.group_hms_user,1,0,0,0
+access_hms_drug_company_user,Indimedi Drug Company,model_drug_company,hms.group_hms_user,1,0,0,0
+access_hms_drug_route_user,Indimedi Drug Route,model_drug_route,hms.group_hms_user,1,0,0,0
+access_hms_medication_dosage_user,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_user,1,0,0,0
+access_hms_patient_res_group,Res Group,base.model_res_groups,hms.group_hms_user,1,1,1,1
+access_hms_medicament_group_line_user,Medicament Group Line ,model_medicament_group_line,hms.group_hms_user,1,0,0,0
+access_hms_medicament_group_user,Indimedi Medicament Group,model_medicament_group,hms.group_hms_user,1,0,0,0
+access_hms_hospital_department_user,Indimedi Hospital Department,model_hospital_department,hms.group_hms_user,1,0,0,0
+access_hms_hms_patient_insurance_user,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_user,1,0,0,0
+access_hms_hms_patient_reg_product_user,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_user,1,0,0,0
+access_hms_hms_patient_user,Indimedi Patient,model_hms_patient,hms.group_hms_user,1,0,0,0
+access_hms_hms_surgery_user,Indimedi Surgery,model_hms_surgery,hms.group_hms_user,1,0,0,0
+access_hms_res_users_user,Res Users,base.model_res_users,hms.group_hms_user,1,0,0,0
+access_hms_hms_dietplan_user,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_user,1,1,1,0
+access_hms_res_partner_user,Partner User,base.model_res_partner,hms.group_hms_user,1,0,0,0
+access_hms_appointment_finding_user,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_user,1,0,0,0
+access_opd_finding_user,Finding,model_opd_finding,hms.group_hms_user,1,0,0,0
+access_hms_appointment_chief_complain_line_user,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_user,1,0,0,0
+access_hms_appointment_chief_complain_user,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_user,1,0,0,0
+access_hms_receptionist_res_group,Res Group,base.model_res_groups,hms.group_hms_receptionist,1,1,1,1
+access_hms_patient_module_category,module category,base.model_ir_module_category,hms.group_hms_user,1,1,1,1
+access_hms_receptionist_module_category,module category,base.model_ir_module_category,hms.group_hms_receptionist,1,1,1,1
+access_hms_patient_receptionist,Patient,model_hms_patient,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_appointment_receptionist,Appointment,model_hms_appointment,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_reason_receptionist,Oemedical Reason,model_hms_reason,hms.group_hms_receptionist,1,1,1,0
+access_hms_physician_specialty_receptionist,Physician Specialty,model_physician_specialty,hms.group_hms_receptionist,1,1,1,0
+access_hms_physician_degree_receptionist,Physician Degree,model_physician_degree,hms.group_hms_receptionist,1,0,0,0
+access_hms_indimedi_physician_receptionist,physician,model_hms_physician,hms.group_hms_receptionist,1,1,0,0
+access_hms_referring_doctors_receptionist,Referring Doctors,model_referring_doctors,hms.group_hms_receptionist,1,1,1,0
+access_hms_medicament_content_receptionist,Indimedi Medicament Content,model_medicament_content,hms.group_hms_receptionist,1,1,1,0
+access_hms_medicament_flavour_receptionist,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_diseases_receptionist,Indimedi Diseases,model_hms_diseases,hms.group_hms_receptionist,1,1,1,0
+access_hms_indiemdi_diseases_category_receptionist,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_patient_disease_receptionist,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_receptionist,1,1,1,0
+access_hms_disease_gene_receptionist,Indimedi Disease Gene,model_disease_gene,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_patient_genetic_risk_receptionist,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_patient_family_diseases_receptionist,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_receptionist,1,1,1,0
+access_hms_drug_form_receptionist,Indimedi Drug Form,model_drug_form,hms.group_hms_receptionist,1,1,1,0
+access_hms_active_comp_receptionist,Indimedi Active Comp,model_active_comp,hms.group_hms_receptionist,1,1,1,0
+access_hms_drug_company_receptionist,Indimedi Drug Company,model_drug_company,hms.group_hms_receptionist,1,1,1,0
+access_hms_drug_route_receptionist,Indimedi Drug Route,model_drug_route,hms.group_hms_receptionist,1,1,1,0
+access_hms_medication_dosage_receptionist,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_receptionist,1,1,1,0
+,,,,,,,
+access_hms_medicament_group_line_receptionist,Medicament Group Line ,model_medicament_group_line,hms.group_hms_receptionist,1,1,1,0
+access_hms_medicament_group_receptionist,Indimedi Medicament Group,model_medicament_group,hms.group_hms_receptionist,1,1,1,0
+access_hms_hospital_department_receptionist,Indimedi Hospital Department,model_hospital_department,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_patient_insurance_receptionist,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_patient_reg_product_receptionist,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_patient_receptionist,Indimedi Patient,model_hms_patient,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_surgery_receptionist,Indimedi Surgery,model_hms_surgery,hms.group_hms_receptionist,1,0,0,0
+access_hms_res_users_receptionist,Res Users,base.model_res_users,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_dietplan_receptionist,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_receptionist,1,1,1,0
+access_hms_res_partner_receptionist,Partner Receptionist,base.model_res_partner,hms.group_hms_receptionist,1,1,1,0
+access_hms_appointment_finding_receptionist,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_receptionist,1,0,0,0
+access_opd_finding_receptionist,Finding,model_opd_finding,hms.group_hms_receptionist,1,0,0,0
+access_hms_appointment_chief_complain_line_receptionist,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_appointment_chief_complain_receptionist,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_receptionist,1,0,0,0
+access_hms_doctor_module,module category,base.model_ir_module_category,hms.group_hms_doctor,1,1,1,1
+access_hms_doctor_res_group,Res Group,base.model_res_groups,hms.group_hms_doctor,1,1,1,1
+access_hms_patient_doctor,Patient,model_hms_patient,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_appointment_doctor,Appointment,model_hms_appointment,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_reason_doctor,Oemedical Reason,model_hms_reason,hms.group_hms_doctor,1,1,1,1
+access_hms_physician_specialty_doctor,Physician Specialty,model_physician_specialty,hms.group_hms_doctor,1,1,1,1
+access_hms_physician_degree_doctor,Physician Degree,model_physician_degree,hms.group_hms_doctor,1,1,1,1
+access_hms_indimedi_physician_doctor,physician,model_hms_physician,hms.group_hms_doctor,1,1,1,1
+access_hms_referring_doctors_doctor,Referring Doctors,model_referring_doctors,hms.group_hms_doctor,1,1,1,1
+access_hms_medicament_content_doctor,Indimedi Medicament Content,model_medicament_content,hms.group_hms_doctor,1,1,1,1
+access_hms_medicament_flavour_doctor,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_diseases_doctor,Indimedi Diseases,model_hms_diseases,hms.group_hms_doctor,1,1,1,1
+access_hms_indiemdi_diseases_category_doctor,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_patient_disease_doctor,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_doctor,1,1,1,1
+access_hms_disease_gene_doctor,Indimedi Disease Gene,model_disease_gene,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_patient_genetic_risk_doctor,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_patient_family_diseases_doctor,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_doctor,1,1,1,1
+access_hms_drug_form_doctor,Indimedi Drug Form,model_drug_form,hms.group_hms_doctor,1,1,1,1
+access_hms_active_comp_doctor,Indimedi Active Comp,model_active_comp,hms.group_hms_doctor,1,1,1,1
+access_hms_drug_company_doctor,Indimedi Drug Company,model_drug_company,hms.group_hms_doctor,1,1,1,1
+access_hms_drug_route_doctor,Indimedi Drug Route,model_drug_route,hms.group_hms_doctor,1,1,1,1
+access_hms_medication_dosage_doctor,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_medicament_group_line_doctor,Medicament Group Line ,model_medicament_group_line,hms.group_hms_doctor,1,1,1,1
+access_hms_medicament_group_doctor,Indimedi Medicament Group,model_medicament_group,hms.group_hms_doctor,1,1,1,1
+access_hms_hospital_department_doctor,Indimedi Hospital Department,model_hospital_department,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_patient_insurance_doctor,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_patient_reg_product_doctor,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_patient_doctor,Indimedi Patient,model_hms_patient,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_surgery_doctor,Indimedi Surgery,model_hms_surgery,hms.group_hms_doctor,1,1,1,1
+access_hms_res_users_doctor,Res Users,base.model_res_users,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_dietplan_doctor,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_doctor,1,1,1,1
+access_hms_res_partner_doctor,Partner Doctor,base.model_res_partner,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_finding_doctor,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_doctor,1,1,1,1
+access_opd_finding_doctor,Finding,model_opd_finding,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_chief_complain_line_doctor,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_doctor,1,1,1,1
+access_hms_appointment_chief_complain_doctor,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_doctor,1,1,1,1
+access_hms_nurse_res_group,Res Group,base.model_res_groups,hms.group_hms_nurse,1,1,1,1
+access_hms_patient_nurse,Patient,model_hms_patient,hms.group_hms_nurse,1,0,0,0
+access_hms_hms_appointment_nurse,Appointment,model_hms_appointment,hms.group_hms_nurse,1,0,0,0
+access_hms_hms_reason_nurse,Oemedical Reason,model_hms_reason,hms.group_hms_nurse,1,1,1,0
+access_hms_physician_specialty_nurse,Physician Specialty,model_physician_specialty,hms.group_hms_nurse,1,1,1,0
+access_hms_physician_degree_nurse,Physician Degree,model_physician_degree,hms.group_hms_nurse,1,1,1,0
+access_hms_indimedi_physician_nurse,physician,model_hms_physician,hms.group_hms_nurse,1,1,1,0
+access_hms_referring_doctors_nurse,Referring Doctors,model_referring_doctors,hms.group_hms_nurse,1,1,1,0
+access_hms_medicament_content_nurse,Indimedi Medicament Content,model_medicament_content,hms.group_hms_nurse,1,1,1,0
+access_hms_medicament_flavour_nurse,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_diseases_nurse,Indimedi Diseases,model_hms_diseases,hms.group_hms_nurse,1,1,1,0
+access_hms_indiemdi_diseases_category_nurse,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_patient_disease_nurse,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_nurse,1,1,1,0
+access_hms_disease_gene_nurse,Indimedi Disease Gene,model_disease_gene,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_patient_genetic_risk_nurse,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_patient_family_diseases_nurse,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_nurse,1,1,1,0
+access_hms_drug_form_nurse,Indimedi Drug Form,model_drug_form,hms.group_hms_nurse,1,1,1,0
+access_hms_active_comp_nurse,Indimedi Active Comp,model_active_comp,hms.group_hms_nurse,1,1,1,0
+access_hms_drug_company_nurse,Indimedi Drug Company,model_drug_company,hms.group_hms_nurse,1,1,1,0
+access_hms_drug_route_nurse,Indimedi Drug Route,model_drug_route,hms.group_hms_nurse,1,1,1,0
+access_hms_medication_dosage_nurse,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_nurse,1,1,1,0
+access_hms_nurse_module_category,module category,base.model_ir_module_category,hms.group_hms_nurse,1,1,1,1
+access_hms_medicament_group_line_nurse,Medicament Group Line ,model_medicament_group_line,hms.group_hms_nurse,1,1,1,0
+access_hms_medicament_group_nurse,Indimedi Medicament Group,model_medicament_group,hms.group_hms_nurse,1,1,1,0
+access_hms_hospital_department_nurse,Indimedi Hospital Department,model_hospital_department,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_patient_insurance_nurse,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_patient_reg_product_nurse,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_patient_nurse,Indimedi Patient,model_hms_patient,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_surgery_nurse,Indimedi Surgery,model_hms_surgery,hms.group_hms_nurse,1,1,1,0
+access_hms_res_users_nurse,Res Users,base.model_res_users,hms.group_hms_nurse,1,0,0,0
+access_hms_hms_dietplan_nurse,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_nurse,1,1,1,0
+access_hms_res_partner_nurse,Partner Nurse,base.model_res_partner,hms.group_hms_nurse,1,0,0,0
+access_hms_appointment_finding_nurse,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_nurse,1,0,0,0
+access_opd_finding_nurse,Finding,model_opd_finding,hms.group_hms_nurse,1,0,0,0
+access_hms_appointment_chief_complain_line_nurse,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_nurse,1,0,0,0
+access_hms_appointment_chief_complain_nurse,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_nurse,1,0,0,0
+access_hms_pharmacist_res_group,Res Group,base.model_res_groups,hms.group_hms_pharmacist,1,1,1,1
+access_hms_patient_pharmacist,Patient,model_hms_patient,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_appointment_pharmacist,Appointment,model_hms_appointment,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_reason_pharmacist,Oemedical Reason,model_hms_reason,hms.group_hms_pharmacist,1,0,0,0
+access_hms_physician_specialty_pharmacist,Physician Specialty,model_physician_specialty,hms.group_hms_pharmacist,1,0,0,0
+access_hms_physician_degree_pharmacist,Physician Degree,model_physician_degree,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indimedi_physician_pharmacist,physician,model_hms_physician,hms.group_hms_pharmacist,1,0,0,0
+access_hms_referring_doctors_pharmacist,Referring Doctors,model_referring_doctors,hms.group_hms_pharmacist,1,0,0,0
+access_hms_medicament_content_pharmacist,Indimedi Medicament Content,model_medicament_content,hms.group_hms_pharmacist,1,0,0,0
+access_hms_medicament_flavour_pharmacist,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_diseases_pharmacist,Indimedi Diseases,model_hms_diseases,hms.group_hms_pharmacist,1,0,0,0
+access_hms_indiemdi_diseases_category_pharmacist,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_patient_disease_pharmacist,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_pharmacist,1,0,0,0
+access_hms_disease_gene_pharmacist,Indimedi Disease Gene,model_disease_gene,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_patient_genetic_risk_pharmacist,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_patient_family_diseases_pharmacist,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_pharmacist,1,0,0,0
+access_hms_drug_form_pharmacist,Indimedi Drug Form,model_drug_form,hms.group_hms_pharmacist,1,0,0,0
+access_hms_active_comp_pharmacist,Indimedi Active Comp,model_active_comp,hms.group_hms_pharmacist,1,0,0,0
+access_hms_drug_company_pharmacist,Indimedi Drug Company,model_drug_company,hms.group_hms_pharmacist,1,0,0,0
+access_hms_drug_route_pharmacist,Indimedi Drug Route,model_drug_route,hms.group_hms_pharmacist,1,0,0,0
+access_hms_medication_dosage_pharmacist,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_pharmacist,1,0,0,0
+access_hms_pharamacist_module_category,module category,base.model_ir_module_category,hms.group_hms_pharmacist,1,1,1,1
+access_hms_medicament_group_line_pharmacist,Medicament Group Line ,model_medicament_group_line,hms.group_hms_pharmacist,1,0,0,0
+access_hms_medicament_group_pharmacist,Indimedi Medicament Group,model_medicament_group,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hospital_department_pharmacist,Indimedi Hospital Department,model_hospital_department,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_patient_insurance_pharmacist,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_patient_reg_product_pharmacist,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_patient_pharmacist,Indimedi Patient,model_hms_patient,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_surgery_pharmacist,Indimedi Surgery,model_hms_surgery,hms.group_hms_pharmacist,1,0,0,0
+access_hms_res_users_pharmacist,Res Users,base.model_res_users,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_dietplan_pharmacist,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_pharmacist,1,1,1,0
+access_hms_res_partner_pharmacist,Partner Pharmacist,base.model_res_partner,hms.group_hms_pharmacist,1,0,0,0
+access_hms_appointment_finding_pharmacist,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_pharmacist,1,0,0,0
+access_opd_finding_pharmacist,Finding,model_opd_finding,hms.group_hms_pharmacist,1,0,0,0
+access_hms_appointment_chief_complain_line_pharmacist,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_pharmacist,1,0,0,0
+access_hms_appointment_chief_complain_pharmacist,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_pharmacist,1,0,0,0
+access_hms_jr_doctor_res_group,Res Group,base.model_res_groups,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_patient_jr_doctor,Patient,model_hms_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_appointment_purpose_jr_dr,Appointment Purpose,model_appointment_purpose,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_appointment_jr_doctor,Appointment,model_hms_appointment,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_reason_jr_doctor,Oemedical Reason,model_hms_reason,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_physician_specialty_jr_doctor,Physician Specialty,model_physician_specialty,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_physician_degree_jr_doctor,Physician Degree,model_physician_degree,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indimedi_physician_jr_doctor,physician,model_hms_physician,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_referring_doctors_jr_doctor,Referring Doctors,model_referring_doctors,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medicament_content_jr_doctor,Indimedi Medicament Content,model_medicament_content,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medicament_flavour_jr_doctor,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_diseases_jr_doctor,Indimedi Diseases,model_hms_diseases,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_indiemdi_diseases_category_jr_doctor,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_patient_disease_jr_doctor,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_disease_gene_jr_doctor,Indimedi Disease Gene,model_disease_gene,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_patient_genetic_risk_jr_doctor,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_patient_family_diseases_jr_doctor,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_drug_form_jr_doctor,Indimedi Drug Form,model_drug_form,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_active_comp_jr_doctor,Indimedi Active Comp,model_active_comp,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_drug_company_jr_doctor,Indimedi Drug Company,model_drug_company,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_drug_route_jr_doctor,Indimedi Drug Route,model_drug_route,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medication_dosage_jr_doctor,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_jr_doctor_module_category,module category,base.model_ir_module_category,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medicament_group_line_jr_doctor,Medicament Group Line ,model_medicament_group_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medicament_group_jr_doctor,Indimedi Medicament Group,model_medicament_group,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hospital_department_jr_doctor,Indimedi Hospital Department,model_hospital_department,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_patient_insurance_jr_doctor,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_patient_reg_product_jr_doctor,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_patient_jr_doctor,Indimedi Patient,model_hms_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_surgery_jr_doctor,Indimedi Surgery,model_hms_surgery,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_res_users_jr_doctor,Res Users,base.model_res_users,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_dietplan_jr_doctor,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_res_partner_jr_doctor,Partner Jr Doctor,base.model_res_partner,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_finding_jr_doctor,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_jr_doctor,1,1,1,1
+access_opd_finding_jr_doctor,Finding,model_opd_finding,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_chief_complain_line_jr_doctor,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_appointment_chief_complain_jr_doctor,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_manager_res_group,Res Group,base.model_res_groups,hms.group_hms_manager,1,1,1,1
+access_hms_patient_manager,Patient,model_hms_patient,hms.group_hms_manager,1,1,1,0
+access_hms_hms_appointment_manager,Appointment,model_hms_appointment,hms.group_hms_manager,1,1,1,0
+access_hms_hms_reason_manager,Oemedical Reason,model_hms_reason,hms.group_hms_manager,1,1,1,0
+access_hms_physician_specialty_manager,Physician Specialty,model_physician_specialty,hms.group_hms_manager,1,1,1,0
+access_hms_physician_degree_manager,Physician Degree,model_physician_degree,hms.group_hms_manager,1,1,1,0
+access_hms_indimedi_physician_manager,physician,model_hms_physician,hms.group_hms_manager,1,1,1,0
+access_hms_referring_doctors_manager,Referring Doctors,model_referring_doctors,hms.group_hms_manager,1,1,1,0
+access_hms_medicament_content_manager,Indimedi Medicament Content,model_medicament_content,hms.group_hms_manager,1,1,1,0
+access_hms_medicament_flavour_manager,Indimedi Medicament Flavour,model_medicament_flavour,hms.group_hms_manager,1,1,1,0
+access_hms_hms_diseases_manager,Indimedi Diseases,model_hms_diseases,hms.group_hms_manager,1,1,1,0
+access_hms_indiemdi_diseases_category_manager,Indimedi Diseases Category,model_indiemdi_diseases_category,hms.group_hms_manager,1,1,1,0
+access_hms_hms_patient_disease_manager,Indimedi Patient Disease,model_hms_patient_disease,hms.group_hms_manager,1,1,1,0
+access_hms_disease_gene_manager,Indimedi Disease Gene,model_disease_gene,hms.group_hms_manager,1,1,1,0
+access_hms_hms_patient_genetic_risk_manager,Indimedi Patient Genetic Risk,model_hms_patient_genetic_risk,hms.group_hms_manager,1,1,1,0
+access_hms_hms_patient_family_diseases_manager,Indimedi Patient Family Diseases,model_hms_patient_family_diseases,hms.group_hms_manager,1,1,1,0
+access_hms_drug_form_manager,Indimedi Drug Form,model_drug_form,hms.group_hms_manager,1,1,1,0
+access_hms_active_comp_manager,Indimedi Active Comp,model_active_comp,hms.group_hms_manager,1,1,1,0
+access_hms_drug_company_manager,Indimedi Drug Company,model_drug_company,hms.group_hms_manager,1,1,1,0
+access_hms_drug_route_manager,Indimedi Drug Route,model_drug_route,hms.group_hms_manager,1,1,1,0
+access_hms_medication_dosage_manager,Indimedi Medication Dosage,model_medication_dosage,hms.group_hms_manager,1,1,1,0
+access_hms_manager_module_category,module category,base.model_ir_module_category,hms.group_hms_manager,1,1,1,1
+access_hms_medicament_group_line_manager,Medicament Group Line ,model_medicament_group_line,hms.group_hms_manager,1,1,1,0
+access_hms_medicament_group_manager,Indimedi Medicament Group,model_medicament_group,hms.group_hms_manager,1,1,1,0
+access_hms_hospital_department_manager,Indimedi Hospital Department,model_hospital_department,hms.group_hms_manager,1,1,1,0
+access_hms_hms_patient_insurance_manager,Indimedi Patient Insurance,model_hms_patient_insurance,hms.group_hms_manager,1,1,1,0
+access_hms_hms_patient_reg_product_manager,Indimedi Patient Reg Product,model_hms_patient_reg_product,hms.group_hms_manager,1,1,1,0
+access_hms_hms_patient_manager,Indimedi Patient,model_hms_patient,hms.group_hms_manager,1,1,1,0
+access_hms_hms_surgery_manager,Indimedi Surgery,model_hms_surgery,hms.group_hms_manager,1,1,1,0
+access_hms_res_users_manager,Res Users,base.model_res_users,hms.group_hms_manager,1,0,0,0
+access_hms_hms_dietplan_manager,Indimedi Dietplan,model_hms_dietplan,hms.group_hms_manager,1,1,1,0
+access_hms_res_partner_manager,Partner Manager,base.model_res_partner,hms.group_hms_manager,1,1,1,0
+access_hms_appointment_finding_manager,Indimedi Appointment Finding,model_hms_appointment_finding,hms.group_hms_manager,1,1,1,1
+access_opd_finding_manager,Finding,model_opd_finding,hms.group_hms_manager,1,1,1,1
+access_hms_appointment_chief_complain_line_manager,Indimedi Appointment Chief Complain Line,model_hms_appointment_chief_complain_line,hms.group_hms_manager,1,1,1,1
+access_hms_appointment_chief_complain_manager,Indimedi Appointment Chief Complain,model_hms_appointment_chief_complain,hms.group_hms_manager,1,1,1,1
+access_res_city_patient,Patient,model_res_city,hms.group_hms_user,1,1,0,0
+access_res_city_receptionist,Receptionist,model_res_city,hms.group_hms_receptionist,1,1,1,0
+access_res_city_doctor,Doctor,model_res_city,hms.group_hms_doctor,1,1,1,1
+access_res_city_nurse,nurse,model_res_city,hms.group_hms_nurse,1,0,0,0
+access_res_city_pharmacist,Pharcimst,model_res_city,hms.group_hms_pharmacist,1,0,0,0
+access_res_city_jr_doctor,jr doctror,model_res_city,hms.group_hms_jr_doctor,1,1,1,1
+access_res_city_manager,manager,model_res_city,hms.group_hms_manager,1,1,1,0
+access_hms_res_area_doctor,Res Area,model_res_area,hms.group_hms_doctor,1,1,1,0
+access_hms_res_area_nurse,Res Area,model_res_area,hms.group_hms_nurse,1,1,0,0
+access_hms_res_area_medical_officer,Res Area,model_res_area,hms.group_hms_medical_officer,1,1,0,0
+access_hms_res_area_jr_doctor,Res Area,model_res_area,hms.group_hms_jr_doctor,1,1,1,0
+access_hms_res_area_receptionist,Res Area,model_res_area,hms.group_hms_receptionist,1,1,1,0
+access_hms_res_area_jr_pharmacist,Res Area,model_res_area,hms.group_hms_pharmacist,1,0,0,0
+access_hms_res_area_manager,Res Area,model_res_area,hms.group_hms_manager,1,1,1,1
+access_hms_res_area_user,Res Area,model_res_area,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_service_type_doctor,service.type,model_service_type,hms.group_hms_doctor,1,1,1,1
+access_service_type_jr_doctor,service.type,model_service_type,hms.group_hms_jr_doctor,1,1,1,0
+access_service_type_mo,service.type,model_service_type,hms.group_hms_medical_officer,1,1,1,1
+access_service_type_receptionist,service.type,model_service_type,hms.group_hms_receptionist,1,1,1,0
+access_service_type_nurse,service.type,model_service_type,hms.group_hms_nurse,1,0,0,0
+access_service_type_pharmacist,service.type,model_service_type,hms.group_hms_pharmacist,1,1,1,1
+,,,,,,,
+access_hms_special_service_doctor,hms.special.service,model_hms_special_service,hms.group_hms_doctor,1,1,1,1
+access_hms_special_service_jr_doctor,hms.special.service,model_hms_special_service,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_special_service_mo,hms.special.service,model_hms_special_service,hms.group_hms_medical_officer,1,1,1,1
+access_hms_special_service_receptionist,hms.special.service,model_hms_special_service,hms.group_hms_receptionist,1,1,1,0
+access_hms_special_service_nurse,hms.special.service,model_hms_special_service,hms.group_hms_nurse,1,0,0,0
+access_hms_special_service_pharmacist,hms.special.service,model_hms_special_service,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_associated_diseases_doctor,associated.diseases,model_associated_diseases,hms.group_hms_doctor,1,1,1,1
+access_associated_diseases_jr_doctor,associated.diseases,model_associated_diseases,hms.group_hms_jr_doctor,1,1,1,1
+access_associated_diseases_mo,associated.diseases,model_associated_diseases,hms.group_hms_medical_officer,1,1,1,1
+access_associated_diseases_receptionist,associated.diseases,model_associated_diseases,hms.group_hms_receptionist,1,1,1,0
+access_associated_diseases_nurse,associated.diseases,model_associated_diseases,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_chief_complain_receptionist,chief.complain,model_chief_complain,hms.group_hms_receptionist,1,1,1,0
+access_chief_complain_doctor,chief.complain,model_chief_complain,hms.group_hms_doctor,1,1,1,1
+access_chief_complain_manager,chief.complain,model_chief_complain,hms.group_hms_manager,1,1,1,1
+access_chief_complain_jr_doctor,chief.complain,model_chief_complain,hms.group_hms_jr_doctor,1,1,1,1
+access_chief_complain_mo,chief.complain,model_chief_complain,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_bmi_records_receptionist,bmi.records,model_bmi_records,hms.group_hms_receptionist,1,1,1,0
+access_bmi_records_doctor,bmi.records,model_bmi_records,hms.group_hms_doctor,1,1,1,1
+access_bmi_records_manager,bmi.records,model_bmi_records,hms.group_hms_manager,1,1,1,1
+access_bmi_records_jr_doctor,bmi.records,model_bmi_records,hms.group_hms_jr_doctor,1,1,1,1
+access_bmi_records_mo,bmi.records,model_bmi_records,hms.group_hms_medical_officer,1,1,1,1

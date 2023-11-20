@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- <report id="report_hospitalization_payment"
+               string="Payment Receipt"
+               model="account.voucher" 
+               report_type="qweb-pdf"
+               file="hms_invoice.report_payment_receipt" 
+               name="hms_invoice.report_payment_receipt" 
+        /> -->
+
+        <!-- <report id="report_partial_payment"
+               string="Payment Receipt"
+               model="account.move" 
+               report_type="qweb-pdf"
+               file="hms_invoice.report_partial_payment_receipt"
+               name="hms_invoice.report_partial_payment_receipt"
+        /> -->
+
+        <!-- <report id="report_account_payment"
+               string="Payment Receipt"
+               model="account.payment" 
+               report_type="qweb-pdf"
+               file="hms_invoice.report_account_payment_receipt"
+               name="hms_invoice.report_account_payment_receipt_document"/> --> 
+    
+        <report id="report_invoice_receipt"
+               string="Payment Receipt"
+               model="account.payment" 
+               report_type="qweb-pdf"
+               file="hms_invoice.report_account_payment_receipt"
+               name="hms_invoice.report_account_payment_receipt"/>
+
+        <report id="report_initial_invoice_receipt"
+               string="Payment Receipt"
+               model="account.initial.payment" 
+               report_type="qweb-pdf"
+               file="hms_invoice.report_account_invoice_receipt"
+               name="hms_invoice.report_account_invoice_initial_receipt"/>
+                   
+         <!-- <report id="report_account_bill"
+               string="Hospital Bill"
+               model="account.invoice"
+               report_type="qweb-pdf"
+               file="hms_invoice.report_hospital_invoice"
+               name="hms_invoice.report_account_invoice_qweb"
+               menu="False"
+              /> --> 
+
+    </data>
+</openerp>

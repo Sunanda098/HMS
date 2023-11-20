@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+	<record id="view_hms_res_company_inherit" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref='base.view_company_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+		    <page name="report_terms" string="Report Terms">
+               <page name="blood_consent" string="Blood Consent"> 
+        			<group string="Consent for Blood - Blood Components Transfusion (English) Part 1">
+        			    <field name="terms_consent_blood1" widget="html" nolabel="1"/>
+        			</group>
+        			<group string="Consent for Blood - Blood Components Transfusion (English) Part 2">
+        			    <field name="terms_consent_blood2" widget="html" nolabel="1"/>
+        			</group>
+                    <group string="Consent for Blood - Blood Components Transfusion (Hindi) Part 1">
+                        <field name="terms_consent_blood1_hi" widget="html" nolabel="1"/>
+                    </group>
+                    <group string="Consent for Blood - Blood Components Transfusion (Hindi) Part 2">
+                        <field name="terms_consent_blood2_hi" widget="html" nolabel="1"/>
+                    </group>
+                    <group string="Consent for Blood - Blood Components Transfusion (Gujarati) Part 1">
+                        <field name="terms_consent_blood1_gj" widget="html" nolabel="1"/>
+                    </group>
+                    <group string="Consent for Blood - Blood Components Transfusion (Gujarati) Part 1">
+                        <field name="terms_consent_blood2_gj" widget="html" nolabel="1"/>
+                    </group>
+                </page>
+            <page name="admission_term" string="General Consent for Admission">
+			<group string="General Consent for Admission Terms (English)">
+			    <field name="terms_consent_admission_en" widget="html" nolabel="1"/>
+			</group>
+            <group string="General Consent for Admission Terms (Hindi)">
+                <field name="terms_consent_admission_hi" widget="html" nolabel="1"/>
+            </group>
+            <group string="General Consent for Admission Terms (Gujarati)">
+                <field name="terms_consent_admission_gj" widget="html" nolabel="1"/>
+            </group>
+        </page>
+            <page name="consent_form" string="General Consent Form">
+			<group string="Consent form in English">
+			    <field name="terms_consent_form" widget="html" nolabel="1"/>
+			</group>
+            <group string="Consent form in Hindi">
+                <field name="terms_consent_form_hi" widget="html" nolabel="1"/>
+            </group>
+            <group string="Consent form in Gujarati">
+                <field name="terms_consent_form_gj" widget="html" nolabel="1"/>
+            </group>
+		    </page>
+        </page>
+		</xpath>
+            </field>
+    </record>
+
+    
+    <!-- Consent Form -->
+    <record id="view_consent_form_tree" model="ir.ui.view">
+            <field name="name">consent.form.tree</field>
+            <field name="model">consent.form</field>
+            <field name="arch" type="xml">
+                <tree string="Consent form">
+                    <field name="name"/>
+                    <field name="patient_id" />
+                    <field name="inpatient_id" />
+                    <field name="consent_date"/>
+                    <field name="doctor_id" />
+                    <field name="nurse_id" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_consent_form_form" model="ir.ui.view">
+            <field name="name">consent.form.form</field>
+            <field name="model">consent.form</field>
+            <field name="arch" type="xml">
+                <form string="Consent form">
+                    <header>
+                        <button name="button_done" states="draft" string="Done" type="object" />
+                        <button name="button_cancel" states="draft" string="Cancel" type="object" />
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"
+                            statusbar_colors='{"draft":"blue","cancel":"red"}' />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1" />
+                            </h1>
+                        </div>
+                        <group colspan="2">
+                            <group>
+                                <field name="inpatient_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="patient_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="doctor_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="nurse_id" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="consent_date" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="language" invisible="0"/>
+                            </group>
+                            <group>
+                                <field name="relative_name" attrs="{'readonly': [('state','!=','draft')]}" />
+                                <field name="relation" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                <field name="relative_phone" attrs="{'readonly': [('state','!=','draft')]}" placeholder="+9199-XX-00"/>
+                                <label for="street" string="Address"/>
+                                        <div class="o_address_format">
+                                            <field name="relative_street" placeholder="Street..." class="o_address_street" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                            <field name="relative_street2" placeholder="Street 2..." class="o_address_street" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                            <field name="area_id" placeholder="Area" class="o_address_city"
+                                            style="width: 48%" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                            <field name="city_id" placeholder="City" class="o_address_city"
+                                            style="width: 48%" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                            <field name="relative_state" class="o_address_city" placeholder="State" style="width: 48%" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                            <field name="zip" placeholder="ZIP" class="o_address_city"
+                                            style="width: 48%" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                        </div>
+                            </group>
+                        </group>
+                     <field name="remark" nolabel="1" placeholder="Notes..." attrs="{'readonly': [('state','!=','draft')]}" />
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_consent_form_search" model="ir.ui.view">
+            <field name="name">consent.form.search</field>
+            <field name="model">consent.form</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Consent for Admission">
+                    <field name="patient_id" />
+                </search>
+            </field>
+        </record>
+        <record id="action_consent_form" model="ir.actions.act_window">
+            <field name="name">Consent form</field>
+            <field name="res_model">consent.form</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+    
+	
+	<record id="view_hms_inpatient_registration_blood_consent" model="ir.ui.view">
+            <field name="name">inpatient.registration.form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="inherit_id" ref='hms_hospitalization.view_inpatient_registration_form'/>
+            <field name="arch" type="xml">
+                <button name="action_view_invoice_hms" position="after">
+		    <button type="object" class="oe_stat_button oe_right" icon="fa-file-text-o" name="action_button_consent_form" groups="hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor,hms.group_hms_nurse">
+			<div>Consent Form</div>
+		    </button>
+                </button>
+            </field>
+        </record>
+	
+	<!-- Consent For Blood in Hospitalize reports menu-->
+	
+	    
+	<!-- Consent Form in Hospitalize reports menu-->
+	<menuitem id="action_menu_consent_form_report"
+            name="Consent Form" groups="hms.group_hms_receptionist" sequence="1"
+            action="action_consent_form" parent="hms_hospitalization.menu_hospitalization_report" />
+	    
+	    
+    </data>
+</openerp>
+
+

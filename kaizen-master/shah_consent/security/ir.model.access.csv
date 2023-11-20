@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shah_consent_user,Consent user,model_consent_form,hms.group_hms_user,1,0,0,0
+access_shah_consent_receptionist,Receptionist,model_consent_form,hms.group_hms_receptionist,1,1,1,0
+access_shah_consent_doctor,Doctor,model_consent_form,hms.group_hms_doctor,1,1,1,1
+access_shah_consent_nurse,Patient,model_consent_form,hms.group_hms_nurse,1,1,1,0
+access_shah_consent_jr_doctor,jr doctor,model_consent_form,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_consent_insurance,insurance,model_consent_form,hms_insurance.group_hms_insurance_officer,1,1,1,0
+access_shah_consent_medical_officer,mo,model_consent_form,hms.group_hms_medical_officer,1,1,1,0

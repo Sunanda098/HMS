@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_claim_res_user_form" model="ir.ui.view">
+            <field name="name">ir.attachment.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <field name="action_id" position="after">
+                    <field name="claim_reminder"/>
+                </field>
+            </field>
+        </record>
+         
+    <record id="view_inpatient_insu_tree" model="ir.ui.view">
+        <field name="name">view.inpatient.insu.tree</field>
+        <field name="model">inpatient.registration</field>
+        <field name="inherit_id" ref="hms_hospitalization.inpatient_registration_tree"/>
+        <field name="arch" type="xml">
+            <button name="action_estimate_report" position="attributes">
+            <attribute name="groups">hms_insurance.group_hms_insurance_officer</attribute>
+            </button>
+            <button name="action_zero_report" position="attributes">
+            <attribute name="groups">hms_insurance.group_hms_insurance_officer</attribute>
+            </button>
+            <button name="action_discharge_report" position="attributes">
+            <attribute name="groups">hms_insurance.group_hms_insurance_officer</attribute>
+            </button>
+            </field>
+        </record>
+
+        <record id="view_inpatient_insu_form" model="ir.ui.view">
+            <field name="name">view.inpatient.insu.form</field>
+            <field name="model">inpatient.registration</field>
+            <field name="inherit_id" ref="hms_hospitalization.view_inpatient_registration_form"/>
+            <field name="arch" type="xml">
+               <!--  <button name="action_create_invoice" position="replace">
+                    <button name="action_create_invoice" string="Create Invoice"
+                    class="oe_highlight" type="object" groups="hms_insurance.group_hms_insurance_officer" attrs="{'invisible': ['|' , '|' ,('cashless', '=', True),('state','!=','hosp'),('invoice_id','!=',False)]}"/>
+                </button> -->
+                <button name="action_view_invoice_hms" position="after">
+                    <button type="object" class="oe_stat_button oe_right" icon="fa-pencil-square-o" name="action_patient_doc_view" groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor">
+                        <div>Patient Doc</div>
+                    </button>
+                    <!-- <br/> -->
+                    <button type="object" class="oe_stat_button oe_right" icon="fa-pencil-square-o" name="action_claim_view" attrs="{'invisible': [('payment_category', '=', 'cash')]}"
+                         groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor">
+                        <div>Credit</div>
+                    </button>
+                    <!-- <br/> -->
+                    <button type="object" class="oe_stat_button oe_right" icon="fa-pencil-square-o" name="action_zero_error" groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor" invisible="1">
+                        <div>0-0 Error Form</div>
+                    </button>
+                </button>
+                <xpath expr="//field[@name='no_invoice']" position="after">
+                    <field name="cashless" invisible="1"/>
+                </xpath>
+                <page name="discharged" position="replace">
+                    <page string="Discharge" groups="hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor,hms.group_hms_nurse" name="discharged">
+                        <notebook>
+                            <page string="Discharge Summary" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer">
+                            <field name="done_summary" invisible="1"/>
+                            <button name="view_discharge_summary" type="object" string="View Discharge Summary" class="oe_highlight" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer"  style="margin:5px;"/> <span> </span>
+                             
+                            <button name="%(hms_hospitalization.report_hospitalization_discharge)d" type="action" string="Test Discharge Summary" class="oe_highlight" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer" attrs="{'invisible': [('done_summary', '=',True)]}" style="margin:5px;"/>
+
+                            <button name="done_discharge_summary" type="object" string="Done Discharge Summary" class="oe_highlight"  groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer" style="margin:5px;"/>
+
+                            <button name="%(hms_hospitalization.report_hospitalization_discharge)d" type="action" string="Final Discharge Summary" class="oe_highlight"  groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms_insurance.group_hms_insurance_officer" attrs="{'invisible': [('done_summary', '=',False)]}" style="margin:5px;"/>
+                            <br/>
+                                <label for="clinincal_history" />
+                                <field name="clinincal_history" colspan="2"></field>
+                                <label for="past_history" />
+                                <field name="past_history" colspan="4"></field>
+                                <label for="past_surgical_history" />
+                                <field name="past_surgical_history" colspan="4"></field>
+                                <label for="prov_mm_diagnosis"/>
+                                <field name="prov_mm_diagnosis" colspan="2" widget="many2many_tags"/>
+                                <field name="prov_mm_diagnosis_dummy" widget="many2many_tags" invisible="1"/>
+                                <label for="prov_diagnosis" />
+                                <field name="prov_diagnosis" colspan="2"></field>
+                                <label for="post_operative" />
+                                <field name="post_operative" colspan="2"></field>
+                                <label for="discharge_diagnosis" />
+                                <field name="discharge_diagnosis" colspan="2"></field>
+                                <label for="medication_diagnosis_ids" />
+                                <field name="medication_diagnosis_ids" widget="many2many_tags" string="Medication During Hospitalization"/>
+                                <group>
+                                    <field name="discharge_status" />
+                                    <field name="type_of_discharge" />
+                                </group>
+                                
+                                
+                               <!-- <label for="op_note" /> -->
+                               <field name="op_note" colspan="4" invisible="1"></field>
+                               <label for="followup_issue" />
+                               <field name="followup_issue" colspan="2"></field>
+                                
+<!--                                <label for="treatment_at_home" />-->
+<!--                                <field name="treatment_at_home" colspan="4"></field>-->
+                                <label for="instruction" />
+                                <field name="instruction" nolabel="1">
+                                    <tree string="Instruction" editable="bottom">
+                                       <field name="inst_id" context="{'instruction_group_id':parent.instruction_group_id}"/>
+                                    </tree>
+                                    <form string="Instruction" editable="bottom">
+                                        <group>
+                                            <field name="inst_id"/>
+                                            <field name="ipd_id"/>
+                                        </group>
+                                    </form>
+                                </field>
+                                <group>
+                                    <!-- <label for="hospitalization_injury"/> -->
+                                    <field name="hospitalization_injury" widget="radio" />
+                                    <!-- <label for="cause"/> -->
+                                    <field name="cause" widget="radio" attrs="{'invisible':[('hospitalization_injury','=','no')]}"/>
+                                    <!-- <label for="outside_injury"/> -->
+                                    <!-- <field name="outside_injury" widget="radio" string="If Injury 
+                                        due to Substance abuse /alcohol consumption,Test Conducted to this establish 
+                                        this"/> -->
+                                    <!-- <label for="medico_legal"/> -->
+                                    <field name="medico_legal" widget="radio" attrs="{'invisible':[('hospitalization_injury','=','no')]}"/>
+                                    <!-- <label for="reported_to_police"/> -->
+                                    <field name="reported_to_police" widget="radio" attrs="{'invisible':[('hospitalization_injury','=','no')]}"/>
+                                    <!-- <label for="fir_no"/> -->
+                                    <field name="fir_no" attrs="{'invisible':[('hospitalization_injury','=','no')]}"/>
+                                    <!-- <label for="fir_reason"/> -->
+                                    <field name="fir_reason" attrs="{'invisible':[('hospitalization_injury','=','no')]}"/>
+                                </group>
+                                <group>
+                                    <field name="outside_injury" widget="radio"
+                                        string="If Injury due to Substance abuse /alcohol consumption,Test Conducted to this establish this" attrs="{'invisible':[('hospitalization_injury','=','no')]}"/>
+                                </group>
+
+                                <!-- <label for="examination_id"/> <field name="examination_id" colspan="4"></field> 
+                                    <label for="investigation_id"/> <field name="investigation_id" colspan="4"></field> 
+                                    <label for="adv_on_dis"/> <field name="adv_on_dis" colspan="4"/> -->
+                            </page>
+                            <page name="checklist" string="Checklist">
+                                <saprator string="Checklist"/>
+                                <field name="claim_checklist_ids" nolabel="1" groups="hms.group_hms_doctor,hms.group_hms_medical_officer,hms.group_hms_nurse,hms_insurance.group_hms_insurance_officer">
+                                    <tree editable="top">
+                                        <field name="name" readonly="1"/>
+                                        <field name="is_done" />
+                                        <field name="remark" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </page>
+                </page>
+            </field>
+        </record>
+        <record id="view_attachment_tree" model="ir.ui.view">
+            <field name="name">ir.attachment.form</field>
+            <field name="model">ir.attachment</field>
+            <field name="inherit_id" ref="base.view_attachment_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="patient_id"/>
+                    <field name="hosp_id"/>
+                    <field name="req_doc_id"/>
+                </field>
+                <field name="res_model" position="replace"/>
+                <field name="res_field" position="replace"/>
+                <field name="res_id" position="replace"/>
+                <field name="type" position="replace"/>
+                <field name="company_id" position="replace"/>
+                <field name="create_uid" position="replace"/>
+                <field name="create_date" position="replace"/>
+            </field>
+        </record>
+        <record id="view_attachment_form" model="ir.ui.view">
+            <field name="name">ir.attachment.form</field>
+            <field name="model">ir.attachment</field>
+            <field name="inherit_id" ref="base.view_attachment_form"/>
+            <field name="arch" type="xml">
+                <field name="datas" position="after">
+                    <field name="patient_id"/>
+                    <field name="hosp_id"/>
+                    <field name="req_doc_id"/>
+                </field>
+            </field>
+        </record>
+        <record id="product_patient_doc_action" model="ir.actions.act_window">
+            <field name="name">Documents</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ir.attachment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('res_model', 'in', ['hms.patient', 'indimedi.inpatient','inpatient.registration', 'hms.appointment'])]</field>
+        </record>
+        <menuitem id="menu_action_patient_doc" name="Patient Documents"
+            parent="hms.menu_hms" sequence="1" action="product_patient_doc_action"/>
+        <record id="view_partner_hospital_tree" model="ir.ui.view">
+            <field name="name">partner.hospital.form</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Partners">
+                    <field name="display_name"/>
+                    <field name="function" invisible="1"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="is_company" invisible="1"/>
+                    <field name="country_id" invisible="1"/>
+                    <field name="parent_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_partner_hospital_form" model="ir.ui.view">
+            <field name="name">partner.hospital.form</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Partners">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" groups="base.group_no_one" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                    </div>
+                    <field name="image" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+                    <div class="oe_title">
+                        <field name="is_company" invisible="1"/>
+                        <field name="company_type" widget="radio" class="oe_edit_only" on_change="on_change_company_type(company_type)" options="{'horizontal': true}"/>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                        </h1>
+                        <div class="o_row">
+                            <field name="parent_id" placeholder="Company" domain="[('is_company', '=', True)]" context="{'default_is_company': True, 'default_supplier': supplier, 'default_customer': customer}" attrs="{'invisible': [('is_company','=', True),('parent_id', '=', False)]}" on_change="onchange_parent_id(parent_id)"/>
+                        </div>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="supplier" invisible="1"/>
+                            <field name="customer" invisible="1"/>
+                            <field name="type" attrs="{'invisible': [('parent_id','=', False)]}" groups="base.group_no_one"/>
+                            <label for="street" string="Address"/>
+                            <div class="o_address_format">
+                                <div class="oe_edit_only">
+                                    <button name="open_parent" type="object" string="(edit)" class="oe_link" attrs="{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}"/>
+                                </div>
+                                
+                                <field name="street" placeholder="Street..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="street2" placeholder="Street 2..." class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="city" placeholder="City" class="o_address_city" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="state_id" class="o_address_state" placeholder="State" options="{&quot;no_open&quot;: True}" on_change="onchange_state(state_id)" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                            </div>
+                            <field name="website" widget="url" placeholder="e.g. www.odoo.com"/>
+                        </group>
+                        <group>
+                            <field name="function" placeholder="e.g. Sales Director" attrs="{'invisible': [('is_company','=', True)]}"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="mobile" widget="phone"/>
+                            <field name="fax"/>
+                            <field name="user_ids" invisible="1"/>
+                            <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
+                            <field name="title" options="{&quot;no_open&quot;: True}" attrs="{'invisible': [('is_company', '=', True)]}"/>
+                            <field name="lang"/>
+                            <field name="category_id" widget="many2many_tags" placeholder="Tags..."/>
+                        </group>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Contacts &amp; Addresses" autofocus="autofocus">
+                            <field name="child_ids" mode="kanban" context="{'default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_supplier': supplier, 'default_customer': customer, 'default_lang': lang,}">
+                                <kanban>
+                                    <field name="color"/>
+                                    <field name="name"/>
+                                    <field name="title"/>
+                                    <field name="type"/>
+                                    <field name="email"/>
+                                    <field name="parent_id"/>
+                                    <field name="is_company"/>
+                                    <field name="function"/>
+                                    <field name="phone"/>
+                                    <field name="street"/>
+                                    <field name="street2"/>
+                                    <field name="zip"/>
+                                    <field name="city"/>
+                                    <field name="country_id"/>
+                                    <field name="mobile"/>
+                                    <field name="fax"/>
+                                    <field name="state_id"/>
+                                    <field name="image"/>
+                                    <field name="lang"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                            <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">
+                                                <a t-if="!read_only_mode" type="delete" class="fa fa-times pull-right"/>
+                                                <div class="o_kanban_image">
+                                                    <img t-if="record.image.raw_value" t-att-src="'data:image/png;base64,'+record.image.raw_value"/>
+                                                    <t t-if="!record.image.raw_value">
+                                                        <img t-if="record.type.raw_value === 'delivery'" t-att-src="_s + &quot;/base/static/src/img/truck.png&quot;"/>
+                                                        <img t-if="record.type.raw_value === 'invoice'" t-att-src="_s + &quot;/base/static/src/img/money.png&quot;"/>
+                                                        <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">
+                                                            <img t-if="record.is_company.raw_value === true" t-att-src="_s + &quot;/base/static/src/img/company_image.png&quot;"/>
+                                                            <img t-if="record.is_company.raw_value === false" t-att-src="_s + &quot;/base/static/src/img/avatar.png&quot;"/>
+                                                        </t>
+                                                    </t>
+                                                </div>
+                                                <div class="oe_kanban_details">
+                                                    <field name="name"/>
+                                                    <div t-if="record.function.raw_value"><field name="function"/></div>
+                                                    <div t-if="record.email.raw_value"><field name="email"/></div>
+                                                    <div t-if="record.type.raw_value != 'contact'">
+                                                        <div>
+                                                            <field name="zip"/>
+                                                            <field name="city"/>
+                                                        </div>
+                                                        <field t-if="record.state_id.raw_value" name="state_id"/>
+                                                        <field name="country_id"/>
+                                                    </div>
+                                                    <div t-if="record.phone.raw_value">Phone: <field name="phone"/></div>
+                                                    <div t-if="record.mobile.raw_value">Mobile: <field name="mobile"/></div>
+                                                    <div t-if="record.fax.raw_value">Fax: <field name="fax"/></div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form string="Contact / Address">
+                                    <sheet>
+                                        <field name="type" required="1" widget="radio" options="{'horizontal': true}"/>
+                                        <hr/>
+                                        <group>
+                                            <group attrs="{'invisible': [('type','=', 'contact')]}">
+                                                <label for="street" string="Address"/>
+                                                <div>
+                                                    <div class="o_address_format" name="div_address">
+                                                        <field name="street" placeholder="Street..." class="o_address_street"/>
+                                                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                                        <field name="city" placeholder="City" class="o_address_city"/>
+                                                        <field name="state_id" class="o_address_state" placeholder="State" options="{&quot;no_open&quot;: True}" on_change="onchange_state(state_id)" context="{'country_id': country_id, 'zip': zip}"/>
+                                                        <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                                        <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                                    </div>
+                                                </div>
+                                            </group>
+                                            <group>
+                                                <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>
+                                                <field name="title" placeholder="e.g. Mr." attrs="{'invisible': [('type','&lt;&gt;', 'contact')]}"/>
+                                                <field name="function" placeholder="e.g. Sales Director" attrs="{'invisible': [('type','&lt;&gt;', 'contact')]}"/>
+                                                <field name="email"/>
+                                                <field name="phone" widget="phone"/>
+                                                <field name="mobile" widget="phone"/>
+                                                <field name="comment" placeholder="internal note..."/>
+                                            </group>
+                                        </group>
+                                        <field name="supplier" invisible="True"/>
+                                        <field name="customer" invisible="True"/>
+                                        <field name="lang" invisible="True"/>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_partner_tpa_form" model="ir.actions.act_window">
+            <field name="name">TPA</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"form_view_ref": "hms_insurance.view_partner_hospital_form", "default_hospital_partner_type": 'tpa'}</field>
+            <field name="domain">[('hospital_partner_type', '=', 'tpa')]</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="view_id" ref="hms_insurance.view_partner_hospital_tree"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a TPA.
+              </p>
+            </field>
+        </record>
+
+        <record id="action_partner_insurance_form" model="ir.actions.act_window">
+            <field name="name">Insurance Company</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"form_view_ref": "hms_insurance.view_partner_hospital_form", "default_hospital_partner_type": 'insurance'}</field>
+            <field name="domain">[('hospital_partner_type', '=', 'insurance')]</field>
+            <field name="search_view_id" ref="base.view_res_partner_filter"/>
+            <field name="view_id" ref="hms_insurance.view_partner_hospital_tree"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a Insurance Company.
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_insurance_config" name="Insurance Company"
+            parent="hms.menu_hms_cofig" sequence="3" />
+
+        <menuitem id="menu_action_tpa" name="TPA"
+            parent="menu_insurance_config" sequence="0" action="action_partner_tpa_form"/>
+
+        <menuitem id="menu_action_company"
+            parent="menu_insurance_config" sequence="0" action="action_partner_insurance_form"/>
+
+        <record id="view_product_simple_tree" model="ir.ui.view">
+            <field name="name">product.simple.tree</field>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+                <tree string="Product">
+                    <field name="name"/>
+                    <field name="content_ids" string="Generic"/>
+                    <field name="lst_price" class="oe_list_field_cell oe_list_field_char oe_required" string="Charges"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_template_package_action" model="ir.actions.act_window">
+            <field name="name">Packages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_product_simple_tree"/>
+            <field name="context">{'default_hospital_product_type': 'package', 'default_type': 'service'}</field>
+            <field name="domain">[('hospital_product_type', '=', 'package')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p><p>
+                    You must define a product for everything you sell, whether it's a physical product, a consumable or a service you offer to  customers.               
+                </p><p>
+                    The product form contains information to simplify the sale process: price, notes in the quotation, accounting data, procurement methods, etc.
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_action_package" name="Packages"
+            parent="menu_insurance_config" sequence="1" action="product_template_package_action"/>
+
+        <record id="product_template_charges_action" model="ir.actions.act_window">
+            <field name="name">Charges</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="view_product_simple_tree"/>
+            <field name="context">{'default_hospital_product_type': 'charge', 'default_type': 'service'}</field>
+            <field name="domain">[('hospital_product_type', '=', 'charge')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to define a new product.
+                </p><p>
+                    You must define a product for everything you sell, whether it's a physical product, a consumable or a service you offer to  customers.               
+                </p><p>
+                    The product form contains information to simplify the sale process: price, notes in the quotation, accounting data, procurement methods, etc.
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_action_charges" name="Charges"
+            parent="menu_insurance_config" sequence="1" action="product_template_charges_action"/>
+
+        <record id="view_mediclaim_tree" model="ir.ui.view">
+            <field name="name">indiemdi.insurance.mediclaim.tree</field>
+            <field name="model">hms.insurance.mediclaim</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_mediclaim_form" model="ir.ui.view">
+            <field name="name">hms.insurance.mediclaim.form</field>
+            <field name="model">hms.insurance.mediclaim</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_mediclaim_tree" model="ir.actions.act_window">
+            <field name="name">Mediclaim</field>
+            <field name="res_model">hms.insurance.mediclaim</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+        <menuitem id="menu_action_mediclaim"
+            parent="menu_insurance_config" sequence="0" action="action_mediclaim_tree"/>
+        
+        <record id="view_checklist_tree" model="ir.ui.view">
+            <field name="name">indiemdi.insurance.checklist.tree</field>
+            <field name="model">hms.insurance.checklist</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_checklist_form" model="ir.ui.view">
+            <field name="name">hms.insurance.checklist.form</field>
+            <field name="model">hms.insurance.checklist</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_checklist_tree" model="ir.actions.act_window">
+            <field name="name">Checklist</field>
+            <field name="res_model">hms.insurance.checklist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+        <menuitem id="menu_action_checklist"
+            parent="menu_insurance_config" sequence="0" action="action_checklist_tree"/>
+
+        <record id="view_mediclaim_doc_type_tree" model="ir.ui.view">
+            <field name="name">indiemdi.insurance.mediclaim.doc.type.tree</field>
+            <field name="model">hms.insurance.req.doc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_mediclaim_doc_type_form" model="ir.ui.view">
+            <field name="name">hms.insurance.req.doc.form</field>
+            <field name="model">hms.insurance.req.doc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_mediclaim_doc_type" model="ir.actions.act_window">
+            <field name="name">Req Documents</field>
+            <field name="res_model">hms.insurance.req.doc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    
+        <menuitem id="menu_action_mediclaim_doc_type"
+            parent="menu_insurance_config" sequence="0" action="action_mediclaim_doc_type"/>
+
+        <record id="view_zero_error_tree" model="ir.ui.view">
+            <field name="name">indiemdi.insurance.zero_error.tree</field>
+            <field name="model">hms.insurance.zero_error</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="hosp_id"/>
+                    <field name="patient_id"/>
+                    <field name="date_zero_error"/>
+                    <field name="left_right"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_zero_error_form" model="ir.ui.view">
+            <field name="name">hms.insurance.zero_error.form</field>
+            <field name="model">hms.insurance.zero_error</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="patient_id"/>
+                                <field name="hosp_id"/>
+                            </group>
+                            <group>
+                                <field name="date_zero_error"/>
+                                <field name="left_right"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Reports">
+                                <br/>
+                                <field name="image_one" widget='image'/>
+                                <group>
+                                    <group>
+                                        <field name="image_two" widget='image' nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="image_three" widget='image' nolabel="1"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="image_four" widget='image' nolabel="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="image_five" widget='image' nolabel="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                        <!-- <label for="image_ids"/>
+                        <field name="image_ids">
+                            <tree editable="bottom">
+                                <field name="report_image"/>
+                            </tree>
+                        </field> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_zero_error" model="ir.actions.act_window">
+            <field name="name">0-0 Error Form</field>
+            <field name="res_model">hms.insurance.zero_error</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_insurance" name="Insurance"
+            parent="hms.menu_hms" sequence="3" />
+
+        <menuitem id="menu_action_zero_error"
+            parent="menu_insurance" sequence="0" action="action_zero_error"/>
+
+
+        
+        <record id="view_claim_tree" model="ir.ui.view">
+            <field name="name">indiemdi.insurance.claim.tree</field>
+            <field name="model">hms.insurance.claim</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="claim_number" string="Claim No."/>
+                    <field name="hosp_id" string="Hosp.Id"/>
+                    <field name="patient_id" string="Patient"/>
+                    <field name="policy_number" string="Policy No."/>
+                    <field name="insurance_company_id" string="Insurance Co."/>
+                    <field name="tpa_id" string="TPA"/>
+                    <field name="created_date" string="Created on Date"/>
+                    <field name="amount_requested" string="Total Claim Amount"/>
+                    <field name="amount_pass" string="Passed Amount"/>
+                    <field name="amount_difference" string="Difference Amount"/>
+                    <field name="date_received" string="Amount Received Date"/>
+                    <field name="state" string="Claim status"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_mediclaim_form" model="ir.ui.view">
+            <field name="name">hms.insurance.claim.form</field>
+            <field name="model">hms.insurance.claim</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_create_invoice" type="object" string="Create Invoice" groups="hms_insurance.group_hms_insurance_officer" attrs="{'invisible': [('invoice_id', '!=', False)]}"/>
+                        <!-- <button name="action_done" type="object" string="Done" states="active" groups="hms_insurance.group_hms_insurance_officer"/> -->
+                        <field name="state" widget="statusbar" clickable="True"/>
+                    </header>
+                    <sheet>
+                        <button name="action_view_invoice" type="object" class="oe_stat_button oe_right" attrs="{'invisible': [('invoice_id', '=', False)]}" groups="hms_insurance.group_hms_insurance_officer,hms.group_hms_doctor" icon="fa-pencil-square-o"><div>view Invoice</div></button>
+                        <group>
+                            <group>
+                                <field name="invoice_id" invisible="1"/>
+                                <field name="claim_number"/>
+                                <field name="sub_type" />
+                                <field name="insurance_company_id"/>
+                                <field name="policy_number"/>
+                                <field name="tpa_id"/>
+                                <field name="amount_requested"/>
+                                <field name="amount_pass"/>
+                                <field name="amount_difference"/>
+                                <field name="date_received"/>
+                                <field name="amount_received"/>
+                                <field name="amount_tds"/>
+                                <field name="amount_total"/>
+                            </group>
+                            <group>
+                                <field name="patient_id"/>
+                                <field name="hosp_id"/>
+                                <field name="req_document_ids" widget="many2many_tags"/>
+                                <field name="question" string="If any Query"/>
+                                <field name="answer"/>
+                                <field name="created_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_claim_search" model="ir.ui.view">
+             <field name="name">hms.insurance.claim.search</field>
+             <field name="model">hms.insurance.claim</field>
+             <field name="priority" eval="1" />
+             <field name="arch" type="xml">
+                 <search string="Patient">
+                    <filter name="pending" string="Pending" domain="[('state','=','active')]"/>
+                    <separator />
+                    <filter name="last_90d" string="Last 90d" domain="[('state', '=', 'active'), ('created_date','&lt;=', (context_today() - datetime.timedelta(days=90)).strftime('%%Y-%%m-%%d') )]"/>
+                    <!-- <separator /> -->
+                    <field name="patient_id" />
+                    <field name="hosp_id" />                    
+                    <group expand="0" string="Group By...">
+                        <filter string="Date" domain="[]" context="{'group_by':'created_date'}" />
+                    </group>
+                 </search>
+             </field>
+         </record>
+        <record id="action_claim_tree" model="ir.actions.act_window">
+            <field name="name">Claim</field>
+            <field name="res_model">hms.insurance.claim</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+
+            <field name="context">{'search_default_last_90d':1,'search_default_pending': 1}</field>
+        </record>
+
+        <menuitem id="menu_action_claim"
+            parent="menu_insurance" sequence="0" action="action_claim_tree"/>
+
+        <menuitem id="hms.action_main_menu_patient" name="Patient" action="hms.action_patient" groups="hms.group_hms_doctor,hms.group_hms_receptionist,hms.group_hms_pharmacist,group_hms_insurance_officer" sequence="3"/>
+
+        <menuitem id="hms_hospitalization.main_menu_hospitalization" name="Hospitalization"  groups="hms.group_hms_doctor,hms.group_hms_receptionist,hms.group_hms_nurse,hms.group_hms_pharmacist,hms.group_hms_medical_officer,group_hms_insurance_officer" sequence="7"/>
+
+        <menuitem id="hms_hospitalization.action_main_menu_hospitalization" name="Hospitalization"
+            action="hms_hospitalization.indimedi_action_form_inpatient" parent="hms_hospitalization.menu_hospitalization" groups="hms.group_hms_doctor,hms.group_hms_receptionist,hms.group_hms_nurse,hms.group_hms_pharmacist,hms.group_hms_medical_officer,group_hms_insurance_officer" sequence="1"/>
+
+        <menuitem id="menu_action_patient_doc_hosp" name="Patient Documents"
+            parent="hms_hospitalization.main_menu_hospitalization" groups="group_hms_insurance_officer" action="product_patient_doc_action"
+            sequence="15"/>
+
+        <menuitem id="hms_operation_theatre.menu_ot_booking" name="OT Booking" action="hms_operation_theatre.action_ot_booking" groups="hms.group_hms_jr_doctor,group_hms_insurance_officer" parent="hms_hospitalization.menu_hospitalization" sequence="2" />
+
+
+        <menuitem id="menu_insurance_hospitalization" name="Insurance"
+            parent="hms_hospitalization.main_menu_hospitalization" groups="group_hms_insurance_officer" sequence="20"/>
+
+        <menuitem id="menu_action_zero_error_hospitalization"
+            parent="menu_insurance_hospitalization" sequence="0" action="action_zero_error" groups="group_hms_insurance_officer"/>
+
+        <menuitem id="menu_action_claim_hospitalization"
+            parent="menu_insurance_hospitalization" sequence="1" action="action_claim_tree" groups="group_hms_insurance_officer"/>
+        <!--menu configuation-->
+        <menuitem id="menu_configuration_insurance_hospitalization"
+            name="Configuration"
+            parent="hms_hospitalization.main_menu_hospitalization" groups="group_hms_insurance_officer" sequence="25"/>
+
+
+        <menuitem id="menu_configuration_insurance_co_hospitalization"
+            name="Insurance Company"
+            parent="menu_configuration_insurance_hospitalization" groups="group_hms_insurance_officer"/>
+
+        <menuitem id="menu_insurance_config_hosp" name="Insurance Company"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="3" groups="group_hms_insurance_officer"/>
+
+        <menuitem id="menu_action_tpa_hsp" name="TPA"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="0" action="action_partner_tpa_form" groups="group_hms_insurance_officer"/>
+
+        <menuitem id="menu_action_company_hosp"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="0" action="action_partner_insurance_form" groups="group_hms_insurance_officer"/>
+
+        <menuitem id="menu_action_package_hosp" name="Packages"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="1" action="product_template_package_action" groups="group_hms_insurance_officer"/>   
+            
+        <menuitem id="menu_action_charges_hosp" name="Charges"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="1" action="product_template_charges_action" groups="group_hms_insurance_officer"/>   
+
+        <menuitem id="menu_action_mediclaim_hosp"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="0" action="action_mediclaim_tree" groups="group_hms_insurance_officer"/> 
+
+        <menuitem id="menu_action_checklist_hosp"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="0" action="action_checklist_tree" groups="group_hms_insurance_officer"/>
+
+          <menuitem id="menu_action_mediclaim_doc_type_hosp"
+            parent="menu_configuration_insurance_co_hospitalization" sequence="0" action="action_mediclaim_doc_type" groups="group_hms_insurance_officer"/>
+            <menuitem id="menuitem_action_instruction_group" name="Instruction Group"
+            parent="menu_configuration_insurance_hospitalization" sequence="4" action="hms_hospitalization.action_instruction_group" groups="hms.group_hms_doctor"/>
+
+            <menuitem id="menuitem_action_instruction_group_line" name="Instruction" parent="menu_configuration_insurance_hospitalization" sequence="5" action="hms_hospitalization.action_hms_instruction" groups="hms.group_hms_doctor"/>
+
+            <record id="invoice_form_insurance" model="ir.ui.view">
+                <field name="name">account.invoice.form</field>
+                <field name="model">account.invoice</field>
+                <field name="inherit_id" ref="account.invoice_form"/>
+                    <field name="arch" type="xml">
+                        <button name="%(account.action_account_invoice_payment)d" position="attributes">
+                            <attribute name="groups">account.group_account_invoice,hms_insurance.group_hms_insurance_officer</attribute>
+                        </button>
+                        <field name="payment_term_id" position="after">
+                            <field name="claim_amount"/>
+                        </field>
+                </field>
+            </record>
+	    
+    </data>
+</openerp>

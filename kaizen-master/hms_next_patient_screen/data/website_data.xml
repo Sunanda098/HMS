@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="action_next_patient" model="ir.actions.act_url">
+            <field name="name">Website Next Patient Screen</field>
+            <field name="url">/next_patient</field>
+            <field name="target">self</field>
+        </record>
+        <record id="menu_website" model="ir.ui.menu">
+            <field name="name">Next Patient Screen</field>
+            <field name="sequence" eval="17"/>
+            <field name="groups_id"
+                eval="[(4, ref('hms.group_hms_receptionist'))]" />
+            <field name="action" ref="action_next_patient"/>
+        </record>
+    </data>
+</openerp>

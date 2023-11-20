@@ -1,0 +1,23 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Data for OPD Phy hand Note -->
+        <record id="shah_hip_note_1" model="shah.hip.note.template">
+            <field name="val_name">Flexion-120° :</field>
+        </record>
+        <record id="shah_hip_note_2" model="shah.hip.note.template">
+            <field name="val_name">Extension-10°</field>
+        </record>
+        <record id="shah_hip_note_3" model="shah.hip.note.template">
+            <field name="val_name">Abduction-40°</field>
+        </record>
+        <record id="shah_hip_note_4" model="shah.hip.note.template">
+            <field name="val_name">Adduction-30°</field>
+        </record>
+        <record id="shah_hip_note_5" model="shah.hip.note.template">
+            <field name="val_name">External Rotation-50°</field>
+        </record>
+        <record id="shah_hip_note_6" model="shah.hip.note.template">
+            <field name="val_name">Internal Rotation-40°</field>
+        </record>     
+    </data>
+</openerp>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+
+		<record id="seq_for_receipt_outside" model="ir.sequence">
+            <field name="name">Outside Surgery Receipt</field>
+            <field name="code">receipt.outside</field>
+            <field name="padding">5</field>
+        </record>
+
+    </data>
+</openerp>

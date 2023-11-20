@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!--menuitem id="health_center" name="Health Center" parent="hms.menu_hms_cofig" sequence="1" />
+        <menuitem id="hospitalization_menu" name="Hospitalization" sequence="3" />
+        <menuitem name="Hospitalization" id="indimedi_inpatient_menu" parent="hms.menu_hms" sequence="2" /-->
+        <!--<menuitem id="hos_bed" name="Hospital Beds" parent="health_center" action="hospital_bed.act_open_hospital_bed_view"/>  -->
+        <menuitem action="open_view_medical_procedure_list" id="menu_medical_procedure" parent="hms_hospitalization.indimedi_inpatient_menu" sequence="3"/> 
+        <menuitem  id="menu_medical_procedure_type" action="open_medical_procedure_type_list" sequence="20" parent="hms.menu_hms_cofig"/> 
+    </data>
+</openerp>

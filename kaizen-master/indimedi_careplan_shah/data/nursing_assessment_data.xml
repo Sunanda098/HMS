@@ -1,0 +1,71 @@
+<openerp>
+    <data noupdate="1">
+
+    	<record id="nusring_past_history_1" model="nusring.past.history">
+            <field name="name">Hypertension</field>
+        </record>
+
+        <record id="nusring_past_history_2" model="nusring.past.history">
+            <field name="name">Heart Disease</field>
+        </record>
+
+        <record id="nusring_past_history_3" model="nusring.past.history">
+            <field name="name">Diabetes</field>
+        </record>
+
+        <record id="nusring_past_history_4" model="nusring.past.history">
+            <field name="name">Dyslipidemia</field>
+        </record>
+
+        <record id="nusring_past_history_5" model="nusring.past.history">
+            <field name="name">Asthma</field>
+        </record>
+
+        <record id="nusring_past_history_6" model="nusring.past.history">
+            <field name="name">Stroke</field>
+        </record>
+
+        <record id="nusring_past_history_8" model="nusring.past.history">
+            <field name="name">Cancer</field>
+        </record>
+
+
+        <record id="nusring_past_history_7" model="nusring.past.history">
+            <field name="name">Other Chronic Disease</field>
+        </record>
+
+
+        <record id="nusring_family_history_1" model="nusring.family.history">
+            <field name="name">Hypertension</field>
+        </record>
+
+        <record id="nusring_family_history_2" model="nusring.family.history">
+            <field name="name">Heart Disease</field>
+        </record>
+
+        <record id="nusring_family_history_3" model="nusring.family.history">
+            <field name="name">Diabetes</field>
+        </record>
+
+        <record id="nusring_family_history_4" model="nusring.family.history">
+            <field name="name">Dyslipidemia</field>
+        </record>
+
+        <record id="nusring_family_history_5" model="nusring.family.history">
+            <field name="name">Asthma</field>
+        </record>
+
+        <record id="nusring_familt_history_6" model="nusring.family.history">
+            <field name="name">Stroke</field>
+        </record>
+
+        <record id="nusring_familt_history_8" model="nusring.family.history">
+            <field name="name">Cancer</field>
+        </record>
+
+        <record id="nusring_familt_history_7" model="nusring.family.history">
+            <field name="name">Other Chronic Disease</field>
+        </record>
+
+    </data>
+</openerp>

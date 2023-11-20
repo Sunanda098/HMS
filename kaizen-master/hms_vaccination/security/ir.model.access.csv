@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vaacination_group_line,vaacination group line,model_vaccination_group_line,hms.group_hms_receptionist,1,1,1,0
+action_vaacination_group,vaacination group ,model_vaccination_group,hms.group_hms_receptionist,1,1,1,0
+action_product_template,Product Template,model_product_template,hms.group_hms_receptionist,1,1,1,0
+action_vaccination_vaccination,vaacination vaccination,model_vaccination_vaccination,hms.group_hms_receptionist,1,1,1,0
+

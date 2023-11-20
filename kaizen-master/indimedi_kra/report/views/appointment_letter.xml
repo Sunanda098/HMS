@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="report.style" name="style">
+            <style type="text/css">
+                body {
+                color: #000 !important;
+                }
+                .table table-condensed {
+                border-top: 1px solid black !important;
+                }
+
+             </style>
+          </template> 
+
+        <template id="appointment_letter_report_temp">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div>
+                            <table style="width:100%;" >
+                                <tbody>
+                                    <tr>
+                                        <td align="right">
+                                            <span>KH/HRD/AP/<t t-esc="o.employee_code"/></span>
+                                        </td> 
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="text-decoration:underline;adding-top:15;">
+                                            <strong>APPOINTMENT LETTER
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td> 
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <p>
+                                <span>Date: <t t-esc="o.date_joining"/></span>
+                            </p>
+                        
+                            <p>
+                                <span>Name: <t t-esc="o.full_name"/>
+                                </span>
+                            </p>
+                            <p>
+                                <span>Address: <t t-esc="o.street"/>,<t t-esc="o.street2"/>,<t t-esc="o.city"/>,<t t-esc="o.state_id.name"/>,<t t-esc="o.zip"/>,<t t-esc="o.country_id.name"/></span>
+                            </p>
+                            <p>
+                                <span>------------------------------------------------------------------------------------------------------------------------------------------------------
+                                </span>
+                            </p>
+                        </div>
+                                    
+                        <div class="row" >
+                            <p style="padding-top:3px;"><span>Dear <t t-esc="o.full_name"/></span></p>
+                        
+                            <p style="padding-top:3px;"><span>Welcome to KAIZEN family.</span></p>
+                            <p style="padding-top:3px;"><span>We are pleased to appoint you as the <t t-esc="o.job_id.name"/>, with effect from <t t-esc="o.date_joining"/> on the following terms and conditions.</span></p>
+                        
+                            <p style="padding-top:3px;"><span>Salary Structure:</span></p>
+                            <p style="padding-top:3px;"><span>Your salary will be Rs.
+                            <t t-foreach="o.contract_ids" t-as="a"> 
+                                <t t-if="a.state == 'open'">
+                                    <t t-esc="a.wage"/>
+
+                                </t>
+                            </t>/- per month including all benefits (CTC).</span></p>
+                        </div>
+                        
+                        <div class="row" >
+                            <h4 ><strong> Other terms &amp; conditions:</strong></h4>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>1. Your working hours will on 9:30 AM to 6:00 PM.</span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>2. Payment of all above remuneration will be subject to policies, rules and regulations of the hospital, as applicable from time to time.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>3. Your remuneration will be confidential between you and the hospital and you are obliged to maintain absolute secrecy of the terms and conditions of your employment.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>4. You will abide by any instruction, rules and orders issued by the management from time to time. Your appointment and continuations in service is subject to satisfactory verification of our credentials.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>5. You will be on probation for a period of 3 months from the date of your appointment which if deemed necessary may be extended. During the period of probation either side will be entitled to terminate the employment relationship without assigning any reasons and without giving notice period. On successful completion of your probation period, you shall be eligible for confirmation in the services of hospital and same shall be communicated in writing to you.  In case you do not receive this written communication, your status shall remain that of a probationer. After confirmation your employment is liable to be terminated by giving 1 month notice on either side. In case you leave our employment without giving notice, we shall have the right to deduct an amount equivalent to the notice period of one months  gross salary from any amount that may be payable to you, besides taking action for breach of contract. 
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>6. If not already proficient, you shall strive to achieve proficiency in the use of computers within the first 3 months of the commencement of your employment with the hospital to the level decided as necessary by the hospital. The hospital will offer training, assistance and guidance as deemed necessary to enable you acquire this proficiency and you shall make all effort on your part. On testing after 3 months of services, if your level of computer proficiency is found to be lower than the norm then the hospital shall have the right to take any action as deemed appropriate, including discontinuance of services.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>7. You shall devote your whole time and attention to your employment with the hospital and shall discharge your duties such that you undertake not to engage yourself directly or indirectly with or without remuneration in any other employment, service or calling of any nature whatsoever without written permission from the hospital.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>8. If you or your dependant family members currently and during the tenure of employment have a financial/gainful interest in any business with Kaizen Hospital, then it would be obligatory on your part to make written declaration to this effect to the management. In future, if you or your dependent family members enter in to any such business, the same may be informed immediately to the hospital.
+
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>9. If at any time you shall , by your conduct , render yourself incompetent to perform  your duties or if you should be dishonest, disobedient, irregular in attendance, commit , any act subversive of discipline and good conduct or an act unbecoming of an employee, any breach of the terms of your appointment or any of its stipulations herein contained, the hospital shall without prejudice to any of its rights under the term herein be entitled to terminate your employment forthwith without notice or payment in lieu of notice and to deduct from your salary due to you, the amount of any loss the company may have sustained.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>10. This appointment and continuance of your appointment is subject to you being medically fit by our medical consultant.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>11. The date of birth entered by you in the record of the  hospital  at any commencement of your employment will be binding and conclusive and you will not be entitled to raise any dispute later on the date of birth so recorded so as to seek continuation in service or for monetary benefits.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>12. It is condition of your employment with the hospital that you will retire from the services of the hospital on attaining age of 60 years, without notice whatsoever from the company in this regard.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>13. During your employment with Kaizen hospital you are suppose to maintain confidentiality of all data and material of kaizen hospital.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>14. Upon leaving the employment with the hospital, you shall not take with you any properties, formula, drawing, blue print or other reproduction or any other data, tables, calculation, letters or other documents in physical , electronic or any other format relating to the affairs of the hospital.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>15. It is agreed that it shall be open to the hospital from time to time, to add and /or to modify any remuneration, benefits, facility or perquisite that may have been extended to you, on a review of the hospital’s functioning, finances and prospectus and your performance and that you shall be bound by the hospital’s decision in this regard.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>16. On the ceasing to be in the employment of the hospital you shall return forthwith all the properties of the hospital that you are entrusted at the time of employment and or during the course of employment with the hospital.
+
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>17. If at any time, it is realised that the particulars, testimonials and the information furnished by you at the time of your selection and appointment are false; your services will be liable to be terminated on that count.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>18. If the employee/staff is found to be doing a theft, corruption, or misconduct of any kind, he/she will be handed over to security officer or police department and the job will be terminated without prior notice.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>19. Your promotion/increment is depends on your performance appraisal and will carried out as per organisation norms.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>20. You will be entitled to medical benefits as per rules and regulations of our hospital in force from time to time.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>21. You are bound to co operate hospital security services and security norms of Kaizen hospital.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>22. Your detailed job responsibilities are attached with this letter, and you are responsible for any work assigned to you by higher authorities.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>23. Any harm caused by you to the properties and assets of kaizen hospital is not tolerable 
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>24. Your leave entitlement will be in accordance with the hospital rules applicable from time to time.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;padding-left:20px"><span>25. If time to time “that any change in terms and conditions communicated by company shall be applicable and acceptable to you"
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;"><span>You are requested to please signify your acceptance of the terms and condition herein above by signing and returning to us the duplicate copy of this letter.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;"><span>We look forward to a long and mutually beneficial association.
+                            </span></p>
+                        </div>
+                        <div class="row" >
+                            <p style="padding-top:3px;"><span>Sincerely </span><br/><span>For,</span><strong> Kaizen hospital
+
+                            </strong></p>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row" >
+                            <p style="padding-top:3px;"><strong>Dr. Nehal Gadhavi </strong><br/><strong> Hospital Administrator
+                            </strong></p>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row" >
+                            <p style="padding-top:3px;"><span>I accept the above terms and conditions.</span></p>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row" >
+                            <p style="padding-top:3px;"><span>Signature of employee:__________________________   Date:  <span t-esc="datetime.datetime.now().date()" />
+                            </span></p>
+                        </div>
+    
+                    </div>
+                    <div class="footer">
+                        <table class="table table-condensed" style="width:100%;" >
+                            <tbody>
+                                <tr>
+                                    <td align="center" style="width:50%;padding-top:50"><strong>Signature of Hospital Administrator </strong></td>
+                                    <td align="center" style="width:50%;padding-top:50"><strong>Signature of Employee </strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_appointment_letter" model="report.paperformat">
+            <field name="name">Appointment Letter</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="report_appointment_letter" 
+            string="Appointment Letter" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.appointment_letter_report" 
+            name="indimedi_kra.appointment_letter_report_temp"
+            paperformat="indimedi_kra.paperformat_appointment_letter"
+        />
+
+        <!-- <record id="report_appointment_letter" model="ir.actions.report.xml">
+            <field name="name">Appointment Letter</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="model">hr.employee</field>
+            <field name="report_name">indimedi_kra.appointment_letter_report</field>
+            <field name="report_file">indimedi_kra.appointment_letter_report</field>
+        </record> -->
+    </data>
+</openerp>

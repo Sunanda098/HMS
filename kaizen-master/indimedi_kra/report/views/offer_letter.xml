@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="paperformat_formats" model="report.paperformat">
+            <field name="name">European A4 Invoice</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">30</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">67</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report 
+            id="report_offer_letter" 
+            string="Offer Letter" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.offer_letter_report" 
+            name="indimedi_kra.offer_letter_report"
+            paperformat="indimedi_kra.paperformat_formats"
+
+        />
+        <template id="offer_letter_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page" style="padding:5px">
+                        <div class="row text-right">
+                            <p style="font-size:20px;pull-right;">Date:<span t-esc="datetime.datetime.now().date().strftime('%d/%m/%Y')" /></p>
+                        </div><br/><br/>
+                        <div class="row">
+                            <p style="font-size:20px;"><center><u><strong><h4><b>OFFER LETTER</b></h4></strong></u></center></p>
+                            <b style="font-size:20px;">Dear, <br/></b>
+                             <p style="font-size:20px;margin-left:3%" class="row pull-left text-left">
+                                <!-- <strong><h4> -->
+                                <!-- <b> -->
+                                    <span t-field="o.full_name" style="font-size:20px;"/>
+                                <!-- </b> -->
+                            <!-- </h4></strong> -->
+                            <br/>
+                            <p style="font-size:20px;margin-left:3%" class="row pull-left text-left"><strong><h4><b><span>Congratulations!!</span></b></h4></strong></p></p>
+                        </div><br/>
+                        <!-- <div class="row pull-left text-left" style="margin-bottom:5%">
+                            <p style="font-size:20px;"><strong><h4><b><span t-field="o.name"/></b></h4></strong></p>
+                            <br/>
+                            <p><strong><h4><b>Congratulations!!</b></h4></strong></p>
+                        </div><br/><br/> -->
+                        <div>
+                            <p style="font-size:20px;">We are pleased to offer you an association with<b> Kaizen Hospital,</b> based on the discussions you had with us and your application submitted to us. Details of the terms and conditions of offer are as under: 
+</p>
+                            <p style="font-size:20px;">1. You will be designated as <b><t t-if = "o.job_id">
+                                <t t-esc="o.job_id.name"/>
+                            </t></b></p>
+                            <p style="font-size:20px;">2. Your date of commencement of association will be on or before<b>
+                                <span t-field="o.date_joining" t-options="{&quot;format&quot;: &quot;dd-MM-yyyy&quot;}"/>
+                           </b></p>
+                            <p style="font-size:20px;">3. Your association would be subject to the Terms and Conditions, mentioned in your agreement, which will be issued to you on your joining</p>
+                            <p style="font-size:20px;">4. Please bring along the below listed documents details on your day of joining.<br/><p style="font-size:20px;margin-left:8%">a) Education Certificates (all from 10th , 12th, school leaving certificate, <br/> Graduation Marksheets, Degree Certificate, PG Marksheets) </p>
+                            <p style="font-size:20px;margin-left:8%">b) Photo ID proof (Pan card, Voter-id card -  each 2 copy)</p>
+                            <p style="font-size:20px;margin-left:8%">c) Residence Proof (Driving License, Aadhar Card each 2 copy)</p>
+                            <p style="font-size:20px;margin-left:8%">d) Experience Certificate</p>
+                            <p style="font-size:20px;margin-left:8%">e) Last 3 month Salary Slip</p>
+                            <p style="font-size:20px;margin-left:8%">f) 7 Passport size photograph</p>
+                            <p style="font-size:20px;margin-left:8%">g) Police Verification</p>
+                        </p>
+                         <p style="font-size:20px;">Looking forward for a long and mutually beneficial association with you. </p>
+                         <p style="font-size:20px;">For, Kaizen Hospital <br/>Dr  Nehal Gadhavi <br/>
+                         Hospital Administrator</p>
+                        </div><br/><br/>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>

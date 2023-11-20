@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="next_patient_view" name="Next Patient view">
+            <head>
+                <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"/>
+                <script type="text/javascript" src="/hms_next_patient_screen/static/src/js/jquery.cookie.js"></script>
+                <script type="text/javascript" src="/hms_next_patient_screen/static/src/js/hms_next_patient.js"></script>
+                <link rel="stylesheet" href="/web/static/lib/bootstrap/css/bootstrap.min.css" />
+                <link rel="stylesheet" href="/hms_next_patient_screen/static/src/css/hms_next_patient_screen.css" />
+            </head>
+            <script type="text/javascript">
+                setTimeout("location.reload(true);", 4000);
+            </script>
+            <div id="wrap">
+                <section>
+                    <div class="container">
+                        <span class="cookie" t-field="one.id" style="display:none;"/>
+                        <div class="cookie" t-field="two.id" style="display:none;"/>
+                        <div class="cookie" t-field="three.id" style="display:none;"/>
+                        <div class="cookie" t-field="four.id" style="display:none;"/>
+                        <div class="col-xs-12" style="margin-top:30px;">
+                            <div class="pull-left col-xs-4" style="font-size: 30px;">
+                                <strong>Cabin No.</strong>
+                            </div>
+                            <div class="pull-left col-xs-6" style="font-size: 30px;">
+                                <strong>Patient Name</strong>
+                            </div>
+                        </div>
+                        <div class="col-xs-12" style="margin-top:30px;">
+                            <div class="media testimonial-inner"
+                                style="min-height:110px; margin:10px 0; border-bottom:1px solid #ccc; padding-bottom:10px;" t-att-data-id="one.id">
+                                <h1 class="pull-left col-xs-3 img-rounded cabin" >1</h1>
+                                <t t-if="not one.patient_id.image">
+                                    <div class="pull-left col-xs-3">
+                                        <img src='/hms_next_patient_screen/static/src/img/dummy.jpg' style="height:100px !important;width:100px !important;" />
+                                    </div>
+                                </t>
+                                <t t-if="one.patient_id.image">
+                                    <div class="pull-left col-xs-3 img-circle">
+                                        <span itemprop="image" t-field="one.patient_id.image"
+                                            t-field-options='{"widget": "image"}'
+                                            style="height:100px !important;width:100px !important;" />
+                                    </div>
+                                </t>
+                                <t t-if="not one.patient_id.name">
+                                    
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:40px;line-height:100px;">-------</span>
+                                    </div>
+                                </t>
+                                <t t-if="one.patient_id.name">
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:35px;line-height:100px; "><span t-esc="one.patient_id.first_name"/> <t t-if="one.patient_id.middel_name"><span t-esc="one.patient_id.middel_name[0]" /></t><t t-if="one.patient_id.last_name"> <span t-esc="one.patient_id.last_name"/></t></span>
+                                    </div>
+                                </t>
+                            </div>
+                        
+
+                        
+                             
+                            
+                            <div class="media testimonial-inner"
+                                style="min-height:110px; margin:10px 0; border-bottom:1px solid #ccc; padding-bottom:10px;"  t-att-data-id="two.id">
+                                <h1 class="pull-left col-xs-3 img-rounded cabin">2</h1>
+                                <t t-if="not two.patient_id.image">
+                                    <div class="pull-left col-xs-3">
+                                        <img src='/hms_next_patient_screen/static/src/img/dummy.jpg' style="height:100px !important;width:100px !important;" />
+                                    </div>
+                                </t>
+                                <t t-if="two.patient_id.image">
+                                    <div class="pull-left col-xs-3 img-circle">
+                                        <span itemprop="image" t-field="two.patient_id.image"
+                                            t-field-options='{"widget": "image"}' style="height:100px;width:100px;" />
+                                    </div>
+                                </t>
+                                <t t-if="not two.patient_id.name">
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:40px;line-height:100px;">-------</span>
+                                    </div>
+                                </t>
+                                <t t-if="two.patient_id.name">
+                                
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:35px;line-height:100px;"><span t-esc="two.patient_id.first_name"/> <t t-if="two.patient_id.middel_name"><span t-esc="two.patient_id.middel_name[0]"/></t> <t t-if="two.patient_id.last_name"><span t-esc="two.patient_id.last_name"/></t></span>
+                                    </div>
+                                </t>
+                            </div>
+                        
+                            
+                            
+                            <div class="media testimonial-inner"
+                                style="min-height:110px; margin:10px 0; border-bottom:1px solid #ccc; padding-bottom:10px;"  t-att-data-id="three.id">
+                                <h1 class="pull-left col-xs-3 img-rounded cabin">3</h1>
+                                <t t-if="not three.patient_id.image">
+                                    <div class="pull-left col-xs-3">
+                                        <img src='/hms_next_patient_screen/static/src/img/dummy.jpg' style="height:100px !important;width:100px !important;" />
+                                    </div>
+                                </t>
+                                <t t-if="three.patient_id.image">
+                                    <div class="pull-left col-xs-3 img-circle">
+                                        <span itemprop="image" t-field="three.patient_id.image"
+                                            t-field-options='{"widget": "image"}' style="height:100px;width:100px;" />
+                                    </div>
+                                </t>
+                                <t t-if="not three.patient_id.name">
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:40px;line-height:100px;">-------</span>
+                                    </div>
+                                </t>
+                                <t t-if="three.patient_id.name">
+                                    
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:35px;line-height:100px;"><span t-esc="three.patient_id.first_name"/> <t t-if="three.patient_id.middel_name"><span t-esc="three.patient_id.middel_name[0]"/> </t><t t-if="three.patient_id.last_name"> <span t-esc="three.patient_id.last_name"/></t></span>
+                                    </div>
+                                </t>
+                            </div>
+                            
+                            
+                            <div class="media testimonial-inner"
+                                style="min-height:110px; margin:10px 0; border-bottom:1px solid #ccc; padding-bottom:10px;"  t-att-data-id="four.id">
+                                <h1 class="pull-left col-xs-3 img-rounded cabin" >4</h1>
+                                <t t-if="not four.patient_id.image">
+                                    <div class="pull-left col-xs-3">
+                                        <img src='/hms_next_patient_screen/static/src/img/dummy.jpg' style="height:100px !important;width:100px !important;" />
+                                    </div>
+                                </t>
+                                <t t-if="four.patient_id.image">
+                                    <div class="pull-left col-xs-3 img-circle">
+                                        <span itemprop="image" t-field="four.patient_id.image"
+                                            t-field-options='{"widget": "image"}' style="height:100px;width:100px;" />
+                                    </div>
+                                </t>
+                                <t t-if="not four.patient_id.name">
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:40px;line-height:100px;">-------</span>
+                                    </div>
+                                </t>
+                                <t t-if="four.patient_id.name">
+                                    
+                                    <div class="pull-left col-xs-6">
+                                        <span style="font-size:35px;line-height:100px;"><span t-esc="four.patient_id.first_name"/> <t t-if="four.patient_id.middel_name"><span t-esc="four.patient_id.middel_name[0]"/> </t><t t-if="four.patient_id.last_name"><span t-esc="four.patient_id.last_name"/></t></span>
+                                    </div>
+                                </t>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </template>
+    </data>
+</openerp>

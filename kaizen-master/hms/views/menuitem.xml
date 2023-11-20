@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    <!-- HMS -->
+        <menuitem id="menu_hms" name="HMS" sequence="9" groups="hms.group_hms_manager"/>
+
+        <menuitem id="menu_patient" name="Patient" sequence="0" 
+            parent="menu_hms"/>
+        <menuitem id="action_menu_patient" name="Patient" sequence="0"
+            parent="menu_patient" action="action_patient" />
+        <menuitem id="menu_hms_cofig" name="Configrations" parent="menu_hms" groups="hms.group_hms_manager"
+            sequence="10"  />
+        <menuitem id="menu_appointment" parent="menu_hms" name="Appointment"
+            sequence="2" />
+        <menuitem id="action_menu_appointment" action="action_appointment"
+            parent="menu_appointment" groups="hms.group_hms_orthopedic"/>
+        <menuitem id="action_menu_appointment_both" action="action_appointment_both"
+            parent="menu_appointment" groups="hms.group_hms_both"/>
+        <menuitem id="diseases_menu" name="Diseases"
+            parent="hms.menu_hms_cofig" sequence="40" />
+        <menuitem id="hms_diseases" name="Diseases"
+            action="hms.act_open_indiemdi_diseases_view" parent="hms.diseases_menu"
+            sequence="0" />
+        <menuitem id="menu_disease_category" name="Disease Categories"
+            sequence="1" parent="hms.diseases_menu"
+            action="hms.act_open_indimedi_disease_category_view" />
+
+        <!-- Registaration Fee -->
+        <menuitem id="menu_reg_product" name="Registration Fee" 
+            sequence="5" parent="menu_hms_cofig" action="action_reg_product" />
+
+        <!-- Department -->
+        <menuitem id="menu_hospital_department" name="Departments"
+            sequence="10" parent="menu_hms_cofig" action="action_hospital_department" />
+                
+        <!-- Refereing doc -->
+        <menuitem id="menu_referring_doctors" sequence="15"
+            parent="menu_hms_cofig" action='action_referring_doctors' />
+
+        <record model="ir.ui.menu" id="mail.menu_contacts">
+            <field name="sequence" eval="16"/>
+            <field name="groups_id" eval="[(6, 0, [ ref('hms.group_hms_receptionist')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="mail.mail_channel_menu_root_chat">
+            <field name="sequence" eval="18"/>
+            <field name="groups_id" eval="[(6, 0, [ ref('hms.group_hms_receptionist')])]"/>
+        </record>
+
+        <!-- Patient -->
+        <menuitem id="action_main_menu_patient" name="Patient" action="action_patient"
+            groups="hms.group_hms_doctor,hms.group_hms_receptionist,hms.group_hms_pharmacist" sequence="3"/>
+
+        <!-- Doctor -->
+        <menuitem id="action_main_menu_doctor" name="Doctors" groups="hms.group_hms_manager"
+            action="action_physician" sequence="11"/>
+
+        <!-- Appointment -->
+        <menuitem id="action_main_menu_appointmnet_opd" action="action_appointment" sequence="2"
+            groups="hms.group_hms_orthopedic"/>
+        <menuitem id="action_main_menu_appointmnet_opd_both" action="action_appointment_both" sequence="2"
+            groups="hms.group_hms_both"/>
+        <!-- Medicament Conf -->
+        <menuitem id="medicaments_conf_menu" name="Medicaments"
+            parent="hms.menu_hms_cofig" sequence="30" />
+        <menuitem id="hos_druggg" name="Drug Form"
+            parent="hms.medicaments_conf_menu" action="hms.act_open_drug_form_view"
+            sequence="2" />
+        <menuitem id="product_active_component" name="Active Component"
+            parent="hms.medicaments_conf_menu" action="act_open_active_comp"
+            sequence="5" />
+        <menuitem id="hos_drug_company" name="Drug Company"
+            parent="hms.medicaments_conf_menu" action="act_open_drug_company_form_view"
+            sequence="6" />
+        <menuitem id="menuitem_action_medication_dosage" name="Medication Dosage"
+            parent="hms.medicaments_conf_menu" action="action_medication_dosage"
+            sequence="6" />
+        <menuitem id="menuitem_action_medicament_content" name="Medicament Content"
+            parent="hms.medicaments_conf_menu" action="action_medicament_content"
+            sequence="6" />
+        <menuitem id="menuitem_action_medicament_flavour" name="Medicament Flavour"
+            parent="hms.medicaments_conf_menu" action="action_medicament_flavour"
+            sequence="6" />
+        <menuitem id="menuitem_action_medicament_route" name="Medicament Route"
+            parent="hms.medicaments_conf_menu" action="action_medicament_route"
+            sequence="6" />
+       <menuitem id="menuitem_action_hms_medicament_group" name="Medicament Group" 
+            parent="hms.medicaments_conf_menu" action="act_open_medicament_group_view" sequence="8"/>
+
+        <!-- <menuitem id="menuitem_action_medicament_group_line" name="Medicament Group line" 
+            parent="hms.medicaments_conf_menu" action="act_open_medicament_group_line_view" sequence="9"/> -->
+        <menuitem action="product_template_action_medical_medicament"
+            id="menu_product_template_action_medicament"
+             sequence="13" parent="hms.medicaments_conf_menu"/>
+
+        <!--group line ended-->
+
+        <!-- Appointment related configurations -->
+        <menuitem id="menu_group_appointment" name="Appointment"
+            parent="hms.menu_hms_cofig" sequence="35" />
+        <menuitem id="menu_patient_disease" name="Systemic Examination"
+            sequence="5" parent="hms.menu_group_appointment" action="action_hms_patient_disease" />
+        <menuitem id="menu_patient_disease" name="Appointment Purpose"
+            sequence="5" parent="hms.menu_group_appointment" action="act_open_appointment_purpose" />
+
+
+    </data>
+</openerp>

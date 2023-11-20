@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- Diseases Views -->
+        <record id="view_medicament_flavour_tree" model="ir.ui.view">
+            <field name="name">medicament.flavour.tree</field>
+            <field name="model">medicament.flavour</field>
+            <field name="arch" type="xml">
+                <tree string="Medicament Flavour">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indiemdi_medicament_flavour_form" model="ir.ui.view">
+            <field name="name">medicament.flavour.form</field>
+            <field name="model">medicament.flavour</field>
+            <field name="arch" type="xml">
+                <form string="Medicament Flavours">
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_medicament_flavour">
+            <field name="name">Flavour</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medicament.flavour</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record id="view_indiemdi_diseases_tree" model="ir.ui.view">
+            <field name="name">hms.diseases.tree</field>
+            <field name="model">hms.diseases</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indimedi Diseases">
+                    <field name="name" />
+                    <field name="code"/>
+                    <field name="category" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indiemdi_diseases_form" model="ir.ui.view">
+            <field name="name">hms.diseases.form</field>
+            <field name="model">hms.diseases</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indimedi Diseases">
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="code"/>
+                        </group>
+                        <group>
+                            <field name="category" />
+                        </group>
+                    </group>
+                    <group colspan="4" string="Extra Info">
+                        <field name="info" nolabel="1" colspan="4" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="view_indiemdi_diseases_search" model="ir.ui.view">
+            <field name="name">hms.diseases.search</field>
+            <field name="model">hms.diseases</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indimedi Diseases">
+                    <field name="category" />
+                    <field name="info" />
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="protein" />
+                    <field name="gene" />
+                    <field name="chromosome" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Main Category" domain="[]" context="{'group_by':'category'}" />
+                        <filter string="Extra Info" domain="[]" context="{'group_by':'info'}" />
+                        <filter string="Code" domain="[]" context="{'group_by':'code'}" />
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="Protein involved" domain="[]" context="{'group_by':'protein'}" />
+                        <filter string="Gene" domain="[]" context="{'group_by':'gene'}" />
+                        <filter string="Affected Chromosome" domain="[]" context="{'group_by':'chromosome'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_indiemdi_diseases_view">
+            <field name="name">Diseases</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hms.diseases</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_indiemdi_diseases_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indiemdi_diseases_view_form">
+            <field name="act_window_id" ref="act_open_indiemdi_diseases_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_indiemdi_diseases_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indiemdi_diseases_view_tree">
+            <field name="act_window_id" ref="act_open_indiemdi_diseases_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_indiemdi_diseases_tree" />
+        </record>
+
+        <!-- Diseases Category Views -->
+        
+                <record id="view_indiemdi_diseases_category_tree" model="ir.ui.view">
+            <field name="name">indiemdi.diseases.category.tree</field>
+            <field name="model">indiemdi.diseases.category</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Indiemdi Diseases Category">
+                    <field name="name" />
+                    <field name="parent_id" />
+                    <!-- <field name="childs" /> -->
+                </tree>
+            </field>
+        </record>
+        <record id="view_indiemdi_diseases_category_form" model="ir.ui.view">
+            <field name="name">indiemdi.diseases.category.form</field>
+            <field name="model">indiemdi.diseases.category</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Indiemdi Diseases Category">
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="parent_id" />
+                        </group>
+                    </group>
+                    <newline />
+                    <!-- <field name="childs" colspan="4" /> -->
+                </form>
+            </field>
+        </record>
+        <record id="view_indiemdi_diseases_category_search" model="ir.ui.view">
+            <field name="name">indiemdi.diseases.category.search</field>
+            <field name="model">indiemdi.diseases.category</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Indiemdi Diseases Category">
+                    <field name="name" />
+                    <field name="parent_id" />
+                    <!-- <field name="childs" /> -->
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Category Name" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="Parent Category" domain="[]" context="{'group_by':'parent_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_indimedi_disease_category_view">
+            <field name="name">Disease Categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">indiemdi.diseases.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_indiemdi_diseases_category_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_disease_category_view_form">
+            <field name="act_window_id" ref="act_open_indimedi_disease_category_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_indiemdi_diseases_category_form" />
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_indimedi_disease_category_view_tree">
+            <field name="act_window_id" ref="act_open_indimedi_disease_category_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_indiemdi_diseases_category_tree" />
+        </record>
+
+    </data>
+</openerp>

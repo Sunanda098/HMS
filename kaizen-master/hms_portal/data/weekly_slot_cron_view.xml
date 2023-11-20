@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<openerp>
+    <data noupdate="1">
+        <record forcecreate="True" id="ir_cron_create_slot" model="ir.cron">
+            <field name="name">Weekly Slot Create Cron</field>
+            <field eval="True" name="active"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'appointment.schedual.slot'" name="model"/>
+            <field eval="'weekly_slot_create_cron'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+	
+	<record forcecreate="True" id="ir_cron_clear_appointment" model="ir.cron">
+            <field name="name">Clear appointment Cron</field>
+            <field eval="True" name="active"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'hms.appointment'" name="model"/>
+            <field eval="'clear_appointment_cron'" name="function"/>
+            <field eval="'()'" name="args"/>
+        </record>
+     </data>
+</openerp>

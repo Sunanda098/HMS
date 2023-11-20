@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <report id="report_all_consultation" string="OPD Case Record"
+            model="hms.appointment" report_type="qweb-pdf"
+            file="hms_consultation_report.consultation_report_qweb" name="hms_consultation_report.consultation_report_qweb" />
+
+        <!-- <report id="report_all_consultation_invoice" string="Invoices"
+            model="hms.appointment" report_type="qweb-pdf"
+            file="hms_consultation_report.invoice_qweb_report" name="hms_consultation_report.invoice_qweb_report"
+            header="False" /> -->
+
+    </data>
+</openerp>

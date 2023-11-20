@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+       <report id="hms_hospitalization.report_hospitalization_discharge" string="Discharge Card"
+             model="inpatient.registration" report_type="qweb-pdf"
+             file="hms_hospitalization.report_hospital_discharge_document"
+             name="hms_hospitalization.report_hospital_discharge_document" 
+             groups="hms.group_hms_receptionist,hms_insurance.group_hms_insurance_officer"/>
+
+</data>
+</odoo>
+
+

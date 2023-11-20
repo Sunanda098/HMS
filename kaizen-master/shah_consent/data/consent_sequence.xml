@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+         <!-- Sequences for CM-->
+        <record id="seq_consent_form" model="ir.sequence">
+            <field name="name">Consent Form</field>
+            <field name="code">consent.form</field>
+            <field name="prefix">KZ/CF-</field>
+            <field name="padding">4</field>
+        </record>
+
+    </data>
+</openerp>

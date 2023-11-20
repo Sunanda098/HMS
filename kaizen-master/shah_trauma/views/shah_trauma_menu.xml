@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+         
+        <menuitem id="shah_orthopedic_appointment" name="Appointment" parent="hms.menu_hms" sequence="15"/>
+         <menuitem id="shah_trauma_menu" name="Trauma" sequence="1" action="action_trauma_form" parent="shah_orthopedic_appointment"/>
+         <menuitem id="shah_oa_menu" name="Oa" sequence="2" action="action_oa_form" parent="shah_orthopedic_appointment"/>
+         <menuitem id="shah_spine_menu" name="Spine" sequence="3" action="action_spine_form" parent="shah_orthopedic_appointment"/>
+         <menuitem id="shah_hipjoint_menu" name="Hip Joint" sequence="4" action="action_hipjoint_form" parent="shah_orthopedic_appointment"/>
+
+    </data>
+</openerp>

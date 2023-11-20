@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_xray_investigation_jr_doctor,Xray Investigation,model_xray_investigation,hms.group_hms_jr_doctor,1,1,1,1
+access_xray_template_jr_doctor,Xray Template,model_xray_template,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_xray_investigation_manager,Xray Investigation,model_xray_investigation,hms.group_hms_manager,1,1,1,0
+access_xray_template_manager,Xray Template,model_xray_template,hms.group_hms_manager,1,1,1,0

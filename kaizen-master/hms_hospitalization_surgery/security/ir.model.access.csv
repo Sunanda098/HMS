@@ -1,0 +1,307 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_pre_operative_check_list_template_user,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_user,1,0,0,0
+access_hms_pre_operative_check_list_template_nurse,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_nurse,1,0,0,0
+access_hms_pre_operative_check_list_template_pharmacist,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_pharmacist,1,1,1,0
+access_hms_pre_operative_check_list_template_jr_doctor,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_pre_operative_check_list_template_doctor_manager,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_manager,1,1,1,1
+access_hms_pre_operative_check_list_template_medical_officer,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_medical_officer,1,1,1,0
+access_hms_pre_operative_check_list_template_doctor,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_doctor,1,1,1,1
+access_hms_pre_operative_check_list_template_receptionist,Pre Operative Check List Template,model_pre_operative_check_list_template,hms.group_hms_receptionist,1,1,1,0
+,,,,,,,
+access_hms_instruction_set_doctor_manager,Instruction Set,model_instruction_set,hms.group_hms_manager,1,1,1,1
+access_hms_instruction_set_medical_officer,Instruction Set,model_instruction_set,hms.group_hms_medical_officer,1,1,1,0
+access_hms_instruction_set_user,Instruction Set,model_instruction_set,hms.group_hms_user,1,0,0,0
+access_hms_instruction_set_jr_doctor,Instruction Set,model_instruction_set,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_instruction_set_receptionist,Instruction Set,model_instruction_set,hms.group_hms_receptionist,1,0,0,0
+access_hms_instruction_set_doctor,Instruction Set,model_instruction_set,hms.group_hms_doctor,1,1,1,1
+access_hms_instruction_set_nurse,Instruction Set,model_instruction_set,hms.group_hms_nurse,1,0,0,0
+access_hms_instruction_set_pharmacist,Instruction Set,model_instruction_set,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_hms_instruction_list_jr_doctor,Instruction List,model_instruction_list,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_instruction_list_doctor_manager,Instruction List,model_instruction_list,hms.group_hms_manager,1,1,1,1
+access_hms_instruction_list_medical_officer,Instruction List,model_instruction_list,hms.group_hms_medical_officer,1,1,1,1
+access_hms_instruction_list_user,Instruction List,model_instruction_list,hms.group_hms_user,1,0,0,0
+access_hms_instruction_list_receptionist,Instruction List,model_instruction_list,hms.group_hms_receptionist,1,0,0,0
+access_hms_instruction_list_doctor,Instruction List,model_instruction_list,hms.group_hms_doctor,1,1,1,1
+access_hms_instruction_list_nurse,Instruction List,model_instruction_list,hms.group_hms_nurse,1,0,0,0
+access_hms_instruction_list_pharmacist,Instruction List,model_instruction_list,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_hms_ip_fluid_jr_doctor,Ip Fluid,model_ip_fluid,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ip_fluid_doctor_manager,Ip Fluid,model_ip_fluid,hms.group_hms_manager,1,1,1,1
+access_hms_ip_fluid_medical_officer,Ip Fluid,model_ip_fluid,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ip_fluid_user,Ip Fluid,model_ip_fluid,hms.group_hms_user,1,0,0,0
+access_hms_ip_fluid_receptionist,Ip Fluid,model_ip_fluid,hms.group_hms_receptionist,1,0,0,0
+access_hms_ip_fluid_doctor,Ip Fluid,model_ip_fluid,hms.group_hms_doctor,1,1,1,1
+access_hms_ip_fluid_nurse,Ip Fluid,model_ip_fluid,hms.group_hms_nurse,1,0,0,0
+access_hms_ip_fluid_pharmacist,Ip Fluid,model_ip_fluid,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_hms_ips_fluid_jr_doctor,Ips Fluid,model_ips_fluid,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_ips_fluid_doctor_manager,Ips Fluid,model_ips_fluid,hms.group_hms_manager,1,1,1,1
+access_hms_ips_fluid_medical_officer,Ips Fluid,model_ips_fluid,hms.group_hms_medical_officer,1,1,1,0
+access_hms_ips_fluid_user,Ips Fluid,model_ips_fluid,hms.group_hms_user,1,0,0,0
+access_hms_ips_fluid_receptionist,Ips Fluid,model_ips_fluid,hms.group_hms_receptionist,1,0,0,0
+access_hms_ips_fluid_doctor,Ips Fluid,model_ips_fluid,hms.group_hms_doctor,1,1,1,1
+access_hms_ips_fluid_nurse,Ips Fluid,model_ips_fluid,hms.group_hms_nurse,1,0,0,0
+access_hms_ips_fluid_pharmacist,Ips Fluid,model_ips_fluid,hms.group_hms_pharmacist,1,1,1,0
+,,,,,,,
+access_hms_antibiotic_analogesis_pharmacist,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_pharmacist,1,1,1,0
+access_hms_antibiotic_analogesis_jr_doctor,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_antibiotic_analogesis_doctor_manager,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_manager,1,1,1,1
+access_hms_antibiotic_analogesis_medical_officer,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_medical_officer,1,1,1,0
+access_hms_antibiotic_analogesis_user,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_user,1,0,0,0
+access_hms_antibiotic_analogesis_receptionist,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_receptionist,1,0,0,0
+access_hms_antibiotic_analogesis_doctor,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_doctor,1,1,1,1
+access_hms_antibiotic_analogesis_nurse,Antibiotic Analogesis,model_antibiotic_analogesis,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+access_hms_miscellaneous_drugs_nurse,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_nurse,1,0,0,0
+access_hms_miscellaneous_drugs_pharmacist,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_pharmacist,1,1,1,0
+access_hms_miscellaneous_drugs_jr_doctor,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_miscellaneous_drugs_doctor_manager,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_manager,1,1,1,1
+access_hms_miscellaneous_drugs_medical_officer,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_medical_officer,1,1,1,0
+access_hms_miscellaneous_drugs_user,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_user,1,0,0,0
+access_hms_miscellaneous_drugs_receptionist,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_receptionist,1,0,0,0
+access_hms_miscellaneous_drugs_doctor,Miscellaneous Drugs,model_miscellaneous_drugs,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_consumable_line_nurse,Indimedi Consumable Line,model_consumable_line,hms.group_hms_nurse,1,0,0,0
+access_hms_consumable_line_pharmacist,Indimedi Consumable Line,model_consumable_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_consumable_line_jr_doctor,Indimedi Consumable Line,model_consumable_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_consumable_line_doctor_manager,Indimedi Consumable Line,model_consumable_line,hms.group_hms_manager,1,1,1,1
+access_hms_consumable_line_medical_officer,Indimedi Consumable Line,model_consumable_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_consumable_line_user,Indimedi Consumable Line,model_consumable_line,hms.group_hms_user,1,0,0,0
+access_hms_consumable_line_receptionist,Indimedi Consumable Line,model_consumable_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_consumable_line_doctor,Indimedi Consumable Line,model_consumable_line,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_medicament_line_nurse,Medicament Line,model_medicament_line,hms.group_hms_nurse,1,0,0,0
+access_hms_medicament_line_pharmacist,Medicament Line,model_medicament_line,hms.group_hms_pharmacist,1,1,1,0
+access_hms_medicament_line_jr_doctor,Medicament Line,model_medicament_line,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medicament_line_doctor_manager,Medicament Line,model_medicament_line,hms.group_hms_manager,1,1,1,1
+access_hms_medicament_line_medical_officer,Medicament Line,model_medicament_line,hms.group_hms_medical_officer,1,1,1,0
+access_hms_medicament_line_user,Medicament Line,model_medicament_line,hms.group_hms_user,1,0,0,0
+access_hms_medicament_line_receptionist,Medicament Line,model_medicament_line,hms.group_hms_receptionist,1,0,0,0
+access_hms_medicament_line_doctor,Medicament Line,model_medicament_line,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_hms_medication_schedule_nurse,Medication Schedule,model_medication_schedule,hms.group_hms_nurse,1,0,0,0
+access_hms_medication_schedule_pharmacist,Medication Schedule,model_medication_schedule,hms.group_hms_pharmacist,1,1,1,0
+access_hms_medication_schedule_jr_doctor,Medication Schedule,model_medication_schedule,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_medication_schedule_doctor_manager,Medication Schedule,model_medication_schedule,hms.group_hms_manager,1,1,1,1
+access_hms_medication_schedule_medical_officer,Medication Schedule,model_medication_schedule,hms.group_hms_medical_officer,1,1,1,0
+access_hms_medication_schedule_user,Medication Schedule,model_medication_schedule,hms.group_hms_user,1,0,0,0
+access_hms_medication_schedule_receptionist,Medication Schedule,model_medication_schedule,hms.group_hms_receptionist,1,0,0,0
+access_hms_medication_schedule_doctor,Medication Schedule,model_medication_schedule,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_post_ans_advice_nurse,access_post_ans_advice,model_post_ans_advice,hms.group_hms_nurse,1,0,0,0
+access_post_ans_advice_pharmacist,access_post_ans_advice,model_post_ans_advice,hms.group_hms_pharmacist,1,0,0,0
+access_post_ans_advice_jr_doctor,access_post_ans_advice,model_post_ans_advice,hms.group_hms_jr_doctor,1,1,1,1
+access_post_ans_advice_manager,access_post_ans_advice,model_post_ans_advice,hms.group_hms_manager,1,1,1,1
+access_post_ans_advice_medical_officer,access_post_ans_advice,model_post_ans_advice,hms.group_hms_medical_officer,1,1,1,0
+access_post_ans_advice_receptionist,access_post_ans_advice,model_post_ans_advice,hms.group_hms_receptionist,1,0,0,0
+access_post_ans_advice_doctor,access_post_ans_advice,model_post_ans_advice,hms.group_hms_doctor,1,1,1,1
+access_post_ans_advice_user,access_post_ans_advice,model_post_ans_advice,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_registration_surgery_nurse,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_nurse,1,0,0,0
+access_inpatient_registration_surgery_pharmacist,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_pharmacist,1,0,0,0
+access_inpatient_registration_surgery_jr_doctor,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_jr_doctor,1,1,1,1
+access_inpatient_registration_surgery_manager,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_manager,1,1,1,1
+access_inpatient_registration_surgery_medical_officer,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_medical_officer,1,1,1,0
+access_inpatient_registration_surgery_receptionist,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_registration_surgery_doctor,inpatient.registration.surgery,model_inpatient_registration_surgery,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_other_investigations_receptionist,other.investigations,model_other_investigations,hms.group_hms_receptionist,1,1,1,0
+access_other_investigations_doctor,other.investigations,model_other_investigations,hms.group_hms_doctor,1,1,1,1
+access_other_investigations_jr_doctor,other.investigations,model_other_investigations,hms.group_hms_jr_doctor,1,1,1,1
+access_other_investigations_manager,other.investigations,model_other_investigations,hms.group_hms_manager,1,1,1,1
+access_other_investigations_nurse,other.investigations,model_other_investigations,hms.group_hms_nurse,1,1,1,0
+access_other_investigations_mo,other.investigations,model_other_investigations,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+access_anesthesia_pre_operative_receptionist,anesthesia.pre.operative.instructions,model_anesthesia_pre_operative_instructions,hms.group_hms_receptionist,1,1,1,0
+access_anesthesia_pre_operative_manager,anesthesia.pre.operative.instructions,model_anesthesia_pre_operative_instructions,hms.group_hms_manager,1,1,1,1
+access_anesthesia_pre_operative_doctor,anesthesia.pre.operative.instructions,model_anesthesia_pre_operative_instructions,hms.group_hms_doctor,1,1,1,1
+access_anesthesia_pre_operative_jr_doctor,anesthesia.pre.operative.instructions,model_anesthesia_pre_operative_instructions,hms.group_hms_jr_doctor,1,1,1,1
+access_anesthesia_pre_operative_nurse,anesthesia.pre.operative.instructions,model_anesthesia_pre_operative_instructions,hms.group_hms_nurse,1,1,1,1
+access_anesthesia_pre_operative_mo,anesthesia.pre.operative.instructions,model_anesthesia_pre_operative_instructions,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_anesthesia_personhis_receptionist,anesthesia.personhis,model_anesthesia_personhis,hms.group_hms_receptionist,1,1,1,0
+access_anesthesia_personhis_manager,anesthesia.personhis,model_anesthesia_personhis,hms.group_hms_manager,1,1,1,1
+access_anesthesia_personhis_doctor,anesthesia.personhis,model_anesthesia_personhis,hms.group_hms_doctor,1,1,1,1
+access_anesthesia_personhis_jr_doctor,anesthesia.personhis,model_anesthesia_personhis,hms.group_hms_jr_doctor,1,1,1,0
+access_anesthesia_personhis_nurse,anesthesia.personhis,model_anesthesia_personhis,hms.group_hms_nurse,1,1,1,0
+access_anesthesia_personhis_mo,anesthesia.personhis,model_anesthesia_personhis,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_past_history_operation_receptionist,access_past_history_operation,model_past_history_operation,hms.group_hms_receptionist,1,1,1,0
+access_past_history_operation_manager,access_past_history_operation,model_past_history_operation,hms.group_hms_manager,1,1,1,1
+access_past_history_operation_doctor,access_past_history_operation,model_past_history_operation,hms.group_hms_doctor,1,1,1,1
+access_past_history_operation_jr_doctor,access_past_history_operation,model_past_history_operation,hms.group_hms_jr_doctor,1,1,1,0
+access_past_history_operation_nurse,access_past_history_operation,model_past_history_operation,hms.group_hms_nurse,1,1,1,0
+access_past_history_operation_mo,access_past_history_operation,model_past_history_operation,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_past_history_hospitalization_receptionist,access_past_history_hospitalization,model_past_history_hospitalization,hms.group_hms_receptionist,1,1,1,0
+access_past_history_hospitalization_manager,access_past_history_hospitalization,model_past_history_hospitalization,hms.group_hms_manager,1,1,1,1
+access_past_history_hospitalization_doctor,access_past_history_hospitalization,model_past_history_hospitalization,hms.group_hms_doctor,1,1,1,1
+access_past_history_hospitalization_jr_doctor,access_past_history_hospitalization,model_past_history_hospitalization,hms.group_hms_jr_doctor,1,1,1,0
+access_past_history_hospitalization_nurse,access_past_history_hospitalization,model_past_history_hospitalization,hms.group_hms_nurse,1,1,1,0
+access_past_history_hospitalization_mo,access_past_history_hospitalization,model_past_history_hospitalization,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_intra_op_vital_doctor,access_intra_op_vital,model_intra_op_vital,hms.group_hms_doctor,1,1,1,1
+access_intra_op_vital_jr_doctor,access_intra_op_vital,model_intra_op_vital,hms.group_hms_jr_doctor,1,1,1,1
+access_intra_op_vital_manager,access_intra_op_vital,model_intra_op_vital,hms.group_hms_manager,1,1,1,1
+access_intra_op_vital_receptionist,access_intra_op_vital,model_intra_op_vital,hms.group_hms_receptionist,1,1,1,0
+access_intra_op_vital_nurse,access_intra_op_vital,model_intra_op_vital,hms.group_hms_nurse,1,1,1,0
+access_intra_op_vital_medical_officer,access_intra_op_vital,model_intra_op_vital,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_ivline_ra_doctor,access_ivline_ra,model_ivline_ra,hms.group_hms_doctor,1,1,1,1
+access_ivline_ra_jr_doctor,access_ivline_ra,model_ivline_ra,hms.group_hms_jr_doctor,1,1,1,1
+access_ivline_ra_manager,access_ivline_ra,model_ivline_ra,hms.group_hms_manager,1,1,1,1
+access_ivline_ra_receptionist,access_ivline_ra,model_ivline_ra,hms.group_hms_receptionist,1,1,1,0
+access_ivline_ra_nurse,access_ivline_ra,model_ivline_ra,hms.group_hms_nurse,1,1,1,0
+access_ivline_ra_medical_officer,access_ivline_ra,model_ivline_ra,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_ivline_la_doctor,access_ivline_la,model_ivline_la,hms.group_hms_doctor,1,1,1,1
+access_ivline_la_jr_doctor,access_ivline_la,model_ivline_la,hms.group_hms_jr_doctor,1,1,1,1
+access_ivline_la_manager,access_ivline_la,model_ivline_la,hms.group_hms_manager,1,1,1,1
+access_ivline_la_receptionist,access_ivline_la,model_ivline_la,hms.group_hms_receptionist,1,1,1,0
+access_ivline_la_nurse,access_ivline_la,model_ivline_la,hms.group_hms_nurse,1,1,1,0
+access_ivline_la_medical_officer,access_ivline_la,model_ivline_la,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_spinal_drug_doctor,access_spinal_drug,model_spinal_drug,hms.group_hms_doctor,1,1,1,1
+access_spinal_drug_jr_doctor,access_spinal_drug,model_spinal_drug,hms.group_hms_jr_doctor,1,1,1,1
+access_spinal_drug_manager,access_spinal_drug,model_spinal_drug,hms.group_hms_manager,1,1,1,1
+access_spinal_drug_receptionist,access_spinal_drug,model_spinal_drug,hms.group_hms_receptionist,1,1,1,0
+access_spinal_drug_nurse,access_spinal_drug,model_spinal_drug,hms.group_hms_nurse,1,1,1,0
+access_spinal_drug_medical_officer,access_spinal_drug,model_spinal_drug,hms.group_hms_medical_officer,1,1,1,1
+,,,,,,,
+access_post_advice_ans_list_nurse,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_nurse,1,0,0,0
+access_post_advice_ans_list_pharmacist,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_pharmacist,1,0,0,0
+access_post_advice_ans_list_jr_doctor,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_jr_doctor,1,1,1,1
+access_post_advice_ans_list_manager,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_manager,1,1,1,1
+access_post_advice_ans_list_medical_officer,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_medical_officer,1,1,1,0
+access_post_advice_ans_list_receptionist,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_receptionist,1,0,0,0
+access_post_advice_ans_list_doctor,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_doctor,1,1,1,1
+access_post_advice_ans_list_user,access_post_advice_ans_list,model_post_advice_ans_list,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_op_surgery_outcome_nurse,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_nurse,1,0,0,0
+access_op_surgery_outcome_pharmacist,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_pharmacist,1,0,0,0
+access_op_surgery_outcome_jr_doctor,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_jr_doctor,1,1,1,1
+access_op_surgery_outcome_manager,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_manager,1,1,1,1
+access_op_surgery_outcome_medical_officer,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_medical_officer,1,1,1,0
+accessop_surgery_outcome_receptionist,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_receptionist,1,0,0,0
+access_op_surgery_outcome_doctor,op.surgery.outcome,model_op_surgery_outcome,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_op_surgery_grade_nurse,op.surgery.grade,model_op_surgery_grade,hms.group_hms_nurse,1,0,0,0
+access_op_surgery_grade_pharmacist,op.surgery.grade,model_op_surgery_grade,hms.group_hms_pharmacist,1,0,0,0
+access_op_surgery_grade_jr_doctor,op.surgery.grade,model_op_surgery_grade,hms.group_hms_jr_doctor,1,1,1,1
+access_op_surgery_grade_manager,op.surgery.grade,model_op_surgery_grade,hms.group_hms_manager,1,1,1,1
+access_op_surgery_grade_medical_officer,op.surgery.grade,model_op_surgery_grade,hms.group_hms_medical_officer,1,1,1,0
+access_op_surgery_grade_receptionist,op.surgery.grade,model_op_surgery_grade,hms.group_hms_receptionist,1,0,0,0
+access_op_surgery_grade_doctor,op.surgery.grade,model_op_surgery_grade,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_op_surgery_morbidity_nurse,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_nurse,1,0,0,0
+access_op_surgery_morbidity_pharmacist,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_pharmacist,1,0,0,0
+access_op_surgery_morbidity_jr_doctor,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_jr_doctor,1,1,1,1
+access_op_surgery_morbidity_manager,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_manager,1,1,1,1
+access_op_surgery_morbidity_medical_officer,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_medical_officer,1,1,1,0
+access_op_surgery_morbidity_receptionist,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_receptionist,1,0,0,0
+access_op_surgery_morbidity_doctor,op.surgery.morbidity,model_op_surgery_morbidity,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_op_operative_morbidity_nurse,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_nurse,1,0,0,0
+access_op_operative_morbidity_pharmacist,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_pharmacist,1,0,0,0
+access_op_operative_morbidity_jr_doctor,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_jr_doctor,1,1,1,1
+access_op_operative_morbidity_manager,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_manager,1,1,1,1
+access_op_operative_morbidity_medical_officer,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_medical_officer,1,1,1,0
+access_op_operative_morbidity_receptionist,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_receptionist,1,0,0,0
+access_op_operative_morbidity_doctor,op.operative.morbidity,model_op_operative_morbidity,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+access_anesthesia_personal_history_doctor,anesthesia.personal.history,model_anesthesia_personal_history,hms.group_hms_doctor,1,1,1,1
+access_anesthesia_personal_history_jr_doctor,anesthesia.personal.history,model_anesthesia_personal_history,hms.group_hms_jr_doctor,1,1,1,0
+access_anesthesia_personal_history_mo,anesthesia.personal.history,model_anesthesia_personal_history,hms.group_hms_medical_officer,1,1,1,1
+access_anesthesia_personal_history_receptionist,anesthesia.personal.history,model_anesthesia_personal_history,hms.group_hms_receptionist,1,1,1,0
+access_anesthesia_personal_history_nurse,anesthesia.personal.history,model_anesthesia_personal_history,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_fellow_template_doctor,inpatient.checklist.fellow,model_inpatient_checklist_fellow_template,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_fellow_template_jr_doctor,inpatient.checklist.fellow,model_inpatient_checklist_fellow_template,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_fellow_template_mo,inpatient.checklist.fellow,model_inpatient_checklist_fellow_template,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_fellow_template_receptionist,inpatient.checklist.fellow,model_inpatient_checklist_fellow_template,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_fellow_template_nurse,inpatient.checklist.fellow,model_inpatient_checklist_fellow_template,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_anesthetist_template_doctor,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist_template,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_anesthetist_template_jr_doctor,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist_template,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_anesthetist_template_mo,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist_template,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_anesthetist_template_receptionist,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist_template,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_anesthetist_template_nurse,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist_template,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_operating_surgeon_template_doctor,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon_template,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_operating_surgeon_template_jr_doctor,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon_template,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_operating_surgeon_template_mo,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon_template,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_operating_surgeon_template_receptionist,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon_template,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_operating_surgeon_template_nurse,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon_template,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_scrub_nurse_template_doctor,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse_template,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_scrub_nurse_template_jr_doctor,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse_template,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_scrub_nurse_template_mo,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse_template,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_scrub_nurse_template_receptionist,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse_template,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_scrub_nurse_template_nurse,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse_template,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_otincharge_template_doctor,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge_template,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_otincharge_template_jr_doctor,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge_template,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_otincharge_template_mo,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge_template,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_otincharge_template_receptionist,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge_template,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_otincharge_template_nurse,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge_template,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_recovery_checklist_template_doctor,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist_template,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_recovery_checklist_template_jr_doctor,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist_template,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_recovery_checklist_template_mo,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist_template,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_recovery_checklist_template_receptionist,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist_template,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_recovery_checklist_template_nurse,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist_template,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_fellow_doctor,inpatient.checklist.fellow,model_inpatient_checklist_fellow,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_fellow_jr_doctor,inpatient.checklist.fellow,model_inpatient_checklist_fellow,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_fellow_mo,inpatient.checklist.fellow,model_inpatient_checklist_fellow,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_fellow_receptionist,inpatient.checklist.fellow,model_inpatient_checklist_fellow,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_fellow_nurse,inpatient.checklist.fellow,model_inpatient_checklist_fellow,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_anesthetist_doctor,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_anesthetist_jr_doctor,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_anesthetist_mo,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_anesthetist_receptionist,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_anesthetist_nurse,inpatient.checklist.anesthetist,model_inpatient_checklist_anesthetist,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_operating_surgeon_doctor,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_operating_surgeon_jr_doctor,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_operating_surgeon_mo,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_operating_surgeon_receptionist,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_operating_surgeon_nurse,inpatient.checklist.operating.surgeon,model_inpatient_checklist_operating_surgeon,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_scrub_nurse_doctor,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_scrub_nurse_jr_doctor,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_scrub_nurse_mo,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_scrub_nurse_receptionist,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_scrub_nurse_nurse,inpatient.checklist.scrub.nurse,model_inpatient_checklist_scrub_nurse,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_otincharge_doctor,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_otincharge_jr_doctor,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_otincharge_mo,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_otincharge_receptionist,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_otincharge_nurse,inpatient.checklist.otincharge,model_inpatient_checklist_otincharge,hms.group_hms_nurse,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_inpatient_checklist_recovery_checklist_doctor,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist,hms.group_hms_doctor,1,1,1,1
+access_inpatient_checklist_recovery_checklist_jr_doctor,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist,hms.group_hms_jr_doctor,1,1,1,0
+access_inpatient_checklist_recovery_checklist_mo,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist,hms.group_hms_medical_officer,1,1,1,1
+access_inpatient_checklist_recovery_checklist_receptionist,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist,hms.group_hms_receptionist,1,1,1,0
+access_inpatient_checklist_recovery_checklist_nurse,inpatient.checklist.recovery.checklist,model_inpatient_checklist_recovery_checklist,hms.group_hms_nurse,1,0,0,0

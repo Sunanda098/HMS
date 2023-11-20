@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="trauma_report">
+            <t t-call="hms.hms_letterpad_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page" style="font-size: 14px">
+                        <div class="oe_structure" />
+                        <div class="col-xs-5 col-xs-offset-6">
+                            <strong>
+                                <span>Date:</span>
+                                <span t-field="doc.date_trauma" />
+                            </strong>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <h4>
+                                <span t-esc="doc.get_name(doc)" />
+                                <span>,</span>
+                                <span t-field="doc.patient_id.age" />
+                            </h4>
+                        </div>
+                        <div class="row">
+                            <table class="table table-bordered" style="border-style:solid">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="1" style="border: none;">
+                                            <strong>H/O :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.ho"><span t-esc="doc.ho" />
+                                            </t>
+                                            <t t-if="not doc.ho"><span> NA</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>History of head injury:</strong>
+                                        </td>
+                                        <td colspan="1">
+                                            <t t-if="doc.head_injury_id"><span t-esc="doc.head_injury_id.name" />
+                                            </t>
+                                            <t t-if="not doc.head_injury_id"><span> NA</span>
+                                            </t>
+                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <strong>History of loss of consciousness, vomiting or
+                                            bleeding from ear, nose or mouth:</strong>
+                                        </td>
+                                        <td colspan="1"><t t-if="doc.history_loss_id"><span t-esc="doc.history_loss_id.name" />
+                                            </t>
+                                            <t t-if="not doc.history_loss_id"><span> NA</span>
+                                            </t>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Vitals :</strong>
+                                        </td>
+                                        <td colspan="1">Temp. :
+                                    </td>
+                                        <td colspan="1"><t t-if="doc.temp"><span t-esc="doc.temp" />
+                                            </t>
+                                            <t t-if="not doc.temp"><span> N</span>
+                                            </t>
+                                            
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td colspan="1">Pulse :
+                                    </td>
+                                        <td colspan="1">
+                                            <t t-if="doc.pulse"><span t-esc="doc.pulse" />
+                                            </t>
+                                            <t t-if="not doc.pulse"><span> N</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td colspan="1">B.P.:
+                                    </td>
+                                        <td colspan="1">
+                                            <t t-if="doc.bp"><span t-esc="doc.bp" />
+                                            </t>
+                                            <t t-if="not doc.bp"><span> N</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td colspan="1">Respiratory Rate :
+                                    </td>
+                                        <td colspan="1"><t t-if="doc.resp"><span t-esc="doc.resp" />
+                                            </t>
+                                            <t t-if="not doc.resp"><span> N</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td colspan="1">Consciousness :
+                                    </td>
+                                        <td colspan="1"><t t-if="doc.consciousness"><span t-esc="doc.consciousness" />
+                                            </t>
+                                            <t t-if="not doc.consciousness"><span> N</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"></td>
+                                        <td colspan="1">Orientation :
+                                    </td>
+                                        <td colspan="1">
+                                            <t t-if="doc.orientation"><span t-esc="doc.orientation" />
+                                            </t>
+                                            <t t-if="not doc.orientation"><span> N</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>C/O :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.co"><span t-esc="doc.co" />
+                                            </t>
+                                            <t t-if="not doc.co"><span> NA</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>O/E :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.oe"><span t-esc="doc.oe" />
+                                            </t>
+                                            <t t-if="not doc.oe"><span> NA</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>X-Ray :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.xray_id"><span t-esc="doc.xray_id.name" />
+                                            </t>
+                                            <t t-if="not doc.xray_id"><span> NA</span>
+                                            </t>
+                                        
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>CT/MRI :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.mri"><span t-esc="doc.mri" />
+                                            </t>
+                                            <t t-if="not doc.mri"><span> NA</span>
+                                            </t>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Laboratory:</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <t t-if="doc.lab"><span t-esc="doc.lab" />
+                                            </t>
+                                            <t t-if="not doc.lab"><span> NA</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Influence of alcohol :
+                                    </td>
+                                        <td colspan="1"> <t t-if="doc.alcohol"><span> Yes</span>
+                                            </t>
+                                            <t t-if="not doc.alcohol"><span> No</span>
+                                            </t>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">Medico-legal case :
+                                    </td>
+                                        <td colspan="1">
+                                            <t t-if="doc.legal"><span> Yes</span>
+                                            </t>
+                                            <t t-if="not doc.legal"><span> No</span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1">
+                                            <strong>Advice :</strong>
+                                        </td>
+                                        <td colspan="2">
+                                            <span t-esc="doc.advice_id.name" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row text-right">
+                            <br />
+                            <img t-if="doc.patient_id.primary_doctor.signature" width="150" height="90" alt="Signature" t-attf-src="data:image/gif;base64, #{doc.patient_id.primary_doctor.signature}" />
+                            <br />
+                            <strong>
+                                <span t-field="doc.patient_id.primary_doctor.name" />
+                            </strong>
+                        </div>
+                        <div class="oe_structure" />
+                    </div>
+                </t>
+            </t>
+        </template>
+        <report id="report_shah_trauma" string="Report" model="shah.trauma" report_type="qweb-pdf" file="shah_trauma.trauma_report" name="shah_trauma.trauma_report" />
+        <record id="report_shah_trauma" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="hms.paperformat_hms_letterpad_report" />
+        </record>
+    </data>
+</openerp>

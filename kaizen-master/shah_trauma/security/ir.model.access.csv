@@ -1,0 +1,181 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_chief_complaint_doctor,Chief Complaint,model_chief_complaint,hms.group_hms_doctor,1,1,1,1
+access_shah_history_doctor,Shah History,model_shah_history,hms.group_hms_doctor,1,1,1,1
+access_shah_gait_doctor,Shah Gait,model_shah_gait,hms.group_hms_doctor,1,1,1,1
+access_shah_limb_doctor,Shah Limb,model_shah_limb,hms.group_hms_doctor,1,1,1,1
+access_hipjoint_xray_doctor,Hipjoint Xray,model_hipjoint_xray,hms.group_hms_doctor,1,1,1,1
+access_hipjoint_advice_doctor,Hipjoint Advice,model_hipjoint_advice,hms.group_hms_doctor,1,1,1,1
+access_shah_hip_note_template_doctor,Shah Hip Note Template,model_shah_hip_note_template,hms.group_hms_doctor,1,1,1,1
+access_shah_hip_note_doctor,Shah Hip Note,model_shah_hip_note,hms.group_hms_doctor,1,1,1,1
+access_shah_hipjoint_doctor,Shah Hipjoint,model_shah_hipjoint,hms.group_hms_doctor,1,1,1,1
+access_oa_xray_doctor,Oa Xray,model_oa_xray,hms.group_hms_doctor,1,1,1,1
+access_oa_hip_doctor,Oa Hip,model_oa_hip,hms.group_hms_doctor,1,1,1,1
+access_oa_advice_doctor,Oa Advice,model_oa_advice,hms.group_hms_doctor,1,1,1,1
+access_shah_oa_note_template_doctor,Shah Oa Note Template,model_shah_oa_note_template,hms.group_hms_doctor,1,1,1,1
+access_shah_oa_note_doctor,Shah Oa Note,model_shah_oa_note,hms.group_hms_doctor,1,1,1,1
+access_shah_oa_complaint_template_doctor,Shah Oa Complaint Template,model_shah_oa_complaint_template,hms.group_hms_doctor,1,1,1,1
+access_shah_oa_complaint_doctor,Shah Oa Complaint,model_shah_oa_complaint,hms.group_hms_doctor,1,1,1,1
+access_oa_history_doctor,Oa History,model_oa_history,hms.group_hms_doctor,1,1,1,1
+access_shah_oa_doctor,Shah Oa,model_shah_oa,hms.group_hms_doctor,1,1,1,1
+access_shah_spine_note_doctor,Shah Spine Oa,model_shah_spine_note,hms.group_hms_doctor,1,1,1,1
+access_spine_xray_doctor,Spine Xray,model_spine_xray,hms.group_hms_doctor,1,1,1,1
+access_spine_advice_doctor,Spine Advice,model_spine_advice,hms.group_hms_doctor,1,1,1,1
+access_spine_mri_doctor,Spine Mri,model_spine_mri,hms.group_hms_doctor,1,1,1,1
+access_spine_ctscan_doctor,Spine Ctscan,model_spine_ctscan,hms.group_hms_doctor,1,1,1,1
+access_spine_others_doctor,Spine Others,model_spine_others,hms.group_hms_doctor,1,1,1,1
+access_spine_diagnosis_doctor,Spine Diagnosis,model_spine_diagnosis,hms.group_hms_doctor,1,1,1,1
+access_spine_plan_doctor,Spine Plan,model_spine_plan,hms.group_hms_doctor,1,1,1,1
+access_shah_spine_doctor,Shah Spine,model_shah_spine,hms.group_hms_doctor,1,1,1,1
+access_trauma_xray_doctor,Trauma Xray,model_trauma_xray,hms.group_hms_doctor,1,1,1,1
+access_trauma_advice_doctor,Trauma Advice,model_trauma_advice,hms.group_hms_doctor,1,1,1,1
+access_head_injury_doctor,Head Injury,model_head_injury,hms.group_hms_doctor,1,1,1,1
+access_history_loss_doctor,History Loss,model_history_loss,hms.group_hms_doctor,1,1,1,1
+access_shah_trauma_doctor,Shah Trauma,model_shah_trauma,hms.group_hms_doctor,1,1,1,1
+access_shah_spine_note_template_doctor,Template Spine,model_shah_spine_note_template,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_chief_complaint_jr_doctor,Chief Complaint,model_chief_complaint,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_history_jr_doctor,Shah History,model_shah_history,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_gait_jr_doctor,Shah Gait,model_shah_gait,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_limb_jr_doctor,Shah Limb,model_shah_limb,hms.group_hms_jr_doctor,1,1,1,1
+access_hipjoint_xray_jr_doctor,Hipjoint Xray,model_hipjoint_xray,hms.group_hms_jr_doctor,1,1,1,1
+access_hipjoint_advice_jr_doctor,Hipjoint Advice,model_hipjoint_advice,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_hipjoint_jr_doctor,Shah Hipjoint,model_shah_hipjoint,hms.group_hms_jr_doctor,1,1,1,1
+access_oa_xray_jr_doctor,Oa Xray,model_oa_xray,hms.group_hms_jr_doctor,1,1,1,1
+access_oa_hip_jr_doctor,Oa Hip,model_oa_hip,hms.group_hms_jr_doctor,1,1,1,1
+access_oa_advice_jr_doctor,Oa Advice,model_oa_advice,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_oa_note_jr_doctor,Shah Oa Note,model_shah_oa_note,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_oa_complaint_jr_doctor,Shah Oa Complaint,model_shah_oa_complaint,hms.group_hms_jr_doctor,1,1,1,1
+access_oa_history_jr_doctor,Oa History,model_oa_history,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_oa_jr_doctor,Shah Oa,model_shah_oa,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_spine_note_jr_doctor,Shah Spine Oa,model_shah_spine_note,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_xray_jr_doctor,Spine Xray,model_spine_xray,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_advice_jr_doctor,Spine Advice,model_spine_advice,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_mri_jr_doctor,Spine Mri,model_spine_mri,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_ctscan_jr_doctor,Spine Ctscan,model_spine_ctscan,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_others_jr_doctor,Spine Others,model_spine_others,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_diagnosis_jr_doctor,Spine Diagnosis,model_spine_diagnosis,hms.group_hms_jr_doctor,1,1,1,1
+access_spine_plan_jr_doctor,Spine Plan,model_spine_plan,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_spine_jr_doctor,Shah Spine,model_shah_spine,hms.group_hms_jr_doctor,1,1,1,1
+access_trauma_xray_jr_doctor,Trauma Xray,model_trauma_xray,hms.group_hms_jr_doctor,1,1,1,1
+access_trauma_advice_jr_doctor,Trauma Advice,model_trauma_advice,hms.group_hms_jr_doctor,1,1,1,1
+access_head_injury_jr_doctor,Head Injury,model_head_injury,hms.group_hms_jr_doctor,1,1,1,1
+access_history_loss_jr_doctor,History Loss,model_history_loss,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_trauma_jr_doctor,Shah Trauma,model_shah_trauma,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_hip_note_jr_doctor,Shah Hip Note,model_shah_hip_note,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_hip_note_template_jr_doctor,Shah Hip Note Template,model_shah_hip_note_template,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_oa_note_template_jr_doctor,Shah Oa Note Template,model_shah_oa_note_template,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_oa_complaint_template_jr_doctor,Shah Oa Complaint Template,model_shah_oa_complaint_template,hms.group_hms_jr_doctor,1,1,1,1
+access_shah_spine_note_template_jr_doctor,Template Spine,model_shah_spine_note_template,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+access_chief_complaint_medical_officer,Chief Complaint,model_chief_complaint,hms.group_hms_medical_officer,1,1,1,0
+access_shah_history_medical_officer,Shah History,model_shah_history,hms.group_hms_medical_officer,1,1,1,0
+access_shah_gait_medical_officer,Shah Gait,model_shah_gait,hms.group_hms_medical_officer,1,1,1,0
+access_shah_limb_medical_officer,Shah Limb,model_shah_limb,hms.group_hms_medical_officer,1,1,1,0
+access_hipjoint_xray_medical_officer,Hipjoint Xray,model_hipjoint_xray,hms.group_hms_medical_officer,1,1,1,0
+access_hipjoint_advice_medical_officer,Hipjoint Advice,model_hipjoint_advice,hms.group_hms_medical_officer,1,1,1,0
+access_shah_hipjoint_medical_officer,Shah Hipjoint,model_shah_hipjoint,hms.group_hms_medical_officer,1,1,1,0
+access_oa_xray_medical_officer,Oa Xray,model_oa_xray,hms.group_hms_medical_officer,1,1,1,0
+access_oa_hip_medical_officer,Oa Hip,model_oa_hip,hms.group_hms_medical_officer,1,1,1,0
+access_oa_advice_medical_officer,Oa Advice,model_oa_advice,hms.group_hms_medical_officer,1,1,1,0
+access_shah_oa_note_medical_officer,Shah Oa Note,model_shah_oa_note,hms.group_hms_medical_officer,1,1,1,0
+access_shah_oa_complaint_medical_officer,Shah Oa Complaint,model_shah_oa_complaint,hms.group_hms_medical_officer,1,1,1,0
+access_oa_history_medical_officer,Oa History,model_oa_history,hms.group_hms_medical_officer,1,1,1,0
+access_shah_oa_medical_officer,Shah Oa,model_shah_oa,hms.group_hms_medical_officer,1,1,1,0
+access_shah_spine_note_medical_officer,Shah Spine Oa,model_shah_spine_note,hms.group_hms_medical_officer,1,1,1,0
+access_spine_xray_medical_officer,Spine Xray,model_spine_xray,hms.group_hms_medical_officer,1,1,1,0
+access_spine_advice_medical_officer,Spine Advice,model_spine_advice,hms.group_hms_medical_officer,1,1,1,0
+access_spine_mri_medical_officer,Spine Mri,model_spine_mri,hms.group_hms_medical_officer,1,1,1,0
+access_spine_ctscan_medical_officer,Spine Ctscan,model_spine_ctscan,hms.group_hms_medical_officer,1,1,1,0
+access_spine_others_medical_officer,Spine Others,model_spine_others,hms.group_hms_medical_officer,1,1,1,0
+access_spine_diagnosis_medical_officer,Spine Diagnosis,model_spine_diagnosis,hms.group_hms_medical_officer,1,1,1,0
+access_spine_plan_medical_officer,Spine Plan,model_spine_plan,hms.group_hms_medical_officer,1,1,1,0
+access_shah_spine_medical_officer,Shah Spine,model_shah_spine,hms.group_hms_medical_officer,1,1,1,0
+access_trauma_xray_medical_officer,Trauma Xray,model_trauma_xray,hms.group_hms_medical_officer,1,1,1,0
+access_trauma_advice_medical_officer,Trauma Advice,model_trauma_advice,hms.group_hms_medical_officer,1,1,1,0
+access_head_injury_medical_officer,Head Injury,model_head_injury,hms.group_hms_medical_officer,1,1,1,0
+access_history_loss_medical_officer,History Loss,model_history_loss,hms.group_hms_medical_officer,1,1,1,0
+access_shah_trauma_medical_officer,Shah Trauma,model_shah_trauma,hms.group_hms_medical_officer,1,1,1,0
+access_shah_hip_note_medical_officer,Shah Hip Note,model_shah_hip_note,hms.group_hms_medical_officer,1,1,1,0
+access_shah_hip_note_template_medical_officer,Shah Hip Note Template,model_shah_hip_note_template,hms.group_hms_medical_officer,1,1,1,0
+access_shah_oa_note_template_medical_officer,Shah Oa Note Template,model_shah_oa_note_template,hms.group_hms_medical_officer,1,1,1,0
+access_shah_oa_complaint_template_medical_officer,Shah Oa Complaint Template,model_shah_oa_complaint_template,hms.group_hms_medical_officer,1,1,1,0
+access_shah_spine_note_template_medical_officer,Template Spine,model_shah_spine_note_template,hms.group_hms_medical_officer,1,1,1,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_chief_complaint_nurse,Chief Complaint,model_chief_complaint,hms.group_hms_nurse,0,0,0,0
+access_shah_history_nurse,Shah History,model_shah_history,hms.group_hms_nurse,0,0,0,0
+access_shah_gait_nurse,Shah Gait,model_shah_gait,hms.group_hms_nurse,0,0,0,0
+access_shah_limb_nurse,Shah Limb,model_shah_limb,hms.group_hms_nurse,0,0,0,0
+access_hipjoint_xray_nurse,Hipjoint Xray,model_hipjoint_xray,hms.group_hms_nurse,0,0,0,0
+access_hipjoint_advice_nurse,Hipjoint Advice,model_hipjoint_advice,hms.group_hms_nurse,0,0,0,0
+access_shah_hipjoint_nurse,Shah Hipjoint,model_shah_hipjoint,hms.group_hms_nurse,0,0,0,0
+access_oa_xray_nurse,Oa Xray,model_oa_xray,hms.group_hms_nurse,0,0,0,0
+access_oa_hip_nurse,Oa Hip,model_oa_hip,hms.group_hms_nurse,0,0,0,0
+access_oa_advice_nurse,Oa Advice,model_oa_advice,hms.group_hms_nurse,0,0,0,0
+access_shah_oa_note_nurse,Shah Oa Note,model_shah_oa_note,hms.group_hms_nurse,0,0,0,0
+access_shah_oa_complaint_nurse,Shah Oa Complaint,model_shah_oa_complaint,hms.group_hms_nurse,0,0,0,0
+access_oa_history_nurse,Oa History,model_oa_history,hms.group_hms_nurse,0,0,0,0
+access_shah_oa_nurse,Shah Oa,model_shah_oa,hms.group_hms_nurse,0,0,0,0
+access_shah_spine_note_nurse,Shah Spine Oa,model_shah_spine_note,hms.group_hms_nurse,0,0,0,0
+access_spine_xray_nurse,Spine Xray,model_spine_xray,hms.group_hms_nurse,0,0,0,0
+access_spine_advice_nurse,Spine Advice,model_spine_advice,hms.group_hms_nurse,0,0,0,0
+access_spine_mri_nurse,Spine Mri,model_spine_mri,hms.group_hms_nurse,0,0,0,0
+access_spine_ctscan_nurse,Spine Ctscan,model_spine_ctscan,hms.group_hms_nurse,0,0,0,0
+access_spine_others_nurse,Spine Others,model_spine_others,hms.group_hms_nurse,0,0,0,0
+access_spine_diagnosis_nurse,Spine Diagnosis,model_spine_diagnosis,hms.group_hms_nurse,0,0,0,0
+access_spine_plan_nurse,Spine Plan,model_spine_plan,hms.group_hms_nurse,0,0,0,0
+access_shah_spine_nurse,Shah Spine,model_shah_spine,hms.group_hms_nurse,0,0,0,0
+access_trauma_xray_nurse,Trauma Xray,model_trauma_xray,hms.group_hms_nurse,0,0,0,0
+access_trauma_advice_nurse,Trauma Advice,model_trauma_advice,hms.group_hms_nurse,0,0,0,0
+access_head_injury_nurse,Head Injury,model_head_injury,hms.group_hms_nurse,0,0,0,0
+access_history_loss_nurse,History Loss,model_history_loss,hms.group_hms_nurse,0,0,0,0
+access_shah_trauma_nurse,Shah Trauma,model_shah_trauma,hms.group_hms_nurse,0,0,0,0
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_chief_complaint_manager,Chief Complaint,model_chief_complaint,hms.group_hms_manager,1,1,1,1
+access_shah_history_manager,Shah History,model_shah_history,hms.group_hms_manager,1,1,1,1
+access_shah_gait_manager,Shah Gait,model_shah_gait,hms.group_hms_manager,1,1,1,1
+access_shah_limb_manager,Shah Limb,model_shah_limb,hms.group_hms_manager,1,1,1,1
+access_hipjoint_xray_manager,Hipjoint Xray,model_hipjoint_xray,hms.group_hms_manager,1,1,1,1
+access_hipjoint_advice_manager,Hipjoint Advice,model_hipjoint_advice,hms.group_hms_manager,1,1,1,1
+access_shah_hipjoint_manager,Shah Hipjoint,model_shah_hipjoint,hms.group_hms_manager,1,1,1,1
+access_oa_xray_manager,Oa Xray,model_oa_xray,hms.group_hms_manager,1,1,1,1
+access_oa_hip_manager,Oa Hip,model_oa_hip,hms.group_hms_manager,1,1,1,1
+access_oa_advice_manager,Oa Advice,model_oa_advice,hms.group_hms_manager,1,1,1,1
+access_shah_oa_note_manager,Shah Oa Note,model_shah_oa_note,hms.group_hms_manager,1,1,1,1
+access_shah_oa_complaint_manager,Shah Oa Complaint,model_shah_oa_complaint,hms.group_hms_manager,1,1,1,1
+access_oa_history_manager,Oa History,model_oa_history,hms.group_hms_manager,1,1,1,1
+access_shah_oa_manager,Shah Oa,model_shah_oa,hms.group_hms_manager,1,1,1,1
+access_shah_spine_note_manager,Shah Spine Oa,model_shah_spine_note,hms.group_hms_manager,1,1,1,1
+access_spine_xray_manager,Spine Xray,model_spine_xray,hms.group_hms_manager,1,1,1,1
+access_spine_advice_manager,Spine Advice,model_spine_advice,hms.group_hms_manager,1,1,1,1
+access_spine_mri_manager,Spine Mri,model_spine_mri,hms.group_hms_manager,1,1,1,1
+access_spine_ctscan_manager,Spine Ctscan,model_spine_ctscan,hms.group_hms_manager,1,1,1,1
+access_spine_others_manager,Spine Others,model_spine_others,hms.group_hms_manager,1,1,1,1
+access_spine_diagnosis_manager,Spine Diagnosis,model_spine_diagnosis,hms.group_hms_manager,1,1,1,1
+access_spine_plan_manager,Spine Plan,model_spine_plan,hms.group_hms_manager,1,1,1,1
+access_shah_spine_manager,Shah Spine,model_shah_spine,hms.group_hms_manager,1,1,1,1
+access_trauma_xray_manager,Trauma Xray,model_trauma_xray,hms.group_hms_manager,1,1,1,1
+access_trauma_advice_manager,Trauma Advice,model_trauma_advice,hms.group_hms_manager,1,1,1,1
+access_head_injury_manager,Head Injury,model_head_injury,hms.group_hms_manager,1,1,1,1
+access_history_loss_manager,History Loss,model_history_loss,hms.group_hms_manager,1,1,1,1
+access_shah_trauma_manager,Shah Trauma,model_shah_trauma,hms.group_hms_manager,1,1,1,1
+access_shah_hip_note_manager,Shah Hip Note,model_shah_hip_note,hms.group_hms_manager,1,1,1,1
+access_shah_hip_note_template_manager,Shah Hip Note Template,model_shah_hip_note_template,hms.group_hms_manager,1,1,1,0
+access_shah_oa_note_template_manager,Shah Oa Note Template,model_shah_oa_note_template,hms.group_hms_manager,1,1,1,0
+access_shah_oa_complaint_template_manager,Shah Oa Complaint Template,model_shah_oa_complaint_template,hms.group_hms_manager,1,1,1,0
+,,,,,,,
+access_shah_trauma_receptionist,Shah Trauma,model_shah_trauma,hms.group_hms_receptionist,1,1,1,0
+access_shah_spine_receptionist,Shah Spine,model_shah_spine,hms.group_hms_receptionist,1,1,1,0
+access_shah_oa_receptionist,Trauma Xray,model_shah_oa,hms.group_hms_receptionist,1,1,1,0
+access_shah_hip_joint_rec,Hipjoint Advice,model_shah_hipjoint,hms.group_hms_receptionist,1,1,1,0

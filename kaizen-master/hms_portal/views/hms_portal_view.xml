@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    <menuitem name="HMS" id="portal_hms" parent="portal.portal_menu" sequence="40"/>
+	<menuitem name="Patient" id="portal_hms_patient" parent="portal_hms" action="hms.action_patient" sequence="10"/>
+	<menuitem name="Appointment" id="portal_hms_appointment" parent="portal_hms" action="hms.action_appointment" sequence="30"/>
+	
+	<!-- Patient View -->
+	<record id="view_patient_form_reset_password" model="ir.ui.view">
+            <field name="name">patient.form</field>
+            <field name="model">hms.patient</field>
+            <field name="inherit_id" ref="hms.view_patient_form"/>
+            <field name="arch" type="xml">
+                <button name="action_appointment" position="after">
+                    <button name="action_send_password" string="Send Password" groups="hms.group_hms_receptionist"
+                        type="object" class="oe_stat_button" icon="fa-share-square-o" invisible="1"/>
+                </button>
+            </field>
+    </record>
+
+    </data>
+</openerp>

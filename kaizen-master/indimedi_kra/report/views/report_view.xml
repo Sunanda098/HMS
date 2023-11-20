@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		
+		<report id="report_all_consultation"
+               string="Consultation Report"
+               model="oemedical.appointment" 
+               report_type="qweb-pdf"
+               file="all_consultation_report.all_consultation_report_qweb" 
+               name="all_consultation_report.all_consultation_report_qweb" 
+           />
+    <report id="report_all_consultation_invoice"
+               string="Invoices"
+               model="oemedical.appointment" 
+               report_type="qweb-pdf"
+               file="all_consultation_report.all_consultation_invoice_qweb_report" 
+               name="all_consultation_report.all_consultation_invoice_qweb_report" 
+               header="False"
+           />
+	</data>
+</openerp>

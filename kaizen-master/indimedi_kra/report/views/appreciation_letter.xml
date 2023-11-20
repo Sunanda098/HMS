@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <template id="appreciation_letter_report_temp">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="col-xs-12">
+                            <p style="margin-left:300px;font-size:18px;"><b>Letter of Appreciation</b></p><br/><br/>
+                        </div>
+                        <div class="col-xs-12">
+
+                            <div align="right">
+                                <p style="font-size:18px;">Date <span t-esc="datetime.datetime.now().date()" /></p>
+                            </div>
+                            <div align="left">
+                                <p style="font-size:18px;">Dear <t t-esc="o.full_name"/></p>
+
+                            <div class="col-xs-12">
+                                <p style="font-size:18px;">Let the family members of "Kaizen Hospital" congratulate you for your honesty.</p><br/>
+                                <p style="font-size:18px;">The “Kaizen Hospital” expects you to keep the same spirit and extends best wishes for further achievements. We hope the Hospital Management finds many such opportunities to congratulate you in the future.</p><br/>
+                                <p style="font-size:18px;">You truly are an asset to the “Kaizen Hospital”.</p><br/>
+                                <p style="font-size:18px;">Yours sincerely, </p><br/><br/><br/>
+                                <p style="font-size:18px;">Dr. Nehal Gadhavi</p>
+                                <p style="font-size:18px;">Hospital administrator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </t>
+            </t>
+        </template>
+
+        <report 
+            id="report_appreciation_letter" 
+            string="Appreciation Letter" 
+            model="hr.employee" 
+            report_type="qweb-pdf" 
+            file="indimedi_kra.appointment_letter_report" 
+            name="indimedi_kra.appreciation_letter_report_temp"
+        />
+
+    </data>
+</openerp>

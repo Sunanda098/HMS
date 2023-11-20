@@ -1,0 +1,48 @@
+<openerp>
+    <data noupdate="1">
+
+        <!-- Data for Admission Check List -->
+
+
+        <record id="vulnerable_assessment_100" model="vulnerable.assessment">
+            <field name="name">Age more then 60 Years/below 12 Years</field>
+        </record>
+
+        <record id="vulnerable_assessment_99" model="vulnerable.assessment">
+            <field name="name">Physically Challenged</field>
+        </record>
+
+        <record id="vulnerable_assessment_98" model="vulnerable.assessment">
+            <field name="name">Mentally Challenged/Mentally ill</field>
+        </record>
+
+        <record id="vulnerable_assessment_97" model="vulnerable.assessment">
+            <field name="name">Terminally ill</field>
+        </record>
+
+        <record id="vulnerable_assessment_96" model="vulnerable.assessment">
+            <field name="name">Inability to speak</field>
+        </record>
+
+        <record id="vulnerable_assessment_95" model="vulnerable.assessment">
+            <field name="name">Altered Consciousness</field>
+        </record>
+
+        <record id="vulnerable_assessment_94" model="vulnerable.assessment">
+            <field name="name">Epileptic Fit</field>
+        </record>
+
+        <record id="vulnerable_assessment_93" model="vulnerable.assessment">
+            <field name="name">Medication Related Consciousness Defect</field>
+        </record>
+
+        <record id="vulnerable_assessment_92" model="vulnerable.assessment">
+            <field name="name">Absence of Relative Attendant</field>
+        </record>
+
+        <record id="vulnerable_assessment_91" model="vulnerable.assessment">
+            <field name="name">Immunocom Promised/Low Immunity</field>
+        </record>
+
+    </data>
+</openerp>

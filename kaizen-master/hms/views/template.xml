@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template id="favicon_icon" name="HMS Icon" inherit_id="web.layout">
+            <xpath expr="//html/head/title" position="replace">
+                <title>HMS</title>
+            </xpath>
+            <xpath expr="//html/head/link[1]" position="replace">
+                <link rel="shortcut icon"
+                    href="/hms/static/src/img/favicon.ico"
+                    type="image/x-icon" />
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

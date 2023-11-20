@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="revenue_sharing_report_template">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <br />
+                    <h2 class="text-center">
+                        <t t-if="doc.type == 'service'">
+                            <u><strong>Service Wise Sharing Report</strong></u>
+                            <strong><h4><span t-field="doc.product_id.name" /></h4></strong>
+                        </t>
+                        <t t-if="doc.type == 'person'">
+                            <u><strong>Person Wise Sharing Report</strong></u>
+                            <strong><h4><span t-field="doc.person_id.name" /></h4></strong>
+                        </t>
+                        <t t-if="doc.type == 'group'">
+                            <u><strong>Group Wise Sharing Report</strong></u>
+                            <strong><h4><span t-field="doc.service_group" /></h4></strong>
+                        </t>
+                    </h2>
+                    <br/>
+                    <div class="row pull-right">
+                        <strong>Run Date:</strong>
+                        <span t-esc="datetime.datetime.today().date()" ></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <strong><span>Date From:</span></strong> <span t-field="doc.date_from"/> <strong><span>To:</span></strong> <span t-field="doc.date_to"/>
+                        </div>
+                        <!-- <div class="col-xs-3">
+                            <strong><span>Total Patient: </span><span t-esc="len(doc.get_mlc_hospitalization())"/></strong>
+                        </div> -->
+                    </div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No.</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Patient Name</th>
+                                <th class="text-center">B. No</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Discount</th>
+                                <th class="text-center">AD</th>
+                                <th class="text-center">TD</th>
+                                <th class="text-center">KSGA</th>
+                                <th class="text-center">Hos</th>
+                                <th class="text-center">Dr.Share</th>
+                                <th class="text-center">Adm.Dr</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="no" t-value="1" />
+                                <t t-if="doc.type == 'service'">
+                                	<t t-foreach="doc.get_revenue_sharing_by_service()" t-as="line">
+                                        <tr style="border:none">
+                                            <td style="border:none">
+                                                <center>
+                                                    <span t-esc="no" />
+                                                </center>
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.date" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.patient_id.name" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.invoice_id.number"/>
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.product_id.lst_price" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.discount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.attending_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.treating_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.ksga" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.hospital_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-esc="line.attending_amount + line.treating_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.by_whom.name" />
+                                            </td>
+                                        </tr>
+                                        <t t-set="no" t-value="no+1" />
+                                    </t>
+                                </t>
+                                <t t-if="doc.type == 'person'">
+                                    <t t-foreach="doc.get_revenue_sharing_by_person()" t-as="line">
+                                        <tr style="border:none">
+                                            <td style="border:none">
+                                                <center>
+                                                    <span t-esc="no" />
+                                                </center>
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.date" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.patient_id.name" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.invoice_id.number"/>
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.product_id.lst_price" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.discount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.attending_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.treating_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.ksga" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.hospital_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-esc="line.attending_amount + line.treating_amount" />
+                                            </td>
+                                            <td style="border:none">
+                                                <span t-field="line.by_whom.name" />
+                                            </td>
+                                        </tr>
+                                        <t t-set="no" t-value="no+1" />
+                                    </t>
+                                </t>
+                                <t t-if="doc.type == 'group'">
+                                    <t t-foreach="doc.get_groups()" t-as="group">
+                                        <tr>
+                                            <td colspan="12">
+                                                <strong><span t-esc="group.name" /></strong>
+                                            </td>
+                                        </tr>
+                                        <t t-foreach="doc.get_revenue_sharing_by_group(group)" t-as="line">
+                                        <tr>
+                                            <td>
+                                                <center>
+                                                    <span t-esc="no" />
+                                                </center>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.date" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.patient_id.name" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.invoice_id.number"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.product_id.lst_price" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.discount" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.attending_amount" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.treating_amount" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.ksga" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.hospital_amount" />
+                                            </td>
+                                            <td>
+                                                <span t-esc="line.attending_amount + line.treating_amount" />
+                                            </td>
+                                            <td>
+                                                <span t-field="line.by_whom.name" />
+                                            </td>
+                                        </tr>
+                                        <t t-set="no" t-value="no+1" />
+                                        </t>
+                                    </t>
+                                </t>
+
+<!--                    		<t t-foreach="doc.get_pathology_investigation()" t-as="line">-->
+<!--                                <tr>-->
+<!--                                    <td>-->
+<!--                                        <center>-->
+<!--                                            <span t-esc="no" />-->
+<!--                                        </center>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.investigation_id.date_investigation" />-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.product_id.name" />-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.investigation_id.patient_id.name" />-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.investigation_id.patient_id.code" />-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.product_id.hospital_product_type" />-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.product_id.inv_department" />-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <span t-field="line.product_id.inv_category" />-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <t t-set="no" t-value="no+1" />-->
+<!--                            </t> -->
+                        </tbody>
+                    </table>
+                    <!-- <t t-foreach="doc.get_ipd_discharge()" t-as="month">
+                        <strong><span t-esc="month" style="margin-right:30%" />Total : <span t-esc="len(month_value)" /></strong>
+	                    <table class="table table-bordered">
+	                        <thead>
+	                            <tr style="background-color:#808080">
+	                                <th class="text-center">No.</th>
+									<th class="text-center">Test Name</th>
+	                                <th class="text-center">Patient Name</th>
+	                                <th class="text-center">Reg. No.</th>
+	                                <th class="text-center">Hospital Product Type</th>
+	                                <th class="text-center">Investigation Department</th>
+	                                <th class="text-center">Investigation Category</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <t t-foreach="month_value" t-as="line">
+	                            <t t-set="no" t-value="1" />
+	                                <tr>
+	                                    <td class="text-center">
+	                                        <span t-esc="line.patient_id.name" />
+	                                    </td>
+	                                    <td class="text-center">
+	                                        <span t-esc="line.patient_id.code" />
+	                                    </td>
+	                                    <td class="text-center">
+	                                        <span t-esc="line.name" />
+	                                    </td>
+	                                    <td class="text-center">
+	                                        <span t-esc="line.hospitalization_date" />
+	                                    </td>
+	                                    <t t-if="doc.discharge_status != 'death'">
+	                                        <td>
+	                                            <span t-esc="line.discharge_date" />
+	                                        </td>
+	                                    </t>
+	                                    <t t-if="doc.discharge_status == 'death'">
+	                                        <td class="text-center">
+	                                        <span t-esc="line.death_date" />
+	                                        </td>
+	                                        <td class="text-center">
+	                                        <span t-esc="line.death_detail" />
+	                                        </td>
+	                                    </t>
+	                                </tr>
+	                                <t t-set="no" t-value="no+1" />
+	                                </t>
+	                        </tbody>
+	                    </table>
+	                    </t>
+	                 -->
+                </div>
+            </t>
+        </t>
+    </template>
+    <report id="action_revenue_sharing_report" model="revenue.sharing.report" string="Revenue Sharing Report" report_type="qweb-pdf" name="hms_invoice.revenue_sharing_report_template" file="hms_invoice.revenue_sharing_report_template" />
+
+</odoo>

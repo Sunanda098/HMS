@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="consultation_report_qweb">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-if="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id"></t>
+                    </t>
+                    <t t-if="not o or not 'company_id' in o">
+                    <t t-set="company" t-value="res_company"></t>
+                    </t>
+                    <div class="header">
+                        <div class="col-md-3" style="float:left;">
+                            <img
+                                style="z-index: 1;position: absolute;height:100px !important;height:120px !important;"
+                                t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" />
+                        </div>
+                        <div class="col-md-3" style="float:right;text-align:right;">
+                            <br><span>Unit of G.I.Heathcare Pvt.Ltd.</span></br>
+                            <br><span>132 ft Ring Road, Helmet Memnagar,</span></br>
+                            <br><span>Ahmedabad-380052, Gujarat, India</span></br>
+                            <br><span>Phone No : +91-79-2791 4444 / Mob:+91-98244 40044</span></br>                            
+                            <br><span>E-mail: contact@kaizenhospital.com</span></br>
+                            <br><span>Web: www.kaizenhospital.com</span></br>
+                        </div>
+                    </div>
+                    <div class="page" style="font-size:16px !important;margin:0 0 0 60; padding:0">
+                        <h2 class="text-center" style="margin-bottom:-20px"><strong>OPD Case Record</strong></h2>
+                        <div class="row mt32 mb32">
+                            <table class="table table-condensed" style="padding:0; margin:30px 0 0 0;border:1 px solid black;border-top:1 px solid black;">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding-top:5;border-top:1 px solid black;">
+                                            <strong>OPD No.:</strong>
+                                            <span t-esc="o.name"/>
+                                        </td>
+                                        <td style="padding-top:0;border-top:1 px solid black;">
+                                            <strong>Date:</strong>
+                                            <span t-field="o.date"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-top:0;" colspan="2">
+                                            <strong>Patient:</strong>
+                                            <span t-esc="o.patient_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-top:0;">
+                                            <strong>Age / Sex:</strong>
+                                            <span t-field="o.patient_id.age"/>/
+                                            <span t-field="o.patient_id.sex"/>
+                                        </td>
+                                        <td style="padding-top:0;">
+                                            <strong>Ref. By:</strong>
+                                            <t t-foreach="o.ref_doctor" t-as="line">
+                                                <span t-field="line.name"/>
+                                                <strong>,</strong>
+                                            </t> (<span t-field="o.refer_type1"/>)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table border="1">
+                                <tbody>
+                                    <!--Complaints 001-->
+                                    <t t-if="o.chief_complain">
+                                        <tr>
+                                            <td>
+                                                <strong>Complaints</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.chief_complain"/>             
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>                                    
+                                    <!--Past History 002-->
+                                    <t t-if="o.past_ho">
+                                        <tr>
+                                            <td>
+                                                <strong>Past History</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.past_ho"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Past Operation 003-->
+                                    <t t-if="o.past_surgeries_ids">
+                                        <tr>
+                                            <td>
+                                                <strong>Past Operation</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.past_surgeries_ids.description"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Past Medication 004-->
+                                    <t t-if="o.post_medication">
+                                        <tr>
+                                            <td>
+                                                <strong>Past Medication</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.post_medication"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Associated Disease 005-->
+                                    <t t-if="o.associated_disease">
+                                        <tr>
+                                            <td>
+                                                <strong>Associated Disease</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.associated_disease"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Previous Investigation 006-->
+                                    <t t-if="o.provisional_inv">
+                                        <tr>
+                                            <td>
+                                                <strong>Previous Investigation</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <t t-foreach="o.provisional_inv" t-as="line">
+                                                    <span t-field="line.past_inv_datetime"/>
+                                                    <strong>,</strong>
+                                                    <span t-field="line.product_id"/>
+                                                    <strong>,</strong>
+                                                    <span t-field="line.result"/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Personal History 007-->
+                                    <t t-if="o.personal_his_ids">
+                                        <tr>
+                                            <td>
+                                                <strong>Personal History</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <t t-foreach="o.personal_his_ids" t-as="line">
+                                                    <span t-field="line.personal_his_id"/>
+                                                    <strong>,</strong>
+                                                </t>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Family History 008-->
+                                    <t t-if="o.family_ho">
+                                        <tr>
+                                            <td>
+                                                <strong>Family History</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.family_ho"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--General Examination 009-->
+                                    <t t-if="o.general_examination">
+                                        <tr>
+                                            <td>
+                                                <strong>General Examination</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">   
+                                                <strong>:</strong>
+                                                <span t-field="o.general_examination"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Abdominal Examination 10-->
+                                    <t t-if="o.abdominal_examination_note">
+                                        <tr>
+                                            <td>
+                                                <strong>Abdominal Examination</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">  
+                                                <strong>:</strong>
+                                                <span t-field="o.abdominal_examination_note"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Rectal Examination 11-->
+                                        <tr>
+                                            <td>
+                                                <strong>Systemic Examination</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <t t-if="o.bp"><strong>:</strong> BP:
+                                                <span t-field="o.bp"/>/<span t-field="o.lbp"/></t><t t-if="o.temperature"> Temp:<span t-field="o.temperature"/></t><t t-if="o.pulse"> Pulse:<span t-field="o.pulse"/></t><t t-if="o.rr"> RR:<span t-field="o.rr"/></t><t t-if="o.spo2"> SPO2:<span t-field="o.spo2"/></t>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    <!--Rectal Examination 12-->
+                                    <t t-if="o.rectal_examination_note">
+                                        <tr>
+                                            <td>
+                                                <strong>Rectal Examination</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-field="o.rectal_examination_note"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Provisional Diagnosis 13-->
+                                    <t t-if="o.appt_prov_diagnosis">
+                                        <tr>
+                                            <td>
+                                                <strong>Provisional Diagnosis</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.appt_prov_diagnosis"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Suggestive Investigations 14-->
+                                    <t t-if="o.suggestive_investigations">
+                                        <tr>
+                                            <td>
+                                                <strong>Suggestive Investigation</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.suggestive_investigations"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.hypersensitive">
+                                        <tr>
+                                            <td>
+                                                <strong>Allergic To</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.hypersensitive"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.associated_diseases">
+                                        <tr>
+                                            <td>
+                                                <strong>Associated Disease</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <t t-foreach="o.associated_diseases" t-as="line">
+                                                    <span t-esc="line.associated_diseases_name.name"/>-
+                                                    <span t-esc="line.associated_diseases_desc"/>, 
+                                                </t>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.previous_inv">
+                                        <tr>
+                                            <td>
+                                                <strong>Present Medication</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.previous_inv"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.rs">
+                                        <tr>
+                                            <td>
+                                                <strong>R.S.</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.rs"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.cns">
+                                        <tr>
+                                            <td>
+                                                <strong>C.N.S.</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.cns"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.cvs">
+                                        <tr>
+                                            <td>
+                                                <strong>C.V.S.</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.cvs"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.external_genitals">
+                                        <tr>
+                                            <td>
+                                                <strong>Hernial Sites</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.external_genitals"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.diagnosis_id">
+                                        <tr>
+                                            <td>
+                                                <strong>Final Diagnosis</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <t t-foreach="o.diagnosis_id" t-as="line">
+                                                    <span t-esc="line.name"/>,
+                                                </t>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <t t-if="o.second_diagonsiss">
+                                        <tr>
+                                            <td>
+                                                <strong>Secondary Diagnosis</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span t-esc="o.second_diagonsiss"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <!--Advice 15-->
+                                    <!-- <t t-if="o.advice_group_ids">
+                                        <tr>
+                                            <td>
+                                                <strong>Advice Group</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <span  t-esc="', '.join(map(lambda x: x.name, o.advice_group_ids))"/>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t> -->
+                                    <t t-if="o.advices_group_lines_ids">
+                                        <tr>
+                                            <td>
+                                                <strong>Advices</strong>
+                                            </td>
+                                            <td style="padding-left:50px;" colspan="2">
+                                                <strong>:</strong>
+                                                <t t-foreach="o.advices_group_lines_ids" t-as="line">
+                                                    <span t-esc="line.name"/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>   
+                            <table class="table table-condensed">
+                                <tbody>
+                                    <t t-if="get_prescription(o.id)">
+                                        <tr>
+                                            <td colspan="4" style="border: none !important; padding-top:0;">
+                                                <h1 style="margin-bottom: -20px;">R</h1>
+                                                <span style="vertical-align: bottom; margin-left:30px;font-size:10">x</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: none !important; padding-right: 40; height: 20; text-align: left; font-weight:bold; padding-top:1; padding-bottom:1;">
+                                                <span>Medicine Name</span>
+                                            </td>
+                                            <td style="border: none !important; padding-right: 40; height: 20; text-align: left; font-weight:bold; padding-top:1; padding-bottom:1;">Frequency</td>
+                                            <td style="border: none !important; padding-right: 40; height: 20; text-align: left; font-weight:bold; padding-top:1; padding-bottom:1;">Instruction</td>
+                                            <td style="border: none !important; padding-right: 40; height: 20; text-align: left;font-weight:bold;padding-top:1; padding-bottom:1;">Days</td>
+                                            <td style="border: none !important; padding-right: 40; height: 20; text-align: left;font-weight:bold;padding-top:1; padding-bottom:1;">Qty</td>
+                                        </tr>
+                                    </t>
+                                    <t t-foreach="get_prescription(o.id)" t-as="prescription">
+                                        <tr>
+                                            <td style="padding-right: 40; width:538; height: 20; padding-top:1; padding-bottom:1;">
+                                                <span t-esc="prescription['prescription']"/>
+                                            </td>
+                                            <td style="padding-right: 40; width:312; height: 20; padding-top:1; padding-bottom:1;">
+                                                <span t-esc="prescription['common_dosage']"/>
+                                            </td>
+                                            <td style="padding-right: 40; width:312; height: 20; padding-top:1; padding-bottom:1;">
+                                                <span t-esc="prescription['sub_frequency_id']"/>
+                                            </td>
+                                            <td style="padding-right: 40; width:100; height: 20; padding-top:1; padding-bottom:1;">
+                                                <span t-esc="prescription['days']"/>
+                                            </td>
+                                            <td style="padding-right: 40; width:100; height: 20; padding-top:1; padding-bottom:1;">
+                                                <span t-esc="prescription['quantity']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <table class="table table-condensed" style="border-top:1px solid black;">
+                                <tbody>
+                                    <t t-if="o.post_medication">
+                                        <tr>
+                                            <td style="margin-top:10;"><b>
+Your next follow-up visit is scheduled on <t t-if="o.adv_followup_date"><span t-field="o.adv_followup_date"/></t> <br/>
+Please take prior appointment before 2 days on 98244 40044</b>
+                                            
+                                        </td>
+                                        </tr>
+                                    </t>
+                                    <tr>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <!-- <td style="border: none ; margin-top:10">
+                                            <p align="right">Kaizen Hospital</p>
+                                            <strong>
+                                                <b>Doctor’s Stamp/Signature:</b>
+                                            </strong>
+                                        </td> -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="row pull-right">
+                            <strong>Date:</strong>
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y %H:%M:%S')"/>
+                        </div> -->
+                    </div>
+                </t>
+            </t>
+
+        </template>
+        <report id="report_all_opd_consultation" string="OPD Case Record"
+            model="hms.appointment" report_type="qweb-pdf"
+            file="hms_consultation_report.report.xml" name="hms_consultation_report.consultation_report_qweb" />
+    </data>
+</openerp>

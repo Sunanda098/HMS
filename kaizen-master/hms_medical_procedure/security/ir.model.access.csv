@@ -1,0 +1,41 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hms_patient_user,Patient,hms.model_hms_patient,hms.group_hms_user,1,0,0,0
+access_hms_hms_medical_procedure_user,Medical Procedure,model_medical_procedure,hms.group_hms_user,1,0,0,0
+access_hms_procedure_type_user,Procedure Type,model_procedure_type,hms.group_hms_user,1,0,0,0
+access_hms_report_hms_medical_procedure_oop_discharge_summary_user,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_user,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_doctor,Patient,hms.model_hms_patient,hms.group_hms_doctor,1,1,1,1
+access_hms_hms_medical_procedure_doctor,Medical Procedure,model_medical_procedure,hms.group_hms_doctor,1,1,1,1
+access_hms_procedure_type_doctor,Procedure Type,model_procedure_type,hms.group_hms_doctor,1,1,1,1
+access_hms_report_hms_medical_procedure_oop_discharge_summary_doctor,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_doctor,1,1,1,1
+,,,,,,,
+,,,,,,,
+,,,,,,,
+access_hms_patient_receptionist,Patient,hms.model_hms_patient,hms.group_hms_receptionist,1,1,1,0
+access_hms_hms_medical_procedure_receptionist,Medical Procedure,model_medical_procedure,hms.group_hms_receptionist,1,1,1,0
+access_hms_procedure_type_receptionist,Procedure Type,model_procedure_type,hms.group_hms_receptionist,1,1,1,0
+access_hms_report_hms_medical_procedure_oop_discharge_summary_receptionist,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_receptionist,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_nurse,Patient,hms.model_hms_patient,hms.group_hms_nurse,1,1,1,0
+access_hms_hms_medical_procedure_nurse,Medical Procedure,model_medical_procedure,hms.group_hms_nurse,1,1,1,0
+access_hms_procedure_type_nurse,Procedure Type,model_procedure_type,hms.group_hms_nurse,1,1,1,0
+access_hms_report_hms_medical_procedure_oop_discharge_summary_nurse,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_nurse,1,1,1,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_pharmacist,Patient,hms.model_hms_patient,hms.group_hms_pharmacist,1,0,0,0
+access_hms_hms_medical_procedure_pharmacist,Medical Procedure,model_medical_procedure,hms.group_hms_pharmacist,1,0,0,0
+access_hms_procedure_type_pharmacist,Procedure Type,model_procedure_type,hms.group_hms_pharmacist,1,0,0,0
+access_hms_report_hms_medical_procedure_oop_discharge_summary_pharmacist,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_pharmacist,1,0,0,0
+,,,,,,,
+,,,,,,,
+access_hms_patient_jr_doctor,Patient,hms.model_hms_patient,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_hms_medical_procedure_jr_doctor,Medical Procedure,model_medical_procedure,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_procedure_type_jr_doctor,Procedure Type,model_procedure_type,hms.group_hms_jr_doctor,1,1,1,1
+access_hms_report_hms_medical_procedure_oop_discharge_summary_jr_doctor,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_jr_doctor,1,1,1,1
+,,,,,,,
+access_hms_patient_manager,Patient,hms.model_hms_patient,hms.group_hms_manager,1,1,1,0
+access_hms_hms_medical_procedure_manager,Medical Procedure,model_medical_procedure,hms.group_hms_manager,1,1,1,0
+access_hms_procedure_type_manager,Procedure Type,model_procedure_type,hms.group_hms_manager,1,1,1,0
+access_hms_report_hms_medical_procedure_oop_discharge_summary_manager,Report indimedi Medical Procedure Oop Discharge Summary,model_report_hms_medical_procedure_oop_discharge_summary,hms.group_hms_manager,1,1,1,0

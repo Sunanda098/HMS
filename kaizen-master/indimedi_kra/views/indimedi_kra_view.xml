@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem name="KRA" id="menu_indimedi_kra_root" sequence="10" />
+        <menuitem id="menu_indimedi_kra_kra" parent="menu_indimedi_kra_root" name="KRA" sequence="1" />
+        <menuitem id="menu_indimedi_kra_config" parent="menu_indimedi_kra_root" name="Configuration" sequence="30" groups="base.group_hr_user" />
+        <menuitem id="menu_indimedi_kra_analysis" parent="menu_indimedi_kra_root" name="Analysis" sequence="15" />
+        <!-- <menuitem id="menu_indimedi_kra_reporting" parent="menu_indimedi_kra_root" name="Reporting" sequence="20" /> -->
+        <record id="view_employee_kra_tree" model="ir.ui.view">
+            <field name="name">employee.kra.tree</field>
+            <field name="model">employee.kra</field>
+            <field name="arch" type="xml">
+                <tree string="Employee KRA">
+                    <field name="name" />
+                    <field name="quarterly" />
+                    <field name="year" />
+                    <field name="employee_id" />
+                    <field name="kra_question_ids" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_employee_kra_form" model="ir.ui.view">
+            <field name="name">employee.kra.form</field>
+            <field name="model">employee.kra</field>
+            <field name="arch" type="xml">
+                <form string="Employee KRA">
+                    <header>
+                        <!-- <button name="Print KRA" string="print_fill_kra_report" type="object" class="oe_highlight"/> -->
+                        <button name="action_submit" class="oe_highlight" type="object" string="Submit To Supervisor" states="draft" />
+                        <button name="action_done" class="oe_highlight" type="object" string="Done" states="submit" groups="base.group_hr_user" />
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,submit" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="name" colspan="2" attrs="{'readonly': [('state', '=', 'done')]}" />
+                            <field name="quarterly" />
+                            <field name="year" colspan="2" attrs="{'readonly': [('state', '=', 'done')]}" />
+                            <field name="employee_id" on_change="onchange_employee_id(employee_id)" colspan="2" attrs="{'readonly': [('state', '=', 'done')]}" />
+                            <field name="kra_id" colspan="2" />
+                        </group>
+                        <notebook>
+                            <page string="KRA Questions">
+                                <field name="kra_question_ids" attrs="{'readonly': [('state', '=', 'done')]}">
+                                    <tree string="KRA Questions" editable="bottom">
+                                        <field name="name" />
+                                        <field name="kra_question_id" />
+                                        <field name="hint" />
+                                        <field name="weightage" />
+                                        <field name="employee_rating" />
+                                        <field name="employee_remark" />
+                                        <field name="manager_rating" readonly="1" />
+                                        <field name="manager_remark" readonly="1" />
+                                        <field name="final_score" sum="Final Score" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!--  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div> -->
+                </form>
+            </field>
+        </record>
+        <record id="action_employee_kra_form" model="ir.actions.act_window">
+            <field name="name">Employee KRA</field>
+            <field name="res_model">employee.kra</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.ui.view" id="view_manager_kra_form">
+            <field name="name">employee.kra.manager.form</field>
+            <field name="model">employee.kra</field>
+            <field name="inherit_id" ref="view_employee_kra_form" />
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_hr_user') ])]" />
+            <field name="arch" type="xml">
+                <field name="manager_rating" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+                <field name="manager_remark" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+        </record>
+        <!--Indimedi KRA  -->
+        <record id="view_indimedi_kra_tree" model="ir.ui.view">
+            <field name="name">indimedi.kra.tree</field>
+            <field name="model">indimedi.kra</field>
+            <field name="arch" type="xml">
+                <tree string="Indimedi KRA">
+                    <field name="name" />
+                    <field name="kra_question_ids" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_indimedi_kra_form" model="ir.ui.view">
+            <field name="name">indimedi.kra.form</field>
+            <field name="model">indimedi.kra</field>
+            <field name="arch" type="xml">
+                <form string="Indimedi KRA">
+                    <!-- <header>
+                       <button string="Print KRA" name="print_kra_report" type="object" class="oe_highlight"/>
+                   </header> -->
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <notebook>
+                            <page string="KRA Questions">
+                                <field name="kra_question_ids">
+                                    <tree string="KRA Questions" editable="bottom">
+                                        <field name="sequence" />
+                                        <field name="name" />
+                                        <field name="question" />
+                                        <field name="description" />
+                                        <field name="weightage" />
+                                    </tree>
+                                    <form string="KRA Questions">
+                                        <group col="4">
+                                            <field name="sequence" />
+                                            <field name="name" />
+                                            <field name="question" />
+                                            <field name="description" />
+                                            <field name="weightage" />
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_indimedi_kra_form" model="ir.actions.act_window">
+            <field name="name">Indimedi KRA</field>
+            <field name="res_model">indimedi.kra</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Indimedi KRA  -->
+        <record id="employee_tag_probation" model="hr.employee.category">
+            <field name="name">Probation</field>
+        </record>
+        <record id="employee_allocation_leave" model="ir.cron">
+            <field name="name">Employee Leave Per Month</field>
+            <field eval="True" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall" />
+            <field name="model">hr.holidays</field>
+            <field name="function">_create_leave_employee_per_month</field>
+            <field name="args">()</field>
+        </record>
+        <record id="view_employee_kra_form_review" model="ir.ui.view">
+            <field name="name">employee.kra.form</field>
+            <field name="model">employee.kra</field>
+            <field name="arch" type="xml">
+                <form string="Employee KRA Review">
+                    <header>
+                        <!-- <button name="Print KRA" string="print_fill_kra_report" type="object" class="oe_highlight"/> -->
+                        <button name="action_submit" class="oe_highlight" type="object" string="Submit To Supervisor" states="draft" />
+                        <button name="action_done" class="oe_highlight" type="object" string="Done" states="submit" groups="base.group_hr_user" />
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,submit" />
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="name" colspan="2" attrs="{'readonly': [('state', '=', 'done')]}" />
+                            <field name="quarterly" />
+                            <field name="year" colspan="2" attrs="{'readonly': [('state', '=', 'done')]}" />
+                            <field name="employee_id" on_change="onchange_employee_id(employee_id)" colspan="2" attrs="{'readonly': [('state', '=', 'done')]}" />
+                            <field name="kra_id" colspan="2" />
+                        </group>
+                        <notebook>
+                            <page string="KRA Questions">
+                                <field name="kra_question_ids" attrs="{'readonly': [('state', '=', 'done')]}">
+                                    <tree string="KRA Questions" editable="bottom">
+                                        <field name="name" />
+                                        <field name="kra_question_id" />
+                                        <field name="hint" />
+                                        <field name="weightage" />
+                                        <field name="employee_rating" readonly="1"/>
+                                        <field name="employee_remark" readonly="1"/>
+                                        <field name="manager_rating"/>
+                                        <field name="manager_remark"/>
+                                        <field name="final_score" sum="Final Score" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!--  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div> -->
+                </form>
+            </field>
+        </record>
+
+        <record id="action_employee_kra_review" model="ir.actions.act_window">
+            <field name="name">Employee KRA to Review</field>
+            <field name="res_model">employee.kra</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'submit'),('employee_id.parent_id.user_id', 'in', [uid])]</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_employee_kra_review_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_employee_kra_tree"/>
+            <field name="act_window_id" ref="action_employee_kra_review"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_employee_kra_review_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_employee_kra_form_review"/>
+            <field name="act_window_id" ref="action_employee_kra_review"/>
+        </record>
+
+
+        <!-- Employee inherit view -->
+        <record id="view_hr_employee_color_kanban" model="ir.ui.view">
+            <field name="name">hr.employee.color.kanban</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="arch" type="xml">
+                <field name="last_login" position="after">
+                    <field name="color"/>
+                </field>
+                <xpath expr="//div[@class='oe_kanban_global_click']" position="attributes">
+                    <attribute name="class"></attribute>
+                    <attribute name="t-attf-class">oe_kanban_global_click oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}</attribute>
+                </xpath>
+            </field>
+        </record>
+        <!-- <record id="employee_tree" model="ir.ui.view">
+            <field name="name">hr.employee.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                     <field name="employee_joining_progress" widget="progressbar"/>
+                </field>
+            </field>
+        </record> -->
+        
+        
+        <!-- <record model="ir.ui.view" id="view_employee_inherit_form_view">
+            <field name="name">hr.employee inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="priority" eval="20" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_button_box']" position="inside">
+                    <button class="oe_inline oe_stat_button" type="object" name="action_kra_tree_view" icon="fa-key">
+                        <field string="KRA" name="kra_count" widget="statinfo" />
+                    </button>
+                    <button class="oe_inline oe_stat_button" type="object" name="action_survey_tree_view" icon="fa-paperclip">
+                        <field string="Survey" name="survey_count" widget="statinfo" />
+                    </button>
+                </xpath>
+                <field name="mobile_phone" position="after">
+                    <field name="mobile_alternative" />
+                </field>
+                <field name="work_location" position="after">
+                    <field name="kra_id" />
+                    <field name="employee_code" />
+                    <field name="e_mail" widget="email"/>
+                    <field name="skype" />
+                    <field name="date_joining"/>
+                    <field name="Spark_id" />
+                </field>
+                <xpath expr="//notebook/page[@name='public']" position="after">
+                    <page string="Joining Checklist" groups="base.group_hr_user">
+                        <group>
+                            <field name="employee_joining_progress" widget="progressbar"/>
+                        </group>
+                        <group string="For Employees Joining">
+                            <field name="id_proof" />
+                            <field name="address_proof" />
+                            <field name="is_experience" />
+                            <field name="computer_allocated" />
+                            <field name="biometric" />
+                            <field name="card_no" />
+                            <field name="pan_card"/>
+                            <field name="final_degree" />
+                            <field name="nda" />
+                            <field name="cheque_scanned" />
+                            <field name="bank_acc" />
+                            <field name="pf_form" />
+                            <field name="esci" />
+                            <field name="background_check_details" />
+                            <field name="verification" />
+                            <field name="alternate_email_id" />
+                            <field name="alternate_phone_no" />
+                        </group>
+                        <group string="New Joinee Process">
+                            <field name="group_broad" />
+                            <field name="verify_check" />
+                            <field name="background_check" />
+                            <field name="nda_sign" />
+                        </group>
+                        <group string="Question Templates">
+                            <group><group>
+                                <field name="survey_one" />
+                                <field name="survey_two" />
+                                <field name="survey_three" />
+                           </group> </group>
+                        </group>
+                    </page>
+                    <page string="Exit Checklist"  groups="base.group_hr_user">
+                        <group string="Particular">
+                            <field name="super_approval" />
+                            <field name="is_notice" />
+                            <field name="is_resource" />
+                            <field name="cheque_received" />
+                            <field name="security_cheque" />
+                            <field name="loan_paid" />
+                            <field name="pf_nos" />
+                            <field name="esi_nos" />
+                            <field name="is_tds" />
+                            <field name="tds_certificate" />
+                            <field name="experience_letter" />
+                            <field name="is_notice" />
+                            <field name="non_due" />
+                        </group>
+                        <group string="Exit interview form">
+                            <field name="is_pwd_chng" />
+                            <group><group>
+                                <field name="resignation_date" />
+                                <field name="last_date" />
+                                field of hr_employee.py
+                                <field name="salary_start_date" />
+                                <field name="cheque_no" />
+                                <field name="cheque_date" />
+                           </group> </group>
+                        </group>
+                    </page>
+                </xpath>
+                <field name="user_id" position="after">
+                    <field name="date_joining"/>
+                    <field name="three_months_after" invisible="1"/>
+                </field>
+            </field>
+        </record> -->
+        <record id="action_employee_inherit_menu" model="ir.actions.act_window">
+            <field name="name">Employee</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.ui.view" id="view_hr_job_inherit_form_view">
+            <field name="name">hr job inherit</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form" />
+            <field name="priority" eval="20" />
+            <field name="arch" type="xml">
+                <field name="department_id" position="after">
+                    <field name="kra_id" />
+                </field>
+            </field>
+        </record>
+        <record id="action_job_inherit_menu" model="ir.actions.act_window">
+            <field name="name">Job</field>
+            <field name="res_model">hr.job</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_employee_inherit_menu" action="action_employee_inherit_menu" parent="menu_indimedi_kra_kra" name="Employee" sequence="10" />
+        <menuitem id="menu_employee_kra_inherit_menu" action="action_employee_kra_form" parent="menu_indimedi_kra_kra" name="KRA" sequence="20" />
+        <menuitem id="menu_employee_kra_review" action="action_employee_kra_review" parent="menu_indimedi_kra_kra" name="KRA to Review" sequence="25"/>
+        <menuitem id="menu_job_inherit_menu" action="action_job_inherit_menu" parent="menu_indimedi_kra_config" name="Job" sequence="10" />
+        <menuitem id="menu_indimedi_kra_inherit_menu" action="action_indimedi_kra_form" parent="menu_indimedi_kra_config" name="KRA" sequence="20" />
+        <record id="view_indimedi_kra_question_pivot" model="ir.ui.view">
+            <field name="name">indimedi.kra.question.pivot</field>
+            <field name="model">employee.kra.question</field>
+            <field name="arch" type="xml">
+                <pivot string="KRA Analysis" disable_linking="True">
+                    <field name="employee_id" type="row" />
+                    <field name="kra_question_id" type="row" />
+                    <field name="create_date" interval="quarter" type="col" />
+                    <field name="create_date" interval="year" type="col" />
+                    <field name="employee_rating" type="measure" />
+                    <field name="manager_rating" type="measure" />
+                    <field name="final_score" type="measure" />
+                </pivot>
+            </field>
+        </record>
+        <record id="view_indimedi_kra_question_graph" model="ir.ui.view">
+            <field name="name">indimedi.kra.question.graph</field>
+            <field name="model">employee.kra.question</field>
+            <field name="arch" type="xml">
+                <graph string="KRA Analysis" type="pivot" stacked="True">
+                    <field name="employee_id" type="row" />
+                    <field name="kra_question_id" type="row" />
+                    <field name="create_date" interval="quarter" type="col" />
+                    <field name="create_date" interval="year" type="col" />
+                    <field name="employee_rating" type="measure" />
+                    <field name="manager_rating" type="measure" />
+                    <field name="final_score" type="measure" />
+                </graph>
+            </field>
+        </record>
+        <record id="view_indimedi_kra_question_search" model="ir.ui.view">
+            <field name="name">employee.kra.question.search</field>
+            <field name="model">employee.kra.question</field>
+            <field name="arch" type="xml">
+                <search string="KRA Analysis">
+                    <field name="employee_id" />
+                    <field name="kra_question_id" />
+                    <field name="employee_kra_id" />
+                    <filter string="KRA" help="KRA" domain="[('employee_id.user_id','=',uid)]" />
+                    <group expand="1" string="Group By">
+                        <filter string="Employee" name="Employee" context="{'group_by':'employee_id'}" />
+                        <filter string="Month" name="Month" context="{'group_by':'create_date:month'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_indimedi_kra_question_report_all" model="ir.actions.act_window">
+            <field name="name">KRA Analysis</field>
+            <field name="res_model">employee.kra.question</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="view_ids" eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_indimedi_kra_question_pivot')}),                           (0, 0, {'view_mode': 'graph', 'view_id': ref('view_indimedi_kra_question_graph')})]" />
+            <!-- <field name="view_id" ref="view_indimedi_kra_question_graph"/> -->
+            <field name="search_view_id" ref="view_indimedi_kra_question_search" />
+        </record>
+        <record id="view_value_rating_tree" model="ir.ui.view">
+            <field name="name">value.rating.tree</field>
+            <field name="model">value.rating</field>
+            <field name="arch" type="xml">
+                <tree string="Value Rating">
+                    <field name="employee_id" />
+                    <!-- <field name="employee_code" /> -->
+                    <field name="designation" />
+                </tree>
+            </field>
+        </record>
+        <record id="view_value_rating_form" model="ir.ui.view">
+            <field name="name">value.rating.form</field>
+            <field name="model">value.rating</field>
+            <field name="arch" type="xml">
+                <form string="Value Rating">
+                    <header>
+                        <button name="action_submit" class="oe_highlight" type="object" string="Submit To Supervisor" states="draft" />
+                        <button name="action_done" class="oe_highlight" type="object" string="Done" states="submit" />
+                        <button name="action_cancel" type="object" string="Cancel" states="draft,submit" />
+                        <field name="state" widget="statusbar" />
+                        <!--  <button name="Print Value Rating" string="print_value_rating" type="object" class="oe_highlight"/> -->
+                    </header>
+                    <sheet>
+                        <group col="2">
+                            <group>
+                                <field name="employee_id" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="designation" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="month" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group>
+                                <!-- <field name="employee_code" attrs="{'readonly':[('state','=','done')]}" /> -->
+                                <field name="appraiser_id" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="year" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                        </group>
+                        <group col="2">
+                            <group String="Approach To Work">
+                                <field name="sys_process" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="follow_instr" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="flexible" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="plan" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Technical Skills">
+                                <field name="job_knowledge" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="skill" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="learn_skill" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Quality Of work">
+                                <field name="accuracy" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="reliability" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="cust_sati" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Handling Targets">
+                                <field name="work_comple" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="pressure" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="handling" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Interpersonal Skills">
+                                <field name="relationship" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="prob_solv" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="dec_mak" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="time_mng" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Communication Skills">
+                                <field name="express" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="share_know" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Development">
+                                <field name="seeks" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="open_ideas" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Personality">
+                                <field name="enthu" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="trust" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Code of Conduct">
+                                <field name="ettiquttes" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="punctuality" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="descipline" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="attendance" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                            <group string="Leadership">
+                                <field name="team_work" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="team_build" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="strategy" attrs="{'readonly':[('state','=','done')]}" />
+                                <field name="participation" attrs="{'readonly':[('state','=','done')]}" />
+                            </group>
+                        </group>
+                    </sheet>
+                    <!--  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div> -->
+                </form>
+            </field>
+        </record>
+
+        <record id="edit_holiday_new_readonly_emp" model="ir.ui.view">
+            <field name="name">edit.holiday.new.readonly.emp</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="priority">1</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user')])]"/>
+            <field name="arch" type="xml">
+                <field name="number_of_days_temp" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>
+        <record id="edit_holiday_new_readonly_emp2" model="ir.ui.view">
+            <field name="name">edit.holiday.new.readonly.emp</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new"/>
+            <field name="priority">5</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_hr_manager'), ref('base.group_hr_user')])]"/>
+            <field name="arch" type="xml">
+                <field name="number_of_days_temp" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_employee_value_rating" model="ir.actions.act_window">
+            <field name="name">Employee Value Rating</field>
+            <field name="res_model">value.rating</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!--menuitem action="action_employee_value_rating" id="menu_employee_value_rating" parent="menu_indimedi_kra_config" sequence="20" /-->
+        <menuitem action="action_indimedi_kra_question_report_all" id="menu_report_indimedi_kra_all" parent="menu_indimedi_kra_analysis" sequence="11" />
+    </data>
+</openerp>
+

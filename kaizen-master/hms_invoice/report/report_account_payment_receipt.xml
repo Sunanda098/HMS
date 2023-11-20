@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_account_payment_receipt_document">
+            <!-- <t t-call="hms.hms_external_layout"> -->
+                <div class="page col-xs-offset-1">
+                    <div class="row mt32 mb32">
+                        <table class="table">
+                            <div>
+                                <h4 class="text-center" style="border-bottom:1px black;"><strong>Advance / Refund Receipt</strong></h4>
+                                <h3 class="text-center" style="border-bottom:1px black;"><strong>DEPOSIT RECEIPT VOUCHER</strong></h3>
+                            </div>
+                            <tr>
+                                <td colspan="2">
+                                    <strong>Deposit Receipt Number : </strong>
+                                    <span t-field="o.name" />
+                                </td>
+                                <td colspan="2">
+                                    <strong>Date : </strong>
+                                    <span t-field="o.payment_date" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="border:none;">
+                                    <strong>Patient Name :</strong>
+                                    <span t-field="o.partner_id.name" />
+                                </td>
+                                <td colspan="2" style="border:none;">
+                                    <strong>Patient No. : </strong>
+                                    <span t-field="o.patient_id.code" />
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td colspan="4" style="border:none;">
+                                    <strong>IPD No. : </strong>
+                                    <span t-field="o.ipd_id" />
+                                </td>    
+                            </tr> -->
+                            <tr>
+                                <td colspan="2">
+                                    <strong>Particular</strong>
+                                    <br/>
+                                </td>
+                                <td colspan="2">
+                                    <strong>Amount</strong>
+                                    <br/>
+                                </td>     
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <strong>Deposit for <span t-field="o.product_id" /></strong>   
+                                </td>
+                                <td colspan="2">
+                                    <strong>Rs. : </strong>
+                                    <span t-field="o.amount" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: none;">
+                                    <strong>By </strong>
+                                    <span t-field="o.journal_id" />
+                                    <br />
+                                </td>
+                                <div t-if="o.journal_id=='cash'">
+                                    <td style="border:none;">
+                                        <strong>Cash</strong>
+                                        <br />
+                                    </td>
+                                </div>
+                                <div t-if="o.journal_id.code=='cheq'">
+                                    <td style="border:none;">
+                                        <strong>Bank Name :</strong>
+                                        <span t-field="o.bank_name" />
+                                        <br />
+                                        <!-- <strong>Branch:</strong>
+                                        <span t-field="o.branch" />
+                                        <br /> -->
+                                        <strong>Cheque No :</strong>
+                                        <span t-field="o.cheque_no" />
+                                        <br />
+                                        <strong>Cheque Date :</strong>
+                                        <span t-field="o.cheque_date" />
+                                        <br />
+                                    </td>
+                                </div>
+                                <div t-if="o.journal_id.code=='credt'">
+                                    <td style="border:none;">
+                                        <t t-if="o.card_no">
+                                            <strong>Card Number :</strong>
+                                            <span t-field="o.card_no" />
+                                            <br />
+                                        </t>
+                                        <t t-if="o.months">
+                                            <strong>Expiry Date :</strong>
+                                            <span t-field="o.months" />
+                                            <br />
+                                        </t>
+                                        <t t-if="o.card_name">
+                                            <strong>Card Holder :</strong>
+                                            <span t-field="o.card_name" />
+                                        </t>
+                                    </td>
+                                </div>
+                                <!-- <div t-if="o.payment_mode=='neft/rtgs'">
+                                    <td>
+                                        <strong>Neft Nos.:</strong>
+                                        <span t-field="o.neft_number" />
+                                        <br />
+                                        <strong>Neft Date:</strong>
+                                        <span t-field="o.neft_date" />
+                                    </td>
+                                </div> -->                                   
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <strong>Received with thanks from  </strong>
+                                    <span t-field="o.partner_id.name" />
+                                    <strong> an amount</strong>
+                                    <br/>
+                                    <strong>of Rs:  <span t-esc="o.amount_to_text(o.amount)" />Only</strong>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td style="border: none;">
+                                    <strong>Address : </strong>
+                                    <t t-if="o.partner_id.street">
+                                        <span t-field="o.partner_id.street" />
+                                        ,
+                                    </t> -->
+                                    <!--t t-if="o.partner_id.street1"><span t-field="o.partner_id.street1"/>, 
+                                        </t -->
+                                    <!-- <t t-if="o.partner_id.city">
+                                        <span t-field="o.partner_id.city" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.state_id.name">
+                                        <span t-field="o.partner_id.state_id.name" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.zip">
+                                        <span t-field="o.partner_id.zip" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.phone">
+                                        <span t-field="o.partner_id.phone" />
+                                        ,
+                                    </t>
+                                    <t t-if="o.partner_id.mobile">
+                                        <span t-field="o.partner_id.mobile" />
+                                        ,
+                                    </t>
+                                </td>
+                                <td style="border: none;">
+                                </td>
+                            </tr> -->
+                            
+                            <tr>
+                                <td colspan="2">
+                                    <br/><br/>
+                                    <strong><span>For, Kaizen Hospital</span></strong>
+                                </td>
+                                <td colspan="2">
+                                    <br/><br/>
+                                    <strong><span>Authorised Signature</span></strong>
+                                </td>  
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <strong><span>* All transaction are subject to Ahmedabad Jurisdiction only.</span></strong> 
+                                </td>                               
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="oe_structure" />
+                </div>
+            <!-- </t> -->
+        </template>
+
+        <template id="report_account_payment_receipt">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="hms_invoice.report_account_payment_receipt_document"
+                        t-lang="o.partner_id.lang" />
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

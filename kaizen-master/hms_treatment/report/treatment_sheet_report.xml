@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_line_treatment">
+        <t t-call="report.html_container">
+            <t t-call="report.internal_layout">
+                <div class="page">
+                    <h2 class="text-center">Treatment Sheet</h2>
+                    <div class="row mt32" t-foreach="treatments" t-as="treatment">
+                        <div class="col-xs-4 oe_right">
+                            <strong>
+                                Patient Name:
+                                <span t-att-style="style" t-esc="treatment.patient_id.name"/>
+                            </strong>
+                        </div>
+                    </div>
+                    <br>
+                    </br>
+                    <br>
+                    </br>
+                    <table class="table table-condensed table-bordered" style="border-style:solid">
+                        <thead>
+                            <tr style="border-style:solid">
+                                <th class="text-left">DATE</th>
+                                <th class="text-left">NOTE</th>
+                                <th class="text-left">ORDERS</th>
+                            </tr>
+                        </thead>
+                        <tbody t-foreach="treatments" t-as="treatment">
+                            <tr style="border-style:solid">
+                                <th class="text-left">
+                                    <span t-att-style="style" t-esc="treatment.treatment_date"/>
+                                </th>
+                                <th class="text-left" >
+                                    <t t-if="treatment.finding">
+                                    <strong>
+                                        Findings :
+                                        <span t-att-style="style" t-esc="treatment.finding"/>
+                                    </strong>
+                                    <br>
+                                    </br>
+                                    </t>
+                                    <t t-if="treatment.physiotherapy">
+                                    <strong>
+                                        Physiotherapy :
+                                        <span t-att-style="style" t-esc="treatment.physiotherapy"/>
+                                    </strong>
+                                    <br>
+                                    </br>
+                                    </t>
+                                    <t t-if="treatment.instruction">
+                                    <strong>
+                                        Instructions :
+                                        <br>
+                                        </br>
+                                        <t t-foreach="treatment.instruction" t-as="instruction">
+                                            <span t-att-style="style" t-esc="instruction.inst_id.name"/>
+                                        </t>
+                                        <br>
+                                        </br>
+                                    </strong></t>
+                                </th>
+                                <th class="text-left" >
+                                    <t t-foreach="medicines" t-as="medicine">
+                                        <span t-att-style="style" t-esc="medicine.product_id.name"/>
+                                        -
+                                        <span t-att-style="style" t-esc="medicine.dose"/>
+                                        -
+                                        <span t-att-style="style" t-esc="medicine.actual_time"/>
+                                        <br>
+                                        </br>
+                                    </t>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

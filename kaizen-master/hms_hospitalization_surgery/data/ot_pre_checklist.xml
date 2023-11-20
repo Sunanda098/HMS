@@ -1,0 +1,274 @@
+<openerp>
+    <data noupdate="1">
+        <!-- Data for Admission Check List -->
+
+        <record id="ot_pre_operational_checklist_data_01" model="pre.operative.check.list.template">
+            <field name="name">Date &amp; Time :</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_02" model="pre.operative.check.list.template">
+            <field name="name">Autoclave machine working ok ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_03" model="pre.operative.check.list.template">
+            <field name="name">Autoclave time noted ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_04" model="pre.operative.check.list.template">
+            <field name="name">Implants received/cheked and put in tray for autoclave ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_05" model="pre.operative.check.list.template">
+            <field name="name">Instrument tray prepared ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_06" model="pre.operative.check.list.template">
+            <field name="name">Linen drum and dressing drums prepared ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_07" model="pre.operative.check.list.template">
+            <field name="name">Spirit, Betadine and scrub filled ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_08" model="pre.operative.check.list.template">
+            <field name="name">Ontgen cylinder checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_09" model="pre.operative.check.list.template">
+            <field name="name">Suction machine checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_010" model="pre.operative.check.list.template">
+            <field name="name">Cautery machine checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_011" model="pre.operative.check.list.template">
+            <field name="name">Cautery pad and cover checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_012" model="pre.operative.check.list.template">
+            <field name="name">Anesthesia trorfey cfeaned and checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_013" model="pre.operative.check.list.template">
+            <field name="name">Tourniquet trolley cleaned and checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_014" model="pre.operative.check.list.template">
+            <field name="name">Pulse lavage checked ?</field>
+            <field name="remark"></field>
+        </record>
+        <record id="ot_pre_operational_checklist_data_015" model="pre.operative.check.list.template">
+            <field name="name">Anesthesia medicines checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_016" model="pre.operative.check.list.template">
+            <field name="name">Air conditioners checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_017" model="pre.operative.check.list.template">
+            <field name="name">Operation lights checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_018" model="pre.operative.check.list.template">
+            <field name="name">IV fluids inside the CT checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_019" model="pre.operative.check.list.template">
+            <field name="name">Implants inside the theatre before fumigation ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_020" model="pre.operative.check.list.template">
+            <field name="name">Disposible, Hoods checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_021" model="pre.operative.check.list.template">
+            <field name="name">Bone cement in refrigerator checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_022" model="pre.operative.check.list.template">
+            <field name="name">Suture materials checked ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_023" model="pre.operative.check.list.template">
+            <field name="name">Fracture table arranged ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_024" model="pre.operative.check.list.template">
+            <field name="name">Patti, crepe bandage ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_025" model="pre.operative.check.list.template">
+            <field name="name">X-ray placed on the view box ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_026" model="pre.operative.check.list.template">
+            <field name="name">Operation theatre cleaned ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_027" model="pre.operative.check.list.template">
+            <field name="name">Operation theatre fumigation done? Time?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_028" model="pre.operative.check.list.template">
+            <field name="name">OT dress, caps, masks checked ? Autoclaved ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_029" model="pre.operative.check.list.template">
+            <field name="name">OT shoes ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_030" model="pre.operative.check.list.template">
+            <field name="name">Asst. Ortho. Surgeon informed ?</field>
+            <field name="remark"></field>
+        </record>
+        <record id="ot_pre_operational_checklist_data_031" model="pre.operative.check.list.template">
+            <field name="name">Anesthetist time confirmed ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_032" model="pre.operative.check.list.template">
+            <field name="name">Dustbins in place ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_033" model="pre.operative.check.list.template">
+            <field name="name">Old plastics in place ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_034" model="pre.operative.check.list.template">
+            <field name="name">Radio working ok ?</field>
+            <field name="remark"></field>
+        </record>
+        <record id="ot_pre_operational_checklist_data_035" model="pre.operative.check.list.template">
+            <field name="name">Two pillows with cover ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_036" model="pre.operative.check.list.template">
+            <field name="name">Saline stands ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_037" model="pre.operative.check.list.template">
+            <field name="name">Done By :</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="ot_pre_operational_checklist_data_038" model="pre.operative.check.list.template">
+            <field name="name">Check By :</field>
+            <field name="remark"></field>
+        </record>
+                <record id="pre_operational_checklist_data_01" model="pre.operative.check.list.template">
+            <field name="name">Operative Area Prepared ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_02" model="pre.operative.check.list.template">
+            <field name="name">Operative Area approved by I/C nurse of Ward Sister
+                ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_03" model="pre.operative.check.list.template">
+            <field name="name">Jewellery, Bangles, etc removed ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_04" model="pre.operative.check.list.template">
+            <field name="name">False Teeth Removed ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_05" model="pre.operative.check.list.template">
+            <field name="name">Hair Prepared ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_06" model="pre.operative.check.list.template">
+            <field name="name">Voided or Catheterized ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_07" model="pre.operative.check.list.template">
+            <field name="name">Enema Given ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_08" model="pre.operative.check.list.template">
+            <field name="name">Premedication Given and Charted ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_09" model="pre.operative.check.list.template">
+            <field name="name">P&amp;R taken and recorded 3 min after
+                Premedication ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_010" model="pre.operative.check.list.template">
+            <field name="name">T.P.R. Charted ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_011" model="pre.operative.check.list.template">
+            <field name="name">Operation Theater Clearance signed and put on Chart
+                ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_012" model="pre.operative.check.list.template">
+            <field name="name">Blood Report in Chart ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_013" model="pre.operative.check.list.template">
+            <field name="name">Urine Report in Chart ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_014" model="pre.operative.check.list.template">
+            <field name="name">X-RAYS on Chart ?</field>
+            <field name="remark"></field>
+        </record>
+        <record id="pre_operational_checklist_data_015" model="pre.operative.check.list.template">
+            <field name="name">Doctor Order sheet on Chart ?</field>
+            <field name="remark"></field>
+        </record>
+
+        <record id="pre_operational_checklist_data_016" model="pre.operative.check.list.template">
+            <field name="name">Identification Tag tied on Patient ?</field>
+            <field name="remark"></field>
+        </record>
+
+    </data>
+</openerp>
